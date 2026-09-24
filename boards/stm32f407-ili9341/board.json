@@ -1,0 +1,74 @@
+{
+  "id": "stm32f407-ili9341",
+  "name": "STM32F407 + ILI9341 SPI",
+  "vendor": "Generic",
+  "group": "STM32",
+  "description": "Black pill / Discovery style wiring using SPI1 and an XPT2046 touch panel.",
+  "mcu": {
+    "id": "stm32f4",
+    "name": "STM32F4 (F401 / F407 / F411)"
+  },
+  "usbCdc": false,
+  "display": {
+    "controller": "ili9341",
+    "controllerName": "ILI9341",
+    "interface": "spi",
+    "width": 240,
+    "height": 320,
+    "colorDepth": 16,
+    "rgbOrder": "bgr",
+    "invert": false,
+    "pins": {
+      "sck": "PA5",
+      "mosi": "PA7",
+      "miso": "PA6",
+      "cs": "PB0",
+      "dc": "PB1",
+      "rst": "PB10"
+    },
+    "options": {
+      "freqMhz": 40,
+      "spiHost": "VSPI",
+      "spiMode": "0",
+      "threeWire": false
+    },
+    "backlight": {
+      "pin": "PB11",
+      "active": 1,
+      "pwm": true,
+      "freq": 5000,
+      "defaultLevel": 100
+    }
+  },
+  "touch": {
+    "controller": "xpt2046",
+    "controllerName": "XPT2046",
+    "pins": {
+      "sck": "PA5",
+      "mosi": "PA7",
+      "miso": "PA6",
+      "cs": "PB12",
+      "irq": "PB13"
+    },
+    "swapXY": false,
+    "invertX": false,
+    "invertY": false,
+    "options": {
+      "freqKhz": 2000,
+      "sharedSPI": true
+    }
+  },
+  "buses": [],
+  "ioExpanders": [],
+  "digitalIO": [],
+  "analogInputs": [],
+  "audio": null,
+  "verify": "Needs the STM32duino core. SPI1 pins are remappable - check your variant.",
+  "links": {
+    "page": "https://lcdwizard.com/boards/stm32f407-ili9341",
+    "designer": "https://app.lcdwizard.com/app?board=stm32f407-ili9341",
+    "vendorProduct": "https://www.waveshare.com/core407v.htm",
+    "vendorDocs": "https://www.waveshare.com/wiki/Core407V",
+    "schematic": "https://www.waveshare.com/w/upload/5/58/CorexxxV-Schematic.pdf"
+  }
+}

@@ -1,0 +1,12 @@
+ESP32 display board pinouts
+Copyright (c) 2026 Jonathan Harrocks (LCD Wizard)
+
+Licensed under the Creative Commons Attribution 4.0 International License
+(CC BY 4.0); the full text is in LICENSE.
+
+Credit it as: Pinouts from LCD Wizard (https://lcdwizard.com).
+
+The pin assignments are drawn from each vendor's published schematics and
+example code and from boards tested by hand. Vendor and product names are
+their owners' trademarks. No warranty: check your board's revision before
+wiring it.

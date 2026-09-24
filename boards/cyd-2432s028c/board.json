@@ -1,0 +1,87 @@
+{
+  "id": "cyd-2432s028c",
+  "name": "ESP32-2432S028C (capacitive CYD)",
+  "vendor": "Sunton",
+  "group": "All-in-one boards",
+  "description": "Capacitive variant of the Cheap Yellow Display: same ILI9341, CST820 touch over I2C.",
+  "mcu": {
+    "id": "esp32",
+    "name": "ESP32 (WROOM / WROVER)"
+  },
+  "flashMB": 4,
+  "psramMB": 0,
+  "usbCdc": false,
+  "display": {
+    "controller": "ili9341",
+    "controllerName": "ILI9341",
+    "interface": "spi",
+    "width": 320,
+    "height": 240,
+    "colorDepth": 16,
+    "rgbOrder": "rgb",
+    "invert": false,
+    "pins": {
+      "sck": 14,
+      "mosi": 13,
+      "miso": 12,
+      "cs": 15,
+      "dc": 2,
+      "rst": -1
+    },
+    "options": {
+      "freqMhz": 40,
+      "spiHost": "HSPI",
+      "spiMode": "0",
+      "threeWire": false
+    },
+    "backlight": {
+      "pin": 21,
+      "active": 1,
+      "pwm": true,
+      "freq": 5000,
+      "defaultLevel": 100
+    }
+  },
+  "touch": {
+    "controller": "cst820",
+    "controllerName": "CST820",
+    "pins": {
+      "sda": 33,
+      "scl": 32,
+      "int": -1,
+      "rst": 25
+    },
+    "swapXY": false,
+    "invertX": false,
+    "invertY": false,
+    "options": {
+      "i2cAddr": "0x15",
+      "freqKhz": 400,
+      "sharedI2C": false
+    }
+  },
+  "buses": [
+    {
+      "name": "CN1 I2C (GPIO 27 / 22)",
+      "kind": "i2c",
+      "pins": {
+        "sda": 27,
+        "scl": 22
+      }
+    }
+  ],
+  "ioExpanders": [],
+  "digitalIO": [],
+  "analogInputs": [],
+  "audio": {
+    "output": "dac_internal",
+    "pins": {
+      "dac": 26
+    }
+  },
+  "verify": "GPIO21 drives the backlight here, which is the pin the CST820 interrupt would otherwise use, so touch is polled instead - no behaviour is lost. Colour order is RGB with inversion off, confirmed on hardware.",
+  "links": {
+    "page": "https://lcdwizard.com/boards/cyd-2432s028c",
+    "designer": "https://app.lcdwizard.com/app?board=cyd-2432s028c"
+  }
+}

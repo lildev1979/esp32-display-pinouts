@@ -1,0 +1,15 @@
+group,signal,pin
+Panel - SPI (4-wire serial),SCK / CLK,GPIO 5
+Panel - SPI (4-wire serial),MOSI / SDA,GPIO 4
+Panel - SPI (4-wire serial),MISO / SDO,GPIO 19
+Panel - SPI (4-wire serial),CS,GPIO 7
+Panel - SPI (4-wire serial),DC / RS,GPIO 6
+Panel - SPI (4-wire serial),RESET,GPIO 14
+Backlight,Pin,GPIO 15
+Backlight,Active,low
+Backlight,Drive,PWM 5000 Hz
+I2C (GPIO 18 / 8),SDA,GPIO 18
+I2C (GPIO 18 / 8),SCL,GPIO 8
+TCA9554 (I/O expander),Type,TCA9554
+TCA9554 (I/O expander),Address,0x20
+Board I/O,BOOTButton (active low),GPIO 9

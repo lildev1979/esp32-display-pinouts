@@ -1,0 +1,80 @@
+{
+  "id": "wt32-sc01-plus",
+  "name": "WT32-SC01 Plus",
+  "vendor": "Wireless Tag",
+  "group": "All-in-one boards",
+  "description": "3.5\" 320x480 ST7796 on an 8-bit i80 bus with FT6336U touch. Much faster than the SPI original.",
+  "mcu": {
+    "id": "esp32s3",
+    "name": "ESP32-S3"
+  },
+  "flashMB": 16,
+  "psramMB": 2,
+  "usbCdc": false,
+  "display": {
+    "controller": "st7796",
+    "controllerName": "ST7796 / ST7796S",
+    "interface": "par8",
+    "width": 320,
+    "height": 480,
+    "colorDepth": 16,
+    "rgbOrder": "bgr",
+    "invert": false,
+    "pins": {
+      "wr": 47,
+      "rd": -1,
+      "dc": 0,
+      "cs": -1,
+      "rst": 4,
+      "d0": 9,
+      "d1": 46,
+      "d2": 3,
+      "d3": 8,
+      "d4": 18,
+      "d5": 17,
+      "d6": 16,
+      "d7": 15
+    },
+    "options": {
+      "freqMhz": 20
+    },
+    "backlight": {
+      "pin": 45,
+      "active": 1,
+      "pwm": true,
+      "freq": 5000,
+      "defaultLevel": 100
+    }
+  },
+  "touch": {
+    "controller": "ft6236",
+    "controllerName": "FT6236 / FT6336U",
+    "pins": {
+      "sda": 6,
+      "scl": 5,
+      "int": 7,
+      "rst": -1
+    },
+    "swapXY": false,
+    "invertX": false,
+    "invertY": false,
+    "options": {
+      "i2cAddr": "0x38",
+      "freqKhz": 400,
+      "sharedI2C": false
+    }
+  },
+  "buses": [],
+  "ioExpanders": [],
+  "digitalIO": [],
+  "analogInputs": [],
+  "audio": null,
+  "verify": "CS is tied low on the board, so leave it at -1.",
+  "links": {
+    "page": "https://lcdwizard.com/boards/wt32-sc01-plus",
+    "designer": "https://app.lcdwizard.com/app?board=wt32-sc01-plus",
+    "vendorProduct": "https://shop.wireless-tag.com/products/wt32-sc01-plus-16mb-flash-3-5-inch-multi-touch-lcd-screen-with-gui-firmware-esp32-s3-development-board-wifi-ble-mcu-compatible-with-arduino",
+    "vendorDocs": "https://en.wireless-tag.com/product-item-26.html",
+    "schematic": "https://img03.71360.com/w3/77q677/20241031/bf724a7a164740edb1896e09c5ea50d5.pdf?dl=1&dlf=WT32-SC01+PLUS%28ZX3D50CE08S-USRC-4832%29Datasheet-V1.9+EN.pdf"
+  }
+}

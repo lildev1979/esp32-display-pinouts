@@ -1,0 +1,72 @@
+{
+  "id": "waveshare-s3-lcd-128-b",
+  "name": "Waveshare ESP32-S3-LCD-1.28-B",
+  "vendor": "Waveshare",
+  "group": "All-in-one boards",
+  "description": "1.28\" 240x240 IPS LCD (GC9A01A, SPI), QMI8658C.",
+  "mcu": {
+    "id": "esp32s3",
+    "name": "ESP32-S3"
+  },
+  "flashMB": 16,
+  "psramMB": 2,
+  "usbCdc": false,
+  "display": {
+    "controller": "gc9a01",
+    "controllerName": "GC9A01 / GC9A01A",
+    "interface": "spi",
+    "width": 240,
+    "height": 240,
+    "colorDepth": 16,
+    "rgbOrder": "bgr",
+    "invert": true,
+    "pins": {
+      "sck": 10,
+      "mosi": 11,
+      "miso": -1,
+      "cs": 9,
+      "dc": 8,
+      "rst": 12
+    },
+    "options": {
+      "freqMhz": 80
+    },
+    "backlight": {
+      "pin": 40,
+      "active": 1,
+      "pwm": true,
+      "freq": 5000,
+      "defaultLevel": 100
+    }
+  },
+  "touch": null,
+  "buses": [
+    {
+      "name": "I2C (GPIO 6 / 7)",
+      "kind": "i2c",
+      "pins": {
+        "sda": 6,
+        "scl": 7
+      }
+    }
+  ],
+  "ioExpanders": [],
+  "digitalIO": [
+    {
+      "name": "BOOTButton",
+      "direction": "in",
+      "pin": 0,
+      "activeLow": true
+    }
+  ],
+  "analogInputs": [],
+  "audio": null,
+  "verify": "Pins from Waveshare's demo code and schematic (https://files.waveshare.com/wiki/ESP32-S3-LCD-1.28/ESP32-S3-LCD-1.28-Demo.zip). The -B product is the non-touch ESP32-S3-LCD-1.28 PCB in a CNC metal case with headers; the product page links the same wiki and demo.",
+  "links": {
+    "page": "https://lcdwizard.com/boards/waveshare-s3-lcd-128-b",
+    "designer": "https://app.lcdwizard.com/app?board=waveshare-s3-lcd-128-b",
+    "vendorProduct": "https://www.waveshare.com/product/esp32-related/displays/lcd-spi-qspi/esp32-s3-lcd-1.28-b.htm",
+    "vendorDocs": "https://www.waveshare.com/wiki/ESP32-S3-LCD-1.28",
+    "schematic": "https://files.waveshare.com/wiki/ESP32-S3-LCD-1.28/Esp32-s3-lcd-.128-sch.pdf"
+  }
+}

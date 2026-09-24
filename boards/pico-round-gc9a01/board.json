@@ -1,0 +1,57 @@
+{
+  "id": "pico-round-gc9a01",
+  "name": "Pico + GC9A01 round",
+  "vendor": "Generic",
+  "group": "RP2040",
+  "description": "240x240 round panel driven from SPI0, no touch.",
+  "mcu": {
+    "id": "rp2040",
+    "name": "RP2040 (Pico / Pico W)"
+  },
+  "usbCdc": false,
+  "display": {
+    "controller": "gc9a01",
+    "controllerName": "GC9A01 / GC9A01A",
+    "interface": "spi",
+    "width": 240,
+    "height": 240,
+    "colorDepth": 16,
+    "rgbOrder": "bgr",
+    "invert": true,
+    "pins": {
+      "sck": 18,
+      "mosi": 19,
+      "miso": -1,
+      "cs": 17,
+      "dc": 20,
+      "rst": 21
+    },
+    "options": {
+      "freqMhz": 40,
+      "spiHost": "VSPI",
+      "spiMode": "0",
+      "threeWire": false
+    },
+    "backlight": {
+      "pin": 22,
+      "active": 1,
+      "pwm": true,
+      "freq": 5000,
+      "defaultLevel": 100
+    }
+  },
+  "touch": null,
+  "buses": [],
+  "ioExpanders": [],
+  "digitalIO": [],
+  "analogInputs": [],
+  "audio": null,
+  "verify": "Pair it with a rotary encoder for input.",
+  "links": {
+    "page": "https://lcdwizard.com/boards/pico-round-gc9a01",
+    "designer": "https://app.lcdwizard.com/app?board=pico-round-gc9a01",
+    "vendorProduct": "https://www.raspberrypi.com/products/raspberry-pi-pico/",
+    "vendorDocs": "https://www.raspberrypi.com/documentation/microcontrollers/pico-series.html",
+    "schematic": "https://datasheets.raspberrypi.com/pico/RPi-Pico-R3-PUBLIC-20200119.zip"
+  }
+}

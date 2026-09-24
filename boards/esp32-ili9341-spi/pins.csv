@@ -1,0 +1,15 @@
+group,signal,pin
+Panel - SPI (4-wire serial),SCK / CLK,GPIO 18
+Panel - SPI (4-wire serial),MOSI / SDA,GPIO 23
+Panel - SPI (4-wire serial),MISO / SDO,GPIO 19
+Panel - SPI (4-wire serial),CS,GPIO 15
+Panel - SPI (4-wire serial),DC / RS,GPIO 2
+Panel - SPI (4-wire serial),RESET,GPIO 4
+Touch - XPT2046,SCK,GPIO 18
+Touch - XPT2046,MOSI,GPIO 23
+Touch - XPT2046,MISO,GPIO 19
+Touch - XPT2046,CS,GPIO 5
+Touch - XPT2046,IRQ / PENIRQ,GPIO 27
+Backlight,Pin,GPIO 21
+Backlight,Active,high
+Backlight,Drive,PWM 5000 Hz

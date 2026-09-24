@@ -1,0 +1,113 @@
+{
+  "id": "waveshare-s3-touch-lcd-185c",
+  "name": "Waveshare ESP32-S3-Touch-LCD-1.85C",
+  "vendor": "Waveshare",
+  "group": "All-in-one boards",
+  "description": "1.85\" 360x360 IPS LCD (ST77916, QSPI), CST816 (CST816S datasheet linked by vendor) touch, ES8311 (V2); PCM5101APWR on V1 audio, TF card, PCF85063ATL.",
+  "mcu": {
+    "id": "esp32s3",
+    "name": "ESP32-S3"
+  },
+  "flashMB": 16,
+  "psramMB": 8,
+  "usbCdc": true,
+  "display": {
+    "controller": "st77916",
+    "controllerName": "ST77916",
+    "interface": "qspi",
+    "width": 360,
+    "height": 360,
+    "colorDepth": 16,
+    "rgbOrder": "rgb",
+    "invert": true,
+    "pins": {
+      "sck": 40,
+      "d0": 46,
+      "d1": 45,
+      "d2": 42,
+      "d3": 41,
+      "cs": 21,
+      "rst": {
+        "ext": "ext_waveshare_s3_touch_lcd_185c_tca9554",
+        "pin": 1
+      },
+      "te": 18
+    },
+    "options": {
+      "freqMhz": 80,
+      "spiHost": "SPI2_HOST"
+    },
+    "backlight": {
+      "pin": 5,
+      "active": 1,
+      "pwm": true,
+      "freq": 5000,
+      "defaultLevel": 100
+    }
+  },
+  "touch": {
+    "controller": "cst816s",
+    "controllerName": "CST816S",
+    "pins": {
+      "sda": 11,
+      "scl": 10,
+      "int": 4,
+      "rst": {
+        "ext": "ext_waveshare_s3_touch_lcd_185c_tca9554",
+        "pin": 0
+      }
+    },
+    "swapXY": false,
+    "invertX": false,
+    "invertY": false,
+    "options": {
+      "i2cAddr": "0x15",
+      "freqKhz": 400,
+      "sharedI2C": true
+    }
+  },
+  "buses": [
+    {
+      "name": "I2C (GPIO 11 / 10)",
+      "kind": "i2c",
+      "pins": {
+        "sda": 11,
+        "scl": 10
+      }
+    }
+  ],
+  "ioExpanders": [
+    {
+      "name": "TCA9554",
+      "type": "tca9554",
+      "address": "0x20"
+    }
+  ],
+  "digitalIO": [
+    {
+      "name": "BOOTButton",
+      "direction": "in",
+      "pin": 0,
+      "activeLow": true
+    }
+  ],
+  "analogInputs": [],
+  "audio": {
+    "output": "es8311",
+    "pins": {
+      "mclk": 2,
+      "bclk": 48,
+      "lrclk": 38,
+      "din": 47,
+      "pa": 15
+    }
+  },
+  "verify": "Pins from Waveshare's demo code and schematic (https://github.com/waveshareteam/ESP32-S3-Touch-LCD-1.85C). Two hardware revisions share this slug and SKU.",
+  "links": {
+    "page": "https://lcdwizard.com/boards/waveshare-s3-touch-lcd-185c",
+    "designer": "https://app.lcdwizard.com/app?board=waveshare-s3-touch-lcd-185c",
+    "vendorProduct": "https://www.waveshare.com/product/esp32-related/displays/lcd-spi-qspi/esp32-s3-touch-lcd-1.85c.htm",
+    "vendorDocs": "http://www.waveshare.com/wiki/ESP32-S3-Touch-LCD-1.85C",
+    "schematic": "https://files.waveshare.com/wiki/ESP32-S3-Touch-LCD-1.85C/ESP32-S3-Touch-LCD-1.85C_V2.pdf"
+  }
+}

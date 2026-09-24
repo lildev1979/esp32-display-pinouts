@@ -1,0 +1,110 @@
+{
+  "id": "waveshare-s3-touch-lcd-146b",
+  "name": "Waveshare ESP32-S3-Touch-LCD-1.46B",
+  "vendor": "Waveshare",
+  "group": "All-in-one boards",
+  "description": "1.46\" 412x412 IPS LCD (SPD2010, QSPI), SPD2010 (integrated touch) touch, PCM5101A (I2S DAC, no I2C control) audio, TF card, QMI8658, PCF85063ATL.",
+  "mcu": {
+    "id": "esp32s3",
+    "name": "ESP32-S3"
+  },
+  "flashMB": 16,
+  "psramMB": 8,
+  "usbCdc": true,
+  "display": {
+    "controller": "spd2010",
+    "controllerName": "SPD2010",
+    "interface": "qspi",
+    "width": 412,
+    "height": 412,
+    "colorDepth": 16,
+    "rgbOrder": "rgb",
+    "invert": false,
+    "pins": {
+      "sck": 40,
+      "d0": 46,
+      "d1": 45,
+      "d2": 42,
+      "d3": 41,
+      "cs": 21,
+      "rst": {
+        "ext": "ext_waveshare_s3_touch_lcd_146b_tca9554",
+        "pin": 1
+      },
+      "te": 18
+    },
+    "options": {
+      "freqMhz": 40,
+      "spiHost": "SPI2_HOST"
+    },
+    "backlight": {
+      "pin": 5,
+      "active": 1,
+      "pwm": true,
+      "freq": 5000,
+      "defaultLevel": 100
+    }
+  },
+  "touch": {
+    "controller": "spd2010_t",
+    "controllerName": "SPD2010 (touch half)",
+    "pins": {
+      "sda": 11,
+      "scl": 10,
+      "int": 4,
+      "rst": {
+        "ext": "ext_waveshare_s3_touch_lcd_146b_tca9554",
+        "pin": 0
+      }
+    },
+    "swapXY": false,
+    "invertX": false,
+    "invertY": false,
+    "options": {
+      "i2cAddr": "0x53",
+      "freqKhz": 400,
+      "sharedI2C": true
+    }
+  },
+  "buses": [
+    {
+      "name": "I2C (GPIO 11 / 10)",
+      "kind": "i2c",
+      "pins": {
+        "sda": 11,
+        "scl": 10
+      }
+    }
+  ],
+  "ioExpanders": [
+    {
+      "name": "TCA9554",
+      "type": "tca9554",
+      "address": "0x20"
+    }
+  ],
+  "digitalIO": [
+    {
+      "name": "BOOTButton",
+      "direction": "in",
+      "pin": 0,
+      "activeLow": true
+    },
+    {
+      "name": "PWRKeyBATButton",
+      "direction": "in",
+      "pin": 6,
+      "activeLow": true
+    }
+  ],
+  "analogInputs": [],
+  "audio": null,
+  "verify": "Pins from Waveshare's demo code and schematic (https://github.com/waveshareteam/ESP32-S3-Touch-LCD-1.46/tree/main/example). The -B is the ESP32-S3-Touch-LCD-1.46 PCB sold with cover-glass options (SKUs 'without cover glass' / 'with protective cover glass' / 'widened'); its wiki links the 1.46 schematic and has no demo of its own, so the 1.46 GitHub repo was used.",
+  "links": {
+    "page": "https://lcdwizard.com/boards/waveshare-s3-touch-lcd-146b",
+    "designer": "https://app.lcdwizard.com/app?board=waveshare-s3-touch-lcd-146b",
+    "vendorProduct": "https://www.waveshare.com/product/esp32-related/displays/lcd-spi-qspi/esp32-s3-touch-lcd-1.46b.htm",
+    "vendorDocs": "http://www.waveshare.com/wiki/ESP32-S3-Touch-LCD-1.46B",
+    "schematic": "https://files.waveshare.com/wiki/ESP32-S3-Touch-LCD-1.46/ESP32-S3-Touch-LCD-1.46.pdf"
+  }
+}

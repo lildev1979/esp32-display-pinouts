@@ -1,0 +1,22 @@
+group,signal,pin
+Panel - SPI (4-wire serial),SCK / CLK,GPIO 6
+Panel - SPI (4-wire serial),MOSI / SDA,GPIO 7
+Panel - SPI (4-wire serial),CS,GPIO 5
+Panel - SPI (4-wire serial),DC / RS,GPIO 4
+Panel - SPI (4-wire serial),RESET,GPIO 38
+Touch - CST816S,SDA,GPIO 15
+Touch - CST816S,SCL,GPIO 14
+Touch - CST816S,INT / IRQ,GPIO 13
+Touch - CST816S,RESET,GPIO 39
+Backlight,Pin,GPIO 40
+Backlight,Active,high
+Backlight,Drive,PWM 5000 Hz
+I2C (GPIO 15 / 14),SDA,GPIO 15
+I2C (GPIO 15 / 14),SCL,GPIO 14
+Board I/O,BOOTButton (active low),GPIO 0
+Board I/O,PWRButton (active low),GPIO 41
+Audio,MCLK,GPIO 16
+Audio,BCLK,GPIO 9
+Audio,LRCLK,GPIO 45
+Audio,DIN,GPIO 8
+Audio,PA,GPIO 46

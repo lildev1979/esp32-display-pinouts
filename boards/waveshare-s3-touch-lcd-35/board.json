@@ -1,0 +1,108 @@
+{
+  "id": "waveshare-s3-touch-lcd-35",
+  "name": "Waveshare ESP32-S3-Touch-LCD-3.5",
+  "vendor": "Waveshare",
+  "group": "All-in-one boards",
+  "description": "3.5\" 320x480 IPS LCD (ST7796, SPI), FT6336 touch, ES8311 audio, TF card, AXP2101, PCF85063, QMI8658.",
+  "mcu": {
+    "id": "esp32s3",
+    "name": "ESP32-S3"
+  },
+  "flashMB": 16,
+  "psramMB": 8,
+  "usbCdc": true,
+  "display": {
+    "controller": "st7796",
+    "controllerName": "ST7796 / ST7796S",
+    "interface": "spi",
+    "width": 320,
+    "height": 480,
+    "colorDepth": 16,
+    "rgbOrder": "bgr",
+    "invert": true,
+    "pins": {
+      "sck": 5,
+      "mosi": 1,
+      "miso": 2,
+      "cs": -1,
+      "dc": 3,
+      "rst": {
+        "ext": "ext_waveshare_s3_touch_lcd_35_tca9554",
+        "pin": 1
+      }
+    },
+    "options": {
+      "freqMhz": 80,
+      "spiHost": "SPI2_HOST"
+    },
+    "backlight": {
+      "pin": 6,
+      "active": 1,
+      "pwm": true,
+      "freq": 5000,
+      "defaultLevel": 100
+    }
+  },
+  "touch": {
+    "controller": "ft6236",
+    "controllerName": "FT6236 / FT6336U",
+    "pins": {
+      "sda": 8,
+      "scl": 7,
+      "int": -1,
+      "rst": -1
+    },
+    "swapXY": false,
+    "invertX": false,
+    "invertY": false,
+    "options": {
+      "i2cAddr": "0x38",
+      "freqKhz": 400,
+      "sharedI2C": true
+    }
+  },
+  "buses": [
+    {
+      "name": "I2C (GPIO 8 / 7)",
+      "kind": "i2c",
+      "pins": {
+        "sda": 8,
+        "scl": 7
+      }
+    }
+  ],
+  "ioExpanders": [
+    {
+      "name": "TCA9554",
+      "type": "tca9554",
+      "address": "0x20"
+    }
+  ],
+  "digitalIO": [
+    {
+      "name": "BOOTButton",
+      "direction": "in",
+      "pin": 0,
+      "activeLow": true
+    }
+  ],
+  "analogInputs": [],
+  "audio": {
+    "output": "es8311",
+    "pins": {
+      "mclk": 12,
+      "bclk": 13,
+      "lrclk": 15,
+      "din": 16,
+      "pa": -1
+    }
+  },
+  "verify": "Pins from Waveshare's demo code and schematic (https://github.com/waveshareteam/ESP32-S3-Touch-LCD-3.5 (commit 283ec84c566c096f8c30493b93dcd4b0bb608de7)). SPI clock: vendor IDF 80 MHz, xiaozhi 40 MHz.",
+  "links": {
+    "page": "https://lcdwizard.com/boards/waveshare-s3-touch-lcd-35",
+    "designer": "https://app.lcdwizard.com/app?board=waveshare-s3-touch-lcd-35",
+    "vendorProduct": "https://www.waveshare.com/product/esp32-related/displays/lcd-spi-qspi/esp32-s3-touch-lcd-3.5.htm",
+    "vendorDocs": "https://docs.waveshare.com/ESP32-S3-Touch-LCD-3.5",
+    "schematic": "https://files.waveshare.com/wiki/ESP32-S3-Touch-LCD-3.5/ESP32-S3-Touch-LCD-3.5-Schematic.pdf"
+  }
+}

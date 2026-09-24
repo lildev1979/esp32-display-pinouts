@@ -1,0 +1,99 @@
+{
+  "id": "guition-4848s040",
+  "name": "Guition ESP32-4848S040 (4\" 480x480)",
+  "vendor": "Guition",
+  "group": "All-in-one boards",
+  "description": "4\" 480x480 square ST7701 panel with GT911 touch, sold as the \"86 box\" wall-plate unit.",
+  "mcu": {
+    "id": "esp32s3",
+    "name": "ESP32-S3"
+  },
+  "flashMB": 16,
+  "psramMB": 8,
+  "usbCdc": false,
+  "display": {
+    "controller": "st7701",
+    "controllerName": "ST7701 / ST7701S",
+    "interface": "rgb",
+    "width": 480,
+    "height": 480,
+    "colorDepth": 16,
+    "rgbOrder": "rgb",
+    "invert": false,
+    "pins": {
+      "de": 18,
+      "vsync": 17,
+      "hsync": 16,
+      "pclk": 21,
+      "r0": 11,
+      "r1": 12,
+      "r2": 13,
+      "r3": 14,
+      "r4": 0,
+      "g0": 8,
+      "g1": 20,
+      "g2": 3,
+      "g3": 46,
+      "g4": 9,
+      "g5": 10,
+      "b0": 4,
+      "b1": 5,
+      "b2": 6,
+      "b3": 7,
+      "b4": 15,
+      "cs": 39,
+      "sck": 48,
+      "mosi": 47,
+      "rst": -1
+    },
+    "options": {
+      "pclkMhz": 12,
+      "hsyncPolarity": "1",
+      "hsyncFrontPorch": 10,
+      "hsyncPulseWidth": 8,
+      "hsyncBackPorch": 50,
+      "vsyncPolarity": "1",
+      "vsyncFrontPorch": 10,
+      "vsyncPulseWidth": 8,
+      "vsyncBackPorch": 20,
+      "pclkActiveNeg": false,
+      "initSeq": "st7701_type9_init_operations"
+    },
+    "backlight": {
+      "pin": 38,
+      "active": 1,
+      "pwm": true,
+      "freq": 5000,
+      "defaultLevel": 100
+    }
+  },
+  "touch": {
+    "controller": "gt911",
+    "controllerName": "GT911",
+    "pins": {
+      "sda": 19,
+      "scl": 45,
+      "int": -1,
+      "rst": -1
+    },
+    "swapXY": false,
+    "invertX": false,
+    "invertY": false,
+    "options": {
+      "i2cAddr": "0x5D",
+      "freqKhz": 400,
+      "sharedI2C": false
+    }
+  },
+  "buses": [],
+  "ioExpanders": [],
+  "digitalIO": [],
+  "analogInputs": [],
+  "audio": null,
+  "verify": "The ST7701 init sequence is the type 9 one - this board is the reason that type exists, and the panel stays black with any other. Touch INT and RESET are not brought out, so the GT911 is polled and reset by software. GPIO0 and GPIO3 are strapping pins used as RGB data, which is safe: they are outputs only, and not driven until after boot.",
+  "links": {
+    "page": "https://lcdwizard.com/boards/guition-4848s040",
+    "designer": "https://app.lcdwizard.com/app?board=guition-4848s040",
+    "vendorDocs": "https://pan.jczn1688.com/directlink/1/ESP32%20module/4.0inch_ESP32-4848S040.zip"
+  }
+}

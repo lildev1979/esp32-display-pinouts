@@ -1,0 +1,20 @@
+group,signal,pin
+Panel - QSPI (quad SPI),SCK,GPIO 5
+Panel - QSPI (quad SPI),D0 - D3,"GPIO 1, 2, 3, 4"
+Panel - QSPI (quad SPI),CS,GPIO 12
+Panel - QSPI (quad SPI),RESET,TCA9554 1
+Touch - AXS15231B (touch half),SDA,GPIO 8
+Touch - AXS15231B (touch half),SCL,GPIO 7
+Backlight,Pin,GPIO 6
+Backlight,Active,high
+Backlight,Drive,PWM 5000 Hz
+"I2C (GPIO 8 / 7, header pins 27 / 25)",SDA,GPIO 8
+"I2C (GPIO 8 / 7, header pins 27 / 25)",SCL,GPIO 7
+TCA9554 (I/O expander),Type,TCA9554
+TCA9554 (I/O expander),Address,0x20
+Board I/O,BootButton (active low),GPIO 0
+Audio,MCLK,GPIO 44
+Audio,BCLK,GPIO 13
+Audio,LRCLK,GPIO 15
+Audio,DIN,GPIO 16
+Audio,PA,TCA9554 7

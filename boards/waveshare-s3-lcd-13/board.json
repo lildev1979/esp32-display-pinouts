@@ -1,0 +1,66 @@
+{
+  "id": "waveshare-s3-lcd-13",
+  "name": "Waveshare ESP32-S3-LCD-1.3",
+  "vendor": "Waveshare",
+  "group": "All-in-one boards",
+  "description": "1.3\" 240x240 IPS LCD (ST7789VW, SPI), TF card, QMI8658.",
+  "mcu": {
+    "id": "esp32s3",
+    "name": "ESP32-S3"
+  },
+  "flashMB": 16,
+  "psramMB": 8,
+  "usbCdc": false,
+  "display": {
+    "controller": "st7789",
+    "controllerName": "ST7789",
+    "interface": "spi",
+    "width": 240,
+    "height": 240,
+    "colorDepth": 16,
+    "rgbOrder": "rgb",
+    "invert": true,
+    "pins": {
+      "sck": 40,
+      "mosi": 41,
+      "miso": -1,
+      "cs": 39,
+      "dc": 38,
+      "rst": 42
+    },
+    "options": {
+      "freqMhz": 40,
+      "spiHost": "SPI2_HOST"
+    },
+    "backlight": {
+      "pin": 20,
+      "active": 1,
+      "pwm": true,
+      "freq": 5000,
+      "defaultLevel": 100
+    }
+  },
+  "touch": null,
+  "buses": [
+    {
+      "name": "I2C (GPIO 47 / 48)",
+      "kind": "i2c",
+      "pins": {
+        "sda": 47,
+        "scl": 48
+      }
+    }
+  ],
+  "ioExpanders": [],
+  "digitalIO": [],
+  "analogInputs": [],
+  "audio": null,
+  "verify": "Pins from Waveshare's demo code and schematic (https://files.waveshare.com/wiki/ESP32-S3-LCD-1.3/ESP32-S3-LCD-1.3-Demo.zip). Backlight: ESP-IDF main.c defines PIN_NUM_BL 4 and drives it high, but the same demo's pwm_init() drives lcd_bl=20, the Arduino Prism demo uses LCD_BL 20, and the schematic labels GPIO20 BL_PWM (NPN low-side switch, so active high).",
+  "links": {
+    "page": "https://lcdwizard.com/boards/waveshare-s3-lcd-13",
+    "designer": "https://app.lcdwizard.com/app?board=waveshare-s3-lcd-13",
+    "vendorProduct": "https://www.waveshare.com/product/esp32-related/displays/lcd-spi-qspi/esp32-s3-lcd-1.3.htm",
+    "vendorDocs": "http://www.waveshare.com/wiki/ESP32-S3-LCD-1.3",
+    "schematic": "https://files.waveshare.com/wiki/ESP32-S3-LCD-1.3/ESP32S3_1.3inch.pdf"
+  }
+}

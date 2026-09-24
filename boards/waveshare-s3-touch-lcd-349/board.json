@@ -1,0 +1,122 @@
+{
+  "id": "waveshare-s3-touch-lcd-349",
+  "name": "Waveshare ESP32-S3-Touch-LCD-3.49",
+  "vendor": "Waveshare",
+  "group": "All-in-one boards",
+  "description": "3.49\" 172x640 IPS LCD (AXS15231B, QSPI), AXS15231B (integrated touch) touch, ES8311 audio, TF card, QMI8658, PCF85063.",
+  "mcu": {
+    "id": "esp32s3",
+    "name": "ESP32-S3"
+  },
+  "flashMB": 16,
+  "psramMB": 8,
+  "usbCdc": true,
+  "display": {
+    "controller": "axs15231b",
+    "controllerName": "AXS15231B",
+    "interface": "qspi",
+    "width": 172,
+    "height": 640,
+    "colorDepth": 16,
+    "rgbOrder": "rgb",
+    "invert": false,
+    "pins": {
+      "sck": 10,
+      "d0": 11,
+      "d1": 12,
+      "d2": 13,
+      "d3": 14,
+      "cs": 9,
+      "rst": {
+        "ext": "ext_waveshare_s3_touch_lcd_349_tca9554",
+        "pin": 5
+      },
+      "te": 21
+    },
+    "options": {
+      "freqMhz": 40,
+      "spiHost": "SPI3_HOST"
+    },
+    "backlight": {
+      "pin": 42,
+      "active": 0,
+      "pwm": true,
+      "freq": 5000,
+      "defaultLevel": 100
+    }
+  },
+  "touch": {
+    "controller": "axs15231b_t",
+    "controllerName": "AXS15231B (touch half)",
+    "pins": {
+      "sda": 17,
+      "scl": 18,
+      "int": {
+        "ext": "ext_waveshare_s3_touch_lcd_349_tca9554",
+        "pin": 0
+      },
+      "rst": -1
+    },
+    "swapXY": false,
+    "invertX": false,
+    "invertY": false,
+    "options": {
+      "i2cAddr": "0x3B",
+      "freqKhz": 400,
+      "sharedI2C": false
+    }
+  },
+  "buses": [
+    {
+      "name": "I2C (GPIO 17 / 18)",
+      "kind": "i2c",
+      "pins": {
+        "sda": 17,
+        "scl": 18
+      }
+    }
+  ],
+  "ioExpanders": [
+    {
+      "name": "TCA9554",
+      "type": "tca9554",
+      "address": "0x20"
+    }
+  ],
+  "digitalIO": [
+    {
+      "name": "BOOTButton",
+      "direction": "in",
+      "pin": 0,
+      "activeLow": true
+    },
+    {
+      "name": "PWRSYSOUTButton",
+      "direction": "in",
+      "pin": 16,
+      "activeLow": true
+    }
+  ],
+  "analogInputs": [],
+  "audio": {
+    "output": "es8311",
+    "pins": {
+      "mclk": 7,
+      "bclk": 15,
+      "lrclk": 46,
+      "din": 45,
+      "pa": {
+        "ext": "ext_waveshare_s3_touch_lcd_349_tca9554",
+        "pin": 7
+      }
+    }
+  },
+  "verify": "Pins from Waveshare's demo code and schematic (https://github.com/waveshareteam/ESP32-S3-Touch-LCD-3.49-V2). Two hardware revisions with different pins; recorded V2 (Rev1.1 silkscreen), which is all that ships since 2026-06-08.",
+  "links": {
+    "page": "https://lcdwizard.com/boards/waveshare-s3-touch-lcd-349",
+    "designer": "https://app.lcdwizard.com/app?board=waveshare-s3-touch-lcd-349",
+    "vendorProduct": "https://www.waveshare.com/product/esp32-related/displays/lcd-spi-qspi/esp32-s3-touch-lcd-3.49.htm",
+    "vendorDocs": "http://www.waveshare.com/wiki/ESP32-S3-Touch-LCD-3.49",
+    "schematic": "https://github.com/waveshareteam/ESP32-S3-Touch-LCD-3.49-V2/blob/main/schematic/ESP32-S3-Touch-LCD-3.49%20V2.pdf"
+  }
+}

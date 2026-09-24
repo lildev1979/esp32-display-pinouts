@@ -1,0 +1,9 @@
+group,signal,pin
+Panel - SPI (4-wire serial),SCK / CLK,GPIO 18
+Panel - SPI (4-wire serial),MOSI / SDA,GPIO 19
+Panel - SPI (4-wire serial),CS,GPIO 17
+Panel - SPI (4-wire serial),DC / RS,GPIO 20
+Panel - SPI (4-wire serial),RESET,GPIO 21
+Backlight,Pin,GPIO 22
+Backlight,Active,high
+Backlight,Drive,PWM 5000 Hz

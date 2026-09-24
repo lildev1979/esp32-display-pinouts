@@ -1,0 +1,121 @@
+{
+  "id": "waveshare-s3-7",
+  "name": "Waveshare ESP32-S3-Touch-LCD-7",
+  "vendor": "Waveshare",
+  "group": "All-in-one boards",
+  "description": "7\" 800x480 RGB panel with GT911 touch. Same wiring as the 4.3\" board, its own timings.",
+  "mcu": {
+    "id": "esp32s3",
+    "name": "ESP32-S3"
+  },
+  "flashMB": 16,
+  "psramMB": 8,
+  "usbCdc": false,
+  "display": {
+    "controller": "rgb_generic",
+    "controllerName": "Generic RGB565 panel",
+    "interface": "rgb",
+    "width": 800,
+    "height": 480,
+    "colorDepth": 16,
+    "rgbOrder": "rgb",
+    "invert": false,
+    "pins": {
+      "de": 5,
+      "vsync": 3,
+      "hsync": 46,
+      "pclk": 7,
+      "r0": 1,
+      "r1": 2,
+      "r2": 42,
+      "r3": 41,
+      "r4": 40,
+      "g0": 39,
+      "g1": 0,
+      "g2": 45,
+      "g3": 48,
+      "g4": 47,
+      "g5": 21,
+      "b0": 14,
+      "b1": 38,
+      "b2": 18,
+      "b3": 17,
+      "b4": 10,
+      "rst": {
+        "ext": "ext_ws7_ch422g",
+        "pin": 3
+      }
+    },
+    "options": {
+      "pclkMhz": 16,
+      "hsyncPolarity": "0",
+      "hsyncFrontPorch": 8,
+      "hsyncPulseWidth": 4,
+      "hsyncBackPorch": 8,
+      "vsyncPolarity": "0",
+      "vsyncFrontPorch": 16,
+      "vsyncPulseWidth": 4,
+      "vsyncBackPorch": 16,
+      "pclkActiveNeg": true
+    },
+    "backlight": {
+      "pin": {
+        "ext": "ext_ws7_ch422g",
+        "pin": 2
+      },
+      "active": 1,
+      "pwm": false,
+      "freq": 5000,
+      "defaultLevel": 100
+    }
+  },
+  "touch": {
+    "controller": "gt911",
+    "controllerName": "GT911",
+    "pins": {
+      "sda": 8,
+      "scl": 9,
+      "int": 4,
+      "rst": {
+        "ext": "ext_ws7_ch422g",
+        "pin": 1
+      }
+    },
+    "swapXY": false,
+    "invertX": false,
+    "invertY": false,
+    "options": {
+      "i2cAddr": "0x5D",
+      "freqKhz": 400,
+      "sharedI2C": false
+    }
+  },
+  "buses": [
+    {
+      "name": "I2C0 (touch, CH422G, header)",
+      "kind": "i2c",
+      "pins": {
+        "sda": 8,
+        "scl": 9
+      }
+    }
+  ],
+  "ioExpanders": [
+    {
+      "name": "CH422G",
+      "type": "ch422g",
+      "address": "0x24"
+    }
+  ],
+  "digitalIO": [],
+  "analogInputs": [],
+  "audio": null,
+  "verify": "Touch reset (EXIO1), backlight (EXIO2), panel reset (EXIO3) and a second panel enable (EXIO6) are all on the CH422G at GPIO 8/9. ESPHome drives EXIO2 and EXIO6 together as enable pins, so if the panel is dark with the backlight apparently on, try swapping which of the two the backlight is on for your revision.",
+  "links": {
+    "page": "https://lcdwizard.com/boards/waveshare-s3-7",
+    "designer": "https://app.lcdwizard.com/app?board=waveshare-s3-7",
+    "vendorProduct": "https://www.waveshare.com/esp32-s3-touch-lcd-7.htm",
+    "vendorDocs": "https://www.waveshare.com/wiki/ESP32-S3-Touch-LCD-7",
+    "schematic": "https://files.waveshare.com/wiki/ESP32-S3-Touch-LCD-7/ESP32-S3-Touch-LCD-7-Sch.pdf"
+  }
+}

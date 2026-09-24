@@ -1,0 +1,98 @@
+{
+  "id": "s3-st7701-480",
+  "name": "ESP32-S3 + ST7701S 480x480 round",
+  "vendor": "Generic",
+  "group": "Common wiring",
+  "description": "480x480 RGB panel that needs a 3-wire SPI init sequence alongside the RGB bus.",
+  "mcu": {
+    "id": "esp32s3",
+    "name": "ESP32-S3"
+  },
+  "flashMB": 16,
+  "psramMB": 8,
+  "usbCdc": false,
+  "display": {
+    "controller": "st7701",
+    "controllerName": "ST7701 / ST7701S",
+    "interface": "rgb",
+    "width": 480,
+    "height": 480,
+    "colorDepth": 16,
+    "rgbOrder": "rgb",
+    "invert": false,
+    "pins": {
+      "de": 18,
+      "vsync": 17,
+      "hsync": 16,
+      "pclk": 21,
+      "r0": 4,
+      "r1": 3,
+      "r2": 2,
+      "r3": 1,
+      "r4": 0,
+      "g0": 10,
+      "g1": 9,
+      "g2": 8,
+      "g3": 7,
+      "g4": 6,
+      "g5": 5,
+      "b0": 15,
+      "b1": 14,
+      "b2": 13,
+      "b3": 12,
+      "b4": 11,
+      "cs": 39,
+      "sck": 48,
+      "mosi": 47,
+      "rst": -1
+    },
+    "options": {
+      "pclkMhz": 12,
+      "hsyncPolarity": "1",
+      "hsyncFrontPorch": 10,
+      "hsyncPulseWidth": 8,
+      "hsyncBackPorch": 50,
+      "vsyncPolarity": "1",
+      "vsyncFrontPorch": 10,
+      "vsyncPulseWidth": 8,
+      "vsyncBackPorch": 20,
+      "pclkActiveNeg": false,
+      "initSeq": "st7701_type1_init_operations"
+    },
+    "backlight": {
+      "pin": 38,
+      "active": 1,
+      "pwm": true,
+      "freq": 5000,
+      "defaultLevel": 100
+    }
+  },
+  "touch": {
+    "controller": "cst328",
+    "controllerName": "CST328",
+    "pins": {
+      "sda": 19,
+      "scl": 45,
+      "int": 40,
+      "rst": 41
+    },
+    "swapXY": false,
+    "invertX": false,
+    "invertY": false,
+    "options": {
+      "i2cAddr": "0x1A",
+      "freqKhz": 400,
+      "sharedI2C": false
+    }
+  },
+  "buses": [],
+  "ioExpanders": [],
+  "digitalIO": [],
+  "analogInputs": [],
+  "audio": null,
+  "verify": "CS/SCK/MOSI carry the ST7701 init commands only; pixels go over the RGB bus. The init sequence is the type 1 one; a panel that stays black on a board wired like this usually wants a different type.",
+  "links": {
+    "page": "https://lcdwizard.com/boards/s3-st7701-480",
+    "designer": "https://app.lcdwizard.com/app?board=s3-st7701-480"
+  }
+}

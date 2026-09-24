@@ -1,0 +1,90 @@
+{
+  "id": "cyd-2432s028r",
+  "name": "ESP32-2432S028R \"Cheap Yellow Display\"",
+  "vendor": "Sunton",
+  "group": "All-in-one boards",
+  "description": "2.8\" 240x320 ILI9341 with XPT2046 resistive touch on a second SPI bus. The cheapest way into LVGL.",
+  "mcu": {
+    "id": "esp32",
+    "name": "ESP32 (WROOM / WROVER)"
+  },
+  "flashMB": 4,
+  "psramMB": 0,
+  "usbCdc": false,
+  "display": {
+    "controller": "ili9341",
+    "controllerName": "ILI9341",
+    "interface": "spi",
+    "width": 320,
+    "height": 240,
+    "colorDepth": 16,
+    "rgbOrder": "rgb",
+    "invert": false,
+    "pins": {
+      "sck": 14,
+      "mosi": 13,
+      "miso": 12,
+      "cs": 15,
+      "dc": 2,
+      "rst": -1
+    },
+    "options": {
+      "freqMhz": 40,
+      "spiHost": "HSPI",
+      "spiMode": "0",
+      "threeWire": false
+    },
+    "backlight": {
+      "pin": 21,
+      "active": 1,
+      "pwm": true,
+      "freq": 5000,
+      "defaultLevel": 100
+    }
+  },
+  "touch": {
+    "controller": "xpt2046",
+    "controllerName": "XPT2046",
+    "pins": {
+      "sck": 25,
+      "mosi": 32,
+      "miso": 39,
+      "cs": 33,
+      "irq": 36
+    },
+    "swapXY": true,
+    "invertX": false,
+    "invertY": false,
+    "options": {
+      "freqKhz": 2500,
+      "sharedSPI": false
+    }
+  },
+  "buses": [
+    {
+      "name": "CN1 I2C (GPIO 27 / 22)",
+      "kind": "i2c",
+      "pins": {
+        "sda": 27,
+        "scl": 22
+      }
+    }
+  ],
+  "ioExpanders": [],
+  "digitalIO": [],
+  "analogInputs": [],
+  "audio": {
+    "output": "dac_internal",
+    "pins": {
+      "dac": 26
+    }
+  },
+  "verify": "Touch runs on its own VSPI bus, separate from the display HSPI bus. The 2432S028 also ships in a capacitive CST820 variant. Colour order is RGB with inversion off, confirmed on hardware - if a clone shows a negative image or swaps red and blue, change them on the Display tab.",
+  "links": {
+    "page": "https://lcdwizard.com/boards/cyd-2432s028r",
+    "designer": "https://app.lcdwizard.com/app?board=cyd-2432s028r",
+    "vendorProduct": "https://www.makerfabs.com/sunton-esp32-2-8-inch-tft-with-touch.html",
+    "vendorDocs": "https://wiki.makerfabs.com/Sunton_ESP32_2.8_inch_240x320_TFT_with_Touch.html",
+    "schematic": "https://github.com/witnessmenow/ESP32-Cheap-Yellow-Display/tree/main/OriginalDocumentation/5-Schematic"
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "id": "waveshare-c6-lcd-273",
+  "name": "Waveshare ESP32-C6-LCD-2.73",
+  "vendor": "Waveshare",
+  "group": "All-in-one boards",
+  "description": "2.73\" 320x320 IPS LCD (ILI9488, SPI), TF card, QMI8658, PCF85063.",
+  "mcu": {
+    "id": "esp32c6",
+    "name": "ESP32-C6"
+  },
+  "flashMB": 16,
+  "psramMB": 0,
+  "usbCdc": true,
+  "display": {
+    "controller": "ili9488",
+    "controllerName": "ILI9488",
+    "interface": "spi",
+    "width": 320,
+    "height": 320,
+    "colorDepth": 18,
+    "rgbOrder": "bgr",
+    "invert": true,
+    "pins": {
+      "sck": 0,
+      "mosi": 1,
+      "miso": 18,
+      "cs": 8,
+      "dc": 19,
+      "rst": {
+        "ext": "ext_waveshare_c6_lcd_273_ws_ioext16",
+        "pin": 0
+      }
+    },
+    "options": {
+      "freqMhz": 60,
+      "spiHost": "SPI2_HOST"
+    },
+    "backlight": {
+      "pin": {
+        "ext": "ext_waveshare_c6_lcd_273_ws_ioext16",
+        "pin": 16
+      },
+      "active": 1,
+      "pwm": true,
+      "freq": 5000,
+      "defaultLevel": 100
+    }
+  },
+  "touch": null,
+  "buses": [
+    {
+      "name": "I2C (GPIO 20 / 2)",
+      "kind": "i2c",
+      "pins": {
+        "sda": 20,
+        "scl": 2
+      }
+    }
+  ],
+  "ioExpanders": [
+    {
+      "name": "IOExtension",
+      "type": "ws_ioext16",
+      "address": "0x24"
+    }
+  ],
+  "digitalIO": [
+    {
+      "name": "PREVButton",
+      "direction": "in",
+      "pin": 4,
+      "activeLow": true
+    },
+    {
+      "name": "NEXTButton",
+      "direction": "in",
+      "pin": 5,
+      "activeLow": true
+    },
+    {
+      "name": "BOOTENTERButton",
+      "direction": "in",
+      "pin": 9,
+      "activeLow": true
+    }
+  ],
+  "analogInputs": [],
+  "audio": null,
+  "verify": "Pins from Waveshare's demo code and schematic (https://github.com/waveshareteam/ESP32-C6-LCD-2.73). Module: docs page says ESP32-C6-WROOM-1-N16 and the factory sdkconfig sets 16MB; the schematic symbol says ESP32-C6-WROOM-1-N8.",
+  "links": {
+    "page": "https://lcdwizard.com/boards/waveshare-c6-lcd-273",
+    "designer": "https://app.lcdwizard.com/app?board=waveshare-c6-lcd-273",
+    "vendorProduct": "https://www.waveshare.com/product/esp32-related/displays/lcd-spi-qspi/esp32-c6-lcd-2.73.htm",
+    "vendorDocs": "http://docs.waveshare.com/ESP32-C6-LCD-2.73",
+    "schematic": "https://github.com/waveshareteam/ESP32-C6-LCD-2.73/blob/main/hardware/ESP32-C6-LCD-2.73.pdf"
+  }
+}

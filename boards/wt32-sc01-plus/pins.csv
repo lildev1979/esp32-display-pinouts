@@ -1,0 +1,12 @@
+group,signal,pin
+Panel - 8-bit parallel (i80 / 8080),WR,GPIO 47
+Panel - 8-bit parallel (i80 / 8080),DC / RS,GPIO 0
+Panel - 8-bit parallel (i80 / 8080),CS,-
+Panel - 8-bit parallel (i80 / 8080),RESET,GPIO 4
+Panel - 8-bit parallel (i80 / 8080),D0 - D7,"GPIO 9, 46, 3, 8, 18, 17, 16, 15"
+Touch - FT6236 / FT6336U,SDA,GPIO 6
+Touch - FT6236 / FT6336U,SCL,GPIO 5
+Touch - FT6236 / FT6336U,INT / IRQ,GPIO 7
+Backlight,Pin,GPIO 45
+Backlight,Active,high
+Backlight,Drive,PWM 5000 Hz

@@ -1,0 +1,64 @@
+{
+  "id": "waveshare-s3-geek",
+  "name": "Waveshare ESP32-S3-GEEK",
+  "vendor": "Waveshare",
+  "group": "All-in-one boards",
+  "description": "1.14\" 135x240 IPS LCD (ST7789, SPI), TF card.",
+  "mcu": {
+    "id": "esp32s3",
+    "name": "ESP32-S3"
+  },
+  "flashMB": 16,
+  "psramMB": 2,
+  "usbCdc": true,
+  "display": {
+    "controller": "st7789",
+    "controllerName": "ST7789",
+    "interface": "spi",
+    "width": 135,
+    "height": 240,
+    "colorDepth": 16,
+    "rgbOrder": "rgb",
+    "invert": true,
+    "pins": {
+      "sck": 12,
+      "mosi": 11,
+      "miso": -1,
+      "cs": 10,
+      "dc": 8,
+      "rst": 9
+    },
+    "options": {
+      "freqMhz": 40,
+      "spiHost": "SPI2_HOST"
+    },
+    "backlight": {
+      "pin": 7,
+      "active": 1,
+      "pwm": true,
+      "freq": 5000,
+      "defaultLevel": 100
+    }
+  },
+  "touch": null,
+  "buses": [],
+  "ioExpanders": [],
+  "digitalIO": [
+    {
+      "name": "BOOTButton",
+      "direction": "in",
+      "pin": 0,
+      "activeLow": true
+    }
+  ],
+  "analogInputs": [],
+  "audio": null,
+  "verify": "Pins from Waveshare's demo code and schematic (https://files.waveshare.com/wiki/ESP32-S3-GEEK/ESP32-S3-GEEK-Demo.zip). SPI clock: Arduino demo uses SPI_CLOCK_DIV2 (40 MHz), MicroPython demo 50 MHz; chose 40.",
+  "links": {
+    "page": "https://lcdwizard.com/boards/waveshare-s3-geek",
+    "designer": "https://app.lcdwizard.com/app?board=waveshare-s3-geek",
+    "vendorProduct": "https://www.waveshare.com/product/esp32-related/displays/lcd-spi-qspi/esp32-s3-geek.htm",
+    "vendorDocs": "https://docs.waveshare.com/ESP32-S3-GEEK",
+    "schematic": "https://files.waveshare.com/wiki/ESP32-S3-GEEK/ESP32-S3-GEEK-Schematic1.pdf"
+  }
+}

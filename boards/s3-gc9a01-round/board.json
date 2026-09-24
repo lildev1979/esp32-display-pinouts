@@ -1,0 +1,73 @@
+{
+  "id": "s3-gc9a01-round",
+  "name": "ESP32-S3 + GC9A01 1.28\" round",
+  "vendor": "Generic",
+  "group": "Common wiring",
+  "description": "240x240 round panel with CST816S single-touch. Popular for watch faces and gauges.",
+  "mcu": {
+    "id": "esp32s3",
+    "name": "ESP32-S3"
+  },
+  "flashMB": 8,
+  "psramMB": 0,
+  "usbCdc": false,
+  "display": {
+    "controller": "gc9a01",
+    "controllerName": "GC9A01 / GC9A01A",
+    "interface": "spi",
+    "width": 240,
+    "height": 240,
+    "colorDepth": 16,
+    "rgbOrder": "bgr",
+    "invert": true,
+    "pins": {
+      "sck": 12,
+      "mosi": 11,
+      "miso": -1,
+      "cs": 10,
+      "dc": 14,
+      "rst": 13
+    },
+    "options": {
+      "freqMhz": 80,
+      "spiHost": "SPI2_HOST",
+      "spiMode": "0",
+      "threeWire": false
+    },
+    "backlight": {
+      "pin": 2,
+      "active": 1,
+      "pwm": true,
+      "freq": 5000,
+      "defaultLevel": 100
+    }
+  },
+  "touch": {
+    "controller": "cst816s",
+    "controllerName": "CST816S",
+    "pins": {
+      "sda": 8,
+      "scl": 9,
+      "int": 7,
+      "rst": 6
+    },
+    "swapXY": false,
+    "invertX": false,
+    "invertY": false,
+    "options": {
+      "i2cAddr": "0x15",
+      "freqKhz": 400,
+      "sharedI2C": false
+    }
+  },
+  "buses": [],
+  "ioExpanders": [],
+  "digitalIO": [],
+  "analogInputs": [],
+  "audio": null,
+  "verify": "The CST816S needs its RESET line wired or it will not answer on I2C.",
+  "links": {
+    "page": "https://lcdwizard.com/boards/s3-gc9a01-round",
+    "designer": "https://app.lcdwizard.com/app?board=s3-gc9a01-round"
+  }
+}

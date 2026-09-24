@@ -1,0 +1,64 @@
+{
+  "id": "waveshare-c6-geek",
+  "name": "Waveshare ESP32-C6-GEEK",
+  "vendor": "Waveshare",
+  "group": "All-in-one boards",
+  "description": "1.14\" 135x240 IPS LCD (ST7789, SPI), TF card.",
+  "mcu": {
+    "id": "esp32c6",
+    "name": "ESP32-C6"
+  },
+  "flashMB": 16,
+  "psramMB": 0,
+  "usbCdc": true,
+  "display": {
+    "controller": "st7789",
+    "controllerName": "ST7789",
+    "interface": "spi",
+    "width": 135,
+    "height": 240,
+    "colorDepth": 16,
+    "rgbOrder": "rgb",
+    "invert": true,
+    "pins": {
+      "sck": 1,
+      "mosi": 2,
+      "miso": -1,
+      "cs": 5,
+      "dc": 3,
+      "rst": 4
+    },
+    "options": {
+      "freqMhz": 40,
+      "spiHost": "SPI2_HOST"
+    },
+    "backlight": {
+      "pin": 6,
+      "active": 1,
+      "pwm": true,
+      "freq": 5000,
+      "defaultLevel": 100
+    }
+  },
+  "touch": null,
+  "buses": [],
+  "ioExpanders": [],
+  "digitalIO": [
+    {
+      "name": "BOOTButton",
+      "direction": "in",
+      "pin": 9,
+      "activeLow": true
+    }
+  ],
+  "analogInputs": [],
+  "audio": null,
+  "verify": "Pins from Waveshare's demo code and schematic (https://github.com/waveshareteam/ESP32-C6-GEEK (commit e9ea5866ff87bef10fd2bcac07dc57a1004264d0; example/ESP32-C6-GEEK-Demo = V1, example/ESP32-C6-GEEK_V2-Demo = V2)). Two hardware revisions: V2 (shipping from 2026-03-23, 'V2' on the back) puts the TF card on the LCD's SPI bus (SCK 1, MOSI 2, MISO 20, CS 23); V1 had the TF card on its own pins (SCK 19, MOSI 18, MISO 20, CS 23).",
+  "links": {
+    "page": "https://lcdwizard.com/boards/waveshare-c6-geek",
+    "designer": "https://app.lcdwizard.com/app?board=waveshare-c6-geek",
+    "vendorProduct": "https://www.waveshare.com/product/esp32-related/displays/lcd-spi-qspi/esp32-c6-geek.htm",
+    "vendorDocs": "https://docs.waveshare.com/ESP32-C6-GEEK",
+    "schematic": "https://github.com/waveshareteam/ESP32-C6-GEEK/blob/main/hardware/schematics/ESP32-C6-GEEK_V2.pdf (V1: hardware/schematics/ESP32-C6-GEEK.pdf)"
+  }
+}

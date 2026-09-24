@@ -1,0 +1,16 @@
+group,signal,pin
+Panel - SPI (4-wire serial),SCK / CLK,GPIO 14
+Panel - SPI (4-wire serial),MOSI / SDA,GPIO 13
+Panel - SPI (4-wire serial),MISO / SDO,GPIO 12
+Panel - SPI (4-wire serial),CS,GPIO 15
+Panel - SPI (4-wire serial),DC / RS,GPIO 2
+Panel - SPI (4-wire serial),RESET,-
+Touch - CST820,SDA,GPIO 33
+Touch - CST820,SCL,GPIO 32
+Touch - CST820,RESET,GPIO 25
+Backlight,Pin,GPIO 21
+Backlight,Active,high
+Backlight,Drive,PWM 5000 Hz
+CN1 I2C (GPIO 27 / 22),SDA,GPIO 27
+CN1 I2C (GPIO 27 / 22),SCL,GPIO 22
+Audio,DAC,GPIO 26

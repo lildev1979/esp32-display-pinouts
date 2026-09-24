@@ -1,0 +1,73 @@
+{
+  "id": "esp32-ili9341-spi",
+  "name": "ESP32 + ILI9341 2.8\" SPI",
+  "vendor": "Generic",
+  "group": "Common wiring",
+  "description": "The classic breadboard combination: ESP32 DevKit, 2.8\" ILI9341, XPT2046 resistive touch on the same SPI bus.",
+  "mcu": {
+    "id": "esp32",
+    "name": "ESP32 (WROOM / WROVER)"
+  },
+  "flashMB": 4,
+  "psramMB": 0,
+  "usbCdc": false,
+  "display": {
+    "controller": "ili9341",
+    "controllerName": "ILI9341",
+    "interface": "spi",
+    "width": 240,
+    "height": 320,
+    "colorDepth": 16,
+    "rgbOrder": "bgr",
+    "invert": false,
+    "pins": {
+      "sck": 18,
+      "mosi": 23,
+      "miso": 19,
+      "cs": 15,
+      "dc": 2,
+      "rst": 4
+    },
+    "options": {
+      "freqMhz": 40,
+      "spiHost": "VSPI",
+      "spiMode": "0",
+      "threeWire": false
+    },
+    "backlight": {
+      "pin": 21,
+      "active": 1,
+      "pwm": true,
+      "freq": 5000,
+      "defaultLevel": 100
+    }
+  },
+  "touch": {
+    "controller": "xpt2046",
+    "controllerName": "XPT2046",
+    "pins": {
+      "sck": 18,
+      "mosi": 23,
+      "miso": 19,
+      "cs": 5,
+      "irq": 27
+    },
+    "swapXY": false,
+    "invertX": false,
+    "invertY": false,
+    "options": {
+      "freqKhz": 2500,
+      "sharedSPI": true
+    }
+  },
+  "buses": [],
+  "ioExpanders": [],
+  "digitalIO": [],
+  "analogInputs": [],
+  "audio": null,
+  "verify": "Wiring template rather than a fixed board - adjust to match how you actually wired it.",
+  "links": {
+    "page": "https://lcdwizard.com/boards/esp32-ili9341-spi",
+    "designer": "https://app.lcdwizard.com/app?board=esp32-ili9341-spi"
+  }
+}

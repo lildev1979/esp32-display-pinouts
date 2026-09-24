@@ -1,0 +1,120 @@
+{
+  "id": "waveshare-touch-lcd-35",
+  "name": "Waveshare ESP32-Touch-LCD-3.5",
+  "vendor": "Waveshare",
+  "group": "All-in-one boards",
+  "description": "3.5\" 320x480 IPS LCD (ST7796S, SPI), FT6336U touch, ES8311 audio, TF card, AXP2101, PCF85063.",
+  "mcu": {
+    "id": "esp32",
+    "name": "ESP32 (WROOM / WROVER)"
+  },
+  "flashMB": 16,
+  "psramMB": 2,
+  "usbCdc": false,
+  "display": {
+    "controller": "st7796",
+    "controllerName": "ST7796 / ST7796S",
+    "interface": "spi",
+    "width": 320,
+    "height": 480,
+    "colorDepth": 16,
+    "rgbOrder": "bgr",
+    "invert": true,
+    "pins": {
+      "sck": 18,
+      "mosi": 23,
+      "miso": 19,
+      "cs": 5,
+      "dc": 27,
+      "rst": {
+        "ext": "ext_waveshare_touch_lcd_35_tca9554",
+        "pin": 0
+      }
+    },
+    "options": {
+      "freqMhz": 40,
+      "spiHost": "SPI3_HOST"
+    },
+    "backlight": {
+      "pin": 25,
+      "active": 1,
+      "pwm": true,
+      "freq": 5000,
+      "defaultLevel": 100
+    }
+  },
+  "touch": {
+    "controller": "ft6236",
+    "controllerName": "FT6236 / FT6336U",
+    "pins": {
+      "sda": 21,
+      "scl": 22,
+      "int": 37,
+      "rst": {
+        "ext": "ext_waveshare_touch_lcd_35_tca9554",
+        "pin": 1
+      }
+    },
+    "swapXY": false,
+    "invertX": false,
+    "invertY": false,
+    "options": {
+      "i2cAddr": "0x38",
+      "freqKhz": 400,
+      "sharedI2C": true
+    }
+  },
+  "buses": [
+    {
+      "name": "I2C (GPIO 21 / 22)",
+      "kind": "i2c",
+      "pins": {
+        "sda": 21,
+        "scl": 22
+      }
+    }
+  ],
+  "ioExpanders": [
+    {
+      "name": "TCA9554",
+      "type": "tca9554",
+      "address": "0x20"
+    }
+  ],
+  "digitalIO": [
+    {
+      "name": "BOOTButton",
+      "direction": "in",
+      "pin": 0,
+      "activeLow": true
+    },
+    {
+      "name": "PWRButton",
+      "direction": "in",
+      "pin": 36,
+      "activeLow": false
+    }
+  ],
+  "analogInputs": [],
+  "audio": {
+    "output": "es8311",
+    "pins": {
+      "mclk": 3,
+      "bclk": 2,
+      "lrclk": 4,
+      "din": 12,
+      "pa": {
+        "ext": "ext_waveshare_touch_lcd_35_tca9554",
+        "pin": 2
+      }
+    }
+  },
+  "verify": "Pins from Waveshare's demo code and schematic (https://github.com/waveshareteam/ESP32-Touch-LCD-3.5). SPI clock: 40 MHz in the ESP-IDF lvgl example (and the Arduino_ESP32SPI default), 80 MHz in the factory firmware; chose 40.",
+  "links": {
+    "page": "https://lcdwizard.com/boards/waveshare-touch-lcd-35",
+    "designer": "https://app.lcdwizard.com/app?board=waveshare-touch-lcd-35",
+    "vendorProduct": "https://www.waveshare.com/product/esp32-related/displays/lcd-spi-qspi/esp32-touch-lcd-3.5.htm",
+    "vendorDocs": "http://www.waveshare.com/wiki/ESP32-Touch-LCD-3.5",
+    "schematic": "https://files.waveshare.com/wiki/ESP32-Touch-LCD-3.5/ESP32-Touch-LCD-3.5_Rev1.1.pdf"
+  }
+}

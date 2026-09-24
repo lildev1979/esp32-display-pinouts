@@ -1,0 +1,17 @@
+group,signal,pin
+Panel - RGB565 parallel (DPI),DE,GPIO 18
+Panel - RGB565 parallel (DPI),VSYNC,GPIO 17
+Panel - RGB565 parallel (DPI),HSYNC,GPIO 16
+Panel - RGB565 parallel (DPI),PCLK,GPIO 21
+Panel - RGB565 parallel (DPI),R0 - R4,"GPIO 11, 12, 13, 14, 0"
+Panel - RGB565 parallel (DPI),G0 - G5,"GPIO 8, 20, 3, 46, 9, 10"
+Panel - RGB565 parallel (DPI),B0 - B4,"GPIO 4, 5, 6, 7, 15"
+Panel - RGB565 parallel (DPI),CS (init only),GPIO 39
+Panel - RGB565 parallel (DPI),SCK (init only),GPIO 48
+Panel - RGB565 parallel (DPI),MOSI (init only),GPIO 47
+Panel - RGB565 parallel (DPI),RESET,-
+Touch - GT911,SDA,GPIO 19
+Touch - GT911,SCL,GPIO 45
+Backlight,Pin,GPIO 38
+Backlight,Active,high
+Backlight,Drive,PWM 5000 Hz

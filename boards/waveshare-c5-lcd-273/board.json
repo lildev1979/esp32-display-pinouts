@@ -1,0 +1,97 @@
+{
+  "id": "waveshare-c5-lcd-273",
+  "name": "Waveshare ESP32-C5-LCD-2.73",
+  "vendor": "Waveshare",
+  "group": "All-in-one boards",
+  "description": "2.73\" 320x320 IPS LCD (ILI9488, SPI), TF card, QMI8658, PCF85063.",
+  "mcu": {
+    "id": "esp32c5",
+    "name": "ESP32-C5"
+  },
+  "flashMB": 32,
+  "psramMB": 8,
+  "usbCdc": true,
+  "display": {
+    "controller": "ili9488",
+    "controllerName": "ILI9488",
+    "interface": "spi",
+    "width": 320,
+    "height": 320,
+    "colorDepth": 18,
+    "rgbOrder": "bgr",
+    "invert": true,
+    "pins": {
+      "sck": 6,
+      "mosi": 7,
+      "miso": 5,
+      "cs": 8,
+      "dc": 4,
+      "rst": {
+        "ext": "ext_waveshare_c5_lcd_273_ws_ioext16",
+        "pin": 0
+      }
+    },
+    "options": {
+      "freqMhz": 60,
+      "spiHost": "SPI2_HOST"
+    },
+    "backlight": {
+      "pin": {
+        "ext": "ext_waveshare_c5_lcd_273_ws_ioext16",
+        "pin": 16
+      },
+      "active": 1,
+      "pwm": true,
+      "freq": 5000,
+      "defaultLevel": 100
+    }
+  },
+  "touch": null,
+  "buses": [
+    {
+      "name": "I2C (GPIO 27 / 26)",
+      "kind": "i2c",
+      "pins": {
+        "sda": 27,
+        "scl": 26
+      }
+    }
+  ],
+  "ioExpanders": [
+    {
+      "name": "IOExtension",
+      "type": "ws_ioext16",
+      "address": "0x24"
+    }
+  ],
+  "digitalIO": [
+    {
+      "name": "PREVButton",
+      "direction": "in",
+      "pin": 2,
+      "activeLow": true
+    },
+    {
+      "name": "NEXTButton",
+      "direction": "in",
+      "pin": 3,
+      "activeLow": true
+    },
+    {
+      "name": "BOOTENTERButton",
+      "direction": "in",
+      "pin": 28,
+      "activeLow": true
+    }
+  ],
+  "analogInputs": [],
+  "audio": null,
+  "verify": "Pins from Waveshare's demo code and schematic (https://github.com/waveshareteam/ESP32-C5-LCD-2.73). Docs call the expander CH32V003; the schematic part is CH32V006K8U7 - same Waveshare register protocol at 0x24 either way.",
+  "links": {
+    "page": "https://lcdwizard.com/boards/waveshare-c5-lcd-273",
+    "designer": "https://app.lcdwizard.com/app?board=waveshare-c5-lcd-273",
+    "vendorProduct": "https://www.waveshare.com/product/esp32-related/displays/lcd-spi-qspi/esp32-c5-lcd-2.73.htm",
+    "vendorDocs": "http://docs.waveshare.com/ESP32-C5-LCD-2.73",
+    "schematic": "https://github.com/waveshareteam/ESP32-C5-LCD-2.73/blob/main/schematic/ESP32-C5-LCD-2.73.pdf"
+  }
+}

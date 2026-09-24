@@ -1,0 +1,15 @@
+group,signal,pin
+Panel - SPI (4-wire serial),SCK / CLK,GPIO 7
+Panel - SPI (4-wire serial),MOSI / SDA,GPIO 5
+Panel - SPI (4-wire serial),MISO / SDO,GPIO 6
+Panel - SPI (4-wire serial),CS,-
+Panel - SPI (4-wire serial),DC / RS,GPIO 8
+Panel - SPI (4-wire serial),RESET,IOExtension 1
+Backlight,Pin,IOExtension 8
+Backlight,Active,high
+Backlight,Drive,PWM 5000 Hz
+I2C (GPIO 4 / 3),SDA,GPIO 4
+I2C (GPIO 4 / 3),SCL,GPIO 3
+IOExtension (I/O expander),Type,WS_IOEXT
+IOExtension (I/O expander),Address,0x24
+Board I/O,BOOTButton (active low),GPIO 9

@@ -1,0 +1,96 @@
+{
+  "id": "sunton-8048s043",
+  "name": "Sunton ESP32-8048S043 (4.3\" RGB)",
+  "vendor": "Sunton",
+  "group": "All-in-one boards",
+  "description": "4.3\" 800x480 RGB565 panel with GT911 capacitive touch and 8 MB PSRAM.",
+  "mcu": {
+    "id": "esp32s3",
+    "name": "ESP32-S3"
+  },
+  "flashMB": 16,
+  "psramMB": 8,
+  "usbCdc": false,
+  "display": {
+    "controller": "st7262",
+    "controllerName": "ST7262",
+    "interface": "rgb",
+    "width": 800,
+    "height": 480,
+    "colorDepth": 16,
+    "rgbOrder": "rgb",
+    "invert": false,
+    "pins": {
+      "de": 40,
+      "vsync": 41,
+      "hsync": 39,
+      "pclk": 42,
+      "r0": 45,
+      "r1": 48,
+      "r2": 47,
+      "r3": 21,
+      "r4": 14,
+      "g0": 5,
+      "g1": 6,
+      "g2": 7,
+      "g3": 15,
+      "g4": 16,
+      "g5": 4,
+      "b0": 8,
+      "b1": 3,
+      "b2": 46,
+      "b3": 9,
+      "b4": 1,
+      "rst": -1
+    },
+    "options": {
+      "pclkMhz": 16,
+      "hsyncPolarity": "0",
+      "hsyncFrontPorch": 8,
+      "hsyncPulseWidth": 4,
+      "hsyncBackPorch": 8,
+      "vsyncPolarity": "0",
+      "vsyncFrontPorch": 8,
+      "vsyncPulseWidth": 4,
+      "vsyncBackPorch": 8,
+      "pclkActiveNeg": true
+    },
+    "backlight": {
+      "pin": 2,
+      "active": 1,
+      "pwm": true,
+      "freq": 5000,
+      "defaultLevel": 100
+    }
+  },
+  "touch": {
+    "controller": "gt911",
+    "controllerName": "GT911",
+    "pins": {
+      "sda": 19,
+      "scl": 20,
+      "int": -1,
+      "rst": 38
+    },
+    "swapXY": false,
+    "invertX": false,
+    "invertY": false,
+    "options": {
+      "i2cAddr": "0x5D",
+      "freqKhz": 400,
+      "sharedI2C": false
+    }
+  },
+  "buses": [],
+  "ioExpanders": [],
+  "digitalIO": [],
+  "analogInputs": [],
+  "audio": null,
+  "verify": "PSRAM must be enabled (OPI, 80 MHz) or the RGB framebuffer will not allocate.",
+  "links": {
+    "page": "https://lcdwizard.com/boards/sunton-8048s043",
+    "designer": "https://app.lcdwizard.com/app?board=sunton-8048s043",
+    "vendorProduct": "https://www.makerfabs.com/sunton-esp32-s3-4-3-inch-ips-with-touch.html",
+    "vendorDocs": "https://wiki.makerfabs.com/Sunton_ESP32_S3_4.3_inch_800x400_IPS_with_Touch.html"
+  }
+}

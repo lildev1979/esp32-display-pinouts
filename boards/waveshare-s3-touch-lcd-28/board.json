@@ -1,0 +1,96 @@
+{
+  "id": "waveshare-s3-touch-lcd-28",
+  "name": "Waveshare ESP32-S3-Touch-LCD-2.8",
+  "vendor": "Waveshare",
+  "group": "All-in-one boards",
+  "description": "2.8\" 240x320 IPS LCD (ST7789T3, SPI), CST328 touch, PCM5101A (I2S DAC, no I2C control) audio, TF card, QMI8658C, PCF85063ATL.",
+  "mcu": {
+    "id": "esp32s3",
+    "name": "ESP32-S3"
+  },
+  "flashMB": 16,
+  "psramMB": 8,
+  "usbCdc": true,
+  "display": {
+    "controller": "st7789",
+    "controllerName": "ST7789",
+    "interface": "spi",
+    "width": 240,
+    "height": 320,
+    "colorDepth": 16,
+    "rgbOrder": "rgb",
+    "invert": true,
+    "pins": {
+      "sck": 40,
+      "mosi": 45,
+      "miso": 46,
+      "cs": 42,
+      "dc": 41,
+      "rst": 39
+    },
+    "options": {
+      "freqMhz": 80,
+      "spiHost": "SPI3_HOST"
+    },
+    "backlight": {
+      "pin": 5,
+      "active": 1,
+      "pwm": true,
+      "freq": 5000,
+      "defaultLevel": 100
+    }
+  },
+  "touch": {
+    "controller": "cst328",
+    "controllerName": "CST328",
+    "pins": {
+      "sda": 1,
+      "scl": 3,
+      "int": 4,
+      "rst": 2
+    },
+    "swapXY": false,
+    "invertX": false,
+    "invertY": false,
+    "options": {
+      "i2cAddr": "0x1A",
+      "freqKhz": 400,
+      "sharedI2C": false
+    }
+  },
+  "buses": [
+    {
+      "name": "I2C (GPIO 1 / 3)",
+      "kind": "i2c",
+      "pins": {
+        "sda": 1,
+        "scl": 3
+      }
+    }
+  ],
+  "ioExpanders": [],
+  "digitalIO": [
+    {
+      "name": "BOOTButton",
+      "direction": "in",
+      "pin": 0,
+      "activeLow": true
+    },
+    {
+      "name": "PWRKeyBATButton",
+      "direction": "in",
+      "pin": 6,
+      "activeLow": true
+    }
+  ],
+  "analogInputs": [],
+  "audio": null,
+  "verify": "Pins from Waveshare's demo code and schematic (https://files.waveshare.com/wiki/ESP32-S3-Touch-LCD-2.8/ESP32-S3-Touch-LCD-2.8-Demo.zip). Colour order: Arduino writes MADCTL 0x00 (RGB); ESP-IDF builds the panel with LCD_RGB_ENDIAN_BGR and mirror(true,false).",
+  "links": {
+    "page": "https://lcdwizard.com/boards/waveshare-s3-touch-lcd-28",
+    "designer": "https://app.lcdwizard.com/app?board=waveshare-s3-touch-lcd-28",
+    "vendorProduct": "https://www.waveshare.com/product/esp32-related/displays/lcd-spi-qspi/esp32-s3-touch-lcd-2.8.htm",
+    "vendorDocs": "http://www.waveshare.com/wiki/ESP32-S3-Touch-LCD-2.8",
+    "schematic": "https://files.waveshare.com/wiki/ESP32-S3-Touch-LCD-2.8/ESP32-S3-Touch-LCD-2.8.pdf"
+  }
+}

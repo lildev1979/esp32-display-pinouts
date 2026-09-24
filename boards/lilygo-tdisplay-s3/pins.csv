@@ -1,0 +1,14 @@
+group,signal,pin
+Panel - 8-bit parallel (i80 / 8080),WR,GPIO 8
+Panel - 8-bit parallel (i80 / 8080),RD,GPIO 9
+Panel - 8-bit parallel (i80 / 8080),DC / RS,GPIO 7
+Panel - 8-bit parallel (i80 / 8080),CS,GPIO 6
+Panel - 8-bit parallel (i80 / 8080),RESET,GPIO 5
+Panel - 8-bit parallel (i80 / 8080),D0 - D7,"GPIO 39, 40, 41, 42, 45, 46, 47, 48"
+Touch - CST816S,SDA,GPIO 18
+Touch - CST816S,SCL,GPIO 17
+Touch - CST816S,INT / IRQ,GPIO 16
+Touch - CST816S,RESET,GPIO 21
+Backlight,Pin,GPIO 38
+Backlight,Active,high
+Backlight,Drive,PWM 5000 Hz

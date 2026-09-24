@@ -1,0 +1,23 @@
+group,signal,pin
+Panel - SPI (4-wire serial),SCK / CLK,GPIO 23
+Panel - SPI (4-wire serial),MOSI / SDA,GPIO 7
+Panel - SPI (4-wire serial),CS,GPIO 27
+Panel - SPI (4-wire serial),DC / RS,GPIO 24
+Panel - SPI (4-wire serial),RESET,-
+Touch - CST816S,SDA,GPIO 8
+Touch - CST816S,SCL,GPIO 9
+Touch - CST816S,INT / IRQ,GPIO 5
+Touch - CST816S,RESET,TCA9554 1
+Backlight,Pin,GPIO 26
+Backlight,Active,high
+Backlight,Drive,PWM 5000 Hz
+I2C (GPIO 8 / 9),SDA,GPIO 8
+I2C (GPIO 8 / 9),SCL,GPIO 9
+TCA9554 (I/O expander),Type,TCA9554
+TCA9554 (I/O expander),Address,0x20
+Board I/O,BOOTButton (active low),GPIO 28
+Audio,MCLK,GPIO 0
+Audio,BCLK,GPIO 1
+Audio,LRCLK,GPIO 3
+Audio,DIN,GPIO 10
+Audio,PA,TCA9554 0

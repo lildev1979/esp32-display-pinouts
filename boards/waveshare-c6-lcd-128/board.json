@@ -1,0 +1,73 @@
+{
+  "id": "waveshare-c6-lcd-128",
+  "name": "Waveshare ESP32-C6-LCD-1.28",
+  "vendor": "Waveshare",
+  "group": "All-in-one boards",
+  "description": "1.28\" 240x240 IPS LCD (GC9A01A, SPI), TF card, QMI8658, PCF85063ATL.",
+  "mcu": {
+    "id": "esp32c6",
+    "name": "ESP32-C6"
+  },
+  "flashMB": 16,
+  "psramMB": 0,
+  "usbCdc": true,
+  "display": {
+    "controller": "gc9a01",
+    "controllerName": "GC9A01 / GC9A01A",
+    "interface": "spi",
+    "width": 240,
+    "height": 240,
+    "colorDepth": 16,
+    "rgbOrder": "rgb",
+    "invert": true,
+    "pins": {
+      "sck": 11,
+      "mosi": 21,
+      "miso": 22,
+      "cs": 10,
+      "dc": 19,
+      "rst": 20
+    },
+    "options": {
+      "freqMhz": 80,
+      "spiHost": "SPI2_HOST"
+    },
+    "backlight": {
+      "pin": 7,
+      "active": 1,
+      "pwm": true,
+      "freq": 5000,
+      "defaultLevel": 100
+    }
+  },
+  "touch": null,
+  "buses": [
+    {
+      "name": "I2C (GPIO 18 / 8)",
+      "kind": "i2c",
+      "pins": {
+        "sda": 18,
+        "scl": 8
+      }
+    }
+  ],
+  "ioExpanders": [],
+  "digitalIO": [
+    {
+      "name": "BOOTButton",
+      "direction": "in",
+      "pin": 9,
+      "activeLow": true
+    }
+  ],
+  "analogInputs": [],
+  "audio": null,
+  "verify": "Pins from Waveshare's demo code and schematic (https://github.com/waveshareteam/ESP32-C6-LCD-1.28). The repo's BSP and 07_LVGL_Demo are copied from the ESP32-C6-Touch-LCD-1.28 and declare a CST816S touch (RST GPIO23, INT GPIO4); this board has no touch panel - the schematic has no touch connector, HARDWARE_REFERENCE.md says GPIO23 is BC_State (charge status) and GPIO4 is QMI8658 INT2.",
+  "links": {
+    "page": "https://lcdwizard.com/boards/waveshare-c6-lcd-128",
+    "designer": "https://app.lcdwizard.com/app?board=waveshare-c6-lcd-128",
+    "vendorProduct": "https://www.waveshare.com/product/esp32-related/displays/lcd-spi-qspi/esp32-c6-lcd-1.28.htm",
+    "vendorDocs": "http://docs.waveshare.com/ESP32-C6-LCD-1.28",
+    "schematic": "https://github.com/waveshareteam/ESP32-C6-LCD-1.28/blob/main/hardware/schematics/ESP32-C6-LCD-1.28.pdf"
+  }
+}

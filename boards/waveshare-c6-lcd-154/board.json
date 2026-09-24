@@ -1,0 +1,88 @@
+{
+  "id": "waveshare-c6-lcd-154",
+  "name": "Waveshare ESP32-C6-LCD-1.54",
+  "vendor": "Waveshare",
+  "group": "All-in-one boards",
+  "description": "1.54\" 240x240 IPS LCD (ST7789, SPI), ES8311 audio, TF card, QMI8658.",
+  "mcu": {
+    "id": "esp32c6",
+    "name": "ESP32-C6"
+  },
+  "flashMB": 16,
+  "psramMB": 0,
+  "usbCdc": true,
+  "display": {
+    "controller": "st7789",
+    "controllerName": "ST7789",
+    "interface": "spi",
+    "width": 240,
+    "height": 240,
+    "colorDepth": 16,
+    "rgbOrder": "rgb",
+    "invert": true,
+    "pins": {
+      "sck": 1,
+      "mosi": 2,
+      "miso": -1,
+      "cs": 11,
+      "dc": 3,
+      "rst": 4
+    },
+    "options": {
+      "freqMhz": 40,
+      "spiHost": "SPI2_HOST"
+    },
+    "backlight": {
+      "pin": 6,
+      "active": 1,
+      "pwm": true,
+      "freq": 5000,
+      "defaultLevel": 100
+    }
+  },
+  "touch": null,
+  "buses": [
+    {
+      "name": "I2C (GPIO 8 / 7)",
+      "kind": "i2c",
+      "pins": {
+        "sda": 8,
+        "scl": 7
+      }
+    }
+  ],
+  "ioExpanders": [],
+  "digitalIO": [
+    {
+      "name": "BOOTButton",
+      "direction": "in",
+      "pin": 9,
+      "activeLow": true
+    },
+    {
+      "name": "PLUSButton",
+      "direction": "in",
+      "pin": 18,
+      "activeLow": true
+    }
+  ],
+  "analogInputs": [],
+  "audio": {
+    "output": "es8311",
+    "pins": {
+      "mclk": 19,
+      "bclk": 20,
+      "lrclk": 22,
+      "din": 23,
+      "pa": 15
+    }
+  },
+  "verify": "Pins from Waveshare's demo code and schematic (https://github.com/waveshareteam/ESP32-C6-Touch-LCD-1.54 (commit a4f92a91d0c94100a2bd16ce36d5f83652ad1f3b)). Shares the PCB and docs page with ESP32-C6-Touch-LCD-1.54; Waveshare says the only difference is the touch panel (CST816 at 0x15, INT GPIO5, on the Touch version only).",
+  "links": {
+    "page": "https://lcdwizard.com/boards/waveshare-c6-lcd-154",
+    "designer": "https://app.lcdwizard.com/app?board=waveshare-c6-lcd-154",
+    "vendorProduct": "https://www.waveshare.com/product/esp32-related/displays/lcd-spi-qspi/esp32-c6-lcd-1.54.htm",
+    "vendorDocs": "https://docs.waveshare.com/ESP32-C6-Touch-LCD-1.54",
+    "schematic": "https://github.com/waveshareteam/ESP32-C6-Touch-LCD-1.54/blob/main/Hardware/schematics/ESP32-C6-Touch-LCD-1.54.pdf"
+  }
+}

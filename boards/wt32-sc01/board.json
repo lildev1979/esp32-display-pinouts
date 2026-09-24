@@ -1,0 +1,76 @@
+{
+  "id": "wt32-sc01",
+  "name": "WT32-SC01",
+  "vendor": "Wireless Tag",
+  "group": "All-in-one boards",
+  "description": "3.5\" 320x480 ST7796 over SPI with FT6336U capacitive touch.",
+  "mcu": {
+    "id": "esp32",
+    "name": "ESP32 (WROOM / WROVER)"
+  },
+  "flashMB": 4,
+  "psramMB": 8,
+  "usbCdc": false,
+  "display": {
+    "controller": "st7796",
+    "controllerName": "ST7796 / ST7796S",
+    "interface": "spi",
+    "width": 320,
+    "height": 480,
+    "colorDepth": 16,
+    "rgbOrder": "bgr",
+    "invert": false,
+    "pins": {
+      "sck": 14,
+      "mosi": 13,
+      "miso": -1,
+      "cs": 15,
+      "dc": 21,
+      "rst": 22
+    },
+    "options": {
+      "freqMhz": 40,
+      "spiHost": "VSPI",
+      "spiMode": "0",
+      "threeWire": false
+    },
+    "backlight": {
+      "pin": 23,
+      "active": 1,
+      "pwm": true,
+      "freq": 5000,
+      "defaultLevel": 100
+    }
+  },
+  "touch": {
+    "controller": "ft6236",
+    "controllerName": "FT6236 / FT6336U",
+    "pins": {
+      "sda": 18,
+      "scl": 19,
+      "int": -1,
+      "rst": -1
+    },
+    "swapXY": false,
+    "invertX": false,
+    "invertY": false,
+    "options": {
+      "i2cAddr": "0x38",
+      "freqKhz": 400,
+      "sharedI2C": false
+    }
+  },
+  "buses": [],
+  "ioExpanders": [],
+  "digitalIO": [],
+  "analogInputs": [],
+  "audio": null,
+  "verify": "MISO is not broken out - leave it at -1.",
+  "links": {
+    "page": "https://lcdwizard.com/boards/wt32-sc01",
+    "designer": "https://app.lcdwizard.com/app?board=wt32-sc01",
+    "vendorProduct": "https://shop.wireless-tag.com/products/esp32-display-modules-wt32-sc01-16mb-3-5-inch-lcd-hmi-display-touch-screen-monitor-based-on-wifi-bt-ble-module-esp32-wrover-b",
+    "vendorDocs": "https://en.wireless-tag.com/product-item-25.html",
+    "schematic": "https://img03.71360.com/file/read/www2/M00/4E/C2/rBwBEmRl6puAairWACl98s4GYbo755.pdf?dl=1&dlf=WT32-SC01+DataSheetV3.4++with+16MB.pdf"
+  }
+}

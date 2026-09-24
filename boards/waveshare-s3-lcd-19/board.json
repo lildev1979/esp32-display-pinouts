@@ -1,0 +1,64 @@
+{
+  "id": "waveshare-s3-lcd-19",
+  "name": "Waveshare ESP32-S3-LCD-1.9",
+  "vendor": "Waveshare",
+  "group": "All-in-one boards",
+  "description": "1.9\" 170x320 IPS LCD (ST7789V2, SPI), TF card, QMI8658.",
+  "mcu": {
+    "id": "esp32s3",
+    "name": "ESP32-S3"
+  },
+  "flashMB": 16,
+  "psramMB": 8,
+  "usbCdc": true,
+  "display": {
+    "controller": "st7789",
+    "controllerName": "ST7789",
+    "interface": "spi",
+    "width": 170,
+    "height": 320,
+    "colorDepth": 16,
+    "rgbOrder": "rgb",
+    "invert": true,
+    "pins": {
+      "sck": 10,
+      "mosi": 13,
+      "miso": -1,
+      "cs": 12,
+      "dc": 11,
+      "rst": 9
+    },
+    "options": {
+      "freqMhz": 20,
+      "spiHost": "SPI3_HOST"
+    },
+    "backlight": {
+      "pin": 14,
+      "active": 0,
+      "pwm": true,
+      "freq": 5000,
+      "defaultLevel": 100
+    }
+  },
+  "touch": null,
+  "buses": [],
+  "ioExpanders": [],
+  "digitalIO": [
+    {
+      "name": "BOOTButton",
+      "direction": "in",
+      "pin": 0,
+      "activeLow": true
+    }
+  ],
+  "analogInputs": [],
+  "audio": null,
+  "verify": "Pins from Waveshare's demo code and schematic (https://github.com/waveshareteam/ESP32-S3-LCD-1.9 (commit 12b8fc74434103d0c5721906b69d866c789e4c41)). Colour inversion: all three vendor ESP-IDF/esp_lcd tables send 0x21 (INVON) but the Arduino_GFX example passes ips=false (no INVON) - chose invert=true.",
+  "links": {
+    "page": "https://lcdwizard.com/boards/waveshare-s3-lcd-19",
+    "designer": "https://app.lcdwizard.com/app?board=waveshare-s3-lcd-19",
+    "vendorProduct": "https://www.waveshare.com/product/esp32-related/displays/lcd-spi-qspi/esp32-s3-lcd-1.9.htm",
+    "vendorDocs": "https://docs.waveshare.com/ESP32-S3-LCD-1.9",
+    "schematic": "https://files.waveshare.com/wiki/ESP32-S3-LCD-1.9/ESP32-S3-LCD-1.9-Schematic.pdf"
+  }
+}

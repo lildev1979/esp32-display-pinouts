@@ -1,0 +1,73 @@
+{
+  "id": "s3-ili9341-spi",
+  "name": "ESP32-S3 + ILI9341 SPI",
+  "vendor": "Generic",
+  "group": "Common wiring",
+  "description": "ESP32-S3 DevKitC wired to a 2.8\" ILI9341 with XPT2046 touch.",
+  "mcu": {
+    "id": "esp32s3",
+    "name": "ESP32-S3"
+  },
+  "flashMB": 16,
+  "psramMB": 8,
+  "usbCdc": false,
+  "display": {
+    "controller": "ili9341",
+    "controllerName": "ILI9341",
+    "interface": "spi",
+    "width": 240,
+    "height": 320,
+    "colorDepth": 16,
+    "rgbOrder": "bgr",
+    "invert": false,
+    "pins": {
+      "sck": 12,
+      "mosi": 11,
+      "miso": 13,
+      "cs": 10,
+      "dc": 14,
+      "rst": 21
+    },
+    "options": {
+      "freqMhz": 40,
+      "spiHost": "SPI2_HOST",
+      "spiMode": "0",
+      "threeWire": false
+    },
+    "backlight": {
+      "pin": 47,
+      "active": 1,
+      "pwm": true,
+      "freq": 5000,
+      "defaultLevel": 100
+    }
+  },
+  "touch": {
+    "controller": "xpt2046",
+    "controllerName": "XPT2046",
+    "pins": {
+      "sck": 12,
+      "mosi": 11,
+      "miso": 13,
+      "cs": 9,
+      "irq": 8
+    },
+    "swapXY": false,
+    "invertX": false,
+    "invertY": false,
+    "options": {
+      "freqKhz": 2500,
+      "sharedSPI": true
+    }
+  },
+  "buses": [],
+  "ioExpanders": [],
+  "digitalIO": [],
+  "analogInputs": [],
+  "audio": null,
+  "verify": "Wiring template - change the pins to match your build.",
+  "links": {
+    "page": "https://lcdwizard.com/boards/s3-ili9341-spi",
+    "designer": "https://app.lcdwizard.com/app?board=s3-ili9341-spi"
+  }
+}

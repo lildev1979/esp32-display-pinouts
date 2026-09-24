@@ -1,0 +1,11 @@
+group,signal,pin
+Panel - SPI (4-wire serial),SCK / CLK,GPIO 40
+Panel - SPI (4-wire serial),MOSI / SDA,GPIO 41
+Panel - SPI (4-wire serial),CS,GPIO 39
+Panel - SPI (4-wire serial),DC / RS,GPIO 38
+Panel - SPI (4-wire serial),RESET,GPIO 42
+Backlight,Pin,GPIO 20
+Backlight,Active,high
+Backlight,Drive,PWM 5000 Hz
+I2C (GPIO 47 / 48),SDA,GPIO 47
+I2C (GPIO 47 / 48),SCL,GPIO 48

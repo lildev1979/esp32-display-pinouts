@@ -1,0 +1,72 @@
+{
+  "id": "waveshare-s3-lcd-2",
+  "name": "Waveshare ESP32-S3-LCD-2",
+  "vendor": "Waveshare",
+  "group": "All-in-one boards",
+  "description": "2\" 240x320 IPS LCD (ST7789T3, SPI), TF card, QMI8658C.",
+  "mcu": {
+    "id": "esp32s3",
+    "name": "ESP32-S3"
+  },
+  "flashMB": 16,
+  "psramMB": 8,
+  "usbCdc": true,
+  "display": {
+    "controller": "st7789",
+    "controllerName": "ST7789",
+    "interface": "spi",
+    "width": 240,
+    "height": 320,
+    "colorDepth": 16,
+    "rgbOrder": "rgb",
+    "invert": true,
+    "pins": {
+      "sck": 39,
+      "mosi": 38,
+      "miso": 40,
+      "cs": 45,
+      "dc": 42,
+      "rst": -1
+    },
+    "options": {
+      "spiHost": "SPI2_HOST"
+    },
+    "backlight": {
+      "pin": 1,
+      "active": 1,
+      "pwm": true,
+      "freq": 5000,
+      "defaultLevel": 100
+    }
+  },
+  "touch": null,
+  "buses": [
+    {
+      "name": "I2C (GPIO 48 / 47)",
+      "kind": "i2c",
+      "pins": {
+        "sda": 48,
+        "scl": 47
+      }
+    }
+  ],
+  "ioExpanders": [],
+  "digitalIO": [
+    {
+      "name": "BOOTButton",
+      "direction": "in",
+      "pin": 0,
+      "activeLow": true
+    }
+  ],
+  "analogInputs": [],
+  "audio": null,
+  "verify": "Pins from Waveshare's demo code and schematic (https://files.waveshare.com/wiki/ESP32-S3-LCD-2/ESP32-S3-LCD-2-Demo.zip). The wiki links the ESP32-S3-Touch-LCD-2 schematic for this board: it is the same PCB without the touch layer (the touch version adds a touch controller on SDA48/SCL47 with TP_INT on IO46).",
+  "links": {
+    "page": "https://lcdwizard.com/boards/waveshare-s3-lcd-2",
+    "designer": "https://app.lcdwizard.com/app?board=waveshare-s3-lcd-2",
+    "vendorProduct": "https://www.waveshare.com/product/esp32-related/displays/lcd-spi-qspi/esp32-s3-lcd-2.htm",
+    "vendorDocs": "https://www.waveshare.com/wiki/ESP32-S3-LCD-2",
+    "schematic": "https://files.waveshare.com/wiki/ESP32-S3-LCD-2/ESP32-S3-Touch-LCD-2-SchDoc.pdf"
+  }
+}

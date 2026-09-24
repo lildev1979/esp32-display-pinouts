@@ -1,0 +1,96 @@
+{
+  "id": "sunton-8048s070",
+  "name": "Sunton ESP32-8048S070 (7\" RGB)",
+  "vendor": "Sunton",
+  "group": "All-in-one boards",
+  "description": "7\" 800x480 RGB565 panel with GT911 touch. Same family as the 4.3\" board, different RGB pin order.",
+  "mcu": {
+    "id": "esp32s3",
+    "name": "ESP32-S3"
+  },
+  "flashMB": 16,
+  "psramMB": 8,
+  "usbCdc": false,
+  "display": {
+    "controller": "st7262",
+    "controllerName": "ST7262",
+    "interface": "rgb",
+    "width": 800,
+    "height": 480,
+    "colorDepth": 16,
+    "rgbOrder": "rgb",
+    "invert": false,
+    "pins": {
+      "de": 41,
+      "vsync": 40,
+      "hsync": 39,
+      "pclk": 42,
+      "r0": 14,
+      "r1": 21,
+      "r2": 47,
+      "r3": 48,
+      "r4": 45,
+      "g0": 9,
+      "g1": 46,
+      "g2": 3,
+      "g3": 8,
+      "g4": 16,
+      "g5": 1,
+      "b0": 15,
+      "b1": 7,
+      "b2": 6,
+      "b3": 5,
+      "b4": 4,
+      "rst": -1
+    },
+    "options": {
+      "pclkMhz": 12.5,
+      "hsyncPolarity": "0",
+      "hsyncFrontPorch": 210,
+      "hsyncPulseWidth": 30,
+      "hsyncBackPorch": 16,
+      "vsyncPolarity": "0",
+      "vsyncFrontPorch": 22,
+      "vsyncPulseWidth": 13,
+      "vsyncBackPorch": 10,
+      "pclkActiveNeg": true
+    },
+    "backlight": {
+      "pin": 2,
+      "active": 1,
+      "pwm": true,
+      "freq": 5000,
+      "defaultLevel": 100
+    }
+  },
+  "touch": {
+    "controller": "gt911",
+    "controllerName": "GT911",
+    "pins": {
+      "sda": 19,
+      "scl": 20,
+      "int": -1,
+      "rst": 38
+    },
+    "swapXY": false,
+    "invertX": false,
+    "invertY": false,
+    "options": {
+      "i2cAddr": "0x5D",
+      "freqKhz": 400,
+      "sharedI2C": false
+    }
+  },
+  "buses": [],
+  "ioExpanders": [],
+  "digitalIO": [],
+  "analogInputs": [],
+  "audio": null,
+  "verify": "The RGB data pin order differs from the 4.3\" board. The timings are the ones ESPHome and the Sunton board definitions use for this panel (12.5 MHz, long front porches) - a picture that rolls or shifts sideways points at them. Confirm against your board revision before flashing.",
+  "links": {
+    "page": "https://lcdwizard.com/boards/sunton-8048s070",
+    "designer": "https://app.lcdwizard.com/app?board=sunton-8048s070",
+    "vendorProduct": "https://www.makerfabs.com/sunton-esp32-s3-7-inch-tn-display-with-touch.html",
+    "vendorDocs": "https://wiki.makerfabs.com/Sunton_ESP32_S3_5_7_inch_IPS_with_Touch.html"
+  }
+}

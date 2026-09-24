@@ -1,0 +1,74 @@
+{
+  "id": "pico-ili9341",
+  "name": "Raspberry Pi Pico + ILI9341",
+  "vendor": "Generic",
+  "group": "RP2040",
+  "description": "SPI0 driving a 2.8\" ILI9341 with XPT2046 touch.",
+  "mcu": {
+    "id": "rp2040",
+    "name": "RP2040 (Pico / Pico W)"
+  },
+  "usbCdc": false,
+  "display": {
+    "controller": "ili9341",
+    "controllerName": "ILI9341",
+    "interface": "spi",
+    "width": 240,
+    "height": 320,
+    "colorDepth": 16,
+    "rgbOrder": "bgr",
+    "invert": false,
+    "pins": {
+      "sck": 18,
+      "mosi": 19,
+      "miso": 16,
+      "cs": 17,
+      "dc": 20,
+      "rst": 21
+    },
+    "options": {
+      "freqMhz": 30,
+      "spiHost": "VSPI",
+      "spiMode": "0",
+      "threeWire": false
+    },
+    "backlight": {
+      "pin": 22,
+      "active": 1,
+      "pwm": true,
+      "freq": 5000,
+      "defaultLevel": 100
+    }
+  },
+  "touch": {
+    "controller": "xpt2046",
+    "controllerName": "XPT2046",
+    "pins": {
+      "sck": 18,
+      "mosi": 19,
+      "miso": 16,
+      "cs": 15,
+      "irq": 14
+    },
+    "swapXY": false,
+    "invertX": false,
+    "invertY": false,
+    "options": {
+      "freqKhz": 2000,
+      "sharedSPI": true
+    }
+  },
+  "buses": [],
+  "ioExpanders": [],
+  "digitalIO": [],
+  "analogInputs": [],
+  "audio": null,
+  "verify": "Only 264 KB of RAM - keep the LVGL draw buffer at roughly 1/10 screen.",
+  "links": {
+    "page": "https://lcdwizard.com/boards/pico-ili9341",
+    "designer": "https://app.lcdwizard.com/app?board=pico-ili9341",
+    "vendorProduct": "https://www.raspberrypi.com/products/raspberry-pi-pico/",
+    "vendorDocs": "https://www.raspberrypi.com/documentation/microcontrollers/pico-series.html",
+    "schematic": "https://datasheets.raspberrypi.com/pico/RPi-Pico-R3-PUBLIC-20200119.zip"
+  }
+}

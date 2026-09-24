@@ -1,0 +1,11 @@
+group,signal,pin
+Panel - QSPI (quad SPI),SCK,GPIO 47
+Panel - QSPI (quad SPI),D0 - D3,"GPIO 18, 7, 48, 5"
+Panel - QSPI (quad SPI),CS,GPIO 6
+Panel - QSPI (quad SPI),RESET,GPIO 17
+Touch - CST226SE,SDA,GPIO 3
+Touch - CST226SE,SCL,GPIO 2
+Touch - CST226SE,INT / IRQ,GPIO 21
+Backlight,Pin,-
+Backlight,Active,high
+Backlight,Drive,on / off

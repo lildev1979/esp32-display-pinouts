@@ -1,0 +1,64 @@
+{
+  "id": "waveshare-c6-lcd-147",
+  "name": "Waveshare ESP32-C6-LCD-1.47",
+  "vendor": "Waveshare",
+  "group": "All-in-one boards",
+  "description": "1.47\" 172x320 IPS LCD (ST7789 (ESP-IDF demo drives it as ST7789T via Vernon_ST7789T), SPI), TF card.",
+  "mcu": {
+    "id": "esp32c6",
+    "name": "ESP32-C6"
+  },
+  "flashMB": 4,
+  "psramMB": 0,
+  "usbCdc": true,
+  "display": {
+    "controller": "st7789",
+    "controllerName": "ST7789",
+    "interface": "spi",
+    "width": 172,
+    "height": 320,
+    "colorDepth": 16,
+    "rgbOrder": "rgb",
+    "invert": true,
+    "pins": {
+      "sck": 7,
+      "mosi": 6,
+      "miso": 5,
+      "cs": 14,
+      "dc": 15,
+      "rst": 21
+    },
+    "options": {
+      "freqMhz": 80,
+      "spiHost": "SPI2_HOST"
+    },
+    "backlight": {
+      "pin": 22,
+      "active": 1,
+      "pwm": true,
+      "freq": 5000,
+      "defaultLevel": 100
+    }
+  },
+  "touch": null,
+  "buses": [],
+  "ioExpanders": [],
+  "digitalIO": [
+    {
+      "name": "BOOTButton",
+      "direction": "in",
+      "pin": 9,
+      "activeLow": true
+    }
+  ],
+  "analogInputs": [],
+  "audio": null,
+  "verify": "Pins from Waveshare's demo code and schematic (https://files.waveshare.com/wiki/ESP32-C6-LCD-1.47/ESP32-C6-LCD-1.47-Demo.zip). Colour order: the Arduino demo writes MADCTL 0x00 (RGB, bit 3 clear) and pushes pixels itself; the ESP-IDF demo sets rgb_endian = LCD_RGB_ENDIAN_BGR and mirrors X.",
+  "links": {
+    "page": "https://lcdwizard.com/boards/waveshare-c6-lcd-147",
+    "designer": "https://app.lcdwizard.com/app?board=waveshare-c6-lcd-147",
+    "vendorProduct": "https://www.waveshare.com/product/esp32-related/displays/lcd-spi-qspi/esp32-c6-lcd-1.47.htm",
+    "vendorDocs": "http://www.waveshare.com/wiki/ESP32-C6-LCD-1.47",
+    "schematic": "https://files.waveshare.com/wiki/ESP32-C6-LCD-1.47/ESP32-C6-LCD-1.47_schemetics.pdf"
+  }
+}

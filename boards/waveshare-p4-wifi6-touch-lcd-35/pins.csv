@@ -1,0 +1,16 @@
+group,signal,pin
+Panel - SPI (4-wire serial),SCK / CLK,GPIO 21
+Panel - SPI (4-wire serial),MOSI / SDA,GPIO 20
+Panel - SPI (4-wire serial),CS,GPIO 23
+Panel - SPI (4-wire serial),DC / RS,GPIO 26
+Panel - SPI (4-wire serial),RESET,GPIO 27
+Touch - FT6236 / FT6336U,SDA,GPIO 7
+Touch - FT6236 / FT6336U,SCL,GPIO 8
+Touch - FT6236 / FT6336U,INT / IRQ,GPIO 50
+Touch - FT6236 / FT6336U,RESET,GPIO 29
+Backlight,Pin,GPIO 28
+Backlight,Active,high
+Backlight,Drive,PWM 5000 Hz
+I2C (GPIO 7 / 8),SDA,GPIO 7
+I2C (GPIO 7 / 8),SCL,GPIO 8
+Board I/O,BOOTButton (active low),GPIO 35

@@ -1,0 +1,19 @@
+group,signal,pin
+Panel - SPI (4-wire serial),SCK / CLK,GPIO 38
+Panel - SPI (4-wire serial),MOSI / SDA,GPIO 39
+Panel - SPI (4-wire serial),CS,GPIO 21
+Panel - SPI (4-wire serial),DC / RS,GPIO 45
+Panel - SPI (4-wire serial),RESET,GPIO 40
+Backlight,Pin,GPIO 46
+Backlight,Active,high
+Backlight,Drive,PWM 5000 Hz
+I2C (GPIO 42 / 41),SDA,GPIO 42
+I2C (GPIO 42 / 41),SCL,GPIO 41
+Board I/O,BOOTKEYMINUSButton (active low),GPIO 0
+Board I/O,PLUSButton (active low),GPIO 4
+Board I/O,PWRButton,GPIO 5
+Audio,MCLK,GPIO 8
+Audio,BCLK,GPIO 9
+Audio,LRCLK,GPIO 10
+Audio,DIN,GPIO 12
+Audio,PA,GPIO 7

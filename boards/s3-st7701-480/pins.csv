@@ -1,0 +1,19 @@
+group,signal,pin
+Panel - RGB565 parallel (DPI),DE,GPIO 18
+Panel - RGB565 parallel (DPI),VSYNC,GPIO 17
+Panel - RGB565 parallel (DPI),HSYNC,GPIO 16
+Panel - RGB565 parallel (DPI),PCLK,GPIO 21
+Panel - RGB565 parallel (DPI),R0 - R4,"GPIO 4, 3, 2, 1, 0"
+Panel - RGB565 parallel (DPI),G0 - G5,"GPIO 10, 9, 8, 7, 6, 5"
+Panel - RGB565 parallel (DPI),B0 - B4,"GPIO 15, 14, 13, 12, 11"
+Panel - RGB565 parallel (DPI),CS (init only),GPIO 39
+Panel - RGB565 parallel (DPI),SCK (init only),GPIO 48
+Panel - RGB565 parallel (DPI),MOSI (init only),GPIO 47
+Panel - RGB565 parallel (DPI),RESET,-
+Touch - CST328,SDA,GPIO 19
+Touch - CST328,SCL,GPIO 45
+Touch - CST328,INT / IRQ,GPIO 40
+Touch - CST328,RESET,GPIO 41
+Backlight,Pin,GPIO 38
+Backlight,Active,high
+Backlight,Drive,PWM 5000 Hz

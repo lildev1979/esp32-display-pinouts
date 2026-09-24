@@ -1,0 +1,79 @@
+{
+  "id": "waveshare-c6-lcd-19",
+  "name": "Waveshare ESP32-C6-LCD-1.9",
+  "vendor": "Waveshare",
+  "group": "All-in-one boards",
+  "description": "1.9\" 170x320 IPS LCD (ST7789T3, SPI), TF card, QMI8658C.",
+  "mcu": {
+    "id": "esp32c6",
+    "name": "ESP32-C6"
+  },
+  "flashMB": 8,
+  "psramMB": 0,
+  "usbCdc": true,
+  "display": {
+    "controller": "st7789",
+    "controllerName": "ST7789",
+    "interface": "spi",
+    "width": 170,
+    "height": 320,
+    "colorDepth": 16,
+    "rgbOrder": "rgb",
+    "invert": true,
+    "pins": {
+      "sck": 5,
+      "mosi": 4,
+      "miso": 19,
+      "cs": 7,
+      "dc": 6,
+      "rst": 14
+    },
+    "options": {
+      "freqMhz": 20,
+      "spiHost": "SPI2_HOST"
+    },
+    "backlight": {
+      "pin": 15,
+      "active": 0,
+      "pwm": true,
+      "freq": 5000,
+      "defaultLevel": 100
+    }
+  },
+  "touch": null,
+  "buses": [
+    {
+      "name": "I2C (GPIO 18 / 8)",
+      "kind": "i2c",
+      "pins": {
+        "sda": 18,
+        "scl": 8
+      }
+    }
+  ],
+  "ioExpanders": [
+    {
+      "name": "TCA9554",
+      "type": "tca9554",
+      "address": "0x20"
+    }
+  ],
+  "digitalIO": [
+    {
+      "name": "BOOTButton",
+      "direction": "in",
+      "pin": 9,
+      "activeLow": true
+    }
+  ],
+  "analogInputs": [],
+  "audio": null,
+  "verify": "Pins from Waveshare's demo code and schematic (https://files.waveshare.com/wiki/ESP32-C6-LCD-1.9/ESP32-C6-LCD-1.9-Demo-V2.zip). Invert: 08_LVGL_Test and ESP-IDF 07_LVGL_Test send 0x21 (INVON), while 07_Hello_World_GFX builds Arduino_ST7789 with ips=false; chose invert=true from the LVGL demo's explicit register table (typical of this 170x320 IPS glass) - verify on hardware.",
+  "links": {
+    "page": "https://lcdwizard.com/boards/waveshare-c6-lcd-19",
+    "designer": "https://app.lcdwizard.com/app?board=waveshare-c6-lcd-19",
+    "vendorProduct": "https://www.waveshare.com/product/esp32-related/displays/lcd-spi-qspi/esp32-c6-lcd-1.9.htm",
+    "vendorDocs": "http://www.waveshare.com/wiki/ESP32-C6-LCD-1.9",
+    "schematic": "https://files.waveshare.com/wiki/ESP32-C6-LCD-1.9/ESP32-C6-LCD-1.9-Schematic.pdf"
+  }
+}

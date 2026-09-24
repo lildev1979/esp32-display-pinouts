@@ -1,0 +1,105 @@
+{
+  "id": "waveshare-c6-touch-lcd-28",
+  "name": "Waveshare ESP32-C6-Touch-LCD-2.8",
+  "vendor": "Waveshare",
+  "group": "All-in-one boards",
+  "description": "2.8\" 240x320 IPS LCD (ST7789 (per the BSP's esp_lcd_new_panel_st7789; docs do not name the controller), SPI), CST3530 (Hynitron; waveshare__esp_lcd_touch_cst3530 component) touch, ES8311 audio, TF card, QMI8658, PCF85063A.",
+  "mcu": {
+    "id": "esp32c6",
+    "name": "ESP32-C6"
+  },
+  "flashMB": 16,
+  "psramMB": 0,
+  "usbCdc": true,
+  "display": {
+    "controller": "st7789",
+    "controllerName": "ST7789",
+    "interface": "spi",
+    "width": 240,
+    "height": 320,
+    "colorDepth": 16,
+    "rgbOrder": "rgb",
+    "invert": true,
+    "pins": {
+      "sck": 0,
+      "mosi": 1,
+      "miso": -1,
+      "cs": 11,
+      "dc": 10,
+      "rst": {
+        "ext": "ext_waveshare_c6_touch_lcd_28_ws_ioext",
+        "pin": 1
+      }
+    },
+    "options": {
+      "freqMhz": 20,
+      "spiHost": "SPI2_HOST"
+    },
+    "backlight": {
+      "pin": {
+        "ext": "ext_waveshare_c6_touch_lcd_28_ws_ioext",
+        "pin": 8
+      },
+      "active": 1,
+      "pwm": true,
+      "freq": 5000,
+      "defaultLevel": 100
+    }
+  },
+  "touch": {
+    "controller": "cst3530",
+    "controllerName": "CST3530",
+    "pins": {
+      "sda": 6,
+      "scl": 7,
+      "int": 18,
+      "rst": {
+        "ext": "ext_waveshare_c6_touch_lcd_28_ws_ioext",
+        "pin": 0
+      }
+    },
+    "swapXY": false,
+    "invertX": false,
+    "invertY": false,
+    "options": {
+      "i2cAddr": "0x58",
+      "freqKhz": 400,
+      "sharedI2C": true
+    }
+  },
+  "buses": [
+    {
+      "name": "I2C (GPIO 6 / 7)",
+      "kind": "i2c",
+      "pins": {
+        "sda": 6,
+        "scl": 7
+      }
+    }
+  ],
+  "ioExpanders": [
+    {
+      "name": "IOExtension",
+      "type": "ws_ioext",
+      "address": "0x24"
+    }
+  ],
+  "digitalIO": [
+    {
+      "name": "BOOTButton",
+      "direction": "in",
+      "pin": 9,
+      "activeLow": true
+    }
+  ],
+  "analogInputs": [],
+  "audio": null,
+  "verify": "Pins from Waveshare's demo code and schematic (https://github.com/waveshareteam/ESP32-C6-Touch-LCD-2.8 (commit c2a1cf84d6213597d47720a51b3e60cc7f1d5257)). Flash: docs say 16 MB and the 02_2048/04_sd_music sdkconfigs use 16 MB, but the schematic's module symbol reads ESP32-C6-WROOM-1-N8 (8 MB).",
+  "links": {
+    "page": "https://lcdwizard.com/boards/waveshare-c6-touch-lcd-28",
+    "designer": "https://app.lcdwizard.com/app?board=waveshare-c6-touch-lcd-28",
+    "vendorProduct": "https://www.waveshare.com/product/esp32-related/displays/lcd-spi-qspi/esp32-c6-touch-lcd-2.8.htm",
+    "vendorDocs": "https://docs.waveshare.com/ESP32-C6-Touch-LCD-2.8",
+    "schematic": "https://github.com/waveshareteam/ESP32-C6-Touch-LCD-2.8/blob/main/schematic/ESP32-C6-Touch-LCD-2.8.pdf"
+  }
+}

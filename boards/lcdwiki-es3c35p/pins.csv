@@ -1,0 +1,21 @@
+group,signal,pin
+Panel - QSPI (quad SPI),SCK,GPIO 12
+Panel - QSPI (quad SPI),D0 - D3,"GPIO 11, 13, 14, 9"
+Panel - QSPI (quad SPI),CS,GPIO 10
+Panel - QSPI (quad SPI),RESET,-
+Touch - ST77922 (touch half),SDA,GPIO 38
+Touch - ST77922 (touch half),SCL,GPIO 39
+Touch - ST77922 (touch half),INT / IRQ,GPIO 47
+Touch - ST77922 (touch half),RESET,GPIO 48
+Backlight,Pin,GPIO 41
+Backlight,Active,high
+Backlight,Drive,PWM 5000 Hz
+"I2C (GPIO 38 / 39, P4 header)",SDA,GPIO 38
+"I2C (GPIO 38 / 39, P4 header)",SCL,GPIO 39
+Board I/O,BootButton (active low),GPIO 0
+Analogue input,Battery,GPIO 8
+Audio,MCLK,GPIO 17
+Audio,BCLK,GPIO 18
+Audio,LRCLK,GPIO 21
+Audio,DIN,GPIO 15
+Audio,PA,GPIO 1

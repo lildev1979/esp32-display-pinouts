@@ -1,0 +1,85 @@
+{
+  "id": "m5stack-core2",
+  "name": "M5Stack Core2",
+  "vendor": "M5Stack",
+  "group": "All-in-one boards",
+  "description": "2.0\" 320x240 ILI9342C with FT6336U touch. Power rails run through the AXP192 PMIC.",
+  "mcu": {
+    "id": "esp32",
+    "name": "ESP32 (WROOM / WROVER)"
+  },
+  "flashMB": 16,
+  "psramMB": 8,
+  "usbCdc": false,
+  "display": {
+    "controller": "ili9342",
+    "controllerName": "ILI9342 / ILI9342C",
+    "interface": "spi",
+    "width": 320,
+    "height": 240,
+    "colorDepth": 16,
+    "rgbOrder": "bgr",
+    "invert": true,
+    "pins": {
+      "sck": 18,
+      "mosi": 23,
+      "miso": 38,
+      "cs": 5,
+      "dc": 15,
+      "rst": -1
+    },
+    "options": {
+      "freqMhz": 40,
+      "spiHost": "VSPI",
+      "spiMode": "0",
+      "threeWire": false
+    },
+    "backlight": {
+      "pin": -1,
+      "active": 1,
+      "pwm": false,
+      "freq": 5000,
+      "defaultLevel": 100
+    }
+  },
+  "touch": {
+    "controller": "ft6236",
+    "controllerName": "FT6236 / FT6336U",
+    "pins": {
+      "sda": 21,
+      "scl": 22,
+      "int": 39,
+      "rst": -1
+    },
+    "swapXY": false,
+    "invertX": false,
+    "invertY": false,
+    "options": {
+      "i2cAddr": "0x38",
+      "freqKhz": 400,
+      "sharedI2C": true
+    }
+  },
+  "buses": [
+    {
+      "name": "Port A (Grove, GPIO 32 / 33)",
+      "kind": "i2c",
+      "pins": {
+        "sda": 32,
+        "scl": 33
+      }
+    }
+  ],
+  "ioExpanders": [],
+  "digitalIO": [],
+  "analogInputs": [],
+  "audio": null,
+  "verify": "Backlight and panel reset are driven by the AXP192 over I2C, not by a GPIO. Initialise the PMIC before LVGL.",
+  "links": {
+    "page": "https://lcdwizard.com/boards/m5stack-core2",
+    "designer": "https://app.lcdwizard.com/app?board=m5stack-core2",
+    "vendorProduct": "https://shop.m5stack.com/products/m5stack-core2-esp32-iot-development-kit",
+    "vendorDocs": "https://docs.m5stack.com/en/core/core2",
+    "schematic": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/644/CORE2_V1.0_SCH.pdf"
+  }
+}

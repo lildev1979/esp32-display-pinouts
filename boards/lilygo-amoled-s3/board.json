@@ -1,0 +1,75 @@
+{
+  "id": "lilygo-amoled-s3",
+  "name": "LilyGO T-Display-S3 AMOLED",
+  "vendor": "LilyGO",
+  "group": "All-in-one boards",
+  "description": "1.91\" 240x536 RM67162 AMOLED over QSPI with CST226SE touch.",
+  "mcu": {
+    "id": "esp32s3",
+    "name": "ESP32-S3"
+  },
+  "flashMB": 16,
+  "psramMB": 8,
+  "usbCdc": false,
+  "display": {
+    "controller": "rm67162",
+    "controllerName": "RM67162",
+    "interface": "qspi",
+    "width": 240,
+    "height": 536,
+    "colorDepth": 16,
+    "rgbOrder": "rgb",
+    "invert": false,
+    "pins": {
+      "sck": 47,
+      "d0": 18,
+      "d1": 7,
+      "d2": 48,
+      "d3": 5,
+      "cs": 6,
+      "rst": 17
+    },
+    "options": {
+      "freqMhz": 75,
+      "spiHost": "SPI2_HOST"
+    },
+    "backlight": {
+      "pin": -1,
+      "active": 1,
+      "pwm": false,
+      "freq": 5000,
+      "defaultLevel": 100
+    }
+  },
+  "touch": {
+    "controller": "cst226se",
+    "controllerName": "CST226SE",
+    "pins": {
+      "sda": 3,
+      "scl": 2,
+      "int": 21,
+      "rst": -1
+    },
+    "swapXY": false,
+    "invertX": false,
+    "invertY": false,
+    "options": {
+      "i2cAddr": "0x5A",
+      "freqKhz": 400,
+      "sharedI2C": false
+    }
+  },
+  "buses": [],
+  "ioExpanders": [],
+  "digitalIO": [],
+  "analogInputs": [],
+  "audio": null,
+  "verify": "AMOLED brightness is set by a controller command, not a backlight GPIO.",
+  "links": {
+    "page": "https://lcdwizard.com/boards/lilygo-amoled-s3",
+    "designer": "https://app.lcdwizard.com/app?board=lilygo-amoled-s3",
+    "vendorProduct": "https://www.lilygo.cc/products/t-display-s3-amoled",
+    "vendorDocs": "https://github.com/Xinyuan-LilyGO/T-Display-S3-AMOLED",
+    "schematic": "https://raw.githubusercontent.com/Xinyuan-LilyGO/T-Display-S3-AMOLED/main/schematic/T-DISPLAY-S3-AMOLED.pdf"
+  }
+}

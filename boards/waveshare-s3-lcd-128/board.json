@@ -1,0 +1,64 @@
+{
+  "id": "waveshare-s3-lcd-128",
+  "name": "Waveshare ESP32-S3-LCD-1.28",
+  "vendor": "Waveshare",
+  "group": "All-in-one boards",
+  "description": "1.28\" 240x240 IPS LCD (GC9A01, SPI), QMI8658.",
+  "mcu": {
+    "id": "esp32s3",
+    "name": "ESP32-S3"
+  },
+  "flashMB": 16,
+  "psramMB": 2,
+  "usbCdc": false,
+  "display": {
+    "controller": "gc9a01",
+    "controllerName": "GC9A01 / GC9A01A",
+    "interface": "spi",
+    "width": 240,
+    "height": 240,
+    "colorDepth": 16,
+    "rgbOrder": "bgr",
+    "invert": true,
+    "pins": {
+      "sck": 10,
+      "mosi": 11,
+      "miso": -1,
+      "cs": 9,
+      "dc": 8,
+      "rst": 12
+    },
+    "options": {
+      "freqMhz": 80,
+      "spiHost": "SPI2_HOST"
+    },
+    "backlight": {
+      "pin": 40,
+      "active": 1,
+      "pwm": true,
+      "freq": 5000,
+      "defaultLevel": 100
+    }
+  },
+  "touch": null,
+  "buses": [],
+  "ioExpanders": [],
+  "digitalIO": [
+    {
+      "name": "BOOTButton",
+      "direction": "in",
+      "pin": 0,
+      "activeLow": true
+    }
+  ],
+  "analogInputs": [],
+  "audio": null,
+  "verify": "Pins from Waveshare's demo code and schematic (https://files.waveshare.com/wiki/ESP32-S3-LCD-1.28/ESP32-S3-LCD-1.28-Demo.zip). None found on the display.",
+  "links": {
+    "page": "https://lcdwizard.com/boards/waveshare-s3-lcd-128",
+    "designer": "https://app.lcdwizard.com/app?board=waveshare-s3-lcd-128",
+    "vendorProduct": "https://www.waveshare.com/product/esp32-related/displays/lcd-spi-qspi/esp32-s3-lcd-1.28.htm",
+    "vendorDocs": "https://docs.waveshare.com/ESP32-S3-LCD-1.28",
+    "schematic": "https://files.waveshare.com/wiki/ESP32-S3-LCD-1.28/Esp32-s3-lcd-.128-sch.pdf"
+  }
+}

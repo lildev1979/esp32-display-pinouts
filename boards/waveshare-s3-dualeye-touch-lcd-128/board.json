@@ -1,0 +1,99 @@
+{
+  "id": "waveshare-s3-dualeye-touch-lcd-128",
+  "name": "Waveshare ESP32-S3-DualEye-Touch-LCD-1.28",
+  "vendor": "Waveshare",
+  "group": "All-in-one boards",
+  "description": "1.28\" 240x240 IPS LCD (GC9A01A, SPI), CST816S (vendor: CST816) touch, ES8311 audio, TF card.",
+  "mcu": {
+    "id": "esp32s3",
+    "name": "ESP32-S3"
+  },
+  "flashMB": 16,
+  "psramMB": 8,
+  "usbCdc": true,
+  "display": {
+    "controller": "gc9a01",
+    "controllerName": "GC9A01 / GC9A01A",
+    "interface": "spi",
+    "width": 240,
+    "height": 240,
+    "colorDepth": 16,
+    "rgbOrder": "bgr",
+    "invert": true,
+    "pins": {
+      "sck": 41,
+      "mosi": 42,
+      "miso": 40,
+      "cs": 47,
+      "dc": 45,
+      "rst": 48
+    },
+    "options": {
+      "freqMhz": 80,
+      "spiHost": "SPI2_HOST"
+    },
+    "backlight": {
+      "pin": 46,
+      "active": 1,
+      "pwm": true,
+      "freq": 5000,
+      "defaultLevel": 100
+    }
+  },
+  "touch": {
+    "controller": "cst816s",
+    "controllerName": "CST816S",
+    "pins": {
+      "sda": 11,
+      "scl": 10,
+      "int": 5,
+      "rst": 4
+    },
+    "swapXY": false,
+    "invertX": false,
+    "invertY": false,
+    "options": {
+      "i2cAddr": "0x15",
+      "freqKhz": 400,
+      "sharedI2C": true
+    }
+  },
+  "buses": [
+    {
+      "name": "I2C (GPIO 11 / 10)",
+      "kind": "i2c",
+      "pins": {
+        "sda": 11,
+        "scl": 10
+      }
+    }
+  ],
+  "ioExpanders": [],
+  "digitalIO": [
+    {
+      "name": "BOOTButton",
+      "direction": "in",
+      "pin": 0,
+      "activeLow": true
+    }
+  ],
+  "analogInputs": [],
+  "audio": {
+    "output": "es8311",
+    "pins": {
+      "mclk": 12,
+      "bclk": 13,
+      "lrclk": 14,
+      "din": 16,
+      "pa": 9
+    }
+  },
+  "verify": "Pins from Waveshare's demo code and schematic (https://github.com/waveshareteam/ESP32-S3-DualEye-Touch-LCD-1.28). Wiki labels the ES8311 as 'MIC' and ES7210 as 'SPEAKER'; that is backwards (ES8311 is the DAC/codec driving the NS4150B, ES7210 the mic ADC) but the pins it lists agree with the code.",
+  "links": {
+    "page": "https://lcdwizard.com/boards/waveshare-s3-dualeye-touch-lcd-128",
+    "designer": "https://app.lcdwizard.com/app?board=waveshare-s3-dualeye-touch-lcd-128",
+    "vendorProduct": "https://www.waveshare.com/product/esp32-related/displays/lcd-spi-qspi/esp32-s3-dualeye-touch-lcd-1.28.htm",
+    "vendorDocs": "http://www.waveshare.com/wiki/ESP32-S3-DualEye-Touch-LCD-1.28",
+    "schematic": "https://files.waveshare.com/wiki/ESP32-S3-DualEye-Touch-LCD-1.28/ESP32-S3-DualEye-Touch-LCD-1.28.pdf"
+  }
+}

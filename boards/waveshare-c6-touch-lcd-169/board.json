@@ -1,0 +1,105 @@
+{
+  "id": "waveshare-c6-touch-lcd-169",
+  "name": "Waveshare ESP32-C6-Touch-LCD-1.69",
+  "vendor": "Waveshare",
+  "group": "All-in-one boards",
+  "description": "1.69\" 240x280 IPS LCD (ST7789V2, SPI), CST816T touch, ES8311 audio, QMI8658, PCF85063ATL.",
+  "mcu": {
+    "id": "esp32c6",
+    "name": "ESP32-C6"
+  },
+  "flashMB": 16,
+  "psramMB": 0,
+  "usbCdc": true,
+  "display": {
+    "controller": "st7789",
+    "controllerName": "ST7789",
+    "interface": "spi",
+    "width": 240,
+    "height": 280,
+    "colorDepth": 16,
+    "rgbOrder": "rgb",
+    "invert": true,
+    "pins": {
+      "sck": 1,
+      "mosi": 2,
+      "miso": -1,
+      "cs": 5,
+      "dc": 3,
+      "rst": 4
+    },
+    "options": {
+      "freqMhz": 40,
+      "spiHost": "SPI2_HOST"
+    },
+    "backlight": {
+      "pin": 6,
+      "active": 1,
+      "pwm": true,
+      "freq": 5000,
+      "defaultLevel": 100
+    }
+  },
+  "touch": {
+    "controller": "cst816s",
+    "controllerName": "CST816S",
+    "pins": {
+      "sda": 8,
+      "scl": 7,
+      "int": 11,
+      "rst": -1
+    },
+    "swapXY": false,
+    "invertX": false,
+    "invertY": false,
+    "options": {
+      "i2cAddr": "0x15",
+      "freqKhz": 400,
+      "sharedI2C": true
+    }
+  },
+  "buses": [
+    {
+      "name": "I2C (GPIO 8 / 7)",
+      "kind": "i2c",
+      "pins": {
+        "sda": 8,
+        "scl": 7
+      }
+    }
+  ],
+  "ioExpanders": [],
+  "digitalIO": [
+    {
+      "name": "BOOTButton",
+      "direction": "in",
+      "pin": 9,
+      "activeLow": true
+    },
+    {
+      "name": "PWRButton",
+      "direction": "in",
+      "pin": 18,
+      "activeLow": false
+    }
+  ],
+  "analogInputs": [],
+  "audio": {
+    "output": "es8311",
+    "pins": {
+      "mclk": 19,
+      "bclk": 20,
+      "lrclk": 22,
+      "din": 23,
+      "pa": -1
+    }
+  },
+  "verify": "Pins from Waveshare's demo code and schematic (https://files.waveshare.com/wiki/ESP32-C6-Touch-LCD-1.69/ESP32-C6-Touch-LCD-1.69-Demo.zip). Touch reset: demo code sets TP_RST to GPIO_NUM_NC, but the schematic joins TP_RST to LCD_RST (GPIO4) through R33 0R - recorded as 4 (shared with the panel reset; resetting the panel resets touch).",
+  "links": {
+    "page": "https://lcdwizard.com/boards/waveshare-c6-touch-lcd-169",
+    "designer": "https://app.lcdwizard.com/app?board=waveshare-c6-touch-lcd-169",
+    "vendorProduct": "https://www.waveshare.com/product/esp32-related/displays/lcd-spi-qspi/esp32-c6-touch-lcd-1.69.htm",
+    "vendorDocs": "http://www.waveshare.com/wiki/ESP32-C6-Touch-LCD-1.69",
+    "schematic": "https://files.waveshare.com/wiki/ESP32-C6-Touch-LCD-1.69/ESP32-C6-Touch-LCD-1.69-Schematic.pdf"
+  }
+}

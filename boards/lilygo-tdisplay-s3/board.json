@@ -1,0 +1,80 @@
+{
+  "id": "lilygo-tdisplay-s3",
+  "name": "LilyGO T-Display-S3",
+  "vendor": "LilyGO",
+  "group": "All-in-one boards",
+  "description": "1.9\" 170x320 ST7789 on an 8-bit parallel bus, CST816S touch on the touch model.",
+  "mcu": {
+    "id": "esp32s3",
+    "name": "ESP32-S3"
+  },
+  "flashMB": 16,
+  "psramMB": 8,
+  "usbCdc": false,
+  "display": {
+    "controller": "st7789",
+    "controllerName": "ST7789",
+    "interface": "par8",
+    "width": 170,
+    "height": 320,
+    "colorDepth": 16,
+    "rgbOrder": "rgb",
+    "invert": true,
+    "pins": {
+      "wr": 8,
+      "rd": 9,
+      "dc": 7,
+      "cs": 6,
+      "rst": 5,
+      "d0": 39,
+      "d1": 40,
+      "d2": 41,
+      "d3": 42,
+      "d4": 45,
+      "d5": 46,
+      "d6": 47,
+      "d7": 48
+    },
+    "options": {
+      "freqMhz": 20
+    },
+    "backlight": {
+      "pin": 38,
+      "active": 1,
+      "pwm": true,
+      "freq": 5000,
+      "defaultLevel": 100
+    }
+  },
+  "touch": {
+    "controller": "cst816s",
+    "controllerName": "CST816S",
+    "pins": {
+      "sda": 18,
+      "scl": 17,
+      "int": 16,
+      "rst": 21
+    },
+    "swapXY": false,
+    "invertX": false,
+    "invertY": false,
+    "options": {
+      "i2cAddr": "0x15",
+      "freqKhz": 400,
+      "sharedI2C": false
+    }
+  },
+  "buses": [],
+  "ioExpanders": [],
+  "digitalIO": [],
+  "analogInputs": [],
+  "audio": null,
+  "verify": "GPIO15 must be driven HIGH to enable the LCD power rail before init. The generated sketch does this for you.",
+  "links": {
+    "page": "https://lcdwizard.com/boards/lilygo-tdisplay-s3",
+    "designer": "https://app.lcdwizard.com/app?board=lilygo-tdisplay-s3",
+    "vendorProduct": "https://www.lilygo.cc/products/t-display-s3",
+    "vendorDocs": "https://github.com/Xinyuan-LilyGO/T-Display-S3",
+    "schematic": "https://raw.githubusercontent.com/Xinyuan-LilyGO/T-Display-S3/main/schematic/T_Display_S3.pdf"
+  }
+}

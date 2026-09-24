@@ -1,0 +1,106 @@
+{
+  "id": "lcdwiki-es3c35p",
+  "name": "LCDWIKI 3.5\" ESP32-S3 (ES3C35P)",
+  "vendor": "LCDWIKI",
+  "group": "All-in-one boards",
+  "description": "3.5\" 320x480 ST77922 over QSPI with touch in the same chip, an ES8311 codec with microphone and speaker output, a WS2812 LED, a 4-bit SD slot and battery charging.",
+  "mcu": {
+    "id": "esp32s3",
+    "name": "ESP32-S3"
+  },
+  "flashMB": 16,
+  "psramMB": 8,
+  "usbCdc": true,
+  "display": {
+    "controller": "st77922",
+    "controllerName": "ST77922",
+    "interface": "qspi",
+    "width": 320,
+    "height": 480,
+    "colorDepth": 16,
+    "rgbOrder": "rgb",
+    "invert": true,
+    "pins": {
+      "cs": 10,
+      "sck": 12,
+      "d0": 11,
+      "d1": 13,
+      "d2": 14,
+      "d3": 9,
+      "rst": -1
+    },
+    "options": {
+      "freqMhz": 40,
+      "spiHost": "SPI2_HOST",
+      "initSeq": "lw_st77922_lcdwiki_init_operations"
+    },
+    "backlight": {
+      "pin": 41,
+      "active": 1,
+      "pwm": true,
+      "freq": 5000,
+      "defaultLevel": 100
+    }
+  },
+  "touch": {
+    "controller": "st77922_t",
+    "controllerName": "ST77922 (touch half)",
+    "pins": {
+      "sda": 38,
+      "scl": 39,
+      "int": 47,
+      "rst": 48
+    },
+    "swapXY": false,
+    "invertX": false,
+    "invertY": false,
+    "options": {
+      "i2cAddr": "0x55",
+      "freqKhz": 400,
+      "sharedI2C": true
+    }
+  },
+  "buses": [
+    {
+      "name": "I2C (GPIO 38 / 39, P4 header)",
+      "kind": "i2c",
+      "pins": {
+        "sda": 38,
+        "scl": 39
+      }
+    }
+  ],
+  "ioExpanders": [],
+  "digitalIO": [
+    {
+      "name": "BootButton",
+      "direction": "in",
+      "pin": 0,
+      "activeLow": true
+    }
+  ],
+  "analogInputs": [
+    {
+      "name": "Battery",
+      "pin": 8,
+      "unit": "V"
+    }
+  ],
+  "audio": {
+    "output": "es8311",
+    "pins": {
+      "mclk": 17,
+      "bclk": 18,
+      "lrclk": 21,
+      "din": 15,
+      "pa": 1
+    }
+  },
+  "verify": "The ST77922 has no row/column swap and wants 4-pixel-aligned windows, so the export draws whole frames from a canvas in PSRAM, which also rotates them. Its reset is the board's RESET button, not a GPIO: after flashing other firmware, unplug it once if the screen stays dark. Touch (0x55), the ES8311 (0x18) and the P4 header share I2C on GPIO 38/39. The speaker amplifier is enabled by pulling GPIO1 low, and the WS2812 on GPIO40 is a single LED. USB-C goes straight to the S3, so the serial log needs USB CDC On Boot (the export sets it). GPIO45 and 46 on the P3 header are strapping pins. The microphone is wired but not driven.",
+  "links": {
+    "page": "https://lcdwizard.com/boards/lcdwiki-es3c35p",
+    "designer": "https://app.lcdwizard.com/app?board=lcdwiki-es3c35p",
+    "vendorDocs": "https://www.lcdwiki.com/3.5inch_ESP32-S3_Display",
+    "schematic": "https://www.lcdwiki.com/res/ES3C35P/ESP32-S3%E5%8E%9F%E7%90%86%E5%9B%BE.pdf"
+  }
+}

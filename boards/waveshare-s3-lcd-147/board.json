@@ -1,0 +1,64 @@
+{
+  "id": "waveshare-s3-lcd-147",
+  "name": "Waveshare ESP32-S3-LCD-1.47",
+  "vendor": "Waveshare",
+  "group": "All-in-one boards",
+  "description": "1.47\" 172x320 IPS LCD (ST7789 (ST7789T per the IDF driver name), SPI), TF card.",
+  "mcu": {
+    "id": "esp32s3",
+    "name": "ESP32-S3"
+  },
+  "flashMB": 16,
+  "psramMB": 8,
+  "usbCdc": true,
+  "display": {
+    "controller": "st7789",
+    "controllerName": "ST7789",
+    "interface": "spi",
+    "width": 172,
+    "height": 320,
+    "colorDepth": 16,
+    "rgbOrder": "rgb",
+    "invert": true,
+    "pins": {
+      "sck": 40,
+      "mosi": 45,
+      "miso": -1,
+      "cs": 42,
+      "dc": 41,
+      "rst": 39
+    },
+    "options": {
+      "freqMhz": 80,
+      "spiHost": "SPI2_HOST"
+    },
+    "backlight": {
+      "pin": 48,
+      "active": 1,
+      "pwm": true,
+      "freq": 5000,
+      "defaultLevel": 100
+    }
+  },
+  "touch": null,
+  "buses": [],
+  "ioExpanders": [],
+  "digitalIO": [
+    {
+      "name": "BOOTButton",
+      "direction": "in",
+      "pin": 0,
+      "activeLow": true
+    }
+  ],
+  "analogInputs": [],
+  "audio": null,
+  "verify": "Pins from Waveshare's demo code and schematic (https://files.waveshare.com/wiki/ESP32-S3-LCD-1.47/ESP32-S3-LCD-1.47-Demo.zip). Colour order: the Arduino demo sets MADCTL 0x00 (RGB) with LCM control C0=0x2C; the IDF demo sets the BGR bit in MADCTL but also C0=0x80, whose XOR-BGR bit flips it back, so both end up RGB on the glass - recorded rgb.",
+  "links": {
+    "page": "https://lcdwizard.com/boards/waveshare-s3-lcd-147",
+    "designer": "https://app.lcdwizard.com/app?board=waveshare-s3-lcd-147",
+    "vendorProduct": "https://www.waveshare.com/product/esp32-related/displays/lcd-spi-qspi/esp32-s3-lcd-1.47.htm",
+    "vendorDocs": "http://www.waveshare.com/wiki/ESP32-S3-LCD-1.47",
+    "schematic": "https://files.waveshare.com/wiki/ESP32-S3-LCD-1.47/ESP32-S3-LCD-1.47_schematic_diagram.pdf"
+  }
+}

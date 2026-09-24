@@ -1,0 +1,94 @@
+{
+  "id": "waveshare-s3-lcd-154",
+  "name": "Waveshare ESP32-S3-LCD-1.54",
+  "vendor": "Waveshare",
+  "group": "All-in-one boards",
+  "description": "1.54\" 240x240 IPS LCD (ST7789, SPI), ES8311 audio, TF card, QMI8658.",
+  "mcu": {
+    "id": "esp32s3",
+    "name": "ESP32-S3"
+  },
+  "flashMB": 16,
+  "psramMB": 8,
+  "usbCdc": true,
+  "display": {
+    "controller": "st7789",
+    "controllerName": "ST7789",
+    "interface": "spi",
+    "width": 240,
+    "height": 240,
+    "colorDepth": 16,
+    "rgbOrder": "rgb",
+    "invert": true,
+    "pins": {
+      "sck": 38,
+      "mosi": 39,
+      "miso": -1,
+      "cs": 21,
+      "dc": 45,
+      "rst": 40
+    },
+    "options": {
+      "freqMhz": 40,
+      "spiHost": "SPI2_HOST"
+    },
+    "backlight": {
+      "pin": 46,
+      "active": 1,
+      "pwm": true,
+      "freq": 5000,
+      "defaultLevel": 100
+    }
+  },
+  "touch": null,
+  "buses": [
+    {
+      "name": "I2C (GPIO 42 / 41)",
+      "kind": "i2c",
+      "pins": {
+        "sda": 42,
+        "scl": 41
+      }
+    }
+  ],
+  "ioExpanders": [],
+  "digitalIO": [
+    {
+      "name": "BOOTKEYMINUSButton",
+      "direction": "in",
+      "pin": 0,
+      "activeLow": true
+    },
+    {
+      "name": "PLUSButton",
+      "direction": "in",
+      "pin": 4,
+      "activeLow": true
+    },
+    {
+      "name": "PWRButton",
+      "direction": "in",
+      "pin": 5,
+      "activeLow": false
+    }
+  ],
+  "analogInputs": [],
+  "audio": {
+    "output": "es8311",
+    "pins": {
+      "mclk": 8,
+      "bclk": 9,
+      "lrclk": 10,
+      "din": 12,
+      "pa": 7
+    }
+  },
+  "verify": "Pins from Waveshare's demo code and schematic (https://github.com/waveshareteam/ESP32-S3-Touch-LCD-1.54/tree/main/examples/ESP32-S3-LCD-1.54-demo). Same PCB and schematic as ESP32-S3-Touch-LCD-1.54 (one docs page, SKUs 33866/33867 non-touch, 33868/33869 touch); this variant has the non-touch panel.",
+  "links": {
+    "page": "https://lcdwizard.com/boards/waveshare-s3-lcd-154",
+    "designer": "https://app.lcdwizard.com/app?board=waveshare-s3-lcd-154",
+    "vendorProduct": "https://www.waveshare.com/product/esp32-related/displays/lcd-spi-qspi/esp32-s3-lcd-1.54.htm",
+    "vendorDocs": "http://docs.waveshare.com/ESP32-S3-Touch-LCD-1.54",
+    "schematic": "https://files.waveshare.com/wiki/ESP32-S3-Touch-LCD-1.54/ESP32-S3-LCD-1.54-Schematic.pdf"
+  }
+}
