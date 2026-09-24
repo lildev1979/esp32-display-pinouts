@@ -12,6 +12,15 @@ Backlight,Drive,PWM 5000 Hz
 "I2C (GPIO 8 / 7, header pins 27 / 25)",SCL,GPIO 7
 TCA9554 (I/O expander),Type,TCA9554
 TCA9554 (I/O expander),Address,0x20
+Power - AXP2101,Bus,"I2C (GPIO 8 / 7, header pins 27 / 25)"
+Power - AXP2101,Address,0x34
+IMU - QMI8658,Bus,"I2C (GPIO 8 / 7, header pins 27 / 25)"
+IMU - QMI8658,Address,0x6B
+RTC - PCF85063,Bus,"I2C (GPIO 8 / 7, header pins 27 / 25)"
+RTC - PCF85063,Address,0x51
+SDCard - SD card,CLK,GPIO 11
+SDCard - SD card,CMD,GPIO 10
+SDCard - SD card,D0,GPIO 9
 Board I/O,BootButton (active low),GPIO 0
 Audio,MCLK,GPIO 44
 Audio,BCLK,GPIO 13

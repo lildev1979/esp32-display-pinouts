@@ -107,6 +107,7 @@
       "address": "0x24"
     }
   ],
+  "peripherals": [],
   "digitalIO": [],
   "analogInputs": [],
   "audio": null,

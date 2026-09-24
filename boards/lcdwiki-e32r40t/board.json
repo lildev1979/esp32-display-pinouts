@@ -62,6 +62,7 @@
   },
   "buses": [],
   "ioExpanders": [],
+  "peripherals": [],
   "digitalIO": [
     {
       "name": "LedRed",

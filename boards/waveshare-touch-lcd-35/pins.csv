@@ -16,6 +16,10 @@ I2C (GPIO 21 / 22),SDA,GPIO 21
 I2C (GPIO 21 / 22),SCL,GPIO 22
 TCA9554 (I/O expander),Type,TCA9554
 TCA9554 (I/O expander),Address,0x20
+PMICbatterycharger - AXP2101,Bus,I2C (GPIO 21 / 22)
+PMICbatterycharger - AXP2101,Address,0x34
+RTC - PCF85063,Bus,I2C (GPIO 21 / 22)
+RTC - PCF85063,Address,0x51
 Board I/O,BOOTButton (active low),GPIO 0
 Board I/O,PWRButton,GPIO 36
 Audio,MCLK,GPIO 3

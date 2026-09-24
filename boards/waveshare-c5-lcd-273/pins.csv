@@ -12,6 +12,10 @@ I2C (GPIO 27 / 26),SDA,GPIO 27
 I2C (GPIO 27 / 26),SCL,GPIO 26
 IOExtension (I/O expander),Type,WS_IOEXT16
 IOExtension (I/O expander),Address,0x24
+IMU - QMI8658,Bus,I2C (GPIO 27 / 26)
+IMU - QMI8658,Address,0x6B
+RTC - PCF85063,Bus,I2C (GPIO 27 / 26)
+RTC - PCF85063,Address,0x51
 Board I/O,PREVButton (active low),GPIO 2
 Board I/O,NEXTButton (active low),GPIO 3
 Board I/O,BOOTENTERButton (active low),GPIO 28

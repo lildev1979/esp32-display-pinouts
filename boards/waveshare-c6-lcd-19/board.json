@@ -58,6 +58,7 @@
       "address": "0x20"
     }
   ],
+  "peripherals": [],
   "digitalIO": [
     {
       "name": "BOOTButton",

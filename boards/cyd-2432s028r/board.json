@@ -71,6 +71,7 @@
     }
   ],
   "ioExpanders": [],
+  "peripherals": [],
   "digitalIO": [],
   "analogInputs": [],
   "audio": {

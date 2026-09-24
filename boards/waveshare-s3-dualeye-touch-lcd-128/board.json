@@ -69,6 +69,7 @@
     }
   ],
   "ioExpanders": [],
+  "peripherals": [],
   "digitalIO": [
     {
       "name": "BOOTButton",

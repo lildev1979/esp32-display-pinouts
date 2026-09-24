@@ -71,6 +71,29 @@
     }
   ],
   "ioExpanders": [],
+  "peripherals": [
+    {
+      "name": "SDCard",
+      "chip": "SD card",
+      "kind": "Storage",
+      "pins": {
+        "clk": 5,
+        "cmd": 4,
+        "d0": 6,
+        "d1": 7,
+        "d2": 2,
+        "d3": 3
+      }
+    },
+    {
+      "name": "RgbLed",
+      "chip": "NeoPixel string",
+      "kind": "Output",
+      "pins": {
+        "data": 40
+      }
+    }
+  ],
   "digitalIO": [
     {
       "name": "BootButton",

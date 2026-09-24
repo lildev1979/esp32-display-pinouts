@@ -69,6 +69,15 @@
     }
   ],
   "ioExpanders": [],
+  "peripherals": [
+    {
+      "name": "PMICbatterycharger",
+      "chip": "AXP2101",
+      "kind": "Power",
+      "bus": "I2C (GPIO 7 / 8)",
+      "address": "0x34"
+    }
+  ],
   "digitalIO": [
     {
       "name": "BOOTButton",

@@ -9,6 +9,8 @@ Backlight,Active,high
 Backlight,Drive,PWM 5000 Hz
 I2C (GPIO 42 / 41),SDA,GPIO 42
 I2C (GPIO 42 / 41),SCL,GPIO 41
+IMU - QMI8658,Bus,I2C (GPIO 42 / 41)
+IMU - QMI8658,Address,0x6B
 Board I/O,BOOTKEYMINUSButton (active low),GPIO 0
 Board I/O,PLUSButton (active low),GPIO 4
 Board I/O,PWRButton,GPIO 5

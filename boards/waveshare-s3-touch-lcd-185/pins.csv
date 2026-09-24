@@ -14,5 +14,9 @@ I2C (GPIO 11 / 10),SDA,GPIO 11
 I2C (GPIO 11 / 10),SCL,GPIO 10
 TCA9554 (I/O expander),Type,TCA9554
 TCA9554 (I/O expander),Address,0x20
+IMU - QMI8658,Bus,I2C (GPIO 11 / 10)
+IMU - QMI8658,Address,0x6B
+RTC - PCF85063,Bus,I2C (GPIO 11 / 10)
+RTC - PCF85063,Address,0x51
 Board I/O,BOOTButton (active low),GPIO 0
 Board I/O,PWRKeyBATButton (active low),GPIO 6

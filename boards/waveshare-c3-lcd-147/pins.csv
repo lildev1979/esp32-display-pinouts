@@ -12,4 +12,6 @@ I2C (GPIO 4 / 3),SDA,GPIO 4
 I2C (GPIO 4 / 3),SCL,GPIO 3
 IOExtension (I/O expander),Type,WS_IOEXT
 IOExtension (I/O expander),Address,0x24
+IMU - QMI8658,Bus,I2C (GPIO 4 / 3)
+IMU - QMI8658,Address,0x6B
 Board I/O,BOOTButton (active low),GPIO 9

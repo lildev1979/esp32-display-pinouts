@@ -80,6 +80,39 @@
       "address": "0x20"
     }
   ],
+  "peripherals": [
+    {
+      "name": "Power",
+      "chip": "AXP2101",
+      "kind": "Power",
+      "bus": "I2C (GPIO 8 / 7, header pins 27 / 25)",
+      "address": "0x34"
+    },
+    {
+      "name": "IMU",
+      "chip": "QMI8658",
+      "kind": "Motion",
+      "bus": "I2C (GPIO 8 / 7, header pins 27 / 25)",
+      "address": "0x6B"
+    },
+    {
+      "name": "RTC",
+      "chip": "PCF85063",
+      "kind": "Time",
+      "bus": "I2C (GPIO 8 / 7, header pins 27 / 25)",
+      "address": "0x51"
+    },
+    {
+      "name": "SDCard",
+      "chip": "SD card",
+      "kind": "Storage",
+      "pins": {
+        "clk": 11,
+        "cmd": 10,
+        "d0": 9
+      }
+    }
+  ],
   "digitalIO": [
     {
       "name": "BootButton",

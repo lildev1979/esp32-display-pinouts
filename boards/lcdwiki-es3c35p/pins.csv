@@ -12,6 +12,13 @@ Backlight,Active,high
 Backlight,Drive,PWM 5000 Hz
 "I2C (GPIO 38 / 39, P4 header)",SDA,GPIO 38
 "I2C (GPIO 38 / 39, P4 header)",SCL,GPIO 39
+SDCard - SD card,CLK,GPIO 5
+SDCard - SD card,CMD,GPIO 4
+SDCard - SD card,D0,GPIO 6
+SDCard - SD card,D1,GPIO 7
+SDCard - SD card,D2,GPIO 2
+SDCard - SD card,D3,GPIO 3
+RgbLed - NeoPixel string,DATA,GPIO 40
 Board I/O,BootButton (active low),GPIO 0
 Analogue input,Battery,GPIO 8
 Audio,MCLK,GPIO 17

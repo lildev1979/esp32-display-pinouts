@@ -78,6 +78,29 @@
       "address": "0x20"
     }
   ],
+  "peripherals": [
+    {
+      "name": "PMICchargerrailsPWRkey",
+      "chip": "AXP2101",
+      "kind": "Power",
+      "bus": "I2C (GPIO 8 / 7)",
+      "address": "0x34"
+    },
+    {
+      "name": "RTC",
+      "chip": "PCF85063",
+      "kind": "Time",
+      "bus": "I2C (GPIO 8 / 7)",
+      "address": "0x51"
+    },
+    {
+      "name": "IMU",
+      "chip": "QMI8658",
+      "kind": "Motion",
+      "bus": "I2C (GPIO 8 / 7)",
+      "address": "0x6B"
+    }
+  ],
   "digitalIO": [
     {
       "name": "BOOTButton",

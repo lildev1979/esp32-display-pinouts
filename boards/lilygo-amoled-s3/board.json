@@ -61,6 +61,7 @@
   },
   "buses": [],
   "ioExpanders": [],
+  "peripherals": [],
   "digitalIO": [],
   "analogInputs": [],
   "audio": null,

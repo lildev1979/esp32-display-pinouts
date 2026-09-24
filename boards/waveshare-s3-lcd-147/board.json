@@ -43,6 +43,7 @@
   "touch": null,
   "buses": [],
   "ioExpanders": [],
+  "peripherals": [],
   "digitalIO": [
     {
       "name": "BOOTButton",

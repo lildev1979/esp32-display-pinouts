@@ -10,4 +10,8 @@ Backlight,Active,high
 Backlight,Drive,PWM 5000 Hz
 I2C (GPIO 18 / 8),SDA,GPIO 18
 I2C (GPIO 18 / 8),SCL,GPIO 8
+IMU - QMI8658,Bus,I2C (GPIO 18 / 8)
+IMU - QMI8658,Address,0x6B
+RTC - PCF85063,Bus,I2C (GPIO 18 / 8)
+RTC - PCF85063,Address,0x51
 Board I/O,BOOTButton (active low),GPIO 9

@@ -51,6 +51,15 @@
     }
   ],
   "ioExpanders": [],
+  "peripherals": [
+    {
+      "name": "IMU",
+      "chip": "QMI8658",
+      "kind": "Motion",
+      "bus": "I2C (GPIO 48 / 47)",
+      "address": "0x6B"
+    }
+  ],
   "digitalIO": [
     {
       "name": "BOOTButton",

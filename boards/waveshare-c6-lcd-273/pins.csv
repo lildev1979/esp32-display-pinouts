@@ -12,6 +12,10 @@ I2C (GPIO 20 / 2),SDA,GPIO 20
 I2C (GPIO 20 / 2),SCL,GPIO 2
 IOExtension (I/O expander),Type,WS_IOEXT16
 IOExtension (I/O expander),Address,0x24
+IMU - QMI8658,Bus,I2C (GPIO 20 / 2)
+IMU - QMI8658,Address,0x6B
+RTC - PCF85063,Bus,I2C (GPIO 20 / 2)
+RTC - PCF85063,Address,0x51
 Board I/O,PREVButton (active low),GPIO 4
 Board I/O,NEXTButton (active low),GPIO 5
 Board I/O,BOOTENTERButton (active low),GPIO 9
