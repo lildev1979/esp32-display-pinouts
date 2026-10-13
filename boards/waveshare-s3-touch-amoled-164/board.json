@@ -1,0 +1,118 @@
+{
+  "id": "waveshare-s3-touch-amoled-164",
+  "name": "Waveshare ESP32-S3-Touch-AMOLED-1.64 V1",
+  "vendor": "Waveshare",
+  "group": "All-in-one boards",
+  "description": "1.64\" 280x456 AMOLED (CO5300, QSPI), FT3168 touch, TF card, QMI8658C, battery sense.",
+  "mcu": {
+    "id": "esp32s3",
+    "name": "ESP32-S3"
+  },
+  "flashMB": 16,
+  "psramMB": 8,
+  "usbCdc": true,
+  "display": {
+    "controller": "co5300",
+    "controllerName": "CO5300",
+    "interface": "qspi",
+    "width": 280,
+    "height": 456,
+    "colorDepth": 16,
+    "rgbOrder": "rgb",
+    "invert": false,
+    "pins": {
+      "sck": 10,
+      "d0": 11,
+      "d1": 12,
+      "d2": 13,
+      "d3": 14,
+      "cs": 9,
+      "rst": 21
+    },
+    "options": {
+      "freqMhz": 40,
+      "spiHost": "SPI2_HOST"
+    },
+    "backlight": null
+  },
+  "touch": {
+    "controller": "ft3168",
+    "controllerName": "FT3168 / FT6146",
+    "pins": {
+      "sda": 47,
+      "scl": 48,
+      "int": -1,
+      "rst": -1
+    },
+    "swapXY": false,
+    "invertX": false,
+    "invertY": false,
+    "options": {
+      "i2cAddr": "0x38",
+      "freqKhz": 400,
+      "sharedI2C": true
+    }
+  },
+  "buses": [
+    {
+      "name": "I2C (GPIO 47 / 48)",
+      "kind": "i2c",
+      "pins": {
+        "sda": 47,
+        "scl": 48
+      }
+    },
+    {
+      "name": "SPI (TF card)",
+      "kind": "spi",
+      "pins": {
+        "sck": 41,
+        "mosi": 39,
+        "miso": 40
+      }
+    }
+  ],
+  "ioExpanders": [],
+  "peripherals": [
+    {
+      "name": "IMU",
+      "chip": "QMI8658",
+      "kind": "Motion",
+      "bus": "I2C (GPIO 47 / 48)",
+      "address": "0x6B"
+    },
+    {
+      "name": "SDCard",
+      "chip": "SD card",
+      "kind": "Storage",
+      "bus": "SPI (TF card)",
+      "pins": {
+        "cs": 38
+      }
+    }
+  ],
+  "digitalIO": [
+    {
+      "name": "BOOTButton",
+      "direction": "in",
+      "pin": 0,
+      "activeLow": true
+    }
+  ],
+  "analogInputs": [
+    {
+      "name": "Battery",
+      "pin": 4,
+      "unit": "V"
+    }
+  ],
+  "audio": null,
+  "verify": "Pins from Waveshare's demo code and schematic (https://files.waveshare.com/wiki/ESP32-S3-Touch-AMOLED-1.64/ESP32-S3-Touch-AMOLED-1.64-Demo.zip). Two hardware revisions with different pins; this is V1 (version silkscreen at the top of the PCB), whose demo is the zip on files.waveshare.com. The glass has rounded corners whose radius Waveshare does not give, so the designer draws them square: keep what matters out of the corners, or set a corner radius on the Display tab once it is measured. Brightness is a command to the panel, not a backlight pin. Compiled; not run on a board here.",
+  "links": {
+    "page": "https://lcdwizard.com/boards/waveshare-s3-touch-amoled-164",
+    "designer": "https://app.lcdwizard.com/app?board=waveshare-s3-touch-amoled-164",
+    "vendorProduct": "https://www.waveshare.com/esp32-s3-touch-amoled-1.64.htm",
+    "vendorDocs": "https://docs.waveshare.com/ESP32-S3-Touch-AMOLED-1.64",
+    "schematic": "https://files.waveshare.com/wiki/ESP32-S3-Touch-AMOLED-1.64/ESP32-S3-Touch-AMOLED-1.64-schematic.pdf"
+  }
+}

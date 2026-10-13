@@ -1,0 +1,140 @@
+{
+  "id": "waveshare-s3-touch-amoled-175",
+  "name": "Waveshare ESP32-S3-Touch-AMOLED-1.75",
+  "vendor": "Waveshare",
+  "group": "All-in-one boards",
+  "description": "1.75\" 466x466 round AMOLED (CO5300, QSPI), CST9217 touch, ES8311 speaker and ES7210 microphones, TF card, AXP2101, QMI8658, PCF85063ATL.",
+  "mcu": {
+    "id": "esp32s3",
+    "name": "ESP32-S3"
+  },
+  "flashMB": 16,
+  "psramMB": 8,
+  "usbCdc": true,
+  "display": {
+    "controller": "co5300",
+    "controllerName": "CO5300",
+    "interface": "qspi",
+    "width": 466,
+    "height": 466,
+    "colorDepth": 16,
+    "rgbOrder": "rgb",
+    "invert": false,
+    "pins": {
+      "sck": 38,
+      "d0": 4,
+      "d1": 5,
+      "d2": 6,
+      "d3": 7,
+      "cs": 12,
+      "rst": 39,
+      "te": 13
+    },
+    "options": {
+      "freqMhz": 40,
+      "spiHost": "SPI2_HOST"
+    },
+    "backlight": null
+  },
+  "touch": {
+    "controller": "cst9217",
+    "controllerName": "CST9217 / CST9220",
+    "pins": {
+      "sda": 15,
+      "scl": 14,
+      "int": 11,
+      "rst": 40
+    },
+    "swapXY": false,
+    "invertX": true,
+    "invertY": true,
+    "options": {
+      "i2cAddr": "0x5A",
+      "freqKhz": 400,
+      "sharedI2C": true
+    }
+  },
+  "buses": [
+    {
+      "name": "I2C (GPIO 15 / 14)",
+      "kind": "i2c",
+      "pins": {
+        "sda": 15,
+        "scl": 14
+      }
+    }
+  ],
+  "ioExpanders": [
+    {
+      "name": "TCA9554",
+      "type": "tca9554",
+      "address": "0x20"
+    }
+  ],
+  "peripherals": [
+    {
+      "name": "PMIC",
+      "chip": "AXP2101",
+      "kind": "Power",
+      "bus": "I2C (GPIO 15 / 14)",
+      "address": "0x34"
+    },
+    {
+      "name": "IMU",
+      "chip": "QMI8658",
+      "kind": "Motion",
+      "bus": "I2C (GPIO 15 / 14)",
+      "address": "0x6B"
+    },
+    {
+      "name": "RTC",
+      "chip": "PCF85063",
+      "kind": "Time",
+      "bus": "I2C (GPIO 15 / 14)",
+      "address": "0x51"
+    },
+    {
+      "name": "SDCard",
+      "chip": "SD card",
+      "kind": "Storage",
+      "pins": {
+        "clk": 2,
+        "cmd": 1,
+        "d0": 3
+      }
+    }
+  ],
+  "digitalIO": [
+    {
+      "name": "BOOTButton",
+      "direction": "in",
+      "pin": 0,
+      "activeLow": true
+    },
+    {
+      "name": "PWRButton",
+      "direction": "in",
+      "pin": -1,
+      "activeLow": false
+    }
+  ],
+  "analogInputs": [],
+  "audio": {
+    "output": "es8311",
+    "pins": {
+      "mclk": 42,
+      "bclk": 9,
+      "lrclk": 45,
+      "din": 8,
+      "pa": 46
+    }
+  },
+  "verify": "Pins from Waveshare's demo code and schematic (https://github.com/waveshareteam/ESP32-S3-Touch-AMOLED-1.75). 1) pin_config.h carries two sets of audio macros. The '// ES8311' block says I2S_MCK_IO 16 - wrong: GPIO16 is header pin, MCLK is GPIO42 in the schematic, in the BSP and in the second block (MCLKPIN 42) that 08_ES8311.ino really uses. The names DOPIN 10 / DIPIN 8 are from the codec's side: the sketch passes DIPIN as the ESP's data out. Believed the schematic and the BSP: ESP out 8, ESP in 10, MCLK 42. On the board and not in this preset: LC76G: no driver. Brightness is a command to the panel, not a backlight pin. Compiled; not run on a board here.",
+  "links": {
+    "page": "https://lcdwizard.com/boards/waveshare-s3-touch-amoled-175",
+    "designer": "https://app.lcdwizard.com/app?board=waveshare-s3-touch-amoled-175",
+    "vendorProduct": "https://www.waveshare.com/esp32-s3-touch-amoled-1.75.htm",
+    "vendorDocs": "https://docs.waveshare.com/ESP32-S3-Touch-AMOLED-1.75",
+    "schematic": "https://github.com/waveshareteam/ESP32-S3-Touch-AMOLED-1.75/blob/main/Schematic/ESP32-S3-Touch-AMOLED-1.75-schematic.pdf"
+  }
+}

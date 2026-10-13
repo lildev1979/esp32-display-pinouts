@@ -3,7 +3,7 @@
   "name": "Waveshare ESP32-S3-Touch-LCD-3.49",
   "vendor": "Waveshare",
   "group": "All-in-one boards",
-  "description": "3.49\" 172x640 IPS LCD (AXS15231B, QSPI), AXS15231B (integrated touch) touch, ES8311 audio, TF card, QMI8658, PCF85063.",
+  "description": "3.49\" 172x640 IPS LCD (AXS15231B, QSPI), AXS15231B (integrated touch) touch, ES8311 speaker and ES7210 microphones, TF card, QMI8658, PCF85063, battery sense.",
   "mcu": {
     "id": "esp32s3",
     "name": "ESP32-S3"
@@ -35,7 +35,8 @@
     },
     "options": {
       "freqMhz": 40,
-      "spiHost": "SPI3_HOST"
+      "spiHost": "SPI3_HOST",
+      "initSeq": "axs15231b_180640_init_operations"
     },
     "backlight": {
       "pin": 42,
@@ -57,9 +58,9 @@
       },
       "rst": -1
     },
-    "swapXY": false,
+    "swapXY": true,
     "invertX": false,
-    "invertY": false,
+    "invertY": true,
     "options": {
       "i2cAddr": "0x3B",
       "freqKhz": 400,
@@ -68,11 +69,11 @@
   },
   "buses": [
     {
-      "name": "I2C (GPIO 17 / 18)",
+      "name": "I2C (GPIO 47 / 48)",
       "kind": "i2c",
       "pins": {
-        "sda": 17,
-        "scl": 18
+        "sda": 47,
+        "scl": 48
       }
     }
   ],
@@ -88,15 +89,25 @@
       "name": "IMU",
       "chip": "QMI8658",
       "kind": "Motion",
-      "bus": "I2C (GPIO 17 / 18)",
+      "bus": "I2C (GPIO 47 / 48)",
       "address": "0x6B"
     },
     {
       "name": "RTC",
       "chip": "PCF85063",
       "kind": "Time",
-      "bus": "I2C (GPIO 17 / 18)",
+      "bus": "I2C (GPIO 47 / 48)",
       "address": "0x51"
+    },
+    {
+      "name": "SDCard",
+      "chip": "SD card",
+      "kind": "Storage",
+      "pins": {
+        "clk": 41,
+        "cmd": 39,
+        "d0": 40
+      }
     }
   ],
   "digitalIO": [
@@ -113,7 +124,13 @@
       "activeLow": true
     }
   ],
-  "analogInputs": [],
+  "analogInputs": [
+    {
+      "name": "Battery",
+      "pin": 4,
+      "unit": "V"
+    }
+  ],
   "audio": {
     "output": "es8311",
     "pins": {
@@ -127,7 +144,7 @@
       }
     }
   },
-  "verify": "Pins from Waveshare's demo code and schematic (https://github.com/waveshareteam/ESP32-S3-Touch-LCD-3.49-V2). Two hardware revisions with different pins; recorded V2 (Rev1.1 silkscreen), which is all that ships since 2026-06-08.",
+  "verify": "Pins from Waveshare's demo code and schematic (https://github.com/waveshareteam/ESP32-S3-Touch-LCD-3.49-V2). Two hardware revisions with different pins; recorded V2 (Rev1.1 silkscreen), which is all that ships since 2026-06-08. The touch panel has I2C pins 17/18 to itself; the I/O expander, both audio chips, the IMU and the clock are on 47/48. The backlight needs EXIO1 on the expander held high as well as its PWM pin (active low), and the panel is reset through EXIO5. The ES7210 is at its default address 0x40, not re-read from its straps, with its data on GPIO 6. Battery sense is GPIO4 through a divide-by-three; the scale is not calibrated. The PWR key's active level is not verified. The touch panel reports along the long side of the glass: x is its Y, and y is 640 less its X (Waveshare's lvgl_port.c), which is Swap X/Y with Invert Y here - seen wrong on the owner's board on 2026-10-10 before this was set. Run on a V2 board on 2026-10-10: the panel, the touch, the backlight and the parts above were reported working with this preset.",
   "links": {
     "page": "https://lcdwizard.com/boards/waveshare-s3-touch-lcd-349",
     "designer": "https://app.lcdwizard.com/app?board=waveshare-s3-touch-lcd-349",

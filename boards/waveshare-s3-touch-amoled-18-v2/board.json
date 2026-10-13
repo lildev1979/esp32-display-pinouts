@@ -1,0 +1,140 @@
+{
+  "id": "waveshare-s3-touch-amoled-18-v2",
+  "name": "Waveshare ESP32-S3-Touch-AMOLED-1.8 V2",
+  "vendor": "Waveshare",
+  "group": "All-in-one boards",
+  "description": "1.8\" 368x448 AMOLED (CO5300, QSPI), CST820 touch, ES8311 speaker and microphone, TF card, QMI8658C, PCF85063ATL, AXP2101.",
+  "mcu": {
+    "id": "esp32s3",
+    "name": "ESP32-S3"
+  },
+  "flashMB": 16,
+  "psramMB": 8,
+  "usbCdc": true,
+  "display": {
+    "controller": "co5300",
+    "controllerName": "CO5300",
+    "interface": "qspi",
+    "width": 368,
+    "height": 448,
+    "colorDepth": 16,
+    "rgbOrder": "rgb",
+    "invert": false,
+    "pins": {
+      "sck": 11,
+      "d0": 4,
+      "d1": 5,
+      "d2": 6,
+      "d3": 7,
+      "cs": 12,
+      "rst": {
+        "ext": "ext_waveshare_s3_touch_amoled_18_v2_tca9554",
+        "pin": 0
+      },
+      "te": 13
+    },
+    "options": {
+      "freqMhz": 40,
+      "spiHost": "SPI2_HOST"
+    },
+    "backlight": null
+  },
+  "touch": {
+    "controller": "cst820",
+    "controllerName": "CST820",
+    "pins": {
+      "sda": 15,
+      "scl": 14,
+      "int": 21,
+      "rst": {
+        "ext": "ext_waveshare_s3_touch_amoled_18_v2_tca9554",
+        "pin": 2
+      }
+    },
+    "swapXY": false,
+    "invertX": false,
+    "invertY": false,
+    "options": {
+      "i2cAddr": "0x15",
+      "freqKhz": 400,
+      "sharedI2C": true
+    }
+  },
+  "buses": [
+    {
+      "name": "I2C (GPIO 15 / 14)",
+      "kind": "i2c",
+      "pins": {
+        "sda": 15,
+        "scl": 14
+      }
+    }
+  ],
+  "ioExpanders": [
+    {
+      "name": "TCA9554",
+      "type": "tca9554",
+      "address": "0x20"
+    }
+  ],
+  "peripherals": [
+    {
+      "name": "IMU",
+      "chip": "QMI8658",
+      "kind": "Motion",
+      "bus": "I2C (GPIO 15 / 14)",
+      "address": "0x6B"
+    },
+    {
+      "name": "RTC",
+      "chip": "PCF85063",
+      "kind": "Time",
+      "bus": "I2C (GPIO 15 / 14)",
+      "address": "0x51"
+    },
+    {
+      "name": "PMIC",
+      "chip": "AXP2101",
+      "kind": "Power",
+      "bus": "I2C (GPIO 15 / 14)",
+      "address": "0x34"
+    },
+    {
+      "name": "SDCard",
+      "chip": "SD card",
+      "kind": "Storage",
+      "pins": {
+        "clk": 2,
+        "cmd": 1,
+        "d0": 3
+      }
+    }
+  ],
+  "digitalIO": [
+    {
+      "name": "BOOTButton",
+      "direction": "in",
+      "pin": 0,
+      "activeLow": true
+    }
+  ],
+  "analogInputs": [],
+  "audio": {
+    "output": "es8311",
+    "pins": {
+      "mclk": 16,
+      "bclk": 9,
+      "lrclk": 45,
+      "din": 8,
+      "pa": 46
+    }
+  },
+  "verify": "Pins from Waveshare's demo code and schematic (https://github.com/waveshareteam/ESP32-S3-Touch-AMOLED-1.8). This is the V2 revision (CO5300 panel, CST820 touch, 16-column offset), which is what ships from 30 May 2026; a V1 board (SH8601, FT3168, no offset) has the same pins and needs the other record - check the label on the back. Every pin recorded here is the same in the vendor's code and on the schematic; the disagreements are inside the vendor's code. The glass has rounded corners whose radius Waveshare does not give, so the designer draws them square: keep what matters out of the corners, or set a corner radius on the Display tab once it is measured. Brightness is a command to the panel, not a backlight pin. Compiled; not run on a board here.",
+  "links": {
+    "page": "https://lcdwizard.com/boards/waveshare-s3-touch-amoled-18-v2",
+    "designer": "https://app.lcdwizard.com/app?board=waveshare-s3-touch-amoled-18-v2",
+    "vendorProduct": "https://www.waveshare.com/esp32-s3-touch-amoled-1.8.htm",
+    "vendorDocs": "https://docs.waveshare.com/ESP32-S3-Touch-AMOLED-1.8",
+    "schematic": "https://files.waveshare.com/wiki/ESP32-S3-Touch-AMOLED-1.8/ESP32-S3-Touch-AMOLED-1.8.pdf"
+  }
+}

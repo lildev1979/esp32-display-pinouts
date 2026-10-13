@@ -1,0 +1,31 @@
+group,signal,pin
+Panel - QSPI (quad SPI),SCK,GPIO 38
+Panel - QSPI (quad SPI),D0 - D3,"GPIO 4, 5, 6, 7"
+Panel - QSPI (quad SPI),CS,GPIO 12
+Panel - QSPI (quad SPI),RESET,GPIO 39
+Touch - CST9217 / CST9220,SDA,GPIO 15
+Touch - CST9217 / CST9220,SCL,GPIO 14
+Touch - CST9217 / CST9220,INT / IRQ,GPIO 11
+Touch - CST9217 / CST9220,RESET,GPIO 40
+I2C (GPIO 15 / 14),SDA,GPIO 15
+I2C (GPIO 15 / 14),SCL,GPIO 14
+TCA9554 (I/O expander),Type,TCA9554
+TCA9554 (I/O expander),Address,0x20
+PMIC - AXP2101,Bus,I2C (GPIO 15 / 14)
+PMIC - AXP2101,Address,0x34
+IMU - QMI8658,Bus,I2C (GPIO 15 / 14)
+IMU - QMI8658,Address,0x6B
+RTC - PCF85063,Bus,I2C (GPIO 15 / 14)
+RTC - PCF85063,Address,0x51
+SDCard - SD card,CLK,GPIO 2
+SDCard - SD card,CMD,GPIO 1
+SDCard - SD card,D0,GPIO 3
+Inputs and outputs,BOOTButton (input),GPIO 0
+Inputs and outputs,PWRButton (input),TCA9554 4
+Board I/O,BOOTButton (active low),GPIO 0
+Board I/O,PWRButton,-
+Audio,MCLK,GPIO 42
+Audio,BCLK,GPIO 9
+Audio,LRCLK,GPIO 45
+Audio,DIN,GPIO 8
+Audio,PA,GPIO 46

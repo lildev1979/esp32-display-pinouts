@@ -1,0 +1,22 @@
+group,signal,pin
+Panel - QSPI (quad SPI),SCK,GPIO 14
+Panel - QSPI (quad SPI),D0 - D3,"GPIO 9, 10, 11, 12"
+Panel - QSPI (quad SPI),CS,GPIO 15
+Panel - QSPI (quad SPI),RESET,GPIO 13
+Touch - CST820,SDA,GPIO 47
+Touch - CST820,SCL,GPIO 48
+Touch - CST820,INT / IRQ,GPIO 17
+Touch - CST820,RESET,GPIO 16
+I2C (GPIO 47 / 48),SDA,GPIO 47
+I2C (GPIO 47 / 48),SCL,GPIO 48
+Inputs and outputs,Battery (analog in),GPIO 4
+Inputs and outputs,BOOTButton (input),GPIO 0
+Inputs and outputs,LED (output),GPIO 5
+Board I/O,BOOTButton (active low),GPIO 0
+Board I/O,LED (active low),GPIO 5
+Analogue input,Battery,GPIO 4
+Audio,MCLK,GPIO 38
+Audio,BCLK,GPIO 39
+Audio,LRCLK,GPIO 40
+Audio,DIN,GPIO 41
+Audio,PA,GPIO 46

@@ -16,5 +16,17 @@ Backlight,Active,high
 Backlight,Drive,on / off
 "I2C0 (touch, CH422G, header)",SDA,GPIO 8
 "I2C0 (touch, CH422G, header)",SCL,GPIO 9
+SPI (TF card),SCK,GPIO 12
+SPI (TF card),MOSI,GPIO 11
+SPI (TF card),MISO,GPIO 13
 CH422G (I/O expander),Type,CH422G
 CH422G (I/O expander),Address,0x24
+SDCard - SD card,Bus,SPI (TF card)
+SDCard - SD card,CS,CH422G 4
+RS485 - RS485 / Modbus RTU,TX,GPIO 16
+RS485 - RS485 / Modbus RTU,RX,GPIO 15
+CanBus - CAN bus / OBD-II,TX,GPIO 20
+CanBus - CAN bus / OBD-II,RX,GPIO 19
+CanBus - CAN bus / OBD-II,EN,CH422G 5
+Inputs and outputs,Sensor AD (analog in),GPIO 6
+Analogue input,SensorAD,GPIO 6

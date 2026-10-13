@@ -3,7 +3,7 @@
   "name": "Waveshare ESP32-S3-Touch-LCD-1.28",
   "vendor": "Waveshare",
   "group": "All-in-one boards",
-  "description": "1.28\" 240x240 IPS LCD (GC9A01A, SPI), CST816S touch, QMI8658.",
+  "description": "1.28\" 240x240 round IPS LCD (GC9A01A, SPI), CST816S touch, QMI8658 IMU, battery sense.",
   "mcu": {
     "id": "esp32s3",
     "name": "ESP32-S3"
@@ -58,9 +58,26 @@
       "sharedI2C": true
     }
   },
-  "buses": [],
+  "buses": [
+    {
+      "name": "I2C (GPIO 6 / 7)",
+      "kind": "i2c",
+      "pins": {
+        "sda": 6,
+        "scl": 7
+      }
+    }
+  ],
   "ioExpanders": [],
-  "peripherals": [],
+  "peripherals": [
+    {
+      "name": "IMU",
+      "chip": "QMI8658",
+      "kind": "Motion",
+      "bus": "I2C (GPIO 6 / 7)",
+      "address": "0x6B"
+    }
+  ],
   "digitalIO": [
     {
       "name": "BOOTButton",
@@ -69,9 +86,15 @@
       "activeLow": true
     }
   ],
-  "analogInputs": [],
+  "analogInputs": [
+    {
+      "name": "Battery",
+      "pin": 1,
+      "unit": "V"
+    }
+  ],
   "audio": null,
-  "verify": "Pins from Waveshare's demo code and schematic (https://files.waveshare.com/wiki/ESP32-S3-Touch-LCD-1.28/ESP32-S3-Touch-LCD-1.28-Demo.zip). Docs say two MOSFETs near the battery holder connect to GPIO4 and GPIO5, but the schematic shows GPIO4 = IMU_INT1 and GPIO5 = TP_INT, with Q3/Q4 marked NC (unpopulated).",
+  "verify": "Pins from Waveshare's demo code and schematic (https://files.waveshare.com/wiki/ESP32-S3-Touch-LCD-1.28/ESP32-S3-Touch-LCD-1.28-Demo.zip). Docs say two MOSFETs near the battery holder connect to GPIO4 and GPIO5, but the schematic shows GPIO4 = IMU_INT1 and GPIO5 = TP_INT, with Q3/Q4 marked NC (unpopulated). The IMU shares the touch panel's I2C bus; its address is 0x6B - the vendor's demo probes 0x6A then 0x6B and the strap could not be read from the schematic, and a board run on 2026-10-10 reported its IMU working at this address. Battery sense is GPIO1 through a divide-by-three, from the vendor's demo; the scale is 3.3 V x 3 and is not calibrated. Run on a board on 2026-10-10 in all three exports and reported all good, the IMU and Bluetooth included.",
   "links": {
     "page": "https://lcdwizard.com/boards/waveshare-s3-touch-lcd-128",
     "designer": "https://app.lcdwizard.com/app?board=waveshare-s3-touch-lcd-128",

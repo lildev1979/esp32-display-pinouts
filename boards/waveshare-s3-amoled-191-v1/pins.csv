@@ -1,0 +1,16 @@
+group,signal,pin
+Panel - QSPI (quad SPI),SCK,GPIO 47
+Panel - QSPI (quad SPI),D0 - D3,"GPIO 18, 7, 48, 5"
+Panel - QSPI (quad SPI),CS,GPIO 6
+Panel - QSPI (quad SPI),RESET,GPIO 17
+Touch - FT3168 / FT6146,SDA,GPIO 40
+Touch - FT3168 / FT6146,SCL,GPIO 39
+Touch - FT3168 / FT6146,INT / IRQ,GPIO 41
+I2C (GPIO 40 / 39),SDA,GPIO 40
+I2C (GPIO 40 / 39),SCL,GPIO 39
+IMU - QMI8658,Bus,I2C (GPIO 40 / 39)
+IMU - QMI8658,Address,0x6B
+Inputs and outputs,Battery (analog in),GPIO 1
+Inputs and outputs,BOOTButton (input),GPIO 0
+Board I/O,BOOTButton (active low),GPIO 0
+Analogue input,Battery,GPIO 1

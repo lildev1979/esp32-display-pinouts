@@ -12,8 +12,8 @@
   "psramMB": 0,
   "usbCdc": false,
   "display": {
-    "controller": "ili9341",
-    "controllerName": "ILI9341",
+    "controller": "ili9342",
+    "controllerName": "ILI9342 / ILI9342C",
     "interface": "spi",
     "width": 320,
     "height": 240,
@@ -53,8 +53,8 @@
       "irq": 36
     },
     "swapXY": true,
-    "invertX": false,
-    "invertY": false,
+    "invertX": true,
+    "invertY": true,
     "options": {
       "freqKhz": 2500,
       "sharedSPI": false
@@ -103,7 +103,7 @@
       "pa": 4
     }
   },
-  "verify": "The panel, touch and backlight are on the Sunton CYD's pins. The RGB LED is GPIO 22 (red), 16 and 17, lit low; GPIO 4 is the speaker amplifier's enable, also low - on the Sunton preset those were the red LED and nothing. The SD card and the SPI socket (CS 27) share GPIO 18/19/23, and an ESP32 has no SPI controller left for them once the panel and touch have theirs, so they are not added; adding one stops touch answering. The battery reading is scaled from typical ADC figures - check it against a meter.",
+  "verify": "The panel is sold as an ILI9341V but scans 320 across natively, as an ILI9342 does, so that is the controller set here - it is how every library draws it. The panel, touch and backlight are on the Sunton CYD's pins. The RGB LED is GPIO 22 (red), 16 and 17, lit low; GPIO 4 is the speaker amplifier's enable, also low - on the Sunton preset those were the red LED and nothing. The SD card and the SPI socket (CS 27) share GPIO 18/19/23, and an ESP32 has no SPI controller left for them once the panel and touch have theirs, so they are not added; adding one stops touch answering. The battery reading is scaled from typical ADC figures - check it against a meter.",
   "links": {
     "page": "https://lcdwizard.com/boards/lcdwiki-e32r28t",
     "designer": "https://app.lcdwizard.com/app?board=lcdwiki-e32r28t",

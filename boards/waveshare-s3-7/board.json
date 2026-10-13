@@ -3,7 +3,7 @@
   "name": "Waveshare ESP32-S3-Touch-LCD-7",
   "vendor": "Waveshare",
   "group": "All-in-one boards",
-  "description": "7\" 800x480 RGB panel with GT911 touch. Same wiring as the 4.3\" board, its own timings.",
+  "description": "7\" 800x480 RGB panel with GT911 touch, a TF card slot, RS485, CAN and a sensor input. Same wiring as the 4.3\" board, its own timings.",
   "mcu": {
     "id": "esp32s3",
     "name": "ESP32-S3"
@@ -98,6 +98,15 @@
         "sda": 8,
         "scl": 9
       }
+    },
+    {
+      "name": "SPI (TF card)",
+      "kind": "spi",
+      "pins": {
+        "sck": 12,
+        "mosi": 11,
+        "miso": 13
+      }
     }
   ],
   "ioExpanders": [
@@ -107,11 +116,52 @@
       "address": "0x24"
     }
   ],
-  "peripherals": [],
+  "peripherals": [
+    {
+      "name": "SDCard",
+      "chip": "SD card",
+      "kind": "Storage",
+      "bus": "SPI (TF card)",
+      "pins": {
+        "cs": {
+          "ext": "ext_ws7_ch422g",
+          "pin": 4
+        }
+      }
+    },
+    {
+      "name": "RS485",
+      "chip": "RS485 / Modbus RTU",
+      "kind": "Industrial",
+      "pins": {
+        "tx": 16,
+        "rx": 15
+      }
+    },
+    {
+      "name": "CanBus",
+      "chip": "CAN bus / OBD-II",
+      "kind": "Vehicle",
+      "pins": {
+        "tx": 20,
+        "rx": 19,
+        "en": {
+          "ext": "ext_ws7_ch422g",
+          "pin": 5
+        }
+      }
+    }
+  ],
   "digitalIO": [],
-  "analogInputs": [],
+  "analogInputs": [
+    {
+      "name": "SensorAD",
+      "pin": 6,
+      "unit": "V"
+    }
+  ],
   "audio": null,
-  "verify": "Touch reset (EXIO1), backlight (EXIO2), panel reset (EXIO3) and a second panel enable (EXIO6) are all on the CH422G at GPIO 8/9. ESPHome drives EXIO2 and EXIO6 together as enable pins, so if the panel is dark with the backlight apparently on, try swapping which of the two the backlight is on for your revision.",
+  "verify": "Touch reset (EXIO1), backlight enable (EXIO2, DISP on the schematic), panel reset (EXIO3), the TF card's CS (EXIO4), the USB / CAN switch (EXIO5) and the panel's supply enable (EXIO6, LCD_VDD_EN) sit on a CH422G expander on the I2C bus at GPIO 8/9; the generated code brings the expander up first and drives them. ESPHome drives EXIO2 and EXIO6 together as enable pins, so if the panel is dark with the backlight apparently on, look at those two for your revision. The TF card is on SPI (MOSI 11, SCK 12, MISO 13) and must be the only thing on it: its CS cannot be toggled through the expander, so the card is selected once and stays selected. RS485 is an SP3485 that turns itself round - the chip sends on GPIO 16 and receives on GPIO 15, which is the other way about from Waveshare's pin table (it names the two from the transceiver's side). GPIO 19 and 20 are the USB port until EXIO5 is raised, which hands them to the CAN transceiver (TX 20, RX 19): the CAN bus arrives switched off, and switching it on takes the USB port away - the expander keeps its lines through a reset, so flash through the UART port, or power the board off and on. The Sensor AD terminal is GPIO 6, 0 to about 3.1 V. The serial log is the UART port (GPIO 43/44). Read off the schematic; nobody here has had this board in their hands.",
   "links": {
     "page": "https://lcdwizard.com/boards/waveshare-s3-7",
     "designer": "https://app.lcdwizard.com/app?board=waveshare-s3-7",

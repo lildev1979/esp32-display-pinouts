@@ -15,4 +15,5 @@ I2C (GPIO 7 / 8),SDA,GPIO 7
 I2C (GPIO 7 / 8),SCL,GPIO 8
 PMICbatterycharger - AXP2101,Bus,I2C (GPIO 7 / 8)
 PMICbatterycharger - AXP2101,Address,0x34
+Inputs and outputs,BOOTButton (input),GPIO 35
 Board I/O,BOOTButton (active low),GPIO 35

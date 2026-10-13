@@ -1,0 +1,125 @@
+{
+  "id": "waveshare-s3-touch-amoled-143-sh8601",
+  "name": "Waveshare ESP32-S3-Touch-AMOLED-1.43 (SH8601 panel)",
+  "vendor": "Waveshare",
+  "group": "All-in-one boards",
+  "description": "1.43\" 466x466 round AMOLED (SH8601, QSPI), FT3168 touch, TF card, QMI8658, PCF85063ATL, battery sense.",
+  "mcu": {
+    "id": "esp32s3",
+    "name": "ESP32-S3"
+  },
+  "flashMB": 16,
+  "psramMB": 8,
+  "usbCdc": true,
+  "display": {
+    "controller": "sh8601",
+    "controllerName": "SH8601",
+    "interface": "qspi",
+    "width": 466,
+    "height": 466,
+    "colorDepth": 16,
+    "rgbOrder": "rgb",
+    "invert": false,
+    "pins": {
+      "sck": 10,
+      "d0": 11,
+      "d1": 12,
+      "d2": 13,
+      "d3": 14,
+      "cs": 9,
+      "rst": 21
+    },
+    "options": {
+      "freqMhz": 40,
+      "spiHost": "SPI2_HOST"
+    },
+    "backlight": null
+  },
+  "touch": {
+    "controller": "ft3168",
+    "controllerName": "FT3168 / FT6146",
+    "pins": {
+      "sda": 47,
+      "scl": 48,
+      "int": -1,
+      "rst": -1
+    },
+    "swapXY": false,
+    "invertX": false,
+    "invertY": false,
+    "options": {
+      "i2cAddr": "0x38",
+      "freqKhz": 400,
+      "sharedI2C": true
+    }
+  },
+  "buses": [
+    {
+      "name": "I2C (GPIO 47 / 48)",
+      "kind": "i2c",
+      "pins": {
+        "sda": 47,
+        "scl": 48
+      }
+    },
+    {
+      "name": "SPI (TF card)",
+      "kind": "spi",
+      "pins": {
+        "sck": 41,
+        "mosi": 39,
+        "miso": 40
+      }
+    }
+  ],
+  "ioExpanders": [],
+  "peripherals": [
+    {
+      "name": "IMU",
+      "chip": "QMI8658",
+      "kind": "Motion",
+      "bus": "I2C (GPIO 47 / 48)",
+      "address": "0x6B"
+    },
+    {
+      "name": "RTC",
+      "chip": "PCF85063",
+      "kind": "Time",
+      "bus": "I2C (GPIO 47 / 48)",
+      "address": "0x51"
+    },
+    {
+      "name": "SDCard",
+      "chip": "SD card",
+      "kind": "Storage",
+      "bus": "SPI (TF card)",
+      "pins": {
+        "cs": 38
+      }
+    }
+  ],
+  "digitalIO": [
+    {
+      "name": "BOOTButton",
+      "direction": "in",
+      "pin": 0,
+      "activeLow": true
+    }
+  ],
+  "analogInputs": [
+    {
+      "name": "Battery",
+      "pin": 4,
+      "unit": "V"
+    }
+  ],
+  "audio": null,
+  "verify": "Pins from Waveshare's demo code and schematic (https://files.waveshare.com/wiki/ESP32-S3-Touch-AMOLED-1.43/ESP32-S3-AMOLED-1.43-Demo-V3.zip). Sold with one of two panels under the same part number. This is the SH8601 one (its id register 0xDA reads 0x86); if the picture sits 6 columns to the left, choose the CO5300 preset. Every pin recorded agrees between the vendor's code and the schematic's GPIO table (QSPI 9/10/11-14, RST 21, OLED_EN 42, I2C 47/48, SD 38-41, BAT_ADC 4, BOOT 0). Brightness is a command to the panel, not a backlight pin. Compiled; not run on a board here.",
+  "links": {
+    "page": "https://lcdwizard.com/boards/waveshare-s3-touch-amoled-143-sh8601",
+    "designer": "https://app.lcdwizard.com/app?board=waveshare-s3-touch-amoled-143-sh8601",
+    "vendorProduct": "https://www.waveshare.com/esp32-s3-touch-amoled-1.43.htm",
+    "vendorDocs": "https://docs.waveshare.com/ESP32-S3-Touch-AMOLED-1.43",
+    "schematic": "https://files.waveshare.com/wiki/ESP32-S3-Touch-AMOLED-1.43/ESP32-S3-Touch-AMOLED-1.43-Schematic.pdf"
+  }
+}

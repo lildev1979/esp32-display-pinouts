@@ -3,7 +3,7 @@
   "name": "Waveshare ESP32-S3-Touch-LCD-3.5B",
   "vendor": "Waveshare",
   "group": "All-in-one boards",
-  "description": "3.5\" 320x480 AXS15231B over QSPI with touch in the same chip, an ES8311 codec with a microphone and speaker output, IMU, RTC, battery charging and a TF card.",
+  "description": "3.5\" 320x480 AXS15231B over QSPI with touch in the same chip, an ES8311 codec with a microphone and speaker output, IMU, RTC, battery charging, a TF card and a camera connector.",
   "mcu": {
     "id": "esp32s3",
     "name": "ESP32-S3"
@@ -111,6 +111,30 @@
         "cmd": 10,
         "d0": 9
       }
+    },
+    {
+      "name": "Camera",
+      "chip": "Camera",
+      "kind": "Camera",
+      "bus": "I2C (GPIO 8 / 7, header pins 27 / 25)",
+      "pins": {
+        "xclk": 38,
+        "pclk": 41,
+        "vsync": 17,
+        "href": 18,
+        "d0": 45,
+        "d1": 47,
+        "d2": 48,
+        "d3": 46,
+        "d4": 42,
+        "d5": 40,
+        "d6": 39,
+        "d7": 21,
+        "pwdn": {
+          "ext": "ext_ws35b_tca9554",
+          "pin": 0
+        }
+      }
     }
   ],
   "digitalIO": [
@@ -135,7 +159,7 @@
       }
     }
   },
-  "verify": "Panel reset (EXIO1), the speaker amplifier (EXIO7) and the TF card's DAT3 (EXIO3) are on the TCA9554 at 0x20; touch, the ES8311, the AXP2101, the QMI8658 and the PCF85063 share the I2C bus on GPIO 8/7. The panel ignores the row address over QSPI, so the export draws whole frames from a canvas in PSRAM. MCLK is GPIO44, which is also the header's RXD - leave it alone while audio is on. USB-C goes straight to the S3, so the serial log needs USB CDC On Boot (the export sets it). The microphone and the camera connector are wired but not driven.",
+  "verify": "Panel reset (EXIO1), the speaker amplifier (EXIO7) and the TF card's DAT3 (EXIO3) are on the TCA9554 at 0x20; touch, the ES8311, the AXP2101, the QMI8658 and the PCF85063 share the I2C bus on GPIO 8/7. The panel ignores the row address over QSPI, so the export draws whole frames from a canvas in PSRAM. MCLK is GPIO44, which is also the header's RXD - leave it alone while audio is on. USB-C goes straight to the S3, so the serial log needs USB CDC On Boot (the export sets it). The microphone goes into the ES8311 and comes back on GPIO 14 - switch it on under Hardware > Audio. The camera connector is in the kit, switched off: only the \"-C\" version of the board has a camera fitted. Its clock, sync and data lines are GPIO 38, 41, 17, 18 and 45, 47, 48, 46, 42, 40, 39, 21 - header pins on a board with no camera - its control lines are the I2C bus, and its power-down is EXIO0.",
   "links": {
     "page": "https://lcdwizard.com/boards/waveshare-s3-35b",
     "designer": "https://app.lcdwizard.com/app?board=waveshare-s3-35b",

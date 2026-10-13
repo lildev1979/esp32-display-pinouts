@@ -16,6 +16,7 @@ TCA9554 (I/O expander),Type,TCA9554
 TCA9554 (I/O expander),Address,0x20
 RTC - PCF85063,Bus,I2C (GPIO 11 / 10)
 RTC - PCF85063,Address,0x51
+Inputs and outputs,BOOTButton (input),GPIO 0
 Board I/O,BOOTButton (active low),GPIO 0
 Audio,MCLK,GPIO 2
 Audio,BCLK,GPIO 48

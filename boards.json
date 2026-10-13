@@ -76,9 +76,18 @@
     "name": "LCDWIKI 2.8\" ESP32-32E (E32R28T)",
     "vendor": "LCDWIKI",
     "mcu": "ESP32 (WROOM / WROVER)",
-    "display": "ILI9341 320x240 SPI",
+    "display": "ILI9342 / ILI9342C 320x240 SPI",
     "touch": "XPT2046",
     "page": "https://lcdwizard.com/boards/lcdwiki-e32r28t"
+  },
+  {
+    "id": "lcdwiki-es3c28p",
+    "name": "LCDWIKI 2.8\" ESP32-S3 (ES3C28P)",
+    "vendor": "LCDWIKI",
+    "mcu": "ESP32-S3",
+    "display": "ILI9341 240x320 SPI",
+    "touch": "FT6236 / FT6336U",
+    "page": "https://lcdwizard.com/boards/lcdwiki-es3c28p"
   },
   {
     "id": "lcdwiki-es3c35p",
@@ -288,6 +297,60 @@
     "page": "https://lcdwizard.com/boards/waveshare-c6-lcd-273"
   },
   {
+    "id": "waveshare-c6-touch-amoled-132",
+    "name": "Waveshare ESP32-C6-Touch-AMOLED-1.32",
+    "vendor": "Waveshare",
+    "mcu": "ESP32-C6",
+    "display": "CO5300 466x466 QSPI",
+    "touch": "CST820",
+    "page": "https://lcdwizard.com/boards/waveshare-c6-touch-amoled-132"
+  },
+  {
+    "id": "waveshare-c6-touch-amoled-143",
+    "name": "Waveshare ESP32-C6-Touch-AMOLED-1.43",
+    "vendor": "Waveshare",
+    "mcu": "ESP32-C6",
+    "display": "CO5300 466x466 QSPI",
+    "touch": "FT3168 / FT6146",
+    "page": "https://lcdwizard.com/boards/waveshare-c6-touch-amoled-143"
+  },
+  {
+    "id": "waveshare-c6-touch-amoled-164",
+    "name": "Waveshare ESP32-C6-Touch-AMOLED-1.64",
+    "vendor": "Waveshare",
+    "mcu": "ESP32-C6",
+    "display": "CO5300 280x456 QSPI",
+    "touch": "FT3168 / FT6146",
+    "page": "https://lcdwizard.com/boards/waveshare-c6-touch-amoled-164"
+  },
+  {
+    "id": "waveshare-c6-touch-amoled-18",
+    "name": "Waveshare ESP32-C6-Touch-AMOLED-1.8",
+    "vendor": "Waveshare",
+    "mcu": "ESP32-C6",
+    "display": "SH8601 368x448 QSPI",
+    "touch": "FT3168 / FT6146",
+    "page": "https://lcdwizard.com/boards/waveshare-c6-touch-amoled-18"
+  },
+  {
+    "id": "waveshare-c6-touch-amoled-18-v2",
+    "name": "Waveshare ESP32-C6-Touch-AMOLED-1.8 V2",
+    "vendor": "Waveshare",
+    "mcu": "ESP32-C6",
+    "display": "CO5300 368x448 QSPI",
+    "touch": "CST820",
+    "page": "https://lcdwizard.com/boards/waveshare-c6-touch-amoled-18-v2"
+  },
+  {
+    "id": "waveshare-c6-touch-amoled-206",
+    "name": "Waveshare ESP32-C6-Touch-AMOLED-2.06",
+    "vendor": "Waveshare",
+    "mcu": "ESP32-C6",
+    "display": "CO5300 410x502 QSPI",
+    "touch": "FT3168 / FT6146",
+    "page": "https://lcdwizard.com/boards/waveshare-c6-touch-amoled-206"
+  },
+  {
     "id": "waveshare-c6-touch-lcd-128",
     "name": "Waveshare ESP32-C6-Touch-LCD-1.28",
     "vendor": "Waveshare",
@@ -331,6 +394,24 @@
     "display": "ST7796 / ST7796S 320x480 SPI",
     "touch": "FT6236 / FT6336U",
     "page": "https://lcdwizard.com/boards/waveshare-p4-wifi6-touch-lcd-35"
+  },
+  {
+    "id": "waveshare-s3-amoled-191",
+    "name": "Waveshare ESP32-S3-AMOLED-1.91 / ESP32-S3-Touch-AMOLED-1.91",
+    "vendor": "Waveshare",
+    "mcu": "ESP32-S3",
+    "display": "RM67162 240x536 QSPI",
+    "touch": "FT3168 / FT6146",
+    "page": "https://lcdwizard.com/boards/waveshare-s3-amoled-191"
+  },
+  {
+    "id": "waveshare-s3-amoled-191-v1",
+    "name": "Waveshare ESP32-S3-AMOLED-1.91 / ESP32-S3-Touch-AMOLED-1.91 (V1 board)",
+    "vendor": "Waveshare",
+    "mcu": "ESP32-S3",
+    "display": "RM67162 240x536 QSPI",
+    "touch": "FT3168 / FT6146",
+    "page": "https://lcdwizard.com/boards/waveshare-s3-amoled-191-v1"
   },
   {
     "id": "waveshare-s3-dualeye-touch-lcd-128",
@@ -432,6 +513,132 @@
     "page": "https://lcdwizard.com/boards/waveshare-s3-lcd-2"
   },
   {
+    "id": "waveshare-s3-touch-amoled-132",
+    "name": "Waveshare ESP32-S3-Touch-AMOLED-1.32",
+    "vendor": "Waveshare",
+    "mcu": "ESP32-S3",
+    "display": "CO5300 466x466 QSPI",
+    "touch": "CST820",
+    "page": "https://lcdwizard.com/boards/waveshare-s3-touch-amoled-132"
+  },
+  {
+    "id": "waveshare-s3-touch-amoled-143",
+    "name": "Waveshare ESP32-S3-Touch-AMOLED-1.43 (CO5300 panel)",
+    "vendor": "Waveshare",
+    "mcu": "ESP32-S3",
+    "display": "CO5300 466x466 QSPI",
+    "touch": "FT3168 / FT6146",
+    "page": "https://lcdwizard.com/boards/waveshare-s3-touch-amoled-143"
+  },
+  {
+    "id": "waveshare-s3-touch-amoled-143-sh8601",
+    "name": "Waveshare ESP32-S3-Touch-AMOLED-1.43 (SH8601 panel)",
+    "vendor": "Waveshare",
+    "mcu": "ESP32-S3",
+    "display": "SH8601 466x466 QSPI",
+    "touch": "FT3168 / FT6146",
+    "page": "https://lcdwizard.com/boards/waveshare-s3-touch-amoled-143-sh8601"
+  },
+  {
+    "id": "waveshare-s3-touch-amoled-143c",
+    "name": "Waveshare ESP32-S3-Touch-AMOLED-1.43C",
+    "vendor": "Waveshare",
+    "mcu": "ESP32-S3",
+    "display": "CO5300 466x466 QSPI",
+    "touch": "CST820",
+    "page": "https://lcdwizard.com/boards/waveshare-s3-touch-amoled-143c"
+  },
+  {
+    "id": "waveshare-s3-touch-amoled-164",
+    "name": "Waveshare ESP32-S3-Touch-AMOLED-1.64 V1",
+    "vendor": "Waveshare",
+    "mcu": "ESP32-S3",
+    "display": "CO5300 280x456 QSPI",
+    "touch": "FT3168 / FT6146",
+    "page": "https://lcdwizard.com/boards/waveshare-s3-touch-amoled-164"
+  },
+  {
+    "id": "waveshare-s3-touch-amoled-164-v2",
+    "name": "Waveshare ESP32-S3-Touch-AMOLED-1.64 V1.1",
+    "vendor": "Waveshare",
+    "mcu": "ESP32-S3",
+    "display": "CO5300 280x456 QSPI",
+    "touch": "FT3168 / FT6146",
+    "page": "https://lcdwizard.com/boards/waveshare-s3-touch-amoled-164-v2"
+  },
+  {
+    "id": "waveshare-s3-touch-amoled-175",
+    "name": "Waveshare ESP32-S3-Touch-AMOLED-1.75",
+    "vendor": "Waveshare",
+    "mcu": "ESP32-S3",
+    "display": "CO5300 466x466 QSPI",
+    "touch": "CST9217 / CST9220",
+    "page": "https://lcdwizard.com/boards/waveshare-s3-touch-amoled-175"
+  },
+  {
+    "id": "waveshare-s3-touch-amoled-175c",
+    "name": "Waveshare ESP32-S3-Touch-AMOLED-1.75C",
+    "vendor": "Waveshare",
+    "mcu": "ESP32-S3",
+    "display": "CO5300 466x466 QSPI",
+    "touch": "CST9217 / CST9220",
+    "page": "https://lcdwizard.com/boards/waveshare-s3-touch-amoled-175c"
+  },
+  {
+    "id": "waveshare-s3-touch-amoled-18",
+    "name": "Waveshare ESP32-S3-Touch-AMOLED-1.8",
+    "vendor": "Waveshare",
+    "mcu": "ESP32-S3",
+    "display": "SH8601 368x448 QSPI",
+    "touch": "FT3168 / FT6146",
+    "page": "https://lcdwizard.com/boards/waveshare-s3-touch-amoled-18"
+  },
+  {
+    "id": "waveshare-s3-touch-amoled-18-v2",
+    "name": "Waveshare ESP32-S3-Touch-AMOLED-1.8 V2",
+    "vendor": "Waveshare",
+    "mcu": "ESP32-S3",
+    "display": "CO5300 368x448 QSPI",
+    "touch": "CST820",
+    "page": "https://lcdwizard.com/boards/waveshare-s3-touch-amoled-18-v2"
+  },
+  {
+    "id": "waveshare-s3-touch-amoled-206",
+    "name": "Waveshare ESP32-S3-Touch-AMOLED-2.06",
+    "vendor": "Waveshare",
+    "mcu": "ESP32-S3",
+    "display": "CO5300 410x502 QSPI",
+    "touch": "FT3168 / FT6146",
+    "page": "https://lcdwizard.com/boards/waveshare-s3-touch-amoled-206"
+  },
+  {
+    "id": "waveshare-s3-touch-amoled-216",
+    "name": "Waveshare ESP32-S3-Touch-AMOLED-2.16",
+    "vendor": "Waveshare",
+    "mcu": "ESP32-S3",
+    "display": "CO5300 480x480 QSPI",
+    "touch": "CST9217 / CST9220",
+    "page": "https://lcdwizard.com/boards/waveshare-s3-touch-amoled-216"
+  },
+  {
+    "id": "waveshare-s3-touch-amoled-241-v1",
+    "name": "Waveshare ESP32-S3-Touch-AMOLED-2.41 V1",
+    "vendor": "Waveshare",
+    "mcu": "ESP32-S3",
+    "display": "RM690B0 450x600 QSPI",
+    "touch": "FT6236 / FT6336U",
+    "page": "https://lcdwizard.com/boards/waveshare-s3-touch-amoled-241-v1"
+  },
+  {
+    "id": "waveshare-s3-touch-amoled-241-v2",
+    "name": "Waveshare ESP32-S3-Touch-AMOLED-2.41 V2",
+    "vendor": "Waveshare",
+    "mcu": "ESP32-S3",
+    "display": "RM690B0 450x600 QSPI",
+    "touch": "FT6236 / FT6336U",
+    "page": "https://lcdwizard.com/boards/waveshare-s3-touch-amoled-241-v2"
+  },
+  {
     "id": "waveshare-s3-touch-lcd-128",
     "name": "Waveshare ESP32-S3-Touch-LCD-1.28",
     "vendor": "Waveshare",
@@ -451,7 +658,7 @@
   },
   {
     "id": "waveshare-s3-touch-lcd-146b",
-    "name": "Waveshare ESP32-S3-Touch-LCD-1.46B",
+    "name": "Waveshare ESP32-S3-Touch-LCD-1.46B / 1.46C",
     "vendor": "Waveshare",
     "mcu": "ESP32-S3",
     "display": "SPD2010 412x412 QSPI",

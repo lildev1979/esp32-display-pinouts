@@ -1,0 +1,27 @@
+group,signal,pin
+Panel - QSPI (quad SPI),SCK,GPIO 11
+Panel - QSPI (quad SPI),D0 - D3,"GPIO 4, 5, 6, 7"
+Panel - QSPI (quad SPI),CS,GPIO 10
+Panel - QSPI (quad SPI),RESET,GPIO 3
+Touch - FT3168 / FT6146,SDA,GPIO 18
+Touch - FT3168 / FT6146,SCL,GPIO 8
+Touch - FT3168 / FT6146,INT / IRQ,TCA9554 0
+I2C (GPIO 18 / 8),SDA,GPIO 18
+I2C (GPIO 18 / 8),SCL,GPIO 8
+TCA9554 (I/O expander),Type,TCA9554
+TCA9554 (I/O expander),Address,0x20
+IMU - QMI8658,Bus,I2C (GPIO 18 / 8)
+IMU - QMI8658,Address,0x6B
+RTC - PCF85063,Bus,I2C (GPIO 18 / 8)
+RTC - PCF85063,Address,0x51
+Inputs and outputs,Battery (analog in),GPIO 0
+Inputs and outputs,BOOTButton (input),GPIO 9
+Inputs and outputs,PWRButton (input),GPIO 2
+Board I/O,BOOTButton (active low),GPIO 9
+Board I/O,PWRButton (active low),GPIO 2
+Analogue input,Battery,GPIO 0
+Audio,MCLK,GPIO 19
+Audio,BCLK,GPIO 21
+Audio,LRCLK,GPIO 22
+Audio,DIN,GPIO 23
+Audio,PA,TCA9554 7

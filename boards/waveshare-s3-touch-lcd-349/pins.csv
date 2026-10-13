@@ -9,16 +9,23 @@ Touch - AXS15231B (touch half),INT / IRQ,TCA9554 0
 Backlight,Pin,GPIO 42
 Backlight,Active,low
 Backlight,Drive,PWM 5000 Hz
-I2C (GPIO 17 / 18),SDA,GPIO 17
-I2C (GPIO 17 / 18),SCL,GPIO 18
+I2C (GPIO 47 / 48),SDA,GPIO 47
+I2C (GPIO 47 / 48),SCL,GPIO 48
 TCA9554 (I/O expander),Type,TCA9554
 TCA9554 (I/O expander),Address,0x20
-IMU - QMI8658,Bus,I2C (GPIO 17 / 18)
+IMU - QMI8658,Bus,I2C (GPIO 47 / 48)
 IMU - QMI8658,Address,0x6B
-RTC - PCF85063,Bus,I2C (GPIO 17 / 18)
+RTC - PCF85063,Bus,I2C (GPIO 47 / 48)
 RTC - PCF85063,Address,0x51
+SDCard - SD card,CLK,GPIO 41
+SDCard - SD card,CMD,GPIO 39
+SDCard - SD card,D0,GPIO 40
+Inputs and outputs,Battery (analog in),GPIO 4
+Inputs and outputs,BOOTButton (input),GPIO 0
+Inputs and outputs,PWRSYSOUTButton (input),GPIO 16
 Board I/O,BOOTButton (active low),GPIO 0
 Board I/O,PWRSYSOUTButton (active low),GPIO 16
+Analogue input,Battery,GPIO 4
 Audio,MCLK,GPIO 7
 Audio,BCLK,GPIO 15
 Audio,LRCLK,GPIO 46

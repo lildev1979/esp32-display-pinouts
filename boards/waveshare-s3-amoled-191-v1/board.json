@@ -1,0 +1,100 @@
+{
+  "id": "waveshare-s3-amoled-191-v1",
+  "name": "Waveshare ESP32-S3-AMOLED-1.91 / ESP32-S3-Touch-AMOLED-1.91 (V1 board)",
+  "vendor": "Waveshare",
+  "group": "All-in-one boards",
+  "description": "1.91\" 240x536 AMOLED (RM67162, QSPI), FT3168 touch, QMI8658C, battery sense.",
+  "mcu": {
+    "id": "esp32s3",
+    "name": "ESP32-S3"
+  },
+  "flashMB": 16,
+  "psramMB": 8,
+  "usbCdc": true,
+  "display": {
+    "controller": "rm67162",
+    "controllerName": "RM67162",
+    "interface": "qspi",
+    "width": 240,
+    "height": 536,
+    "colorDepth": 16,
+    "rgbOrder": "rgb",
+    "invert": false,
+    "pins": {
+      "sck": 47,
+      "d0": 18,
+      "d1": 7,
+      "d2": 48,
+      "d3": 5,
+      "cs": 6,
+      "rst": 17
+    },
+    "options": {
+      "freqMhz": 40,
+      "spiHost": "SPI2_HOST"
+    },
+    "backlight": null
+  },
+  "touch": {
+    "controller": "ft3168",
+    "controllerName": "FT3168 / FT6146",
+    "pins": {
+      "sda": 40,
+      "scl": 39,
+      "int": 41,
+      "rst": -1
+    },
+    "swapXY": false,
+    "invertX": false,
+    "invertY": false,
+    "options": {
+      "i2cAddr": "0x38",
+      "freqKhz": 400,
+      "sharedI2C": true
+    }
+  },
+  "buses": [
+    {
+      "name": "I2C (GPIO 40 / 39)",
+      "kind": "i2c",
+      "pins": {
+        "sda": 40,
+        "scl": 39
+      }
+    }
+  ],
+  "ioExpanders": [],
+  "peripherals": [
+    {
+      "name": "IMU",
+      "chip": "QMI8658",
+      "kind": "Motion",
+      "bus": "I2C (GPIO 40 / 39)",
+      "address": "0x6B"
+    }
+  ],
+  "digitalIO": [
+    {
+      "name": "BOOTButton",
+      "direction": "in",
+      "pin": 0,
+      "activeLow": true
+    }
+  ],
+  "analogInputs": [
+    {
+      "name": "Battery",
+      "pin": 1,
+      "unit": "V"
+    }
+  ],
+  "audio": null,
+  "verify": "Pins from Waveshare's demo code and schematic (https://github.com/waveshareteam/ESP32-S3-AMOLED-1.91). 1) TF card: no conflict on this revision - the schematic and the code's V1 branch agree (SPI, SCK 47, MOSI 42, MISO 8, CS 9). The code's DEFAULT is the other board (VersionControl_V2: SDMMC, CLK 9, CMD 42, D0 8), so the vendor's examples as downloaded do not mount a card on a V1 board until that macro is commented out. The glass has rounded corners whose radius Waveshare does not give, so the designer draws them square: keep what matters out of the corners, or set a corner radius on the Display tab once it is measured. On the board and not in this preset: TF card: it is wired onto the panel's own SPI lines, which the export gives to the panel alone. Brightness is a command to the panel, not a backlight pin. Compiled; not run on a board here.",
+  "links": {
+    "page": "https://lcdwizard.com/boards/waveshare-s3-amoled-191-v1",
+    "designer": "https://app.lcdwizard.com/app?board=waveshare-s3-amoled-191-v1",
+    "vendorProduct": "https://www.waveshare.com/esp32-s3-amoled-1.91.htm",
+    "vendorDocs": "https://docs.waveshare.com/ESP32-S3-AMOLED-1.91",
+    "schematic": "https://files.waveshare.com/wiki/ESP32-S3-AMOLED-1.91/ESP32-S3-AMOLED-1.91.pdf"
+  }
+}

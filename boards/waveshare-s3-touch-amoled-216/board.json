@@ -1,0 +1,140 @@
+{
+  "id": "waveshare-s3-touch-amoled-216",
+  "name": "Waveshare ESP32-S3-Touch-AMOLED-2.16",
+  "vendor": "Waveshare",
+  "group": "All-in-one boards",
+  "description": "2.16\" 480x480 AMOLED (CO5300, QSPI), CST9220 touch, ES8311 speaker and ES7210 microphones, TF card, QMI8658A, PCF85063ATL, AXP2101.",
+  "mcu": {
+    "id": "esp32s3",
+    "name": "ESP32-S3"
+  },
+  "flashMB": 16,
+  "psramMB": 8,
+  "usbCdc": true,
+  "display": {
+    "controller": "co5300",
+    "controllerName": "CO5300",
+    "interface": "qspi",
+    "width": 480,
+    "height": 480,
+    "colorDepth": 16,
+    "rgbOrder": "rgb",
+    "invert": false,
+    "pins": {
+      "sck": 38,
+      "d0": 4,
+      "d1": 5,
+      "d2": 6,
+      "d3": 7,
+      "cs": 12,
+      "rst": 39
+    },
+    "options": {
+      "freqMhz": 40,
+      "spiHost": "SPI2_HOST",
+      "madctl": "0xA0"
+    },
+    "backlight": null
+  },
+  "touch": {
+    "controller": "cst9217",
+    "controllerName": "CST9217 / CST9220",
+    "pins": {
+      "sda": 15,
+      "scl": 14,
+      "int": 11,
+      "rst": 40
+    },
+    "swapXY": true,
+    "invertX": true,
+    "invertY": false,
+    "options": {
+      "i2cAddr": "0x5A",
+      "freqKhz": 400,
+      "sharedI2C": true
+    }
+  },
+  "buses": [
+    {
+      "name": "I2C (GPIO 15 / 14)",
+      "kind": "i2c",
+      "pins": {
+        "sda": 15,
+        "scl": 14
+      }
+    }
+  ],
+  "ioExpanders": [],
+  "peripherals": [
+    {
+      "name": "IMU",
+      "chip": "QMI8658",
+      "kind": "Motion",
+      "bus": "I2C (GPIO 15 / 14)",
+      "address": "0x6B"
+    },
+    {
+      "name": "RTC",
+      "chip": "PCF85063",
+      "kind": "Time",
+      "bus": "I2C (GPIO 15 / 14)",
+      "address": "0x51"
+    },
+    {
+      "name": "PMIC",
+      "chip": "AXP2101",
+      "kind": "Power",
+      "bus": "I2C (GPIO 15 / 14)",
+      "address": "0x34"
+    },
+    {
+      "name": "SDCard",
+      "chip": "SD card",
+      "kind": "Storage",
+      "pins": {
+        "clk": 2,
+        "cmd": 1,
+        "d0": 3
+      }
+    }
+  ],
+  "digitalIO": [
+    {
+      "name": "BOOTButton",
+      "direction": "in",
+      "pin": 0,
+      "activeLow": true
+    },
+    {
+      "name": "KEYButton",
+      "direction": "in",
+      "pin": 18,
+      "activeLow": true
+    },
+    {
+      "name": "PWRButton",
+      "direction": "in",
+      "pin": 16,
+      "activeLow": false
+    }
+  ],
+  "analogInputs": [],
+  "audio": {
+    "output": "es8311",
+    "pins": {
+      "mclk": 42,
+      "bclk": 9,
+      "lrclk": 45,
+      "din": 8,
+      "pa": 46
+    }
+  },
+  "verify": "Pins from Waveshare's demo code and schematic (https://github.com/waveshareteam/ESP32-S3-Touch-AMOLED-2.16). 1) Start-up table: the Arduino sketches use the GFX library's short CO5300 table and the ESP-IDF BSP a longer one with maker's-page writes (0xFE 0x20, 0x19 0x10, 0x1C 0xA0), TE on and the two address windows. Both are Waveshare's for this board; the BSP's is recorded as `initSeq` because it is the fuller and is the one the C6 board of the same size shares. Waveshare runs this glass under orientation byte 0xA0 with the picture starting at column 0, and the preset does the same: the byte is on the Display tab, and a turned design is turned over it. The glass has rounded corners whose radius Waveshare does not give, so the designer draws them square: keep what matters out of the corners, or set a corner radius on the Display tab once it is measured. Brightness is a command to the panel, not a backlight pin. Compiled; not run on a board here.",
+  "links": {
+    "page": "https://lcdwizard.com/boards/waveshare-s3-touch-amoled-216",
+    "designer": "https://app.lcdwizard.com/app?board=waveshare-s3-touch-amoled-216",
+    "vendorProduct": "https://www.waveshare.com/esp32-s3-touch-amoled-2.16.htm",
+    "vendorDocs": "https://docs.waveshare.com/ESP32-S3-Touch-AMOLED-2.16",
+    "schematic": "https://github.com/waveshareteam/ESP32-S3-Touch-AMOLED-2.16/blob/main/schematic/ESP32-S3-Touch-AMOLED-2.16-Schematic.pdf"
+  }
+}

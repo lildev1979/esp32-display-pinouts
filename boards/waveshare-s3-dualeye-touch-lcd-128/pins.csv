@@ -14,6 +14,7 @@ Backlight,Active,high
 Backlight,Drive,PWM 5000 Hz
 I2C (GPIO 11 / 10),SDA,GPIO 11
 I2C (GPIO 11 / 10),SCL,GPIO 10
+Inputs and outputs,BOOTButton (input),GPIO 0
 Board I/O,BOOTButton (active low),GPIO 0
 Audio,MCLK,GPIO 12
 Audio,BCLK,GPIO 13

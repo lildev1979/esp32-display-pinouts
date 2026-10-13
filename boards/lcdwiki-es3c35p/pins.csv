@@ -19,6 +19,8 @@ SDCard - SD card,D1,GPIO 7
 SDCard - SD card,D2,GPIO 2
 SDCard - SD card,D3,GPIO 3
 RgbLed - NeoPixel string,DATA,GPIO 40
+Inputs and outputs,Battery (analog in),GPIO 8
+Inputs and outputs,Boot Button (input),GPIO 0
 Board I/O,BootButton (active low),GPIO 0
 Analogue input,Battery,GPIO 8
 Audio,MCLK,GPIO 17

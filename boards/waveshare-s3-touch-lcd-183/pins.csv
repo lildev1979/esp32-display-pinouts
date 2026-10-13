@@ -19,6 +19,8 @@ RTC - PCF85063,Bus,I2C (GPIO 15 / 14)
 RTC - PCF85063,Address,0x51
 PMICchargerrailsPWRkey - AXP2101,Bus,I2C (GPIO 15 / 14)
 PMICchargerrailsPWRkey - AXP2101,Address,0x34
+Inputs and outputs,BOOTButton (input),GPIO 0
+Inputs and outputs,PWRButton (input),GPIO 41
 Board I/O,BOOTButton (active low),GPIO 0
 Board I/O,PWRButton (active low),GPIO 41
 Audio,MCLK,GPIO 16

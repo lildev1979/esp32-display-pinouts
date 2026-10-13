@@ -21,6 +21,21 @@ RTC - PCF85063,Address,0x51
 SDCard - SD card,CLK,GPIO 11
 SDCard - SD card,CMD,GPIO 10
 SDCard - SD card,D0,GPIO 9
+Camera,Bus,"I2C (GPIO 8 / 7, header pins 27 / 25)"
+Camera,XCLK,GPIO 38
+Camera,PCLK,GPIO 41
+Camera,VSYNC,GPIO 17
+Camera,HREF,GPIO 18
+Camera,D0,GPIO 45
+Camera,D1,GPIO 47
+Camera,D2,GPIO 48
+Camera,D3,GPIO 46
+Camera,D4,GPIO 42
+Camera,D5,GPIO 40
+Camera,D6,GPIO 39
+Camera,D7,GPIO 21
+Camera,PWDN,TCA9554 0
+Inputs and outputs,Boot Button (input),GPIO 0
 Board I/O,BootButton (active low),GPIO 0
 Audio,MCLK,GPIO 44
 Audio,BCLK,GPIO 13

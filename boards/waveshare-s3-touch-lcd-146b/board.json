@@ -1,9 +1,9 @@
 {
   "id": "waveshare-s3-touch-lcd-146b",
-  "name": "Waveshare ESP32-S3-Touch-LCD-1.46B",
+  "name": "Waveshare ESP32-S3-Touch-LCD-1.46B / 1.46C",
   "vendor": "Waveshare",
   "group": "All-in-one boards",
-  "description": "1.46\" 412x412 IPS LCD (SPD2010, QSPI), SPD2010 (integrated touch) touch, PCM5101A (I2S DAC, no I2C control) audio, TF card, QMI8658, PCF85063ATL.",
+  "description": "1.46\" round 412x412 IPS LCD (SPD2010, QSPI), SPD2010 (integrated touch) touch, PCM5101 speaker and I2S microphone, TF card, QMI8658, PCF85063, battery sense. The 1.46B and 1.46C are the same board; the C has a wider cover glass.",
   "mcu": {
     "id": "esp32s3",
     "name": "ESP32-S3"
@@ -97,6 +97,16 @@
       "kind": "Time",
       "bus": "I2C (GPIO 11 / 10)",
       "address": "0x51"
+    },
+    {
+      "name": "SDCard",
+      "chip": "SD card",
+      "kind": "Storage",
+      "pins": {
+        "clk": 14,
+        "cmd": 17,
+        "d0": 16
+      }
     }
   ],
   "digitalIO": [
@@ -113,9 +123,22 @@
       "activeLow": true
     }
   ],
-  "analogInputs": [],
-  "audio": null,
-  "verify": "Pins from Waveshare's demo code and schematic (https://github.com/waveshareteam/ESP32-S3-Touch-LCD-1.46/tree/main/example). The -B is the ESP32-S3-Touch-LCD-1.46 PCB sold with cover-glass options (SKUs 'without cover glass' / 'with protective cover glass' / 'widened'); its wiki links the 1.46 schematic and has no demo of its own, so the 1.46 GitHub repo was used.",
+  "analogInputs": [
+    {
+      "name": "Battery",
+      "pin": 8,
+      "unit": "V"
+    }
+  ],
+  "audio": {
+    "output": "i2s_ext",
+    "pins": {
+      "bclk": 48,
+      "lrclk": 38,
+      "din": 47
+    }
+  },
+  "verify": "Pins from Waveshare's demo code and schematic (https://github.com/waveshareteam/ESP32-S3-Touch-LCD-1.46/tree/main/example). The -B is the ESP32-S3-Touch-LCD-1.46 PCB sold with cover-glass options (SKUs 'without cover glass' / 'with protective cover glass' / 'widened'); its wiki links the 1.46 schematic and has no demo of its own, so the 1.46 GitHub repo was used. The 1.46C is this PCB with a widened cover glass. Speaker (PCM5101: BCLK 48, LRCK 38, DOUT 47), microphone (I2S: BCK 15, WS 2, DIN 39, right slot), SD card (SDMMC 1-bit: CLK 14, CMD 17, D0 16, with D3 on EXIO3), battery sense (GPIO 8, divide by three) and the battery power hold (GPIO 7) are from the same example and schematic. The touch panel reports upright (LVGL_Driver.cpp passes its x and y through).",
   "links": {
     "page": "https://lcdwizard.com/boards/waveshare-s3-touch-lcd-146b",
     "designer": "https://app.lcdwizard.com/app?board=waveshare-s3-touch-lcd-146b",

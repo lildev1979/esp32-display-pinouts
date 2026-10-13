@@ -8,4 +8,5 @@ Panel - SPI (4-wire serial),RESET,GPIO 21
 Backlight,Pin,GPIO 22
 Backlight,Active,high
 Backlight,Drive,PWM 5000 Hz
+Inputs and outputs,BOOTButton (input),GPIO 9
 Board I/O,BOOTButton (active low),GPIO 9

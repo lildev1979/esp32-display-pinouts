@@ -1,0 +1,28 @@
+group,signal,pin
+Panel - QSPI (quad SPI),SCK,GPIO 10
+Panel - QSPI (quad SPI),D0 - D3,"GPIO 11, 12, 13, 14"
+Panel - QSPI (quad SPI),CS,GPIO 9
+Panel - QSPI (quad SPI),RESET,TCA9554 0
+Touch - FT6236 / FT6336U,SDA,GPIO 47
+Touch - FT6236 / FT6336U,SCL,GPIO 48
+Touch - FT6236 / FT6336U,INT / IRQ,GPIO 3
+Touch - FT6236 / FT6336U,RESET,TCA9554 1
+I2C (GPIO 47 / 48),SDA,GPIO 47
+I2C (GPIO 47 / 48),SCL,GPIO 48
+SPI (TF card),SCK,GPIO 4
+SPI (TF card),MOSI,GPIO 5
+SPI (TF card),MISO,GPIO 6
+TCA9554 (I/O expander),Type,TCA9554
+TCA9554 (I/O expander),Address,0x20
+IMU - QMI8658,Bus,I2C (GPIO 47 / 48)
+IMU - QMI8658,Address,0x6B
+RTC - PCF85063,Bus,I2C (GPIO 47 / 48)
+RTC - PCF85063,Address,0x51
+SDCard - SD card,Bus,SPI (TF card)
+SDCard - SD card,CS,GPIO 2
+Inputs and outputs,Battery (analog in),GPIO 17
+Inputs and outputs,BOOTButton (input),GPIO 0
+Inputs and outputs,PWRButton (input),GPIO 15
+Board I/O,BOOTButton (active low),GPIO 0
+Board I/O,PWRButton (active low),GPIO 15
+Analogue input,Battery,GPIO 17

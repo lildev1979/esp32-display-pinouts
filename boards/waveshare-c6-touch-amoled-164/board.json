@@ -1,0 +1,101 @@
+{
+  "id": "waveshare-c6-touch-amoled-164",
+  "name": "Waveshare ESP32-C6-Touch-AMOLED-1.64",
+  "vendor": "Waveshare",
+  "group": "All-in-one boards",
+  "description": "1.64\" 280x456 AMOLED (CO5300, QSPI), FT3168 touch, QMI8658, battery sense.",
+  "mcu": {
+    "id": "esp32c6",
+    "name": "ESP32-C6"
+  },
+  "flashMB": 16,
+  "psramMB": 0,
+  "usbCdc": true,
+  "display": {
+    "controller": "co5300",
+    "controllerName": "CO5300",
+    "interface": "qspi",
+    "width": 280,
+    "height": 456,
+    "colorDepth": 16,
+    "rgbOrder": "rgb",
+    "invert": false,
+    "pins": {
+      "sck": 11,
+      "d0": 4,
+      "d1": 5,
+      "d2": 7,
+      "d3": 19,
+      "cs": 10,
+      "rst": 20,
+      "te": 23
+    },
+    "options": {
+      "freqMhz": 40,
+      "spiHost": "SPI2_HOST"
+    },
+    "backlight": null
+  },
+  "touch": {
+    "controller": "ft3168",
+    "controllerName": "FT3168 / FT6146",
+    "pins": {
+      "sda": 18,
+      "scl": 8,
+      "int": 1,
+      "rst": -1
+    },
+    "swapXY": false,
+    "invertX": false,
+    "invertY": false,
+    "options": {
+      "i2cAddr": "0x38",
+      "freqKhz": 400,
+      "sharedI2C": true
+    }
+  },
+  "buses": [
+    {
+      "name": "I2C (GPIO 18 / 8)",
+      "kind": "i2c",
+      "pins": {
+        "sda": 18,
+        "scl": 8
+      }
+    }
+  ],
+  "ioExpanders": [],
+  "peripherals": [
+    {
+      "name": "IMU",
+      "chip": "QMI8658",
+      "kind": "Motion",
+      "bus": "I2C (GPIO 18 / 8)",
+      "address": "0x6B"
+    }
+  ],
+  "digitalIO": [
+    {
+      "name": "BOOTButton",
+      "direction": "in",
+      "pin": 9,
+      "activeLow": true
+    }
+  ],
+  "analogInputs": [
+    {
+      "name": "Battery",
+      "pin": 0,
+      "unit": "V"
+    }
+  ],
+  "audio": null,
+  "verify": "Pins from Waveshare's demo code and schematic (https://github.com/waveshareteam/ESP32-C6-Touch-AMOLED-1.64). The vendor's two code bases disagree on the panel's reset pin: the ESP-IDF BSP says GPIO20, the Arduino example says GPIO21. The glass has rounded corners whose radius Waveshare does not give, so the designer draws them square: keep what matters out of the corners, or set a corner radius on the Display tab once it is measured. On the board and not in this preset: TF card: it is wired onto the panel's own SPI lines, which the export gives to the panel alone. Brightness is a command to the panel, not a backlight pin. Compiled; not run on a board here.",
+  "links": {
+    "page": "https://lcdwizard.com/boards/waveshare-c6-touch-amoled-164",
+    "designer": "https://app.lcdwizard.com/app?board=waveshare-c6-touch-amoled-164",
+    "vendorProduct": "https://www.waveshare.com/esp32-c6-touch-amoled-1.64.htm",
+    "vendorDocs": "https://docs.waveshare.com/ESP32-C6-Touch-AMOLED-1.64",
+    "schematic": "https://github.com/waveshareteam/ESP32-C6-Touch-AMOLED-1.64/blob/main/hardware/schematics/ESP32-C6-Touch-AMOLED-1.64-schematic.pdf"
+  }
+}

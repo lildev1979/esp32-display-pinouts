@@ -13,6 +13,11 @@ Touch - XPT2046,IRQ / PENIRQ,GPIO 36
 Backlight,Pin,GPIO 21
 Backlight,Active,high
 Backlight,Drive,PWM 5000 Hz
+Inputs and outputs,Battery (analog in),GPIO 34
+Inputs and outputs,Led Red (output),GPIO 22
+Inputs and outputs,Led Green (output),GPIO 16
+Inputs and outputs,Led Blue (output),GPIO 17
+Inputs and outputs,Boot Button (input),GPIO 0
 Board I/O,LedRed (active low),GPIO 22
 Board I/O,LedGreen (active low),GPIO 16
 Board I/O,LedBlue (active low),GPIO 17

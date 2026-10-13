@@ -1,0 +1,109 @@
+{
+  "id": "waveshare-s3-touch-amoled-132",
+  "name": "Waveshare ESP32-S3-Touch-AMOLED-1.32",
+  "vendor": "Waveshare",
+  "group": "All-in-one boards",
+  "description": "1.32\" 466x466 round AMOLED (CO5300, QSPI), CST820 touch, ES8311 speaker and microphone, battery sense.",
+  "mcu": {
+    "id": "esp32s3",
+    "name": "ESP32-S3"
+  },
+  "flashMB": 8,
+  "psramMB": 8,
+  "usbCdc": true,
+  "display": {
+    "controller": "co5300",
+    "controllerName": "CO5300",
+    "interface": "qspi",
+    "width": 466,
+    "height": 466,
+    "colorDepth": 16,
+    "rgbOrder": "rgb",
+    "invert": false,
+    "pins": {
+      "sck": 11,
+      "d0": 12,
+      "d1": 13,
+      "d2": 14,
+      "d3": 15,
+      "cs": 10,
+      "rst": 8,
+      "te": 9
+    },
+    "options": {
+      "freqMhz": 40,
+      "spiHost": "SPI2_HOST",
+      "madctl": "0xC0"
+    },
+    "backlight": null
+  },
+  "touch": {
+    "controller": "cst820",
+    "controllerName": "CST820",
+    "pins": {
+      "sda": 47,
+      "scl": 48,
+      "int": 6,
+      "rst": 7
+    },
+    "swapXY": false,
+    "invertX": true,
+    "invertY": true,
+    "options": {
+      "i2cAddr": "0x15",
+      "freqKhz": 400,
+      "sharedI2C": true
+    }
+  },
+  "buses": [
+    {
+      "name": "I2C (GPIO 47 / 48)",
+      "kind": "i2c",
+      "pins": {
+        "sda": 47,
+        "scl": 48
+      }
+    }
+  ],
+  "ioExpanders": [],
+  "peripherals": [],
+  "digitalIO": [
+    {
+      "name": "BOOTButton",
+      "direction": "in",
+      "pin": 0,
+      "activeLow": true
+    },
+    {
+      "name": "PWRButton",
+      "direction": "in",
+      "pin": 17,
+      "activeLow": true
+    }
+  ],
+  "analogInputs": [
+    {
+      "name": "Battery",
+      "pin": 4,
+      "unit": "V"
+    }
+  ],
+  "audio": {
+    "output": "es8311",
+    "pins": {
+      "mclk": 38,
+      "bclk": 39,
+      "lrclk": 41,
+      "din": 42,
+      "pa": 46
+    }
+  },
+  "verify": "Pins from Waveshare's demo code and schematic (https://github.com/waveshareteam/ESP32-S3-Touch-AMOLED-1.32). No pin differs between the vendor's code and the schematic. Things that are not as they first read: 1) The panel is driven through a component called esp_lcd_sh8601, but the table is a CO5300 table and Waveshare names the chip CO5300, so driverId is co5300. Waveshare runs this glass under orientation byte 0xC0 with the picture starting at column 6, and the preset does the same: the byte is on the Display tab, and a turned design is turned over it. Brightness is a command to the panel, not a backlight pin. Compiled; not run on a board here.",
+  "links": {
+    "page": "https://lcdwizard.com/boards/waveshare-s3-touch-amoled-132",
+    "designer": "https://app.lcdwizard.com/app?board=waveshare-s3-touch-amoled-132",
+    "vendorProduct": "https://www.waveshare.com/esp32-s3-touch-amoled-1.32.htm",
+    "vendorDocs": "https://docs.waveshare.com/ESP32-S3-Touch-AMOLED-1.32",
+    "schematic": "https://files.waveshare.com/wiki/ESP32-S3-Touch-AMOLED-1.32/ESP32-S3-Touch-AMOLED-1.32-Schematic.pdf"
+  }
+}

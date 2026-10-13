@@ -119,7 +119,7 @@
       "pa": 1
     }
   },
-  "verify": "The ST77922 has no row/column swap and wants 4-pixel-aligned windows, so the export draws whole frames from a canvas in PSRAM, which also rotates them. Its reset is the board's RESET button, not a GPIO: after flashing other firmware, unplug it once if the screen stays dark. Touch (0x55), the ES8311 (0x18) and the P4 header share I2C on GPIO 38/39. The speaker amplifier is enabled by pulling GPIO1 low, and the WS2812 on GPIO40 is a single LED. USB-C goes straight to the S3, so the serial log needs USB CDC On Boot (the export sets it). GPIO45 and 46 on the P3 header are strapping pins. The microphone is wired but not driven.",
+  "verify": "The ST77922 wants 4-pixel-aligned windows and has no row/column swap: upright it is drawn in parts, each widened to 4 columns; turned, the Arduino export draws whole frames from a canvas in PSRAM, and the MicroPython export does not turn it at all. Its reset is the board's RESET button, not a GPIO: after flashing other firmware, unplug it once if the screen stays dark. Touch (0x55), the ES8311 (0x18) and the P4 header share I2C on GPIO 38/39. The speaker amplifier is enabled by pulling GPIO1 low, and the WS2812 on GPIO40 is a single LED. USB-C goes straight to the S3, so the serial log needs USB CDC On Boot (the export sets it). GPIO45 and 46 on the P3 header are strapping pins. The microphone goes into the ES8311 and comes back on GPIO 16 - switch it on under Hardware > Audio.",
   "links": {
     "page": "https://lcdwizard.com/boards/lcdwiki-es3c35p",
     "designer": "https://app.lcdwizard.com/app?board=lcdwiki-es3c35p",

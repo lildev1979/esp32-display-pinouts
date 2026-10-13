@@ -14,4 +14,5 @@ IOExtension (I/O expander),Type,WS_IOEXT
 IOExtension (I/O expander),Address,0x24
 IMU - QMI8658,Bus,I2C (GPIO 4 / 3)
 IMU - QMI8658,Address,0x6B
+Inputs and outputs,BOOTButton (input),GPIO 9
 Board I/O,BOOTButton (active low),GPIO 9

@@ -65,7 +65,7 @@
   "digitalIO": [],
   "analogInputs": [],
   "audio": null,
-  "verify": "AMOLED brightness is set by a controller command, not a backlight GPIO.",
+  "verify": "GPIO 38 switches the AMOLED's power and must be HIGH before the panel is reset; the generated code does this for you. Brightness is set by a controller command, not a backlight GPIO.",
   "links": {
     "page": "https://lcdwizard.com/boards/lilygo-amoled-s3",
     "designer": "https://app.lcdwizard.com/app?board=lilygo-amoled-s3",

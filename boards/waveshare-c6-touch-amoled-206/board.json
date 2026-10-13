@@ -1,0 +1,123 @@
+{
+  "id": "waveshare-c6-touch-amoled-206",
+  "name": "Waveshare ESP32-C6-Touch-AMOLED-2.06",
+  "vendor": "Waveshare",
+  "group": "All-in-one boards",
+  "description": "2.06\" 410x502 AMOLED (CO5300, QSPI), FT3168 touch, ES8311 speaker and ES7210 microphones, AXP2101, QMI8658C, PCF85063ATL.",
+  "mcu": {
+    "id": "esp32c6",
+    "name": "ESP32-C6"
+  },
+  "flashMB": 16,
+  "psramMB": 0,
+  "usbCdc": true,
+  "display": {
+    "controller": "co5300",
+    "controllerName": "CO5300",
+    "interface": "qspi",
+    "width": 410,
+    "height": 502,
+    "colorDepth": 16,
+    "rgbOrder": "rgb",
+    "invert": false,
+    "pins": {
+      "sck": 0,
+      "d0": 1,
+      "d1": 2,
+      "d2": 3,
+      "d3": 4,
+      "cs": 5,
+      "rst": 11
+    },
+    "options": {
+      "freqMhz": 40,
+      "spiHost": "SPI2_HOST"
+    },
+    "backlight": null
+  },
+  "touch": {
+    "controller": "ft3168",
+    "controllerName": "FT3168 / FT6146",
+    "pins": {
+      "sda": 8,
+      "scl": 7,
+      "int": 15,
+      "rst": 10
+    },
+    "swapXY": false,
+    "invertX": false,
+    "invertY": false,
+    "options": {
+      "i2cAddr": "0x38",
+      "freqKhz": 400,
+      "sharedI2C": true
+    }
+  },
+  "buses": [
+    {
+      "name": "I2C (GPIO 8 / 7)",
+      "kind": "i2c",
+      "pins": {
+        "sda": 8,
+        "scl": 7
+      }
+    }
+  ],
+  "ioExpanders": [],
+  "peripherals": [
+    {
+      "name": "PMIC",
+      "chip": "AXP2101",
+      "kind": "Power",
+      "bus": "I2C (GPIO 8 / 7)",
+      "address": "0x34"
+    },
+    {
+      "name": "IMU",
+      "chip": "QMI8658",
+      "kind": "Motion",
+      "bus": "I2C (GPIO 8 / 7)",
+      "address": "0x6B"
+    },
+    {
+      "name": "RTC",
+      "chip": "PCF85063",
+      "kind": "Time",
+      "bus": "I2C (GPIO 8 / 7)",
+      "address": "0x51"
+    }
+  ],
+  "digitalIO": [
+    {
+      "name": "BOOTButton",
+      "direction": "in",
+      "pin": 9,
+      "activeLow": true
+    },
+    {
+      "name": "PWRButton",
+      "direction": "in",
+      "pin": 18,
+      "activeLow": false
+    }
+  ],
+  "analogInputs": [],
+  "audio": {
+    "output": "es8311",
+    "pins": {
+      "mclk": 19,
+      "bclk": 20,
+      "lrclk": 22,
+      "din": 23,
+      "pa": 6
+    }
+  },
+  "verify": "Pins from Waveshare's demo code and schematic (https://github.com/waveshareteam/ESP32-C6-Touch-AMOLED-2.06). Bus speed: 40 MHz in the ESP-IDF BSP, 80 MHz (library default) in the Arduino examples; recorded 40. Start-up table and starting brightness differ by framework (BSP table ending 0x51 = 0xFF, Arduino class ending 0x51 = 0xD0); both are recorded, the BSP's as initSeq. The rounder differs by framework too: both axes to even in the BSP, full width with even rows in the Arduino examples; recorded the BSP's. The glass has rounded corners whose radius Waveshare does not give, so the designer draws them square: keep what matters out of the corners, or set a corner radius on the Display tab once it is measured. Brightness is a command to the panel, not a backlight pin. Compiled; not run on a board here.",
+  "links": {
+    "page": "https://lcdwizard.com/boards/waveshare-c6-touch-amoled-206",
+    "designer": "https://app.lcdwizard.com/app?board=waveshare-c6-touch-amoled-206",
+    "vendorProduct": "https://www.waveshare.com/esp32-c6-touch-amoled-2.06.htm",
+    "vendorDocs": "https://docs.waveshare.com/ESP32-C6-Touch-AMOLED-2.06",
+    "schematic": "https://github.com/waveshareteam/ESP32-C6-Touch-AMOLED-2.06/blob/main/Schematic/ESP32-C6-Touch-AMOLED-2.06-Schematic-V1.0.pdf"
+  }
+}
