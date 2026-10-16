@@ -1,0 +1,15 @@
+group,signal,pin
+Panel - MIPI-DSI,RESET,GPIO 41
+Touch - GT911,SDA,GPIO 45
+Touch - GT911,SCL,GPIO 46
+Touch - GT911,INT / IRQ,GPIO 42
+Touch - GT911,RESET,GPIO 40
+Backlight,Pin,GPIO 31
+Backlight,Active,high
+Backlight,Drive,PWM 30000 Hz
+"I2C1 (touch, I2C port)",SDA,GPIO 45
+"I2C1 (touch, I2C port)",SCL,GPIO 46
+Audio,BCLK,GPIO 22
+Audio,LRCLK,GPIO 21
+Audio,DIN,GPIO 23
+Audio,PA,GPIO 30

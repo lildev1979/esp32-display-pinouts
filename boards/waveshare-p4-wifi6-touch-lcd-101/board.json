@@ -1,0 +1,75 @@
+{
+  "id": "waveshare-p4-wifi6-touch-lcd-101",
+  "name": "Waveshare ESP32-P4-WIFI6-Touch-LCD-10.1",
+  "vendor": "Waveshare",
+  "group": "All-in-one boards",
+  "description": "10.1\" 800x1280 MIPI-DSI panel (JD9365) with GT911 touch on an ESP32-P4. Compiled, not yet seen on a board.",
+  "mcu": {
+    "id": "esp32p4",
+    "name": "ESP32-P4"
+  },
+  "flashMB": 32,
+  "psramMB": 32,
+  "usbCdc": false,
+  "display": {
+    "controller": "jd9365",
+    "controllerName": "JD9365",
+    "interface": "dsi",
+    "width": 800,
+    "height": 1280,
+    "colorDepth": 16,
+    "rgbOrder": "rgb",
+    "invert": false,
+    "pins": {
+      "rst": 27
+    },
+    "options": {
+      "initSeq": "jd9365_type2_init_operations",
+      "lanes": "2",
+      "laneMbps": 1500,
+      "pclkMhz": 80,
+      "hsyncFrontPorch": 40,
+      "hsyncPulseWidth": 20,
+      "hsyncBackPorch": 20,
+      "vsyncFrontPorch": 30,
+      "vsyncPulseWidth": 4,
+      "vsyncBackPorch": 10
+    },
+    "backlight": {
+      "pin": 26,
+      "active": 1,
+      "pwm": true,
+      "freq": 5000,
+      "defaultLevel": 100
+    }
+  },
+  "touch": {
+    "controller": "gt911",
+    "controllerName": "GT911",
+    "pins": {
+      "sda": 7,
+      "scl": 8,
+      "int": -1,
+      "rst": -1
+    },
+    "swapXY": false,
+    "invertX": false,
+    "invertY": false,
+    "options": {
+      "i2cAddr": "0x5D",
+      "freqKhz": 400,
+      "sharedI2C": false
+    }
+  },
+  "buses": [],
+  "ioExpanders": [],
+  "peripherals": [],
+  "digitalIO": [],
+  "analogInputs": [],
+  "audio": null,
+  "verify": "Nobody at LCD Wizard has had this board: the export for it compiles and has not been seen on the panel. Pins and the panel's start-up table are from Waveshare's own BSP (esp32_p4_wifi6_touch_lcd_x) and so are the settings (80 MHz, a VSYNC back porch of 10, 1500 Mbps a lane: what Waveshare's ESP-IDF code runs). If the screen stays dark with the backlight lit, try 60 MHz with a VSYNC back porch of 12 and 750 Mbps a lane, which is what GFX Library for Arduino's own definition of the board runs. These boards ship with ESP32-P4 chips of both generations: the export builds for a chip before revision 3 (see the README for the other). The touch controller may answer at 0x14 instead of 0x5D. The TF card, audio codec, camera connector and the ESP32-C6 radio are not driven.",
+  "links": {
+    "page": "https://lcdwizard.com/boards/waveshare-p4-wifi6-touch-lcd-101",
+    "designer": "https://app.lcdwizard.com/app?board=waveshare-p4-wifi6-touch-lcd-101"
+  }
+}

@@ -1,6 +1,6 @@
 # ESP32 display board pinouts
 
-Pin maps for 88 ESP32, ESP32-S3, C3, C5, C6, P4, STM32 and RP2040 display boards: the panel, touch controller, backlight, I2C buses, I/O expanders, LEDs, buttons, battery sense and audio, as JSON, CSV and a printable pinout sheet for each.
+Pin maps for 91 ESP32, ESP32-S3, C3, C5, C6, P4, STM32 and RP2040 display boards: the panel, touch controller, backlight, I2C buses, I/O expanders, LEDs, buttons, battery sense and audio, as JSON, CSV and a printable pinout sheet for each.
 
 They are the board presets from [LCD Wizard](https://lcdwizard.com), a browser LVGL designer that writes the driver configuration for these boards. The same numbers go into the firmware it generates, and they are checked by its pin validator on the way. Every board has a page on the site with the full table, the vendor's own documents and a link that opens the designer with the board set up.
 
@@ -10,6 +10,7 @@ They are the board presets from [LCD Wizard](https://lcdwizard.com), a browser L
 
 | Board | Vendor | MCU | Display | Touch | Files |
 |---|---|---|---|---|---|
+| [Elecrow CrowPanel Advanced ESP32-P4 7 / 9 / 10.1 inch](https://lcdwizard.com/boards/elecrow-crowpanel-advanced-p4) | Elecrow | ESP32-P4 | EK79007 1024x600 DSI | GT911 | [json](boards/elecrow-crowpanel-advanced-p4/board.json) · [csv](boards/elecrow-crowpanel-advanced-p4/pins.csv) · [sheet](boards/elecrow-crowpanel-advanced-p4/pinout.png) |
 | [ESP32 + ILI9341 2.8" SPI](https://lcdwizard.com/boards/esp32-ili9341-spi) | Generic | ESP32 (WROOM / WROVER) | ILI9341 240x320 SPI | XPT2046 | [json](boards/esp32-ili9341-spi/board.json) · [csv](boards/esp32-ili9341-spi/pins.csv) · [sheet](boards/esp32-ili9341-spi/pinout.png) |
 | [ESP32-S3 + GC9A01 1.28" round](https://lcdwizard.com/boards/s3-gc9a01-round) | Generic | ESP32-S3 | GC9A01 / GC9A01A 240x240 SPI | CST816S | [json](boards/s3-gc9a01-round/board.json) · [csv](boards/s3-gc9a01-round/pins.csv) · [sheet](boards/s3-gc9a01-round/pinout.png) |
 | [ESP32-S3 + ILI9341 SPI](https://lcdwizard.com/boards/s3-ili9341-spi) | Generic | ESP32-S3 | ILI9341 240x320 SPI | XPT2046 | [json](boards/s3-ili9341-spi/board.json) · [csv](boards/s3-ili9341-spi/pins.csv) · [sheet](boards/s3-ili9341-spi/pinout.png) |
@@ -53,6 +54,7 @@ They are the board presets from [LCD Wizard](https://lcdwizard.com), a browser L
 | [Waveshare ESP32-C6-Touch-LCD-1.69](https://lcdwizard.com/boards/waveshare-c6-touch-lcd-169) | Waveshare | ESP32-C6 | ST7789 240x280 SPI | CST816S | [json](boards/waveshare-c6-touch-lcd-169/board.json) · [csv](boards/waveshare-c6-touch-lcd-169/pins.csv) · [sheet](boards/waveshare-c6-touch-lcd-169/pinout.png) |
 | [Waveshare ESP32-C6-Touch-LCD-1.83](https://lcdwizard.com/boards/waveshare-c6-touch-lcd-183) | Waveshare | ESP32-C6 | ST7789 240x284 SPI | CST816S | [json](boards/waveshare-c6-touch-lcd-183/board.json) · [csv](boards/waveshare-c6-touch-lcd-183/pins.csv) · [sheet](boards/waveshare-c6-touch-lcd-183/pinout.png) |
 | [Waveshare ESP32-C6-Touch-LCD-2.8](https://lcdwizard.com/boards/waveshare-c6-touch-lcd-28) | Waveshare | ESP32-C6 | ST7789 240x320 SPI | CST3530 | [json](boards/waveshare-c6-touch-lcd-28/board.json) · [csv](boards/waveshare-c6-touch-lcd-28/pins.csv) · [sheet](boards/waveshare-c6-touch-lcd-28/pinout.png) |
+| [Waveshare ESP32-P4-WIFI6-Touch-LCD-10.1](https://lcdwizard.com/boards/waveshare-p4-wifi6-touch-lcd-101) | Waveshare | ESP32-P4 | JD9365 800x1280 DSI | GT911 | [json](boards/waveshare-p4-wifi6-touch-lcd-101/board.json) · [csv](boards/waveshare-p4-wifi6-touch-lcd-101/pins.csv) · [sheet](boards/waveshare-p4-wifi6-touch-lcd-101/pinout.png) |
 | [Waveshare ESP32-P4-WIFI6-Touch-LCD-3.5](https://lcdwizard.com/boards/waveshare-p4-wifi6-touch-lcd-35) | Waveshare | ESP32-P4 | ST7796 / ST7796S 320x480 SPI | FT6236 / FT6336U | [json](boards/waveshare-p4-wifi6-touch-lcd-35/board.json) · [csv](boards/waveshare-p4-wifi6-touch-lcd-35/pins.csv) · [sheet](boards/waveshare-p4-wifi6-touch-lcd-35/pinout.png) |
 | [Waveshare ESP32-S3-AMOLED-1.91 / ESP32-S3-Touch-AMOLED-1.91](https://lcdwizard.com/boards/waveshare-s3-amoled-191) | Waveshare | ESP32-S3 | RM67162 240x536 QSPI | FT3168 / FT6146 | [json](boards/waveshare-s3-amoled-191/board.json) · [csv](boards/waveshare-s3-amoled-191/pins.csv) · [sheet](boards/waveshare-s3-amoled-191/pinout.png) |
 | [Waveshare ESP32-S3-AMOLED-1.91 / ESP32-S3-Touch-AMOLED-1.91 (V1 board)](https://lcdwizard.com/boards/waveshare-s3-amoled-191-v1) | Waveshare | ESP32-S3 | RM67162 240x536 QSPI | FT3168 / FT6146 | [json](boards/waveshare-s3-amoled-191-v1/board.json) · [csv](boards/waveshare-s3-amoled-191-v1/pins.csv) · [sheet](boards/waveshare-s3-amoled-191-v1/pinout.png) |
@@ -90,6 +92,7 @@ They are the board presets from [LCD Wizard](https://lcdwizard.com), a browser L
 | [Waveshare ESP32-S3-Touch-LCD-1.85C](https://lcdwizard.com/boards/waveshare-s3-touch-lcd-185c) | Waveshare | ESP32-S3 | ST77916 360x360 QSPI | CST816S | [json](boards/waveshare-s3-touch-lcd-185c/board.json) · [csv](boards/waveshare-s3-touch-lcd-185c/pins.csv) · [sheet](boards/waveshare-s3-touch-lcd-185c/pinout.png) |
 | [Waveshare ESP32-S3-Touch-LCD-2](https://lcdwizard.com/boards/waveshare-s3-touch-lcd-2) | Waveshare | ESP32-S3 | ST7789 240x320 SPI | CST816S | [json](boards/waveshare-s3-touch-lcd-2/board.json) · [csv](boards/waveshare-s3-touch-lcd-2/pins.csv) · [sheet](boards/waveshare-s3-touch-lcd-2/pinout.png) |
 | [Waveshare ESP32-S3-Touch-LCD-2.8](https://lcdwizard.com/boards/waveshare-s3-touch-lcd-28) | Waveshare | ESP32-S3 | ST7789 240x320 SPI | CST328 | [json](boards/waveshare-s3-touch-lcd-28/board.json) · [csv](boards/waveshare-s3-touch-lcd-28/pins.csv) · [sheet](boards/waveshare-s3-touch-lcd-28/pinout.png) |
+| [Waveshare ESP32-S3-Touch-LCD-2.8B](https://lcdwizard.com/boards/waveshare-s3-touch-lcd-28b) | Waveshare | ESP32-S3 | ST7701 / ST7701S 480x640 RGB | GT911 | [json](boards/waveshare-s3-touch-lcd-28b/board.json) · [csv](boards/waveshare-s3-touch-lcd-28b/pins.csv) · [sheet](boards/waveshare-s3-touch-lcd-28b/pinout.png) |
 | [Waveshare ESP32-S3-Touch-LCD-3.49](https://lcdwizard.com/boards/waveshare-s3-touch-lcd-349) | Waveshare | ESP32-S3 | AXS15231B 172x640 QSPI | AXS15231B (touch half) | [json](boards/waveshare-s3-touch-lcd-349/board.json) · [csv](boards/waveshare-s3-touch-lcd-349/pins.csv) · [sheet](boards/waveshare-s3-touch-lcd-349/pinout.png) |
 | [Waveshare ESP32-S3-Touch-LCD-3.5](https://lcdwizard.com/boards/waveshare-s3-touch-lcd-35) | Waveshare | ESP32-S3 | ST7796 / ST7796S 320x480 SPI | FT6236 / FT6336U | [json](boards/waveshare-s3-touch-lcd-35/board.json) · [csv](boards/waveshare-s3-touch-lcd-35/pins.csv) · [sheet](boards/waveshare-s3-touch-lcd-35/pinout.png) |
 | [Waveshare ESP32-S3-Touch-LCD-3.5B](https://lcdwizard.com/boards/waveshare-s3-35b) | Waveshare | ESP32-S3 | AXS15231B 320x480 QSPI | AXS15231B (touch half) | [json](boards/waveshare-s3-35b/board.json) · [csv](boards/waveshare-s3-35b/pins.csv) · [sheet](boards/waveshare-s3-35b/pinout.png) |
@@ -119,4 +122,4 @@ If a pin is wrong for your board, open an issue with the model number printed on
 
 © 2026 Jonathan Harrocks (LCD Wizard). Licensed [CC BY 4.0](LICENSE): use it for anything, commercial included, with credit: "Pinouts from [LCD Wizard](https://lcdwizard.com)" and a link. See [NOTICE](NOTICE).
 
-Generated 2026-10-13 from LCD Wizard's presets. Not affiliated with any of the vendors named.
+Generated 2026-10-16 from LCD Wizard's presets. Not affiliated with any of the vendors named.

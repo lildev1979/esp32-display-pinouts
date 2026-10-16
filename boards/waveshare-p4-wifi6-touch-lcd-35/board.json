@@ -87,8 +87,17 @@
     }
   ],
   "analogInputs": [],
-  "audio": null,
-  "verify": "Pins from Waveshare's demo code and schematic (https://github.com/waveshareteam/ESP32-P4-WIFI6-Touch-LCD-3.5). BSP comment says touch reset is 'Shared with LCD reset' but its own define and the schematic give TP_RST = GPIO29, separate from LCD_RST GPIO27; chose 29.",
+  "audio": {
+    "output": "es8311",
+    "pins": {
+      "mclk": 13,
+      "bclk": 12,
+      "lrclk": 10,
+      "din": 9,
+      "pa": 53
+    }
+  },
+  "verify": "Pins from Waveshare's demo code and schematic (https://github.com/waveshareteam/ESP32-P4-WIFI6-Touch-LCD-3.5). BSP comment says touch reset is 'Shared with LCD reset' but its own define and the schematic give TP_RST = GPIO29, separate from LCD_RST GPIO27; chose 29. Sound: the ES8311 at 0x18 on I2C 7/8, I2S MCLK 13, BCLK 12, WS 10, data to the codec 9 and the microphone back on 11, speaker amplifier on GPIO 53 (on when high), from Waveshare's lcd35_board.h and the BSP header (pa_reverted false). Compiled; not heard on a board.",
   "links": {
     "page": "https://lcdwizard.com/boards/waveshare-p4-wifi6-touch-lcd-35",
     "designer": "https://app.lcdwizard.com/app?board=waveshare-p4-wifi6-touch-lcd-35",

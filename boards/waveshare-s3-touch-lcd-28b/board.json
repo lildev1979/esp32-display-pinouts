@@ -1,0 +1,164 @@
+{
+  "id": "waveshare-s3-touch-lcd-28b",
+  "name": "Waveshare ESP32-S3-Touch-LCD-2.8B",
+  "vendor": "Waveshare",
+  "group": "All-in-one boards",
+  "description": "2.8\" 480x640 IPS panel (ST7701, RGB) with GT911 touch, a TF card slot, QMI8658 IMU, PCF85063 RTC and battery sense. A TCA9554 expander handles the panel's reset and chip select and the touch reset.",
+  "mcu": {
+    "id": "esp32s3",
+    "name": "ESP32-S3"
+  },
+  "flashMB": 16,
+  "psramMB": 8,
+  "usbCdc": true,
+  "display": {
+    "controller": "st7701",
+    "controllerName": "ST7701 / ST7701S",
+    "interface": "rgb",
+    "width": 480,
+    "height": 640,
+    "colorDepth": 16,
+    "rgbOrder": "rgb",
+    "invert": false,
+    "pins": {
+      "de": 40,
+      "vsync": 39,
+      "hsync": 38,
+      "pclk": 41,
+      "r0": 46,
+      "r1": 3,
+      "r2": 8,
+      "r3": 18,
+      "r4": 17,
+      "g0": 14,
+      "g1": 13,
+      "g2": 12,
+      "g3": 11,
+      "g4": 10,
+      "g5": 9,
+      "b0": 5,
+      "b1": 45,
+      "b2": 48,
+      "b3": 47,
+      "b4": 21,
+      "cs": {
+        "ext": "ext_waveshare_s3_touch_lcd_28b_tca9554",
+        "pin": 2
+      },
+      "sck": 2,
+      "mosi": 1,
+      "rst": {
+        "ext": "ext_waveshare_s3_touch_lcd_28b_tca9554",
+        "pin": 0
+      }
+    },
+    "options": {
+      "initSeq": "lw_st7701_ws28b_init_operations",
+      "pclkMhz": 30,
+      "hsyncPolarity": "1",
+      "hsyncFrontPorch": 60,
+      "hsyncPulseWidth": 10,
+      "hsyncBackPorch": 70,
+      "vsyncPolarity": "1",
+      "vsyncFrontPorch": 20,
+      "vsyncPulseWidth": 10,
+      "vsyncBackPorch": 20,
+      "pclkActiveNeg": false
+    },
+    "backlight": {
+      "pin": 6,
+      "active": 1,
+      "pwm": true,
+      "freq": 5000,
+      "defaultLevel": 100
+    }
+  },
+  "touch": {
+    "controller": "gt911",
+    "controllerName": "GT911",
+    "pins": {
+      "sda": 15,
+      "scl": 7,
+      "int": 16,
+      "rst": {
+        "ext": "ext_waveshare_s3_touch_lcd_28b_tca9554",
+        "pin": 1
+      }
+    },
+    "swapXY": false,
+    "invertX": false,
+    "invertY": false,
+    "options": {
+      "i2cAddr": "0x5D",
+      "freqKhz": 400,
+      "sharedI2C": true
+    }
+  },
+  "buses": [
+    {
+      "name": "I2C (GPIO 15 / 7)",
+      "kind": "i2c",
+      "pins": {
+        "sda": 15,
+        "scl": 7
+      }
+    }
+  ],
+  "ioExpanders": [
+    {
+      "name": "TCA9554",
+      "type": "tca9554",
+      "address": "0x20"
+    }
+  ],
+  "peripherals": [
+    {
+      "name": "IMU",
+      "chip": "QMI8658",
+      "kind": "Motion",
+      "bus": "I2C (GPIO 15 / 7)",
+      "address": "0x6B"
+    },
+    {
+      "name": "RTC",
+      "chip": "PCF85063",
+      "kind": "Time",
+      "bus": "I2C (GPIO 15 / 7)",
+      "address": "0x51"
+    },
+    {
+      "name": "SDCard",
+      "chip": "SD card",
+      "kind": "Storage",
+      "pins": {
+        "clk": 2,
+        "cmd": 1,
+        "d0": 42
+      }
+    }
+  ],
+  "digitalIO": [
+    {
+      "name": "BOOTButton",
+      "direction": "in",
+      "pin": 0,
+      "activeLow": true
+    }
+  ],
+  "analogInputs": [
+    {
+      "name": "Battery",
+      "pin": 4,
+      "unit": "V"
+    }
+  ],
+  "audio": null,
+  "verify": "Nobody at LCD Wizard has had this board: the export for it compiles and has not been seen on the panel. Every pin is from Waveshare's schematic and their Arduino demo, which is what the board's factory firmware was built from. The panel is an ST7701 that shows nothing until Waveshare's own register load is sent over three wires (SDA GPIO 1, SCL GPIO 2, CS on the TCA9554's EXIO3); the sketch selects it for the load inside the panel's begin() and lets it go after, because the TF card uses the same two GPIOs (SDMMC 1-bit: CLK 2, CMD 1, D0 42, D3 held high on EXIO4) and is mounted after the panel. Only GFX Library for Arduino sends that load. The pixel clock is Waveshare's 30 MHz with their porches (hsync 10/70/60, vsync 10/20/20); they run it on a core of their own that keeps code in PSRAM, so if the picture shimmers or drifts, lower the pixel clock on the Display tab (16 to 20 MHz) before anything else. Touch (GT911, 0x5D, INT GPIO 16, reset EXIO2), the expander (0x20), the IMU (QMI8658, 0x6B) and the RTC (PCF85063, 0x51) share I2C on GPIO 15/7. The panel's reset is EXIO1 and the backlight is GPIO 6 (PWM). The battery reads on GPIO 4 through a divide-by-three. The buzzer is EXIO8 and is not in the preset: a TCA9554 line made an output starts high, which would sound it through start-up. The IMU's and the RTC's interrupts (EXIO5-7) are not used. The ESP32-S3-LCD-2.8B is the same board without touch: set Touch to None.",
+  "links": {
+    "page": "https://lcdwizard.com/boards/waveshare-s3-touch-lcd-28b",
+    "designer": "https://app.lcdwizard.com/app?board=waveshare-s3-touch-lcd-28b",
+    "vendorProduct": "https://www.waveshare.com/esp32-s3-touch-lcd-2.8b.htm",
+    "vendorDocs": "https://www.waveshare.com/wiki/ESP32-S3-Touch-LCD-2.8B",
+    "schematic": "https://files.waveshare.com/wiki/ESP32-S3-Touch-LCD-2.8B/ESP32-S3-Touch-LCD-2.8B_schematic_diagram.pdf"
+  }
+}

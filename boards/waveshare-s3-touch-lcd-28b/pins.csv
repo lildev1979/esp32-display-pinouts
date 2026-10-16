@@ -1,0 +1,34 @@
+group,signal,pin
+Panel - RGB565 parallel (DPI),DE,GPIO 40
+Panel - RGB565 parallel (DPI),VSYNC,GPIO 39
+Panel - RGB565 parallel (DPI),HSYNC,GPIO 38
+Panel - RGB565 parallel (DPI),PCLK,GPIO 41
+Panel - RGB565 parallel (DPI),R0 - R4,"GPIO 46, 3, 8, 18, 17"
+Panel - RGB565 parallel (DPI),G0 - G5,"GPIO 14, 13, 12, 11, 10, 9"
+Panel - RGB565 parallel (DPI),B0 - B4,"GPIO 5, 45, 48, 47, 21"
+Panel - RGB565 parallel (DPI),CS (init only),TCA9554 2
+Panel - RGB565 parallel (DPI),SCK (init only),GPIO 2
+Panel - RGB565 parallel (DPI),MOSI (init only),GPIO 1
+Panel - RGB565 parallel (DPI),RESET,TCA9554 0
+Touch - GT911,SDA,GPIO 15
+Touch - GT911,SCL,GPIO 7
+Touch - GT911,INT / IRQ,GPIO 16
+Touch - GT911,RESET,TCA9554 1
+Backlight,Pin,GPIO 6
+Backlight,Active,high
+Backlight,Drive,PWM 5000 Hz
+I2C (GPIO 15 / 7),SDA,GPIO 15
+I2C (GPIO 15 / 7),SCL,GPIO 7
+TCA9554 (I/O expander),Type,TCA9554
+TCA9554 (I/O expander),Address,0x20
+IMU - QMI8658,Bus,I2C (GPIO 15 / 7)
+IMU - QMI8658,Address,0x6B
+RTC - PCF85063,Bus,I2C (GPIO 15 / 7)
+RTC - PCF85063,Address,0x51
+SDCard - SD card,CLK,GPIO 2
+SDCard - SD card,CMD,GPIO 1
+SDCard - SD card,D0,GPIO 42
+Inputs and outputs,Battery (analog in),GPIO 4
+Inputs and outputs,BOOTButton (input),GPIO 0
+Board I/O,BOOTButton (active low),GPIO 0
+Analogue input,Battery,GPIO 4

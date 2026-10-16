@@ -1,4 +1,18 @@
 board,group,signal,pin
+elecrow-crowpanel-advanced-p4,Panel - MIPI-DSI,RESET,GPIO 41
+elecrow-crowpanel-advanced-p4,Touch - GT911,SDA,GPIO 45
+elecrow-crowpanel-advanced-p4,Touch - GT911,SCL,GPIO 46
+elecrow-crowpanel-advanced-p4,Touch - GT911,INT / IRQ,GPIO 42
+elecrow-crowpanel-advanced-p4,Touch - GT911,RESET,GPIO 40
+elecrow-crowpanel-advanced-p4,Backlight,Pin,GPIO 31
+elecrow-crowpanel-advanced-p4,Backlight,Active,high
+elecrow-crowpanel-advanced-p4,Backlight,Drive,PWM 30000 Hz
+elecrow-crowpanel-advanced-p4,"I2C1 (touch, I2C port)",SDA,GPIO 45
+elecrow-crowpanel-advanced-p4,"I2C1 (touch, I2C port)",SCL,GPIO 46
+elecrow-crowpanel-advanced-p4,Audio,BCLK,GPIO 22
+elecrow-crowpanel-advanced-p4,Audio,LRCLK,GPIO 21
+elecrow-crowpanel-advanced-p4,Audio,DIN,GPIO 23
+elecrow-crowpanel-advanced-p4,Audio,PA,GPIO 30
 esp32-ili9341-spi,Panel - SPI (4-wire serial),SCK / CLK,GPIO 18
 esp32-ili9341-spi,Panel - SPI (4-wire serial),MOSI / SDA,GPIO 23
 esp32-ili9341-spi,Panel - SPI (4-wire serial),MISO / SDO,GPIO 19
@@ -800,6 +814,12 @@ waveshare-c6-touch-lcd-28,RTC - PCF85063,Bus,I2C (GPIO 6 / 7)
 waveshare-c6-touch-lcd-28,RTC - PCF85063,Address,0x51
 waveshare-c6-touch-lcd-28,Inputs and outputs,BOOTButton (input),GPIO 9
 waveshare-c6-touch-lcd-28,Board I/O,BOOTButton (active low),GPIO 9
+waveshare-p4-wifi6-touch-lcd-101,Panel - MIPI-DSI,RESET,GPIO 27
+waveshare-p4-wifi6-touch-lcd-101,Touch - GT911,SDA,GPIO 7
+waveshare-p4-wifi6-touch-lcd-101,Touch - GT911,SCL,GPIO 8
+waveshare-p4-wifi6-touch-lcd-101,Backlight,Pin,GPIO 26
+waveshare-p4-wifi6-touch-lcd-101,Backlight,Active,high
+waveshare-p4-wifi6-touch-lcd-101,Backlight,Drive,PWM 5000 Hz
 waveshare-p4-wifi6-touch-lcd-35,Panel - SPI (4-wire serial),SCK / CLK,GPIO 21
 waveshare-p4-wifi6-touch-lcd-35,Panel - SPI (4-wire serial),MOSI / SDA,GPIO 20
 waveshare-p4-wifi6-touch-lcd-35,Panel - SPI (4-wire serial),CS,GPIO 23
@@ -818,6 +838,11 @@ waveshare-p4-wifi6-touch-lcd-35,PMICbatterycharger - AXP2101,Bus,I2C (GPIO 7 / 8
 waveshare-p4-wifi6-touch-lcd-35,PMICbatterycharger - AXP2101,Address,0x34
 waveshare-p4-wifi6-touch-lcd-35,Inputs and outputs,BOOTButton (input),GPIO 35
 waveshare-p4-wifi6-touch-lcd-35,Board I/O,BOOTButton (active low),GPIO 35
+waveshare-p4-wifi6-touch-lcd-35,Audio,MCLK,GPIO 13
+waveshare-p4-wifi6-touch-lcd-35,Audio,BCLK,GPIO 12
+waveshare-p4-wifi6-touch-lcd-35,Audio,LRCLK,GPIO 10
+waveshare-p4-wifi6-touch-lcd-35,Audio,DIN,GPIO 9
+waveshare-p4-wifi6-touch-lcd-35,Audio,PA,GPIO 53
 waveshare-s3-amoled-191,Panel - QSPI (quad SPI),SCK,GPIO 47
 waveshare-s3-amoled-191,Panel - QSPI (quad SPI),D0 - D3,"GPIO 18, 7, 48, 5"
 waveshare-s3-amoled-191,Panel - QSPI (quad SPI),CS,GPIO 6
@@ -1566,6 +1591,39 @@ waveshare-s3-touch-lcd-28,Inputs and outputs,BOOTButton (input),GPIO 0
 waveshare-s3-touch-lcd-28,Inputs and outputs,PWRKey BATButton (input),GPIO 6
 waveshare-s3-touch-lcd-28,Board I/O,BOOTButton (active low),GPIO 0
 waveshare-s3-touch-lcd-28,Board I/O,PWRKeyBATButton (active low),GPIO 6
+waveshare-s3-touch-lcd-28b,Panel - RGB565 parallel (DPI),DE,GPIO 40
+waveshare-s3-touch-lcd-28b,Panel - RGB565 parallel (DPI),VSYNC,GPIO 39
+waveshare-s3-touch-lcd-28b,Panel - RGB565 parallel (DPI),HSYNC,GPIO 38
+waveshare-s3-touch-lcd-28b,Panel - RGB565 parallel (DPI),PCLK,GPIO 41
+waveshare-s3-touch-lcd-28b,Panel - RGB565 parallel (DPI),R0 - R4,"GPIO 46, 3, 8, 18, 17"
+waveshare-s3-touch-lcd-28b,Panel - RGB565 parallel (DPI),G0 - G5,"GPIO 14, 13, 12, 11, 10, 9"
+waveshare-s3-touch-lcd-28b,Panel - RGB565 parallel (DPI),B0 - B4,"GPIO 5, 45, 48, 47, 21"
+waveshare-s3-touch-lcd-28b,Panel - RGB565 parallel (DPI),CS (init only),TCA9554 2
+waveshare-s3-touch-lcd-28b,Panel - RGB565 parallel (DPI),SCK (init only),GPIO 2
+waveshare-s3-touch-lcd-28b,Panel - RGB565 parallel (DPI),MOSI (init only),GPIO 1
+waveshare-s3-touch-lcd-28b,Panel - RGB565 parallel (DPI),RESET,TCA9554 0
+waveshare-s3-touch-lcd-28b,Touch - GT911,SDA,GPIO 15
+waveshare-s3-touch-lcd-28b,Touch - GT911,SCL,GPIO 7
+waveshare-s3-touch-lcd-28b,Touch - GT911,INT / IRQ,GPIO 16
+waveshare-s3-touch-lcd-28b,Touch - GT911,RESET,TCA9554 1
+waveshare-s3-touch-lcd-28b,Backlight,Pin,GPIO 6
+waveshare-s3-touch-lcd-28b,Backlight,Active,high
+waveshare-s3-touch-lcd-28b,Backlight,Drive,PWM 5000 Hz
+waveshare-s3-touch-lcd-28b,I2C (GPIO 15 / 7),SDA,GPIO 15
+waveshare-s3-touch-lcd-28b,I2C (GPIO 15 / 7),SCL,GPIO 7
+waveshare-s3-touch-lcd-28b,TCA9554 (I/O expander),Type,TCA9554
+waveshare-s3-touch-lcd-28b,TCA9554 (I/O expander),Address,0x20
+waveshare-s3-touch-lcd-28b,IMU - QMI8658,Bus,I2C (GPIO 15 / 7)
+waveshare-s3-touch-lcd-28b,IMU - QMI8658,Address,0x6B
+waveshare-s3-touch-lcd-28b,RTC - PCF85063,Bus,I2C (GPIO 15 / 7)
+waveshare-s3-touch-lcd-28b,RTC - PCF85063,Address,0x51
+waveshare-s3-touch-lcd-28b,SDCard - SD card,CLK,GPIO 2
+waveshare-s3-touch-lcd-28b,SDCard - SD card,CMD,GPIO 1
+waveshare-s3-touch-lcd-28b,SDCard - SD card,D0,GPIO 42
+waveshare-s3-touch-lcd-28b,Inputs and outputs,Battery (analog in),GPIO 4
+waveshare-s3-touch-lcd-28b,Inputs and outputs,BOOTButton (input),GPIO 0
+waveshare-s3-touch-lcd-28b,Board I/O,BOOTButton (active low),GPIO 0
+waveshare-s3-touch-lcd-28b,Analogue input,Battery,GPIO 4
 waveshare-s3-touch-lcd-349,Panel - QSPI (quad SPI),SCK,GPIO 10
 waveshare-s3-touch-lcd-349,Panel - QSPI (quad SPI),D0 - D3,"GPIO 11, 12, 13, 14"
 waveshare-s3-touch-lcd-349,Panel - QSPI (quad SPI),CS,GPIO 9

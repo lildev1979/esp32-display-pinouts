@@ -1,0 +1,7 @@
+group,signal,pin
+Panel - MIPI-DSI,RESET,GPIO 27
+Touch - GT911,SDA,GPIO 7
+Touch - GT911,SCL,GPIO 8
+Backlight,Pin,GPIO 26
+Backlight,Active,high
+Backlight,Drive,PWM 5000 Hz

@@ -1,5 +1,14 @@
 [
   {
+    "id": "elecrow-crowpanel-advanced-p4",
+    "name": "Elecrow CrowPanel Advanced ESP32-P4 7 / 9 / 10.1 inch",
+    "vendor": "Elecrow",
+    "mcu": "ESP32-P4",
+    "display": "EK79007 1024x600 DSI",
+    "touch": "GT911",
+    "page": "https://lcdwizard.com/boards/elecrow-crowpanel-advanced-p4"
+  },
+  {
     "id": "esp32-ili9341-spi",
     "name": "ESP32 + ILI9341 2.8\" SPI",
     "vendor": "Generic",
@@ -387,6 +396,15 @@
     "page": "https://lcdwizard.com/boards/waveshare-c6-touch-lcd-28"
   },
   {
+    "id": "waveshare-p4-wifi6-touch-lcd-101",
+    "name": "Waveshare ESP32-P4-WIFI6-Touch-LCD-10.1",
+    "vendor": "Waveshare",
+    "mcu": "ESP32-P4",
+    "display": "JD9365 800x1280 DSI",
+    "touch": "GT911",
+    "page": "https://lcdwizard.com/boards/waveshare-p4-wifi6-touch-lcd-101"
+  },
+  {
     "id": "waveshare-p4-wifi6-touch-lcd-35",
     "name": "Waveshare ESP32-P4-WIFI6-Touch-LCD-3.5",
     "vendor": "Waveshare",
@@ -718,6 +736,15 @@
     "display": "ST7789 240x320 SPI",
     "touch": "CST328",
     "page": "https://lcdwizard.com/boards/waveshare-s3-touch-lcd-28"
+  },
+  {
+    "id": "waveshare-s3-touch-lcd-28b",
+    "name": "Waveshare ESP32-S3-Touch-LCD-2.8B",
+    "vendor": "Waveshare",
+    "mcu": "ESP32-S3",
+    "display": "ST7701 / ST7701S 480x640 RGB",
+    "touch": "GT911",
+    "page": "https://lcdwizard.com/boards/waveshare-s3-touch-lcd-28b"
   },
   {
     "id": "waveshare-s3-touch-lcd-349",

@@ -1,0 +1,95 @@
+{
+  "id": "elecrow-crowpanel-advanced-p4",
+  "name": "Elecrow CrowPanel Advanced ESP32-P4 7 / 9 / 10.1 inch",
+  "vendor": "Elecrow",
+  "group": "All-in-one boards",
+  "description": "1024x600 MIPI-DSI panel (EK79007) with GT911 touch and an I2S speaker amplifier on an ESP32-P4, the same board in 7, 9 and 10.1 inch sizes. Compiled, not yet seen on a board.",
+  "mcu": {
+    "id": "esp32p4",
+    "name": "ESP32-P4"
+  },
+  "flashMB": 16,
+  "psramMB": 32,
+  "usbCdc": false,
+  "display": {
+    "controller": "ek79007",
+    "controllerName": "EK79007",
+    "interface": "dsi",
+    "width": 1024,
+    "height": 600,
+    "colorDepth": 16,
+    "rgbOrder": "rgb",
+    "invert": false,
+    "pins": {
+      "rst": 41
+    },
+    "options": {
+      "initSeq": "ek79007_init_operations",
+      "lanes": "2",
+      "laneMbps": 1000,
+      "pclkMhz": 51,
+      "hsyncFrontPorch": 160,
+      "hsyncPulseWidth": 70,
+      "hsyncBackPorch": 160,
+      "vsyncFrontPorch": 21,
+      "vsyncPulseWidth": 10,
+      "vsyncBackPorch": 23
+    },
+    "backlight": {
+      "pin": 31,
+      "active": 1,
+      "pwm": true,
+      "freq": 30000,
+      "defaultLevel": 100
+    }
+  },
+  "touch": {
+    "controller": "gt911",
+    "controllerName": "GT911",
+    "pins": {
+      "sda": 45,
+      "scl": 46,
+      "int": 42,
+      "rst": 40
+    },
+    "swapXY": false,
+    "invertX": false,
+    "invertY": false,
+    "options": {
+      "i2cAddr": "0x5D",
+      "freqKhz": 400,
+      "sharedI2C": false
+    }
+  },
+  "buses": [
+    {
+      "name": "I2C1 (touch, I2C port)",
+      "kind": "i2c",
+      "pins": {
+        "sda": 45,
+        "scl": 46
+      }
+    }
+  ],
+  "ioExpanders": [],
+  "peripherals": [],
+  "digitalIO": [],
+  "analogInputs": [],
+  "audio": {
+    "output": "i2s_ext",
+    "pins": {
+      "bclk": 22,
+      "lrclk": 21,
+      "din": 23,
+      "pa": 30
+    }
+  },
+  "verify": "Nobody at LCD Wizard has had this board: the export for it compiles and has not been seen on the panel. The 7\", 9\" and 10.1\" share every pin and the same 1024x600 EK79007 panel; pins and settings are from Elecrow's own Arduino lessons for each size (51 MHz, 1000 Mbps a lane, hsync 70/160/160, vsync 10/23/21), the same on hardware V1.0 and V1.2. If the screen stays dark with the backlight lit, try 52 MHz with hsync 10/160/160 and vsync 1/23/12, which is what GFX Library for Arduino's own definition of the 7\" runs. The touch controller may answer at 0x14 instead of 0x5D. Touch, the panel's reset and the TF card are on GPIO 39-48, which the P4 powers from its LDO channel 4: Arduino ESP32 core 3.3.11 and 3.3.12 switch that on by themselves when the pins are first used; core 3.2.0 does not, and there the touch will not answer. The speaker is an I2S amplifier (BCLK 22, LRCK 21, data 23) switched on by pulling GPIO 30 low. Not driven: the TF card (SDMMC CLK 43, CMD 44, D0 39), the PDM microphone (CLK 24, data 26), the camera, and the ESP32-C6 radio, so there is no Wi-Fi or Bluetooth. The export builds for an ESP32-P4 before revision 3, which is what Elecrow's own ESP-IDF lessons build for.",
+  "links": {
+    "page": "https://lcdwizard.com/boards/elecrow-crowpanel-advanced-p4",
+    "designer": "https://app.lcdwizard.com/app?board=elecrow-crowpanel-advanced-p4",
+    "vendorProduct": "https://www.elecrow.com/crowpanel-advanced-10-1inch-esp32-p4-hmi-ai-display-1024x600-ips-touch-screen-wifi-6.html",
+    "vendorDocs": "https://www.elecrow.com/wiki/CrowPanel_Advanced_10.1inch_ESP32-P4_HMI_AI_Display_1024x600_IPS.html",
+    "schematic": "https://github.com/Elecrow-RD/CrowPanel-Advanced-10.1inch-ESP32-P4-HMI-AI-Display-1024x600-IPS-Touch-Screen/blob/master/Eagle_SCH%26PCB/1.2/ESP32-P4%20Display%2010.1%20inch%20V1.2.pdf"
+  }
+}
