@@ -3,7 +3,7 @@
   "name": "Waveshare ESP32-C6-Touch-LCD-2.8",
   "vendor": "Waveshare",
   "group": "All-in-one boards",
-  "description": "2.8\" 240x320 IPS LCD (ST7789 (per the BSP's esp_lcd_new_panel_st7789; docs do not name the controller), SPI), CST3530 (Hynitron; waveshare__esp_lcd_touch_cst3530 component) touch, ES8311 audio, TF card, QMI8658, PCF85063A.",
+  "description": "2.8\" 240x320 IPS LCD (ST7789, SPI), CST3530 touch, ES8311 speaker and microphone, TF card, QMI8658, PCF85063A.",
   "mcu": {
     "id": "esp32c6",
     "name": "ESP32-C6"
@@ -75,6 +75,15 @@
         "sda": 6,
         "scl": 7
       }
+    },
+    {
+      "name": "SPI (panel and TF card)",
+      "kind": "spi",
+      "pins": {
+        "sck": 0,
+        "mosi": 1,
+        "miso": 8
+      }
     }
   ],
   "ioExpanders": [
@@ -98,6 +107,15 @@
       "kind": "Time",
       "bus": "I2C (GPIO 6 / 7)",
       "address": "0x51"
+    },
+    {
+      "name": "SDCard",
+      "chip": "SD card",
+      "kind": "Storage",
+      "bus": "SPI (panel and TF card)",
+      "pins": {
+        "cs": 23
+      }
     }
   ],
   "digitalIO": [
@@ -109,8 +127,20 @@
     }
   ],
   "analogInputs": [],
-  "audio": null,
-  "verify": "Pins from Waveshare's demo code and schematic (https://github.com/waveshareteam/ESP32-C6-Touch-LCD-2.8 (commit c2a1cf84d6213597d47720a51b3e60cc7f1d5257)). Flash: docs say 16 MB and the 02_2048/04_sd_music sdkconfigs use 16 MB, but the schematic's module symbol reads ESP32-C6-WROOM-1-N8 (8 MB).",
+  "audio": {
+    "output": "es8311",
+    "pins": {
+      "mclk": -1,
+      "bclk": 15,
+      "lrclk": 3,
+      "din": 2,
+      "pa": {
+        "ext": "ext_waveshare_c6_touch_lcd_28_ws_ioext",
+        "pin": 3
+      }
+    }
+  },
+  "verify": "Nobody at LCD Wizard has had this board. The Arduino export for it compiles, and nothing in this preset has been seen on the panel or heard. Pins are from Waveshare's ESP-IDF BSP and pin table (https://github.com/waveshareteam/ESP32-C6-Touch-LCD-2.8, commit c2a1cf84d6213597d47720a51b3e60cc7f1d5257). The panel is an ST7789 on SPI (SCK 0, MOSI 1, CS 11, DC 10). Its reset is EXIO1 of Waveshare's IO extension (a CH32V003 at 0x24), and the backlight is that chip's PWM channel. Touch (CST3530 at 0x58, INT GPIO 18, reset EXIO0), the IO extension, the IMU (QMI8658, 0x6B), the RTC (PCF85063, 0x51) and the ES8311 codec (0x18) share I2C on SDA 6 / SCL 7. Sound is the ES8311 on I2S: SCLK 15, LRCK 3, data to the codec on GPIO 2, data from it on GPIO 20. The board has no MCLK line, so the export clocks the codec from SCLK, as Waveshare's BSP does (use_mclk = false). The NS4150B amplifier is switched on by EXIO3, high. The microphone is taken to be on the codec's analog input, as on Waveshare's other ES8311 boards; Waveshare's BSP sets the codec up for playing only, so that is the least certain part. Speaker and microphone arrive switched off: switch them on under Hardware > Audio. The TF card slot shares the panel's SPI lines (SCK 0, MOSI 1; MISO 8 and CS 23 are its own), as Waveshare's ESP-IDF BSP runs it beside the panel; CS 23 is held high from boot. It arrives switched off; switched on under Hardware > Devices, it is started on the panel's bus once the panel has - compiled, not yet read on a board. On the board and not in this preset: the SHTC3 temperature and humidity sensor (0x70), which the app has no driver for; the battery voltage, read through the IO extension's ADC, which the export does not read as an analog input; and the IMU's and RTC's interrupts (GPIO 19, EXIO2). Flash: the docs and Waveshare's sdkconfigs say 16 MB, and the schematic's module symbol reads ESP32-C6-WROOM-1-N8 (8 MB). 16 is recorded; check with esptool flash_id. The ES8311 is set to +15 dB (Speaker gain on Hardware > Audio): its amplifier has a fixed gain and the speaker was very quiet at 0 dB, quieter than the AMOLED 2.16's. The default was set by ear on this board on 2026-10-20.",
   "links": {
     "page": "https://lcdwizard.com/boards/waveshare-c6-touch-lcd-28",
     "designer": "https://app.lcdwizard.com/app?board=waveshare-c6-touch-lcd-28",

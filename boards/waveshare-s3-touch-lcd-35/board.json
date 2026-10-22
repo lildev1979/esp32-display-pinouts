@@ -99,6 +99,26 @@
       "kind": "Motion",
       "bus": "I2C (GPIO 8 / 7)",
       "address": "0x6B"
+    },
+    {
+      "name": "Camera",
+      "chip": "Camera",
+      "kind": "Camera",
+      "bus": "I2C (GPIO 8 / 7)",
+      "pins": {
+        "xclk": 38,
+        "pclk": 41,
+        "vsync": 17,
+        "href": 18,
+        "d0": 45,
+        "d1": 47,
+        "d2": 48,
+        "d3": 46,
+        "d4": 42,
+        "d5": 40,
+        "d6": 39,
+        "d7": 21
+      }
     }
   ],
   "digitalIO": [
@@ -120,7 +140,7 @@
       "pa": -1
     }
   },
-  "verify": "Pins from Waveshare's demo code and schematic (https://github.com/waveshareteam/ESP32-S3-Touch-LCD-3.5 (commit 283ec84c566c096f8c30493b93dcd4b0bb608de7)). SPI clock: vendor IDF 80 MHz, xiaozhi 40 MHz.",
+  "verify": "Pins from Waveshare's demo code and schematic (https://github.com/waveshareteam/ESP32-S3-Touch-LCD-3.5 (commit 283ec84c566c096f8c30493b93dcd4b0bb608de7)). SPI clock: vendor IDF 80 MHz, xiaozhi 40 MHz. Camera connector (in the kit, switched off): pins are Waveshare's esp_camera_port.cpp for this board (the same twelve as the 3.5B's), control on the I2C bus on 8 / 7, 20 MHz, RGB565, PWDN and RESET unused there; the AXP2101's BLDO1 1.5 V and BLDO2 2.8 V are set as that repo's esp_axp2101_port.cpp sets them (the 3.5B schematic has them feeding the camera). Nothing has run on a board; xiaozhi drives EXIO0 low and that may be the camera's power-down - not confirmed.",
   "links": {
     "page": "https://lcdwizard.com/boards/waveshare-s3-touch-lcd-35",
     "designer": "https://app.lcdwizard.com/app?board=waveshare-s3-touch-lcd-35",

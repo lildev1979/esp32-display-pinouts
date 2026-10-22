@@ -1,0 +1,132 @@
+{
+  "id": "waveshare-s3-touch-lcd-28-v2",
+  "name": "Waveshare ESP32-S3-Touch-LCD-2.8 V2",
+  "vendor": "Waveshare",
+  "group": "All-in-one boards",
+  "description": "2.8\" 240x320 IPS LCD (ST7789T3, SPI), CST3530 touch, PCM5101A speaker, TF card, QMI8658C, PCF85063ATL, battery sense.",
+  "mcu": {
+    "id": "esp32s3",
+    "name": "ESP32-S3"
+  },
+  "flashMB": 16,
+  "psramMB": 8,
+  "usbCdc": true,
+  "display": {
+    "controller": "st7789",
+    "controllerName": "ST7789",
+    "interface": "spi",
+    "width": 240,
+    "height": 320,
+    "colorDepth": 16,
+    "rgbOrder": "rgb",
+    "invert": true,
+    "pins": {
+      "sck": 40,
+      "mosi": 45,
+      "miso": 46,
+      "cs": 42,
+      "dc": 41,
+      "rst": 39
+    },
+    "options": {
+      "freqMhz": 80,
+      "spiHost": "SPI3_HOST"
+    },
+    "backlight": {
+      "pin": 5,
+      "active": 1,
+      "pwm": true,
+      "freq": 5000,
+      "defaultLevel": 100
+    }
+  },
+  "touch": {
+    "controller": "cst3530",
+    "controllerName": "CST3530",
+    "pins": {
+      "sda": 1,
+      "scl": 3,
+      "int": 4,
+      "rst": 2
+    },
+    "swapXY": false,
+    "invertX": false,
+    "invertY": false,
+    "options": {
+      "i2cAddr": "0x58",
+      "freqKhz": 400,
+      "sharedI2C": false
+    }
+  },
+  "buses": [
+    {
+      "name": "I2C (GPIO 11 / 10)",
+      "kind": "i2c",
+      "pins": {
+        "sda": 11,
+        "scl": 10
+      }
+    }
+  ],
+  "ioExpanders": [],
+  "peripherals": [
+    {
+      "name": "IMU",
+      "chip": "QMI8658",
+      "kind": "Motion",
+      "bus": "I2C (GPIO 11 / 10)",
+      "address": "0x6B"
+    },
+    {
+      "name": "RTC",
+      "chip": "PCF85063",
+      "kind": "Time",
+      "bus": "I2C (GPIO 11 / 10)",
+      "address": "0x51"
+    },
+    {
+      "name": "SDCard",
+      "chip": "SD card",
+      "kind": "Storage",
+      "pins": {
+        "clk": 14,
+        "cmd": 17,
+        "d0": 16
+      }
+    }
+  ],
+  "digitalIO": [
+    {
+      "name": "BOOTButton",
+      "direction": "in",
+      "pin": 0,
+      "activeLow": true
+    },
+    {
+      "name": "PWRKeyBATButton",
+      "direction": "in",
+      "pin": 6,
+      "activeLow": true
+    }
+  ],
+  "analogInputs": [
+    {
+      "name": "Battery",
+      "pin": 8,
+      "unit": "V"
+    }
+  ],
+  "audio": {
+    "output": "i2s_ext",
+    "pins": {
+      "bclk": 48,
+      "lrclk": 38,
+      "din": 47
+    }
+  },
+  "verify": "Pins from Waveshare's V2 demo code (https://files.waveshare.com/wiki/ESP32-S3-Touch-LCD-2.8/ESP32-S3-Touch-LCD-2.8-V2-Demo.zip). This is the V2 revision (ST7789 panel, CST3530 touch at 0x58), which Waveshare says ships from 5 June 2026; a V1 board (CST328 at 0x1A) has the same pins and panel and the other record - check the label on the back. An Arduino export from either record reads whichever touch chip answers. Touch_CST3530.h has the same pins as Touch_CST328.h (SDA 1, SCL 3, INT 4, RST 2), and every other driver in the V2 demo - panel, TF card, speaker, battery, IMU, clock, power key - is the V1 demo's file unchanged, so the rest of this record is the V1 one's. Compiled, not run on a board.",
+  "links": {
+    "page": "https://lcdwizard.com/boards/waveshare-s3-touch-lcd-28-v2",
+    "designer": "https://app.lcdwizard.com/app?board=waveshare-s3-touch-lcd-28-v2"
+  }
+}

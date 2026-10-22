@@ -1,0 +1,158 @@
+{
+  "id": "waveshare-p4-nano-101-dsi-touch-a",
+  "name": "Waveshare ESP32-P4-NANO + 10.1-DSI-TOUCH-A",
+  "vendor": "Waveshare",
+  "group": "All-in-one boards",
+  "description": "Waveshare's 10.1\" 800x1280 MIPI-DSI screen (JD9365) with GT911 touch on their ESP32-P4-NANO, whose backlight is a register on I2C. With the NANO's ES8311 codec, TF card, Ethernet and Wi-Fi through its ESP32-C6. Compiled, not yet seen on a board.",
+  "mcu": {
+    "id": "esp32p4",
+    "name": "ESP32-P4"
+  },
+  "flashMB": 16,
+  "psramMB": 32,
+  "usbCdc": false,
+  "display": {
+    "controller": "jd9365",
+    "controllerName": "JD9365",
+    "interface": "dsi",
+    "width": 800,
+    "height": 1280,
+    "colorDepth": 16,
+    "rgbOrder": "rgb",
+    "invert": false,
+    "pins": {},
+    "options": {
+      "initSeq": "jd9365_type2_init_operations",
+      "lanes": "2",
+      "laneMbps": 1500,
+      "pclkMhz": 80,
+      "hsyncFrontPorch": 40,
+      "hsyncPulseWidth": 20,
+      "hsyncBackPorch": 20,
+      "vsyncFrontPorch": 30,
+      "vsyncPulseWidth": 4,
+      "vsyncBackPorch": 10
+    },
+    "backlight": {
+      "pin": -1,
+      "active": 1,
+      "pwm": true,
+      "freq": 5000,
+      "defaultLevel": 100,
+      "i2c": {
+        "bus": "touch",
+        "addr": "0x45",
+        "reg": "0x96",
+        "init": [
+          {
+            "reg": "0x95",
+            "value": "0x11",
+            "delayMs": 100
+          },
+          {
+            "reg": "0x95",
+            "value": "0x17",
+            "delayMs": 100
+          },
+          {
+            "reg": "0x96",
+            "value": "0x00",
+            "delayMs": 100
+          },
+          {
+            "reg": "0x96",
+            "value": "0xFF",
+            "delayMs": 100
+          }
+        ]
+      }
+    }
+  },
+  "touch": {
+    "controller": "gt911",
+    "controllerName": "GT911",
+    "pins": {
+      "sda": 7,
+      "scl": 8,
+      "int": -1,
+      "rst": -1
+    },
+    "swapXY": false,
+    "invertX": false,
+    "invertY": false,
+    "options": {
+      "i2cAddr": "0x5D",
+      "freqKhz": 400,
+      "sharedI2C": true
+    }
+  },
+  "buses": [
+    {
+      "name": "I2C (GPIO 7 / 8)",
+      "kind": "i2c",
+      "pins": {
+        "sda": 7,
+        "scl": 8
+      }
+    }
+  ],
+  "ioExpanders": [],
+  "peripherals": [
+    {
+      "name": "SDCard",
+      "chip": "SD card",
+      "kind": "Storage",
+      "pins": {
+        "clk": 43,
+        "cmd": 44,
+        "d0": 39,
+        "d1": 40,
+        "d2": 41,
+        "d3": 42
+      }
+    },
+    {
+      "name": "WiFiCoprocessor",
+      "chip": "Wi-Fi co-processor",
+      "kind": "Network",
+      "pins": {
+        "clk": 18,
+        "cmd": 19,
+        "d0": 14,
+        "d1": 15,
+        "d2": 16,
+        "d3": 17,
+        "rst": 54
+      }
+    },
+    {
+      "name": "Ethernet",
+      "chip": "Ethernet PHY on RMII",
+      "kind": "Network",
+      "pins": {
+        "mdc": 31,
+        "mdio": 52,
+        "power": 51
+      }
+    }
+  ],
+  "digitalIO": [],
+  "analogInputs": [],
+  "audio": {
+    "output": "es8311",
+    "pins": {
+      "mclk": 13,
+      "bclk": 12,
+      "lrclk": 10,
+      "din": 9,
+      "pa": 53
+    }
+  },
+  "verify": "Nobody at LCD Wizard has had this screen: the export compiles and has not been seen on the panel. The NANO gives the screen two MIPI-DSI lanes and I2C on GPIO 7/8: its supplies, its reset and its backlight are a chip on the screen at 0x45, which the generated code sets up before the panel as Waveshare's Arduino code does (0x95 and 0x96, 100 ms apart). The backlight is that chip's register 0x96, 0 to 255, and the serial monitor says if the chip did not answer. The panel settings are Waveshare's (JD9365, two lanes at 1500 Mbps, 80 MHz, hsync 20/20/40, vsync 4/10/30): if the light comes on and no picture does, try 60 MHz, a VSYNC back porch of 12 and 750 Mbps. The GT911 may answer at 0x14. In the kit: the TF card, the ES8311 codec and its microphone (amplifier GPIO 53), and Ethernet (an IP101, arriving switched off). A design on this screen starts on revision 3 of the ESP32-P4, which newer NANOs carry and Waveshare's own Arduino examples for the NANO build for (ChipVariant=postv3); an older NANO may have a chip before revision 3 (the upload says \"revision v1.x\"): choose that under Hardware > Board > Chip revision. Wi-Fi is the ESP32-C6, in the kit as the Wi-Fi co-processor on the ESP32 core's own SDIO lines (CLK 18, CMD 19, D0-D3 14-17, its CHIP_PU on GPIO 54, as Waveshare's schematic for the NANO wires them); it has to run ESP-Hosted of the core's release, which the board prints at start (see the README). Wi-Fi through it compiles and has not been on a board. Not driven: the camera and the C6's Bluetooth; ESP-NOW does not go through the C6.",
+  "links": {
+    "page": "https://lcdwizard.com/boards/waveshare-p4-nano-101-dsi-touch-a",
+    "designer": "https://app.lcdwizard.com/app?board=waveshare-p4-nano-101-dsi-touch-a",
+    "vendorProduct": "https://www.waveshare.com/esp32-p4-nano.htm",
+    "vendorDocs": "https://www.waveshare.com/wiki/10.1-DSI-TOUCH-A"
+  }
+}

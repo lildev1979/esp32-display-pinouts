@@ -81,6 +81,33 @@
     "page": "https://lcdwizard.com/boards/guition-4848s040"
   },
   {
+    "id": "guition-jc1060p470c",
+    "name": "Guition JC1060P470C 7 inch ESP32-P4 (JC1060P470C_I_W_Y)",
+    "vendor": "Guition",
+    "mcu": "ESP32-P4",
+    "display": "JD9165 1024x600 DSI",
+    "touch": "GT911",
+    "page": "https://lcdwizard.com/boards/guition-jc1060p470c"
+  },
+  {
+    "id": "guition-jc2432w328c",
+    "name": "Guition JC2432W328C (2.8\" capacitive, one USB-C)",
+    "vendor": "Guition",
+    "mcu": "ESP32 (WROOM / WROVER)",
+    "display": "ST7789 240x320 SPI",
+    "touch": "CST820",
+    "page": "https://lcdwizard.com/boards/guition-jc2432w328c"
+  },
+  {
+    "id": "guition-jc2432w328r",
+    "name": "Guition JC2432W328R (2.8\" resistive, one USB-C)",
+    "vendor": "Guition",
+    "mcu": "ESP32 (WROOM / WROVER)",
+    "display": "ST7789 240x320 SPI",
+    "touch": "XPT2046",
+    "page": "https://lcdwizard.com/boards/guition-jc2432w328r"
+  },
+  {
     "id": "lcdwiki-e32r28t",
     "name": "LCDWIKI 2.8\" ESP32-32E (E32R28T)",
     "vendor": "LCDWIKI",
@@ -117,6 +144,15 @@
     "page": "https://lcdwizard.com/boards/lcdwiki-e32r40t"
   },
   {
+    "id": "lcdwiki-es3c40p",
+    "name": "LCDWIKI 4.0\" ESP32-S3 (ES3C40P)",
+    "vendor": "LCDWIKI",
+    "mcu": "ESP32-S3",
+    "display": "ST7796 / ST7796S 320x480 SPI",
+    "touch": "FT6236 / FT6336U",
+    "page": "https://lcdwizard.com/boards/lcdwiki-es3c40p"
+  },
+  {
     "id": "lilygo-tdisplay-s3",
     "name": "LilyGO T-Display-S3",
     "vendor": "LilyGO",
@@ -136,12 +172,30 @@
   },
   {
     "id": "m5stack-core2",
-    "name": "M5Stack Core2",
+    "name": "M5Stack Core2 (v1.0, AXP192)",
     "vendor": "M5Stack",
     "mcu": "ESP32 (WROOM / WROVER)",
     "display": "ILI9342 / ILI9342C 320x240 SPI",
     "touch": "FT6236 / FT6336U",
     "page": "https://lcdwizard.com/boards/m5stack-core2"
+  },
+  {
+    "id": "m5stack-core2-v11",
+    "name": "M5Stack Core2 v1.1 (AXP2101)",
+    "vendor": "M5Stack",
+    "mcu": "ESP32 (WROOM / WROVER)",
+    "display": "ILI9342 / ILI9342C 320x240 SPI",
+    "touch": "FT6236 / FT6336U",
+    "page": "https://lcdwizard.com/boards/m5stack-core2-v11"
+  },
+  {
+    "id": "cyd-2432s028-2usb-ili9341",
+    "name": "ESP32-2432S028 \"Cheap Yellow Display\", two USB ports, ILI9341",
+    "vendor": "Sunton",
+    "mcu": "ESP32 (WROOM / WROVER)",
+    "display": "ILI9341 240x320 SPI",
+    "touch": "XPT2046",
+    "page": "https://lcdwizard.com/boards/cyd-2432s028-2usb-ili9341"
   },
   {
     "id": "cyd-2432s028c",
@@ -162,6 +216,15 @@
     "page": "https://lcdwizard.com/boards/cyd-2432s028r"
   },
   {
+    "id": "cyd-2432s028r-st7789",
+    "name": "ESP32-2432S028R \"Cheap Yellow Display\", ST7789 version",
+    "vendor": "Sunton",
+    "mcu": "ESP32 (WROOM / WROVER)",
+    "display": "ST7789 240x320 SPI",
+    "touch": "XPT2046",
+    "page": "https://lcdwizard.com/boards/cyd-2432s028r-st7789"
+  },
+  {
     "id": "sunton-8048s043",
     "name": "Sunton ESP32-8048S043 (4.3\" RGB)",
     "vendor": "Sunton",
@@ -178,6 +241,15 @@
     "display": "ST7262 800x480 RGB",
     "touch": "GT911",
     "page": "https://lcdwizard.com/boards/sunton-8048s070"
+  },
+  {
+    "id": "viewe-p4-smartdisplay-7",
+    "name": "VIEWE ESP32-P4 SmartDisplay 7 inch (UEP4S070H1024V600C)",
+    "vendor": "VIEWE",
+    "mcu": "ESP32-P4",
+    "display": "JD9165 1024x600 DSI",
+    "touch": "GT911",
+    "page": "https://lcdwizard.com/boards/viewe-p4-smartdisplay-7"
   },
   {
     "id": "waveshare-c3-lcd-147",
@@ -360,6 +432,15 @@
     "page": "https://lcdwizard.com/boards/waveshare-c6-touch-amoled-206"
   },
   {
+    "id": "waveshare-c6-touch-amoled-216",
+    "name": "Waveshare ESP32-C6-Touch-AMOLED-2.16",
+    "vendor": "Waveshare",
+    "mcu": "ESP32-C6",
+    "display": "CO5300 480x480 QSPI",
+    "touch": "CST9217 / CST9220",
+    "page": "https://lcdwizard.com/boards/waveshare-c6-touch-amoled-216"
+  },
+  {
     "id": "waveshare-c6-touch-lcd-128",
     "name": "Waveshare ESP32-C6-Touch-LCD-1.28",
     "vendor": "Waveshare",
@@ -367,6 +448,15 @@
     "display": "GC9A01 / GC9A01A 240x240 SPI",
     "touch": "CST816S",
     "page": "https://lcdwizard.com/boards/waveshare-c6-touch-lcd-128"
+  },
+  {
+    "id": "waveshare-c6-touch-lcd-147",
+    "name": "Waveshare ESP32-C6-Touch-LCD-1.47",
+    "vendor": "Waveshare",
+    "mcu": "ESP32-C6",
+    "display": "JD9853 172x320 SPI",
+    "touch": "AXS5106L",
+    "page": "https://lcdwizard.com/boards/waveshare-c6-touch-lcd-147"
   },
   {
     "id": "waveshare-c6-touch-lcd-169",
@@ -396,6 +486,33 @@
     "page": "https://lcdwizard.com/boards/waveshare-c6-touch-lcd-28"
   },
   {
+    "id": "waveshare-p4-nano-101-dsi-touch-a",
+    "name": "Waveshare ESP32-P4-NANO + 10.1-DSI-TOUCH-A",
+    "vendor": "Waveshare",
+    "mcu": "ESP32-P4",
+    "display": "JD9365 800x1280 DSI",
+    "touch": "GT911",
+    "page": "https://lcdwizard.com/boards/waveshare-p4-nano-101-dsi-touch-a"
+  },
+  {
+    "id": "waveshare-p4-nano-7-dsi-touch-a",
+    "name": "Waveshare ESP32-P4-NANO + 7-DSI-TOUCH-A",
+    "vendor": "Waveshare",
+    "mcu": "ESP32-P4",
+    "display": "ILI9881C 720x1280 DSI",
+    "touch": "GT911",
+    "page": "https://lcdwizard.com/boards/waveshare-p4-nano-7-dsi-touch-a"
+  },
+  {
+    "id": "waveshare-p4-nano-8-dsi-touch-a",
+    "name": "Waveshare ESP32-P4-NANO + 8-DSI-TOUCH-A",
+    "vendor": "Waveshare",
+    "mcu": "ESP32-P4",
+    "display": "JD9365 800x1280 DSI",
+    "touch": "GT911",
+    "page": "https://lcdwizard.com/boards/waveshare-p4-nano-8-dsi-touch-a"
+  },
+  {
     "id": "waveshare-p4-wifi6-touch-lcd-101",
     "name": "Waveshare ESP32-P4-WIFI6-Touch-LCD-10.1",
     "vendor": "Waveshare",
@@ -412,6 +529,33 @@
     "display": "ST7796 / ST7796S 320x480 SPI",
     "touch": "FT6236 / FT6336U",
     "page": "https://lcdwizard.com/boards/waveshare-p4-wifi6-touch-lcd-35"
+  },
+  {
+    "id": "waveshare-p4-wifi6-touch-lcd-43",
+    "name": "Waveshare ESP32-P4-WIFI6-Touch-LCD-4.3",
+    "vendor": "Waveshare",
+    "mcu": "ESP32-P4",
+    "display": "ST7701 (MIPI-DSI) 480x800 DSI",
+    "touch": "GT911",
+    "page": "https://lcdwizard.com/boards/waveshare-p4-wifi6-touch-lcd-43"
+  },
+  {
+    "id": "waveshare-p4-wifi6-touch-lcd-5",
+    "name": "Waveshare ESP32-P4-WIFI6-Touch-LCD-5",
+    "vendor": "Waveshare",
+    "mcu": "ESP32-P4",
+    "display": "HX8394 720x1280 DSI",
+    "touch": "GT911",
+    "page": "https://lcdwizard.com/boards/waveshare-p4-wifi6-touch-lcd-5"
+  },
+  {
+    "id": "waveshare-p4-wifi6-touch-lcd-7b",
+    "name": "Waveshare ESP32-P4-WIFI6-Touch-LCD-7B",
+    "vendor": "Waveshare",
+    "mcu": "ESP32-P4",
+    "display": "EK79007 1024x600 DSI",
+    "touch": "GT911",
+    "page": "https://lcdwizard.com/boards/waveshare-p4-wifi6-touch-lcd-7b"
   },
   {
     "id": "waveshare-s3-amoled-191",
@@ -736,6 +880,15 @@
     "display": "ST7789 240x320 SPI",
     "touch": "CST328",
     "page": "https://lcdwizard.com/boards/waveshare-s3-touch-lcd-28"
+  },
+  {
+    "id": "waveshare-s3-touch-lcd-28-v2",
+    "name": "Waveshare ESP32-S3-Touch-LCD-2.8 V2",
+    "vendor": "Waveshare",
+    "mcu": "ESP32-S3",
+    "display": "ST7789 240x320 SPI",
+    "touch": "CST3530",
+    "page": "https://lcdwizard.com/boards/waveshare-s3-touch-lcd-28-v2"
   },
   {
     "id": "waveshare-s3-touch-lcd-28b",

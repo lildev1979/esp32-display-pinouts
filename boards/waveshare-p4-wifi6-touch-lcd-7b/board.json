@@ -1,0 +1,142 @@
+{
+  "id": "waveshare-p4-wifi6-touch-lcd-7b",
+  "name": "Waveshare ESP32-P4-WIFI6-Touch-LCD-7B",
+  "vendor": "Waveshare",
+  "group": "All-in-one boards",
+  "description": "7\" 1024x600 MIPI-DSI panel (EK79007) with GT911 touch on an ESP32-P4, an ES8311 speaker codec, a TF card, RS485, CAN and Wi-Fi through its ESP32-C6. Compiled, not yet seen on a board.",
+  "mcu": {
+    "id": "esp32p4",
+    "name": "ESP32-P4"
+  },
+  "flashMB": 32,
+  "psramMB": 32,
+  "usbCdc": false,
+  "display": {
+    "controller": "ek79007",
+    "controllerName": "EK79007",
+    "interface": "dsi",
+    "width": 1024,
+    "height": 600,
+    "colorDepth": 16,
+    "rgbOrder": "rgb",
+    "invert": false,
+    "pins": {
+      "rst": 33
+    },
+    "options": {
+      "initSeq": "ek79007_init_operations",
+      "lanes": "2",
+      "laneMbps": 1000,
+      "pclkMhz": 52,
+      "hsyncFrontPorch": 160,
+      "hsyncPulseWidth": 10,
+      "hsyncBackPorch": 160,
+      "vsyncFrontPorch": 12,
+      "vsyncPulseWidth": 1,
+      "vsyncBackPorch": 23
+    },
+    "backlight": {
+      "pin": 32,
+      "active": 0,
+      "pwm": true,
+      "freq": 5000,
+      "defaultLevel": 100
+    }
+  },
+  "touch": {
+    "controller": "gt911",
+    "controllerName": "GT911",
+    "pins": {
+      "sda": 7,
+      "scl": 8,
+      "int": -1,
+      "rst": -1
+    },
+    "swapXY": false,
+    "invertX": true,
+    "invertY": true,
+    "options": {
+      "i2cAddr": "0x5D",
+      "freqKhz": 400,
+      "sharedI2C": true
+    }
+  },
+  "buses": [
+    {
+      "name": "I2C (GPIO 7 / 8)",
+      "kind": "i2c",
+      "pins": {
+        "sda": 7,
+        "scl": 8
+      }
+    }
+  ],
+  "ioExpanders": [],
+  "peripherals": [
+    {
+      "name": "SDCard",
+      "chip": "SD card",
+      "kind": "Storage",
+      "pins": {
+        "clk": 43,
+        "cmd": 44,
+        "d0": 39,
+        "d1": 40,
+        "d2": 41,
+        "d3": 42
+      }
+    },
+    {
+      "name": "RS485",
+      "chip": "RS485 / Modbus RTU",
+      "kind": "Industrial",
+      "pins": {
+        "tx": 27,
+        "rx": 26
+      }
+    },
+    {
+      "name": "CanBus",
+      "chip": "CAN bus / OBD-II",
+      "kind": "Vehicle",
+      "pins": {
+        "tx": 22,
+        "rx": 21
+      }
+    },
+    {
+      "name": "WiFiCoprocessor",
+      "chip": "Wi-Fi co-processor",
+      "kind": "Network",
+      "pins": {
+        "clk": 18,
+        "cmd": 19,
+        "d0": 14,
+        "d1": 15,
+        "d2": 16,
+        "d3": 17,
+        "rst": 54
+      }
+    }
+  ],
+  "digitalIO": [],
+  "analogInputs": [],
+  "audio": {
+    "output": "es8311",
+    "pins": {
+      "mclk": 13,
+      "bclk": 12,
+      "lrclk": 10,
+      "din": 9,
+      "pa": 53
+    }
+  },
+  "verify": "Nobody at LCD Wizard has had this board: the export for it compiles and has not been seen on the panel. Pins, the panel's start-up table and its settings are Waveshare's own, from their Arduino examples for this board (EK79007 on two lanes at 1000 Mbps, 52 MHz, hsync 10/160/160, vsync 1/23/12, LCD reset GPIO 33) and their ESP-IDF BSP. The backlight is GPIO 32 and is lit when the pin is LOW; the export dims it with the PWM inverted. The GT911 has no reset or interrupt line and may answer at 0x14 instead of 0x5D; its readings are mirrored on both axes, which the preset undoes. Boards sold now usually carry an ESP32-P4 of revision 3 (Waveshare's own Arduino examples build for it), and a design on this preset starts on it; for a chip before revision 3 (the upload says \"revision v1.x\"), choose that under Hardware > Board > Chip revision. The TF card (SDMMC, 4-bit), the ES8311 speaker codec (amplifier on GPIO 53), RS485 (TX 27, RX 26, no direction pin) and CAN (TX 22, RX 21, arriving switched off) are in the kit. Wi-Fi is the ESP32-C6 beside the P4, in the kit as the Wi-Fi co-processor on the ESP32 core's own SDIO lines (CLK 18, CMD 19, D0-D3 14-17, reset 54) - Waveshare publish no pins for it, and their own Arduino Wi-Fi example uses those defaults; it has to run ESP-Hosted of the core's release, which the board prints at start (see the README; Waveshare's FAQ flashes the C6 over its own UART). Wi-Fi through it compiles and has not been on a board. Not driven: the two ES7210 microphones, the camera connector and the C6's Bluetooth; ESP-NOW does not go through the C6.",
+  "links": {
+    "page": "https://lcdwizard.com/boards/waveshare-p4-wifi6-touch-lcd-7b",
+    "designer": "https://app.lcdwizard.com/app?board=waveshare-p4-wifi6-touch-lcd-7b",
+    "vendorProduct": "https://www.waveshare.com/esp32-p4-wifi6-touch-lcd-7b.htm",
+    "vendorDocs": "https://docs.waveshare.com/ESP32-P4-WIFI6-Touch-LCD-7B",
+    "schematic": "https://files.waveshare.com/wiki/ESP32-P4-WIFI6-Touch-LCD-7B/ESP32-P4-WIFI6-Touch-LCD-7B.pdf"
+  }
+}

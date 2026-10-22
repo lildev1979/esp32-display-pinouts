@@ -1,0 +1,124 @@
+{
+  "id": "waveshare-c6-touch-lcd-147",
+  "name": "Waveshare ESP32-C6-Touch-LCD-1.47",
+  "vendor": "Waveshare",
+  "group": "All-in-one boards",
+  "description": "1.47\" 172x320 IPS LCD (JD9853, SPI), AXS5106L touch, TF card, QMI8658A, battery sense.",
+  "mcu": {
+    "id": "esp32c6",
+    "name": "ESP32-C6"
+  },
+  "flashMB": 8,
+  "psramMB": 0,
+  "usbCdc": true,
+  "display": {
+    "controller": "jd9853",
+    "controllerName": "JD9853",
+    "interface": "spi",
+    "width": 172,
+    "height": 320,
+    "colorDepth": 16,
+    "rgbOrder": "rgb",
+    "invert": true,
+    "pins": {
+      "sck": 1,
+      "mosi": 2,
+      "miso": -1,
+      "cs": 14,
+      "dc": 15,
+      "rst": 22
+    },
+    "options": {
+      "freqMhz": 40,
+      "spiHost": "SPI2_HOST",
+      "initSeq": "lw_jd9853_ws147_init_operations"
+    },
+    "backlight": {
+      "pin": 23,
+      "active": 1,
+      "pwm": true,
+      "freq": 5000,
+      "defaultLevel": 100
+    }
+  },
+  "touch": {
+    "controller": "axs5106l",
+    "controllerName": "AXS5106L",
+    "pins": {
+      "sda": 18,
+      "scl": 19,
+      "int": 21,
+      "rst": 20
+    },
+    "swapXY": false,
+    "invertX": true,
+    "invertY": false,
+    "options": {
+      "i2cAddr": "0x63",
+      "freqKhz": 400,
+      "sharedI2C": true
+    }
+  },
+  "buses": [
+    {
+      "name": "I2C (GPIO 18 / 19)",
+      "kind": "i2c",
+      "pins": {
+        "sda": 18,
+        "scl": 19
+      }
+    },
+    {
+      "name": "SPI (panel and TF card)",
+      "kind": "spi",
+      "pins": {
+        "sck": 1,
+        "mosi": 2,
+        "miso": 3
+      }
+    }
+  ],
+  "ioExpanders": [],
+  "peripherals": [
+    {
+      "name": "IMU",
+      "chip": "QMI8658",
+      "kind": "Motion",
+      "bus": "I2C (GPIO 18 / 19)",
+      "address": "0x6B"
+    },
+    {
+      "name": "SDCard",
+      "chip": "SD card",
+      "kind": "Storage",
+      "bus": "SPI (panel and TF card)",
+      "pins": {
+        "cs": 4
+      }
+    }
+  ],
+  "digitalIO": [
+    {
+      "name": "BOOTButton",
+      "direction": "in",
+      "pin": 9,
+      "activeLow": true
+    }
+  ],
+  "analogInputs": [
+    {
+      "name": "Battery",
+      "pin": 0,
+      "unit": "V"
+    }
+  ],
+  "audio": null,
+  "verify": "Nobody at LCD Wizard has had this board. The Arduino export for it compiles, and nothing in this preset has been seen on the panel. Pins, the panel's register load and the touch panel's read are from Waveshare's own demo code (ESP32-C6-Touch-LCD-1.47-Demo.zip, read 2026-10-18) and the schematic. The panel is a JD9853 on SPI (SCK 1, MOSI 2, CS 14, DC 15, reset 22, backlight 23 dimmed by PWM): no graphics library has a class for this glass, so the export drives it as Waveshare's Arduino demo does, through GFX Library for Arduino's Arduino_ST7789 with Waveshare's own register load, a 172 x 320 window at column 34. Touch is an AXS5106L at 0x63 (SDA 18, SCL 19, INT 21, reset 20), read by the sketch; a finger held on a key stays held between its reports. The QMI8658 IMU (0x6B) shares that I2C bus; its interrupts (GPIO 5 and 6) are not used. The battery is read on GPIO 0 through a 200K/100K divider, so the Battery input reads volts. The BOOT button is GPIO 9 (Waveshare's pin table says 8; their own firmware and the schematic say 9). The TF card slot shares the panel's SPI lines (SCK 1, MOSI 2; MISO 3 and CS 4 are its own, and the schematic pulls all four up with 10K), as Waveshare's ESP-IDF factory firmware runs it beside the panel on the C6's one SPI controller. It arrives switched off; switched on under Hardware > Devices, it is started on the panel's bus once the panel has, at 20 MHz - compiled, and not yet read on a board. If a touch lands mirrored left to right, Invert X under Hardware > Touch is the setting to change; if the colours come out as a negative, untick Invert under Hardware > Display.",
+  "links": {
+    "page": "https://lcdwizard.com/boards/waveshare-c6-touch-lcd-147",
+    "designer": "https://app.lcdwizard.com/app?board=waveshare-c6-touch-lcd-147",
+    "vendorProduct": "https://www.waveshare.com/esp32-c6-touch-lcd-1.47.htm",
+    "vendorDocs": "https://docs.waveshare.com/ESP32-C6-Touch-LCD-1.47",
+    "schematic": "https://files.waveshare.com/wiki/ESP32-C6-Touch-LCD-1.47/ESP32-C6-Touch-LCD-1.47-Schematic.pdf"
+  }
+}

@@ -63,7 +63,8 @@
     "options": {
       "i2cAddr": "0x15",
       "freqKhz": 400,
-      "sharedI2C": true
+      "sharedI2C": true,
+      "irq": "poll"
     }
   },
   "buses": [

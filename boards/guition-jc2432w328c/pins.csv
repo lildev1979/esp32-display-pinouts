@@ -1,0 +1,29 @@
+group,signal,pin
+Panel - SPI (4-wire serial),SCK / CLK,GPIO 14
+Panel - SPI (4-wire serial),MOSI / SDA,GPIO 13
+Panel - SPI (4-wire serial),MISO / SDO,GPIO 12
+Panel - SPI (4-wire serial),CS,GPIO 15
+Panel - SPI (4-wire serial),DC / RS,GPIO 2
+Panel - SPI (4-wire serial),RESET,-
+Touch - CST820,SDA,GPIO 33
+Touch - CST820,SCL,GPIO 32
+Touch - CST820,RESET,GPIO 25
+Backlight,Pin,GPIO 27
+Backlight,Active,high
+Backlight,Drive,PWM 5000 Hz
+SPI (TF card),SCK,GPIO 18
+SPI (TF card),MOSI,GPIO 23
+SPI (TF card),MISO,GPIO 19
+SDCard - SD card,Bus,SPI (TF card)
+SDCard - SD card,CS,GPIO 5
+Inputs and outputs,Light Sensor (analog in),GPIO 34
+Inputs and outputs,Led Red (output),GPIO 4
+Inputs and outputs,Led Green (output),GPIO 16
+Inputs and outputs,Led Blue (output),GPIO 17
+Inputs and outputs,Boot Button (input),GPIO 0
+Board I/O,LedRed (active low),GPIO 4
+Board I/O,LedGreen (active low),GPIO 16
+Board I/O,LedBlue (active low),GPIO 17
+Board I/O,BootButton (active low),GPIO 0
+Analogue input,LightSensor,GPIO 34
+Audio,DAC,GPIO 26

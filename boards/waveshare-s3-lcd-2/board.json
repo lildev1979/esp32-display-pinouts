@@ -48,6 +48,14 @@
         "sda": 48,
         "scl": 47
       }
+    },
+    {
+      "name": "Camera control (GPIO 21 / 16)",
+      "kind": "i2c",
+      "pins": {
+        "sda": 21,
+        "scl": 16
+      }
     }
   ],
   "ioExpanders": [],
@@ -58,6 +66,27 @@
       "kind": "Motion",
       "bus": "I2C (GPIO 48 / 47)",
       "address": "0x6B"
+    },
+    {
+      "name": "Camera",
+      "chip": "Camera",
+      "kind": "Camera",
+      "bus": "Camera control (GPIO 21 / 16)",
+      "pins": {
+        "xclk": 8,
+        "pclk": 9,
+        "vsync": 6,
+        "href": 4,
+        "d0": 12,
+        "d1": 13,
+        "d2": 15,
+        "d3": 11,
+        "d4": 14,
+        "d5": 10,
+        "d6": 7,
+        "d7": 2,
+        "pwdn": 17
+      }
     }
   ],
   "digitalIO": [
@@ -70,7 +99,7 @@
   ],
   "analogInputs": [],
   "audio": null,
-  "verify": "Pins from Waveshare's demo code and schematic (https://files.waveshare.com/wiki/ESP32-S3-LCD-2/ESP32-S3-LCD-2-Demo.zip). The wiki links the ESP32-S3-Touch-LCD-2 schematic for this board: it is the same PCB without the touch layer (the touch version adds a touch controller on SDA48/SCL47 with TP_INT on IO46).",
+  "verify": "Pins from Waveshare's demo code and schematic (https://files.waveshare.com/wiki/ESP32-S3-LCD-2/ESP32-S3-LCD-2-Demo.zip). The wiki links the ESP32-S3-Touch-LCD-2 schematic for this board: it is the same PCB without the touch layer (the touch version adds a touch controller on SDA48/SCL47 with TP_INT on IO46). Camera connector (in the kit, switched off): pins are Waveshare's 09_lvgl_camera.ino (the 2\" boards' demo zip), its control lines on a bus of their own (GPIO 21 / 16), 20 MHz, RGB565, power-down GPIO 17. Nothing has run on a board.",
   "links": {
     "page": "https://lcdwizard.com/boards/waveshare-s3-lcd-2",
     "designer": "https://app.lcdwizard.com/app?board=waveshare-s3-lcd-2",

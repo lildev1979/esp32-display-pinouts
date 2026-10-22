@@ -1,0 +1,131 @@
+{
+  "id": "lcdwiki-es3c40p",
+  "name": "LCDWIKI 4.0\" ESP32-S3 (ES3C40P)",
+  "vendor": "LCDWIKI",
+  "group": "All-in-one boards",
+  "description": "4.0\" 320x480 IPS ST7796S over SPI with FT6336U capacitive touch, an ES8311 codec with microphone and speaker output, a WS2812 LED, a 4-bit SD slot and battery charging.",
+  "mcu": {
+    "id": "esp32s3",
+    "name": "ESP32-S3"
+  },
+  "flashMB": 16,
+  "psramMB": 8,
+  "usbCdc": true,
+  "display": {
+    "controller": "st7796",
+    "controllerName": "ST7796 / ST7796S",
+    "interface": "spi",
+    "width": 320,
+    "height": 480,
+    "colorDepth": 16,
+    "rgbOrder": "bgr",
+    "invert": true,
+    "pins": {
+      "sck": 12,
+      "mosi": 11,
+      "miso": 13,
+      "cs": 10,
+      "dc": 46,
+      "rst": -1
+    },
+    "options": {
+      "freqMhz": 80,
+      "applyClock": true,
+      "spiHost": "SPI2_HOST",
+      "spiMode": "0",
+      "threeWire": false,
+      "tune": "st7796s_lcdwiki"
+    },
+    "backlight": {
+      "pin": 45,
+      "active": 1,
+      "pwm": true,
+      "freq": 5000,
+      "defaultLevel": 100
+    }
+  },
+  "touch": {
+    "controller": "ft6236",
+    "controllerName": "FT6236 / FT6336U",
+    "pins": {
+      "sda": 16,
+      "scl": 15,
+      "int": 17,
+      "rst": 18
+    },
+    "swapXY": false,
+    "invertX": false,
+    "invertY": false,
+    "options": {
+      "i2cAddr": "0x38",
+      "freqKhz": 400,
+      "sharedI2C": true
+    }
+  },
+  "buses": [
+    {
+      "name": "I2C (GPIO 16 / 15, IIC header)",
+      "kind": "i2c",
+      "pins": {
+        "sda": 16,
+        "scl": 15
+      }
+    }
+  ],
+  "ioExpanders": [],
+  "peripherals": [
+    {
+      "name": "SDCard",
+      "chip": "SD card",
+      "kind": "Storage",
+      "pins": {
+        "clk": 38,
+        "cmd": 40,
+        "d0": 39,
+        "d1": 41,
+        "d2": 48,
+        "d3": 47
+      }
+    },
+    {
+      "name": "RgbLed",
+      "chip": "NeoPixel string",
+      "kind": "Output",
+      "pins": {
+        "data": 42
+      }
+    }
+  ],
+  "digitalIO": [
+    {
+      "name": "BootButton",
+      "direction": "in",
+      "pin": 0,
+      "activeLow": true
+    }
+  ],
+  "analogInputs": [
+    {
+      "name": "Battery",
+      "pin": 9,
+      "unit": "V"
+    }
+  ],
+  "audio": {
+    "output": "es8311",
+    "pins": {
+      "mclk": 4,
+      "bclk": 5,
+      "lrclk": 7,
+      "din": 8,
+      "pa": 1
+    }
+  },
+  "verify": "Run on a board (2026-10-22): the picture, touch (FT6336U at 0x38), the ES8311 answering at 0x18 and the 4-bit SD card (it mounted and read a 128 GB card) were seen working. Not reported yet: sound from the speaker, the microphone, the RGB LED and the battery reading. Pins are from LCDWIKI's page, Arduino demo instructions and schematic (their demo source is not published). The panel is set as LCDWIKI's ST7796_Init.txt has it - inversion on, BGR - with its power, VCOM and gamma sent as Panel tuning (the first build without them looked a little washed out); if colours come out negative turn Invert off, if red and blue are swapped change the colour order. The SPI clock is 80 MHz, sent to GFX Library for Arduino (which otherwise starts at 40 MHz); if the picture is noisy or garbled, set the SPI clock back to 40 MHz. Its reset is the board's RESET button, not a GPIO; DC (46) and the backlight (45) are strapping pins used as outputs once running. Touch, the ES8311 and the IIC header share I2C on GPIO 16/15. The speaker amplifier is enabled by pulling GPIO1 low; sound goes out on GPIO8 and the microphone comes in on GPIO6 (the page's I2S_DO/I2S_DI names are the other way round to the schematic) - switch it on under Hardware > Audio. Battery: two 100K resistors halve the cell on GPIO9. For smoother screen changes raise the draw buffer in Project settings (120 lines, double buffered, in PSRAM). Left free on the expansion header: GPIO 2, 3, 14 and 21, and UART0 on 43/44. USB-C goes straight to the S3, so the serial log needs USB CDC On Boot (the export sets it).",
+  "links": {
+    "page": "https://lcdwizard.com/boards/lcdwiki-es3c40p",
+    "designer": "https://app.lcdwizard.com/app?board=lcdwiki-es3c40p",
+    "vendorDocs": "https://www.lcdwiki.com/4.0inch_ESP32-S3_Display",
+    "schematic": "https://www.lcdwiki.com/res/ES3C40P/4.0inch_ESP32-S3_Display_Schematic.pdf"
+  }
+}

@@ -1,9 +1,9 @@
 {
   "id": "m5stack-core2",
-  "name": "M5Stack Core2",
+  "name": "M5Stack Core2 (v1.0, AXP192)",
   "vendor": "M5Stack",
   "group": "All-in-one boards",
-  "description": "2.0\" 320x240 ILI9342C with FT6336U touch. Power rails run through the AXP192 PMIC.",
+  "description": "2.0\" 320x240 ILI9342C with FT6336U touch. The first Core2: its panel's supply, reset and backlight are the AXP192's.",
   "mcu": {
     "id": "esp32",
     "name": "ESP32 (WROOM / WROVER)"
@@ -26,7 +26,10 @@
       "miso": 38,
       "cs": 5,
       "dc": 15,
-      "rst": -1
+      "rst": {
+        "pmu": "per_core2_pmic",
+        "rail": "gpio4"
+      }
     },
     "options": {
       "freqMhz": 40,
@@ -62,6 +65,14 @@
   },
   "buses": [
     {
+      "name": "Internal I2C (GPIO 21 / 22)",
+      "kind": "i2c",
+      "pins": {
+        "sda": 21,
+        "scl": 22
+      }
+    },
+    {
       "name": "Port A (Grove, GPIO 32 / 33)",
       "kind": "i2c",
       "pins": {
@@ -71,11 +82,19 @@
     }
   ],
   "ioExpanders": [],
-  "peripherals": [],
+  "peripherals": [
+    {
+      "name": "Power",
+      "chip": "AXP192",
+      "kind": "Power",
+      "bus": "Internal I2C (GPIO 21 / 22)",
+      "address": "0x34"
+    }
+  ],
   "digitalIO": [],
   "analogInputs": [],
   "audio": null,
-  "verify": "Backlight and panel reset are driven by the AXP192 over I2C, not by a GPIO. Initialise the PMIC before LVGL.",
+  "verify": "This is the first Core2 (v1.0), with an AXP192 power chip; a Core2 v1.1 has an AXP2101 - choose the v1.1 preset for that one (the chip's id says which: 0x03 at register 0x03 is an AXP192, 0x4A an AXP2101). The panel's supply, reset and backlight are driven through the AXP192 as M5Stack's own start-up drives them; the backlight is on and does not dim. MicroPython starts the chip before the panel too, on the touch panel I2C bus; ESPHome has no component for it and is not offered. Compiled; not seen on a panel by LCD Wizard.",
   "links": {
     "page": "https://lcdwizard.com/boards/m5stack-core2",
     "designer": "https://app.lcdwizard.com/app?board=m5stack-core2",

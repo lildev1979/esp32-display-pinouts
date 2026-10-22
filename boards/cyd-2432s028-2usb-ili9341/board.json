@@ -1,0 +1,88 @@
+{
+  "id": "cyd-2432s028-2usb-ili9341",
+  "name": "ESP32-2432S028 \"Cheap Yellow Display\", two USB ports, ILI9341",
+  "vendor": "Sunton",
+  "group": "All-in-one boards",
+  "description": "The CYD with a micro-USB and a USB-C port, in its ILI9341 batch: 2.8\" 240x320 ILI9341 with XPT2046 resistive touch on a second SPI bus. Same pins as the original CYD.",
+  "mcu": {
+    "id": "esp32",
+    "name": "ESP32 (WROOM / WROVER)"
+  },
+  "flashMB": 4,
+  "psramMB": 0,
+  "usbCdc": false,
+  "display": {
+    "controller": "ili9341",
+    "controllerName": "ILI9341",
+    "interface": "spi",
+    "width": 240,
+    "height": 320,
+    "colorDepth": 16,
+    "rgbOrder": "bgr",
+    "invert": false,
+    "pins": {
+      "sck": 14,
+      "mosi": 13,
+      "miso": 12,
+      "cs": 15,
+      "dc": 2,
+      "rst": -1
+    },
+    "options": {
+      "freqMhz": 40,
+      "spiHost": "HSPI",
+      "spiMode": "0",
+      "threeWire": false
+    },
+    "backlight": {
+      "pin": 21,
+      "active": 1,
+      "pwm": true,
+      "freq": 5000,
+      "defaultLevel": 100
+    }
+  },
+  "touch": {
+    "controller": "xpt2046",
+    "controllerName": "XPT2046",
+    "pins": {
+      "sck": 25,
+      "mosi": 32,
+      "miso": 39,
+      "cs": 33,
+      "irq": 36
+    },
+    "swapXY": false,
+    "invertX": false,
+    "invertY": false,
+    "options": {
+      "freqKhz": 2500,
+      "sharedSPI": false
+    }
+  },
+  "buses": [
+    {
+      "name": "CN1 I2C (GPIO 27 / 22)",
+      "kind": "i2c",
+      "pins": {
+        "sda": 27,
+        "scl": 22
+      }
+    }
+  ],
+  "ioExpanders": [],
+  "peripherals": [],
+  "digitalIO": [],
+  "analogInputs": [],
+  "audio": {
+    "output": "dac_internal",
+    "pins": {
+      "dac": 26
+    }
+  },
+  "verify": "Pins are the Sunton CYD's, which the two-USB board shares (witnessmenow/ESP32-Cheap-Yellow-Display). Stored portrait (240 x 320) because the original CYD preset, stored landscape for its own glass, draws this panel squashed and striped. Colour order BGR with inversion off is what a user's own board needed to look as designed (2026-10-21), as an ILI9341 at 240 x 320; touch was not reported on separately. If the picture is a negative, turn Invert on; if red and blue are swapped, set RGB; if colours look washed out, the same notes report a gamma fault on some of these boards. If this preset gives a white screen, the panel is the ST7789 batch: use the ST7789 preset.",
+  "links": {
+    "page": "https://lcdwizard.com/boards/cyd-2432s028-2usb-ili9341",
+    "designer": "https://app.lcdwizard.com/app?board=cyd-2432s028-2usb-ili9341"
+  }
+}

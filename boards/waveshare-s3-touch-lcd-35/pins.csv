@@ -20,6 +20,19 @@ RTC - PCF85063,Bus,I2C (GPIO 8 / 7)
 RTC - PCF85063,Address,0x51
 IMU - QMI8658,Bus,I2C (GPIO 8 / 7)
 IMU - QMI8658,Address,0x6B
+Camera,Bus,I2C (GPIO 8 / 7)
+Camera,XCLK,GPIO 38
+Camera,PCLK,GPIO 41
+Camera,VSYNC,GPIO 17
+Camera,HREF,GPIO 18
+Camera,D0,GPIO 45
+Camera,D1,GPIO 47
+Camera,D2,GPIO 48
+Camera,D3,GPIO 46
+Camera,D4,GPIO 42
+Camera,D5,GPIO 40
+Camera,D6,GPIO 39
+Camera,D7,GPIO 21
 Inputs and outputs,BOOTButton (input),GPIO 0
 Board I/O,BOOTButton (active low),GPIO 0
 Audio,MCLK,GPIO 12

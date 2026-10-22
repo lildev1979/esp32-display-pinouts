@@ -1,0 +1,31 @@
+group,signal,pin
+Panel - MIPI-DSI,RESET,GPIO 27
+Touch - GT911,SDA,GPIO 7
+Touch - GT911,SCL,GPIO 8
+Backlight,Pin,GPIO 26
+Backlight,Active,low
+Backlight,Drive,PWM 5000 Hz
+I2C (GPIO 7 / 8),SDA,GPIO 7
+I2C (GPIO 7 / 8),SCL,GPIO 8
+SDCard - SD card,CLK,GPIO 43
+SDCard - SD card,CMD,GPIO 44
+SDCard - SD card,D0,GPIO 39
+SDCard - SD card,D1,GPIO 40
+SDCard - SD card,D2,GPIO 41
+SDCard - SD card,D3,GPIO 42
+WiFiCoprocessor - Wi-Fi co-processor,CLK,GPIO 18
+WiFiCoprocessor - Wi-Fi co-processor,CMD,GPIO 19
+WiFiCoprocessor - Wi-Fi co-processor,D0,GPIO 14
+WiFiCoprocessor - Wi-Fi co-processor,D1,GPIO 15
+WiFiCoprocessor - Wi-Fi co-processor,D2,GPIO 16
+WiFiCoprocessor - Wi-Fi co-processor,D3,GPIO 17
+WiFiCoprocessor - Wi-Fi co-processor,RST,GPIO 54
+Inputs and outputs,Battery (analog in),GPIO 20
+Inputs and outputs,BOOTButton (input),GPIO 35
+Board I/O,BOOTButton (active low),GPIO 35
+Analogue input,Battery,GPIO 20
+Audio,MCLK,GPIO 13
+Audio,BCLK,GPIO 12
+Audio,LRCLK,GPIO 10
+Audio,DIN,GPIO 9
+Audio,PA,GPIO 53

@@ -1,0 +1,99 @@
+{
+  "id": "viewe-p4-smartdisplay-7",
+  "name": "VIEWE ESP32-P4 SmartDisplay 7 inch (UEP4S070H1024V600C)",
+  "vendor": "VIEWE",
+  "group": "All-in-one boards",
+  "description": "7\" 1024x600 MIPI-DSI panel (JD9165) with GT911 touch, an I2S speaker amplifier and Wi-Fi through an ESP32-C6 on an ESP32-P4. Compiled, not yet seen on a board.",
+  "mcu": {
+    "id": "esp32p4",
+    "name": "ESP32-P4"
+  },
+  "flashMB": 16,
+  "psramMB": 32,
+  "usbCdc": false,
+  "display": {
+    "controller": "jd9165",
+    "controllerName": "JD9165",
+    "interface": "dsi",
+    "width": 1024,
+    "height": 600,
+    "colorDepth": 16,
+    "rgbOrder": "rgb",
+    "invert": false,
+    "pins": {
+      "rst": 22
+    },
+    "options": {
+      "initSeq": "jd9165_viewe_s070_init",
+      "lanes": "2",
+      "laneMbps": 600,
+      "pclkMhz": 50,
+      "hsyncFrontPorch": 160,
+      "hsyncPulseWidth": 20,
+      "hsyncBackPorch": 136,
+      "vsyncFrontPorch": 20,
+      "vsyncPulseWidth": 2,
+      "vsyncBackPorch": 12
+    },
+    "backlight": {
+      "pin": 23,
+      "active": 1,
+      "pwm": true,
+      "freq": 5000,
+      "defaultLevel": 100
+    }
+  },
+  "touch": {
+    "controller": "gt911",
+    "controllerName": "GT911",
+    "pins": {
+      "sda": 7,
+      "scl": 8,
+      "int": -1,
+      "rst": -1
+    },
+    "swapXY": false,
+    "invertX": false,
+    "invertY": false,
+    "options": {
+      "i2cAddr": "0x5D",
+      "freqKhz": 400,
+      "sharedI2C": false
+    }
+  },
+  "buses": [],
+  "ioExpanders": [],
+  "peripherals": [
+    {
+      "name": "WiFiCoprocessor",
+      "chip": "Wi-Fi co-processor",
+      "kind": "Network",
+      "pins": {
+        "clk": 18,
+        "cmd": 19,
+        "d0": 14,
+        "d1": 15,
+        "d2": 16,
+        "d3": 17,
+        "rst": 54
+      }
+    }
+  ],
+  "digitalIO": [],
+  "analogInputs": [],
+  "audio": {
+    "output": "i2s_ext",
+    "pins": {
+      "bclk": 33,
+      "lrclk": 32,
+      "din": 34,
+      "pa": 31
+    }
+  },
+  "verify": "Nobody at LCD Wizard has had this board: the export for it compiles and has not been seen on the panel. Its panel is a JD9165 run under VIEWE's own register load, which the export writes into the sketch; pins and settings are from VIEWE's own board files (their ESP32_Display_Panel board definition and ESP-IDF BSP for the UEP4S070H1024V600C-WBA): two lanes at 600 Mbps, 50 MHz, hsync 20/136/160, vsync 2/12/20, LCD reset GPIO 22, backlight GPIO 23 lit when high. GPIO 4 and GPIO 5 switch the panel's 1.8 V and 3.3 V supplies and must be raised, 30 ms apart, before the panel starts; the generated code does this. The GT911 is on GPIO 7/8 with no reset or interrupt line and may answer at 0x14 instead of 0x5D. The speaker is an NS4168 I2S amplifier (BCLK 33, LRCK 32, data 34) whose control pin, GPIO 31, is held high to play. Wi-Fi is the ESP32-C6, in the kit as the Wi-Fi co-processor on the SDIO lines VIEWE's own Wi-Fi example sets (CLK 18, CMD 19, D0-D3 14-17, reset 54); it has to run ESP-Hosted of the core's release, which the board prints at start (see the README). Wi-Fi through it compiles and has not been on a board. Not driven: the TF card, the PDM microphone, RS485 (VIEWE's microphone and RS485 code both name GPIO 26 and 27), the RGB LED, the camera and the C6's Bluetooth; ESP-NOW does not go through the C6. A design on this preset builds for an ESP32-P4 before revision 3, which VIEWE's README points to (it gives the processor as 360 MHz, the older chips' clock); if the upload reports revision 3 (\"revision v3.1\"), choose that under Hardware > Board > Chip revision. VIEWE's BSP can also drive an EK79007 panel on the same pins (a build option whose default is the JD9165); if yours is one, choose the EK79007 on the Display tab.",
+  "links": {
+    "page": "https://lcdwizard.com/boards/viewe-p4-smartdisplay-7",
+    "designer": "https://app.lcdwizard.com/app?board=viewe-p4-smartdisplay-7",
+    "vendorDocs": "https://github.com/VIEWESMART/7-1024X600-ESP32-P4-C6-TOUCH-DISPLAY"
+  }
+}

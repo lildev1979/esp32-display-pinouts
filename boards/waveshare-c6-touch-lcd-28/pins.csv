@@ -13,11 +13,21 @@ Backlight,Active,high
 Backlight,Drive,PWM 5000 Hz
 I2C (GPIO 6 / 7),SDA,GPIO 6
 I2C (GPIO 6 / 7),SCL,GPIO 7
+SPI (panel and TF card),SCK,GPIO 0
+SPI (panel and TF card),MOSI,GPIO 1
+SPI (panel and TF card),MISO,GPIO 8
 IOExtension (I/O expander),Type,WS_IOEXT
 IOExtension (I/O expander),Address,0x24
 IMU - QMI8658,Bus,I2C (GPIO 6 / 7)
 IMU - QMI8658,Address,0x6B
 RTC - PCF85063,Bus,I2C (GPIO 6 / 7)
 RTC - PCF85063,Address,0x51
+SDCard - SD card,Bus,SPI (panel and TF card)
+SDCard - SD card,CS,GPIO 23
 Inputs and outputs,BOOTButton (input),GPIO 9
 Board I/O,BOOTButton (active low),GPIO 9
+Audio,MCLK,-
+Audio,BCLK,GPIO 15
+Audio,LRCLK,GPIO 3
+Audio,DIN,GPIO 2
+Audio,PA,IOExtension 3

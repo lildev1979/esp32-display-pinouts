@@ -143,6 +143,12 @@
       "direction": "in",
       "pin": 0,
       "activeLow": true
+    },
+    {
+      "name": "Buzzer",
+      "direction": "out",
+      "pin": -1,
+      "activeLow": false
     }
   ],
   "analogInputs": [
@@ -153,7 +159,7 @@
     }
   ],
   "audio": null,
-  "verify": "Nobody at LCD Wizard has had this board: the export for it compiles and has not been seen on the panel. Every pin is from Waveshare's schematic and their Arduino demo, which is what the board's factory firmware was built from. The panel is an ST7701 that shows nothing until Waveshare's own register load is sent over three wires (SDA GPIO 1, SCL GPIO 2, CS on the TCA9554's EXIO3); the sketch selects it for the load inside the panel's begin() and lets it go after, because the TF card uses the same two GPIOs (SDMMC 1-bit: CLK 2, CMD 1, D0 42, D3 held high on EXIO4) and is mounted after the panel. Only GFX Library for Arduino sends that load. The pixel clock is Waveshare's 30 MHz with their porches (hsync 10/70/60, vsync 10/20/20); they run it on a core of their own that keeps code in PSRAM, so if the picture shimmers or drifts, lower the pixel clock on the Display tab (16 to 20 MHz) before anything else. Touch (GT911, 0x5D, INT GPIO 16, reset EXIO2), the expander (0x20), the IMU (QMI8658, 0x6B) and the RTC (PCF85063, 0x51) share I2C on GPIO 15/7. The panel's reset is EXIO1 and the backlight is GPIO 6 (PWM). The battery reads on GPIO 4 through a divide-by-three. The buzzer is EXIO8 and is not in the preset: a TCA9554 line made an output starts high, which would sound it through start-up. The IMU's and the RTC's interrupts (EXIO5-7) are not used. The ESP32-S3-LCD-2.8B is the same board without touch: set Touch to None.",
+  "verify": "Nobody at LCD Wizard has had this board: the export for it compiles and has not been seen on the panel. Every pin is from Waveshare's schematic and their Arduino demo, which is what the board's factory firmware was built from. The panel is an ST7701 that shows nothing until Waveshare's own register load is sent over three wires (SDA GPIO 1, SCL GPIO 2, CS on the TCA9554's EXIO3); the sketch selects it for the load inside the panel's begin() and lets it go after, because the TF card uses the same two GPIOs (SDMMC 1-bit: CLK 2, CMD 1, D0 42, D3 held high on EXIO4) and is mounted after the panel. Only GFX Library for Arduino sends that load. The pixel clock is Waveshare's 30 MHz with their porches (hsync 10/70/60, vsync 10/20/20); they run it on a core of their own that keeps code in PSRAM, so if the picture shimmers or drifts, lower the pixel clock on the Display tab (16 to 20 MHz) before anything else. Touch (GT911, 0x5D, INT GPIO 16, reset EXIO2), the expander (0x20), the IMU (QMI8658, 0x6B) and the RTC (PCF85063, 0x51) share I2C on GPIO 15/7. The panel's reset is EXIO1 and the backlight is GPIO 6 (PWM). The battery reads on GPIO 4 through a divide-by-three. The buzzer is EXIO8, a digital output called Buzzer on Hardware > I/O: on sounds it. It starts silent - the export writes the line low before it makes it an output, since a TCA9554 line made an output starts high. There is no audio chip, speaker or microphone: the buzzer is the board's only sound, so the Internet Radio and anything else that plays needs an I2S amplifier (a MAX98357A and a small speaker) wired by hand to free pins - GPIO 43 and 44 on the UART header and GPIO 0 (the BOOT button's, which then cannot be pressed while it plays) - and set under Hardware > Audio. The IMU's and the RTC's interrupts (EXIO5-7) are not used. The ESP32-S3-LCD-2.8B is the same board without touch: set Touch to None.",
   "links": {
     "page": "https://lcdwizard.com/boards/waveshare-s3-touch-lcd-28b",
     "designer": "https://app.lcdwizard.com/app?board=waveshare-s3-touch-lcd-28b",

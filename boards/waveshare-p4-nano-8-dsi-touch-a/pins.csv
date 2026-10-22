@@ -1,0 +1,30 @@
+group,signal,pin
+Panel - MIPI-DSI,RESET,-
+Touch - GT911,SDA,GPIO 7
+Touch - GT911,SCL,GPIO 8
+Backlight - on I2C,Address,0x45
+Backlight - on I2C,Register,"0x96, 0 - 255"
+Backlight - on I2C,Bus,touch panel's
+I2C (GPIO 7 / 8),SDA,GPIO 7
+I2C (GPIO 7 / 8),SCL,GPIO 8
+SDCard - SD card,CLK,GPIO 43
+SDCard - SD card,CMD,GPIO 44
+SDCard - SD card,D0,GPIO 39
+SDCard - SD card,D1,GPIO 40
+SDCard - SD card,D2,GPIO 41
+SDCard - SD card,D3,GPIO 42
+WiFiCoprocessor - Wi-Fi co-processor,CLK,GPIO 18
+WiFiCoprocessor - Wi-Fi co-processor,CMD,GPIO 19
+WiFiCoprocessor - Wi-Fi co-processor,D0,GPIO 14
+WiFiCoprocessor - Wi-Fi co-processor,D1,GPIO 15
+WiFiCoprocessor - Wi-Fi co-processor,D2,GPIO 16
+WiFiCoprocessor - Wi-Fi co-processor,D3,GPIO 17
+WiFiCoprocessor - Wi-Fi co-processor,RST,GPIO 54
+Ethernet - Ethernet PHY on RMII,MDC,GPIO 31
+Ethernet - Ethernet PHY on RMII,MDIO,GPIO 52
+Ethernet - Ethernet PHY on RMII,POWER,GPIO 51
+Audio,MCLK,GPIO 13
+Audio,BCLK,GPIO 12
+Audio,LRCLK,GPIO 10
+Audio,DIN,GPIO 9
+Audio,PA,GPIO 53

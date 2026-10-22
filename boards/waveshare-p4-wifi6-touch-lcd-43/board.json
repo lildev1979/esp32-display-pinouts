@@ -1,0 +1,137 @@
+{
+  "id": "waveshare-p4-wifi6-touch-lcd-43",
+  "name": "Waveshare ESP32-P4-WIFI6-Touch-LCD-4.3",
+  "vendor": "Waveshare",
+  "group": "All-in-one boards",
+  "description": "4.3\" 480x800 MIPI-DSI panel (ST7701) with GT911 touch on an ESP32-P4, an ES8311 speaker codec, a TF card, a camera connector and Wi-Fi through its ESP32-C6. Compiled, not yet seen on a board.",
+  "mcu": {
+    "id": "esp32p4",
+    "name": "ESP32-P4"
+  },
+  "flashMB": 32,
+  "psramMB": 32,
+  "usbCdc": false,
+  "display": {
+    "controller": "st7701_dsi",
+    "controllerName": "ST7701 (MIPI-DSI)",
+    "interface": "dsi",
+    "width": 480,
+    "height": 800,
+    "colorDepth": 16,
+    "rgbOrder": "rgb",
+    "invert": false,
+    "pins": {
+      "rst": 27
+    },
+    "options": {
+      "initSeq": "st7701_waveshare_43_init",
+      "lanes": "2",
+      "laneMbps": 500,
+      "pclkMhz": 30,
+      "hsyncFrontPorch": 42,
+      "hsyncPulseWidth": 12,
+      "hsyncBackPorch": 42,
+      "vsyncFrontPorch": 60,
+      "vsyncPulseWidth": 8,
+      "vsyncBackPorch": 2
+    },
+    "backlight": {
+      "pin": 26,
+      "active": 0,
+      "pwm": true,
+      "freq": 5000,
+      "defaultLevel": 100
+    }
+  },
+  "touch": {
+    "controller": "gt911",
+    "controllerName": "GT911",
+    "pins": {
+      "sda": 7,
+      "scl": 8,
+      "int": -1,
+      "rst": -1
+    },
+    "swapXY": false,
+    "invertX": false,
+    "invertY": false,
+    "options": {
+      "i2cAddr": "0x5D",
+      "freqKhz": 400,
+      "sharedI2C": true
+    }
+  },
+  "buses": [
+    {
+      "name": "I2C (GPIO 7 / 8)",
+      "kind": "i2c",
+      "pins": {
+        "sda": 7,
+        "scl": 8
+      }
+    }
+  ],
+  "ioExpanders": [],
+  "peripherals": [
+    {
+      "name": "SDCard",
+      "chip": "SD card",
+      "kind": "Storage",
+      "pins": {
+        "clk": 43,
+        "cmd": 44,
+        "d0": 39,
+        "d1": 40,
+        "d2": 41,
+        "d3": 42
+      }
+    },
+    {
+      "name": "WiFiCoprocessor",
+      "chip": "Wi-Fi co-processor",
+      "kind": "Network",
+      "pins": {
+        "clk": 18,
+        "cmd": 19,
+        "d0": 14,
+        "d1": 15,
+        "d2": 16,
+        "d3": 17,
+        "rst": 54
+      }
+    }
+  ],
+  "digitalIO": [
+    {
+      "name": "BOOTButton",
+      "direction": "in",
+      "pin": 35,
+      "activeLow": true
+    }
+  ],
+  "analogInputs": [
+    {
+      "name": "Battery",
+      "pin": 20,
+      "unit": "V"
+    }
+  ],
+  "audio": {
+    "output": "es8311",
+    "pins": {
+      "mclk": 13,
+      "bclk": 12,
+      "lrclk": 10,
+      "din": 9,
+      "pa": 53
+    }
+  },
+  "verify": "Nobody at LCD Wizard has had this board yet: the export for it compiles and has not been seen on the panel. Pins, the panel's start-up table and its settings are Waveshare's own, from their Arduino examples for this board and their ESP-IDF BSP, which agree: the ST7701 over MIPI-DSI under Waveshare's register table, two lanes at 500 Mbps, 30 MHz, hsync 12/42/42, vsync 8/2/60, the panel's reset on GPIO 27 (active low), and the backlight on GPIO 26, lit when the pin is low and dimmed by PWM. A design on this preset starts on revision 3 of the ESP32-P4, which Waveshare's own Arduino examples for the board build for; for a chip before revision 3 (the upload says \"revision v1.x\"), choose that under Hardware > Board > Chip revision. The GT911 has no reset or interrupt line driven and may answer at 0x14 instead of 0x5D. The TF card (SDMMC, 4-bit) and the ES8311 speaker codec (amplifier on GPIO 53) are in the kit, with the BOOT button (GPIO 35) and the battery voltage (GPIO 20, a third of the cell, from the schematic; no Waveshare code reads it). Wi-Fi is the ESP32-C6 beside the P4, on the ESP32 core's own SDIO lines (CLK 18, CMD 19, D0-D3 14-17, reset 54), which the schematic confirms; it has to run ESP-Hosted of the core's release, which the board prints at start (see the README). Not driven: the two ES7210 microphones and the C6's Bluetooth; the -C version's OV5647 camera is on the I2C bus at 0x36.",
+  "links": {
+    "page": "https://lcdwizard.com/boards/waveshare-p4-wifi6-touch-lcd-43",
+    "designer": "https://app.lcdwizard.com/app?board=waveshare-p4-wifi6-touch-lcd-43",
+    "vendorProduct": "https://www.waveshare.com/esp32-p4-wifi6-touch-lcd-4.3.htm",
+    "vendorDocs": "https://docs.waveshare.com/ESP32-P4-WIFI6-Touch-LCD-4.3",
+    "schematic": "https://files.waveshare.com/wiki/ESP32-P4-WIFI6-Touch-LCD-4.3/ESP32-P4-WIFI6-Touch-LCD-4.3-schematic.pdf"
+  }
+}

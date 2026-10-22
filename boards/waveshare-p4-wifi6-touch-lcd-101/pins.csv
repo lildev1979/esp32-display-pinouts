@@ -5,3 +5,10 @@ Touch - GT911,SCL,GPIO 8
 Backlight,Pin,GPIO 26
 Backlight,Active,high
 Backlight,Drive,PWM 5000 Hz
+WiFiCoprocessor - Wi-Fi co-processor,CLK,GPIO 18
+WiFiCoprocessor - Wi-Fi co-processor,CMD,GPIO 19
+WiFiCoprocessor - Wi-Fi co-processor,D0,GPIO 14
+WiFiCoprocessor - Wi-Fi co-processor,D1,GPIO 15
+WiFiCoprocessor - Wi-Fi co-processor,D2,GPIO 16
+WiFiCoprocessor - Wi-Fi co-processor,D3,GPIO 17
+WiFiCoprocessor - Wi-Fi co-processor,RST,GPIO 54

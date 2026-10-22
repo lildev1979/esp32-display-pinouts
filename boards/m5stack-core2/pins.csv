@@ -4,12 +4,16 @@ Panel - SPI (4-wire serial),MOSI / SDA,GPIO 23
 Panel - SPI (4-wire serial),MISO / SDO,GPIO 38
 Panel - SPI (4-wire serial),CS,GPIO 5
 Panel - SPI (4-wire serial),DC / RS,GPIO 15
-Panel - SPI (4-wire serial),RESET,-
+Panel - SPI (4-wire serial),RESET,Power GPIO4
 Touch - FT6236 / FT6336U,SDA,GPIO 21
 Touch - FT6236 / FT6336U,SCL,GPIO 22
 Touch - FT6236 / FT6336U,INT / IRQ,GPIO 39
 Backlight,Pin,-
 Backlight,Active,high
 Backlight,Drive,on / off
+Internal I2C (GPIO 21 / 22),SDA,GPIO 21
+Internal I2C (GPIO 21 / 22),SCL,GPIO 22
 "Port A (Grove, GPIO 32 / 33)",SDA,GPIO 32
 "Port A (Grove, GPIO 32 / 33)",SCL,GPIO 33
+Power - AXP192,Bus,Internal I2C (GPIO 21 / 22)
+Power - AXP192,Address,0x34

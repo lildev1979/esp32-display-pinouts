@@ -9,6 +9,13 @@ elecrow-crowpanel-advanced-p4,Backlight,Active,high
 elecrow-crowpanel-advanced-p4,Backlight,Drive,PWM 30000 Hz
 elecrow-crowpanel-advanced-p4,"I2C1 (touch, I2C port)",SDA,GPIO 45
 elecrow-crowpanel-advanced-p4,"I2C1 (touch, I2C port)",SCL,GPIO 46
+elecrow-crowpanel-advanced-p4,WiFiCoprocessor - Wi-Fi co-processor,CLK,GPIO 18
+elecrow-crowpanel-advanced-p4,WiFiCoprocessor - Wi-Fi co-processor,CMD,GPIO 19
+elecrow-crowpanel-advanced-p4,WiFiCoprocessor - Wi-Fi co-processor,D0,GPIO 17
+elecrow-crowpanel-advanced-p4,WiFiCoprocessor - Wi-Fi co-processor,D1,GPIO 16
+elecrow-crowpanel-advanced-p4,WiFiCoprocessor - Wi-Fi co-processor,D2,GPIO 15
+elecrow-crowpanel-advanced-p4,WiFiCoprocessor - Wi-Fi co-processor,D3,GPIO 14
+elecrow-crowpanel-advanced-p4,WiFiCoprocessor - Wi-Fi co-processor,RST,GPIO 54
 elecrow-crowpanel-advanced-p4,Audio,BCLK,GPIO 22
 elecrow-crowpanel-advanced-p4,Audio,LRCLK,GPIO 21
 elecrow-crowpanel-advanced-p4,Audio,DIN,GPIO 23
@@ -123,6 +130,97 @@ guition-4848s040,Touch - GT911,SCL,GPIO 45
 guition-4848s040,Backlight,Pin,GPIO 38
 guition-4848s040,Backlight,Active,high
 guition-4848s040,Backlight,Drive,PWM 5000 Hz
+guition-jc1060p470c,Panel - MIPI-DSI,RESET,GPIO 0
+guition-jc1060p470c,Touch - GT911,SDA,GPIO 7
+guition-jc1060p470c,Touch - GT911,SCL,GPIO 8
+guition-jc1060p470c,Touch - GT911,INT / IRQ,GPIO 21
+guition-jc1060p470c,Touch - GT911,RESET,GPIO 22
+guition-jc1060p470c,Backlight,Pin,GPIO 23
+guition-jc1060p470c,Backlight,Active,high
+guition-jc1060p470c,Backlight,Drive,PWM 5000 Hz
+guition-jc1060p470c,"I2C (GPIO 7 / 8: touch, codec, I2C port)",SDA,GPIO 7
+guition-jc1060p470c,"I2C (GPIO 7 / 8: touch, codec, I2C port)",SCL,GPIO 8
+guition-jc1060p470c,Ethernet - Ethernet PHY on RMII,MDC,GPIO 31
+guition-jc1060p470c,Ethernet - Ethernet PHY on RMII,MDIO,GPIO 52
+guition-jc1060p470c,Ethernet - Ethernet PHY on RMII,POWER,GPIO 51
+guition-jc1060p470c,WiFiCoprocessor - Wi-Fi co-processor,CLK,GPIO 18
+guition-jc1060p470c,WiFiCoprocessor - Wi-Fi co-processor,CMD,GPIO 19
+guition-jc1060p470c,WiFiCoprocessor - Wi-Fi co-processor,D0,GPIO 14
+guition-jc1060p470c,WiFiCoprocessor - Wi-Fi co-processor,D1,GPIO 15
+guition-jc1060p470c,WiFiCoprocessor - Wi-Fi co-processor,D2,GPIO 16
+guition-jc1060p470c,WiFiCoprocessor - Wi-Fi co-processor,D3,GPIO 17
+guition-jc1060p470c,WiFiCoprocessor - Wi-Fi co-processor,RST,GPIO 54
+guition-jc1060p470c,SDCard - SD card,CLK,GPIO 43
+guition-jc1060p470c,SDCard - SD card,CMD,GPIO 44
+guition-jc1060p470c,SDCard - SD card,D0,GPIO 39
+guition-jc1060p470c,SDCard - SD card,D1,GPIO 40
+guition-jc1060p470c,SDCard - SD card,D2,GPIO 41
+guition-jc1060p470c,SDCard - SD card,D3,GPIO 42
+guition-jc1060p470c,RS485 - RS485 / Modbus RTU,TX,GPIO 26
+guition-jc1060p470c,RS485 - RS485 / Modbus RTU,RX,GPIO 27
+guition-jc1060p470c,Audio,MCLK,GPIO 13
+guition-jc1060p470c,Audio,BCLK,GPIO 12
+guition-jc1060p470c,Audio,LRCLK,GPIO 10
+guition-jc1060p470c,Audio,DIN,GPIO 9
+guition-jc1060p470c,Audio,PA,GPIO 11
+guition-jc2432w328c,Panel - SPI (4-wire serial),SCK / CLK,GPIO 14
+guition-jc2432w328c,Panel - SPI (4-wire serial),MOSI / SDA,GPIO 13
+guition-jc2432w328c,Panel - SPI (4-wire serial),MISO / SDO,GPIO 12
+guition-jc2432w328c,Panel - SPI (4-wire serial),CS,GPIO 15
+guition-jc2432w328c,Panel - SPI (4-wire serial),DC / RS,GPIO 2
+guition-jc2432w328c,Panel - SPI (4-wire serial),RESET,-
+guition-jc2432w328c,Touch - CST820,SDA,GPIO 33
+guition-jc2432w328c,Touch - CST820,SCL,GPIO 32
+guition-jc2432w328c,Touch - CST820,RESET,GPIO 25
+guition-jc2432w328c,Backlight,Pin,GPIO 27
+guition-jc2432w328c,Backlight,Active,high
+guition-jc2432w328c,Backlight,Drive,PWM 5000 Hz
+guition-jc2432w328c,SPI (TF card),SCK,GPIO 18
+guition-jc2432w328c,SPI (TF card),MOSI,GPIO 23
+guition-jc2432w328c,SPI (TF card),MISO,GPIO 19
+guition-jc2432w328c,SDCard - SD card,Bus,SPI (TF card)
+guition-jc2432w328c,SDCard - SD card,CS,GPIO 5
+guition-jc2432w328c,Inputs and outputs,Light Sensor (analog in),GPIO 34
+guition-jc2432w328c,Inputs and outputs,Led Red (output),GPIO 4
+guition-jc2432w328c,Inputs and outputs,Led Green (output),GPIO 16
+guition-jc2432w328c,Inputs and outputs,Led Blue (output),GPIO 17
+guition-jc2432w328c,Inputs and outputs,Boot Button (input),GPIO 0
+guition-jc2432w328c,Board I/O,LedRed (active low),GPIO 4
+guition-jc2432w328c,Board I/O,LedGreen (active low),GPIO 16
+guition-jc2432w328c,Board I/O,LedBlue (active low),GPIO 17
+guition-jc2432w328c,Board I/O,BootButton (active low),GPIO 0
+guition-jc2432w328c,Analogue input,LightSensor,GPIO 34
+guition-jc2432w328c,Audio,DAC,GPIO 26
+guition-jc2432w328r,Panel - SPI (4-wire serial),SCK / CLK,GPIO 14
+guition-jc2432w328r,Panel - SPI (4-wire serial),MOSI / SDA,GPIO 13
+guition-jc2432w328r,Panel - SPI (4-wire serial),MISO / SDO,GPIO 12
+guition-jc2432w328r,Panel - SPI (4-wire serial),CS,GPIO 15
+guition-jc2432w328r,Panel - SPI (4-wire serial),DC / RS,GPIO 2
+guition-jc2432w328r,Panel - SPI (4-wire serial),RESET,-
+guition-jc2432w328r,Touch - XPT2046,SCK,GPIO 14
+guition-jc2432w328r,Touch - XPT2046,MOSI,GPIO 13
+guition-jc2432w328r,Touch - XPT2046,MISO,GPIO 12
+guition-jc2432w328r,Touch - XPT2046,CS,GPIO 33
+guition-jc2432w328r,Touch - XPT2046,IRQ / PENIRQ,GPIO 36
+guition-jc2432w328r,Backlight,Pin,GPIO 27
+guition-jc2432w328r,Backlight,Active,high
+guition-jc2432w328r,Backlight,Drive,PWM 5000 Hz
+guition-jc2432w328r,SPI (TF card),SCK,GPIO 18
+guition-jc2432w328r,SPI (TF card),MOSI,GPIO 23
+guition-jc2432w328r,SPI (TF card),MISO,GPIO 19
+guition-jc2432w328r,SDCard - SD card,Bus,SPI (TF card)
+guition-jc2432w328r,SDCard - SD card,CS,GPIO 5
+guition-jc2432w328r,Inputs and outputs,Light Sensor (analog in),GPIO 34
+guition-jc2432w328r,Inputs and outputs,Led Red (output),GPIO 4
+guition-jc2432w328r,Inputs and outputs,Led Green (output),GPIO 16
+guition-jc2432w328r,Inputs and outputs,Led Blue (output),GPIO 17
+guition-jc2432w328r,Inputs and outputs,Boot Button (input),GPIO 0
+guition-jc2432w328r,Board I/O,LedRed (active low),GPIO 4
+guition-jc2432w328r,Board I/O,LedGreen (active low),GPIO 16
+guition-jc2432w328r,Board I/O,LedBlue (active low),GPIO 17
+guition-jc2432w328r,Board I/O,BootButton (active low),GPIO 0
+guition-jc2432w328r,Analogue input,LightSensor,GPIO 34
+guition-jc2432w328r,Audio,DAC,GPIO 26
 lcdwiki-e32r28t,Panel - SPI (4-wire serial),SCK / CLK,GPIO 14
 lcdwiki-e32r28t,Panel - SPI (4-wire serial),MOSI / SDA,GPIO 13
 lcdwiki-e32r28t,Panel - SPI (4-wire serial),MISO / SDO,GPIO 12
@@ -235,6 +333,37 @@ lcdwiki-e32r40t,Board I/O,BootButton (active low),GPIO 0
 lcdwiki-e32r40t,Analogue input,Battery,GPIO 34
 lcdwiki-e32r40t,Audio,DAC,GPIO 26
 lcdwiki-e32r40t,Audio,PA,GPIO 4
+lcdwiki-es3c40p,Panel - SPI (4-wire serial),SCK / CLK,GPIO 12
+lcdwiki-es3c40p,Panel - SPI (4-wire serial),MOSI / SDA,GPIO 11
+lcdwiki-es3c40p,Panel - SPI (4-wire serial),MISO / SDO,GPIO 13
+lcdwiki-es3c40p,Panel - SPI (4-wire serial),CS,GPIO 10
+lcdwiki-es3c40p,Panel - SPI (4-wire serial),DC / RS,GPIO 46
+lcdwiki-es3c40p,Panel - SPI (4-wire serial),RESET,-
+lcdwiki-es3c40p,Touch - FT6236 / FT6336U,SDA,GPIO 16
+lcdwiki-es3c40p,Touch - FT6236 / FT6336U,SCL,GPIO 15
+lcdwiki-es3c40p,Touch - FT6236 / FT6336U,INT / IRQ,GPIO 17
+lcdwiki-es3c40p,Touch - FT6236 / FT6336U,RESET,GPIO 18
+lcdwiki-es3c40p,Backlight,Pin,GPIO 45
+lcdwiki-es3c40p,Backlight,Active,high
+lcdwiki-es3c40p,Backlight,Drive,PWM 5000 Hz
+lcdwiki-es3c40p,"I2C (GPIO 16 / 15, IIC header)",SDA,GPIO 16
+lcdwiki-es3c40p,"I2C (GPIO 16 / 15, IIC header)",SCL,GPIO 15
+lcdwiki-es3c40p,SDCard - SD card,CLK,GPIO 38
+lcdwiki-es3c40p,SDCard - SD card,CMD,GPIO 40
+lcdwiki-es3c40p,SDCard - SD card,D0,GPIO 39
+lcdwiki-es3c40p,SDCard - SD card,D1,GPIO 41
+lcdwiki-es3c40p,SDCard - SD card,D2,GPIO 48
+lcdwiki-es3c40p,SDCard - SD card,D3,GPIO 47
+lcdwiki-es3c40p,RgbLed - NeoPixel string,DATA,GPIO 42
+lcdwiki-es3c40p,Inputs and outputs,Battery (analog in),GPIO 9
+lcdwiki-es3c40p,Inputs and outputs,Boot Button (input),GPIO 0
+lcdwiki-es3c40p,Board I/O,BootButton (active low),GPIO 0
+lcdwiki-es3c40p,Analogue input,Battery,GPIO 9
+lcdwiki-es3c40p,Audio,MCLK,GPIO 4
+lcdwiki-es3c40p,Audio,BCLK,GPIO 5
+lcdwiki-es3c40p,Audio,LRCLK,GPIO 7
+lcdwiki-es3c40p,Audio,DIN,GPIO 8
+lcdwiki-es3c40p,Audio,PA,GPIO 1
 lilygo-tdisplay-s3,Panel - 8-bit parallel (i80 / 8080),WR,GPIO 8
 lilygo-tdisplay-s3,Panel - 8-bit parallel (i80 / 8080),RD,GPIO 9
 lilygo-tdisplay-s3,Panel - 8-bit parallel (i80 / 8080),DC / RS,GPIO 7
@@ -263,15 +392,54 @@ m5stack-core2,Panel - SPI (4-wire serial),MOSI / SDA,GPIO 23
 m5stack-core2,Panel - SPI (4-wire serial),MISO / SDO,GPIO 38
 m5stack-core2,Panel - SPI (4-wire serial),CS,GPIO 5
 m5stack-core2,Panel - SPI (4-wire serial),DC / RS,GPIO 15
-m5stack-core2,Panel - SPI (4-wire serial),RESET,-
+m5stack-core2,Panel - SPI (4-wire serial),RESET,Power GPIO4
 m5stack-core2,Touch - FT6236 / FT6336U,SDA,GPIO 21
 m5stack-core2,Touch - FT6236 / FT6336U,SCL,GPIO 22
 m5stack-core2,Touch - FT6236 / FT6336U,INT / IRQ,GPIO 39
 m5stack-core2,Backlight,Pin,-
 m5stack-core2,Backlight,Active,high
 m5stack-core2,Backlight,Drive,on / off
+m5stack-core2,Internal I2C (GPIO 21 / 22),SDA,GPIO 21
+m5stack-core2,Internal I2C (GPIO 21 / 22),SCL,GPIO 22
 m5stack-core2,"Port A (Grove, GPIO 32 / 33)",SDA,GPIO 32
 m5stack-core2,"Port A (Grove, GPIO 32 / 33)",SCL,GPIO 33
+m5stack-core2,Power - AXP192,Bus,Internal I2C (GPIO 21 / 22)
+m5stack-core2,Power - AXP192,Address,0x34
+m5stack-core2-v11,Panel - SPI (4-wire serial),SCK / CLK,GPIO 18
+m5stack-core2-v11,Panel - SPI (4-wire serial),MOSI / SDA,GPIO 23
+m5stack-core2-v11,Panel - SPI (4-wire serial),MISO / SDO,GPIO 38
+m5stack-core2-v11,Panel - SPI (4-wire serial),CS,GPIO 5
+m5stack-core2-v11,Panel - SPI (4-wire serial),DC / RS,GPIO 15
+m5stack-core2-v11,Panel - SPI (4-wire serial),RESET,Power ALDO2
+m5stack-core2-v11,Touch - FT6236 / FT6336U,SDA,GPIO 21
+m5stack-core2-v11,Touch - FT6236 / FT6336U,SCL,GPIO 22
+m5stack-core2-v11,Touch - FT6236 / FT6336U,INT / IRQ,GPIO 39
+m5stack-core2-v11,Backlight,Pin,-
+m5stack-core2-v11,Backlight,Active,high
+m5stack-core2-v11,Backlight,Drive,on / off
+m5stack-core2-v11,Internal I2C (GPIO 21 / 22),SDA,GPIO 21
+m5stack-core2-v11,Internal I2C (GPIO 21 / 22),SCL,GPIO 22
+m5stack-core2-v11,"Port A (Grove, GPIO 32 / 33)",SDA,GPIO 32
+m5stack-core2-v11,"Port A (Grove, GPIO 32 / 33)",SCL,GPIO 33
+m5stack-core2-v11,Power - AXP2101,Bus,Internal I2C (GPIO 21 / 22)
+m5stack-core2-v11,Power - AXP2101,Address,0x34
+cyd-2432s028-2usb-ili9341,Panel - SPI (4-wire serial),SCK / CLK,GPIO 14
+cyd-2432s028-2usb-ili9341,Panel - SPI (4-wire serial),MOSI / SDA,GPIO 13
+cyd-2432s028-2usb-ili9341,Panel - SPI (4-wire serial),MISO / SDO,GPIO 12
+cyd-2432s028-2usb-ili9341,Panel - SPI (4-wire serial),CS,GPIO 15
+cyd-2432s028-2usb-ili9341,Panel - SPI (4-wire serial),DC / RS,GPIO 2
+cyd-2432s028-2usb-ili9341,Panel - SPI (4-wire serial),RESET,-
+cyd-2432s028-2usb-ili9341,Touch - XPT2046,SCK,GPIO 25
+cyd-2432s028-2usb-ili9341,Touch - XPT2046,MOSI,GPIO 32
+cyd-2432s028-2usb-ili9341,Touch - XPT2046,MISO,GPIO 39
+cyd-2432s028-2usb-ili9341,Touch - XPT2046,CS,GPIO 33
+cyd-2432s028-2usb-ili9341,Touch - XPT2046,IRQ / PENIRQ,GPIO 36
+cyd-2432s028-2usb-ili9341,Backlight,Pin,GPIO 21
+cyd-2432s028-2usb-ili9341,Backlight,Active,high
+cyd-2432s028-2usb-ili9341,Backlight,Drive,PWM 5000 Hz
+cyd-2432s028-2usb-ili9341,CN1 I2C (GPIO 27 / 22),SDA,GPIO 27
+cyd-2432s028-2usb-ili9341,CN1 I2C (GPIO 27 / 22),SCL,GPIO 22
+cyd-2432s028-2usb-ili9341,Audio,DAC,GPIO 26
 cyd-2432s028c,Panel - SPI (4-wire serial),SCK / CLK,GPIO 14
 cyd-2432s028c,Panel - SPI (4-wire serial),MOSI / SDA,GPIO 13
 cyd-2432s028c,Panel - SPI (4-wire serial),MISO / SDO,GPIO 12
@@ -304,6 +472,23 @@ cyd-2432s028r,Backlight,Drive,PWM 5000 Hz
 cyd-2432s028r,CN1 I2C (GPIO 27 / 22),SDA,GPIO 27
 cyd-2432s028r,CN1 I2C (GPIO 27 / 22),SCL,GPIO 22
 cyd-2432s028r,Audio,DAC,GPIO 26
+cyd-2432s028r-st7789,Panel - SPI (4-wire serial),SCK / CLK,GPIO 14
+cyd-2432s028r-st7789,Panel - SPI (4-wire serial),MOSI / SDA,GPIO 13
+cyd-2432s028r-st7789,Panel - SPI (4-wire serial),MISO / SDO,GPIO 12
+cyd-2432s028r-st7789,Panel - SPI (4-wire serial),CS,GPIO 15
+cyd-2432s028r-st7789,Panel - SPI (4-wire serial),DC / RS,GPIO 2
+cyd-2432s028r-st7789,Panel - SPI (4-wire serial),RESET,-
+cyd-2432s028r-st7789,Touch - XPT2046,SCK,GPIO 25
+cyd-2432s028r-st7789,Touch - XPT2046,MOSI,GPIO 32
+cyd-2432s028r-st7789,Touch - XPT2046,MISO,GPIO 39
+cyd-2432s028r-st7789,Touch - XPT2046,CS,GPIO 33
+cyd-2432s028r-st7789,Touch - XPT2046,IRQ / PENIRQ,GPIO 36
+cyd-2432s028r-st7789,Backlight,Pin,GPIO 21
+cyd-2432s028r-st7789,Backlight,Active,high
+cyd-2432s028r-st7789,Backlight,Drive,PWM 5000 Hz
+cyd-2432s028r-st7789,CN1 I2C (GPIO 27 / 22),SDA,GPIO 27
+cyd-2432s028r-st7789,CN1 I2C (GPIO 27 / 22),SCL,GPIO 22
+cyd-2432s028r-st7789,Audio,DAC,GPIO 26
 sunton-8048s043,Panel - RGB565 parallel (DPI),DE,GPIO 40
 sunton-8048s043,Panel - RGB565 parallel (DPI),VSYNC,GPIO 41
 sunton-8048s043,Panel - RGB565 parallel (DPI),HSYNC,GPIO 39
@@ -332,6 +517,23 @@ sunton-8048s070,Touch - GT911,RESET,GPIO 38
 sunton-8048s070,Backlight,Pin,GPIO 2
 sunton-8048s070,Backlight,Active,high
 sunton-8048s070,Backlight,Drive,PWM 5000 Hz
+viewe-p4-smartdisplay-7,Panel - MIPI-DSI,RESET,GPIO 22
+viewe-p4-smartdisplay-7,Touch - GT911,SDA,GPIO 7
+viewe-p4-smartdisplay-7,Touch - GT911,SCL,GPIO 8
+viewe-p4-smartdisplay-7,Backlight,Pin,GPIO 23
+viewe-p4-smartdisplay-7,Backlight,Active,high
+viewe-p4-smartdisplay-7,Backlight,Drive,PWM 5000 Hz
+viewe-p4-smartdisplay-7,WiFiCoprocessor - Wi-Fi co-processor,CLK,GPIO 18
+viewe-p4-smartdisplay-7,WiFiCoprocessor - Wi-Fi co-processor,CMD,GPIO 19
+viewe-p4-smartdisplay-7,WiFiCoprocessor - Wi-Fi co-processor,D0,GPIO 14
+viewe-p4-smartdisplay-7,WiFiCoprocessor - Wi-Fi co-processor,D1,GPIO 15
+viewe-p4-smartdisplay-7,WiFiCoprocessor - Wi-Fi co-processor,D2,GPIO 16
+viewe-p4-smartdisplay-7,WiFiCoprocessor - Wi-Fi co-processor,D3,GPIO 17
+viewe-p4-smartdisplay-7,WiFiCoprocessor - Wi-Fi co-processor,RST,GPIO 54
+viewe-p4-smartdisplay-7,Audio,BCLK,GPIO 33
+viewe-p4-smartdisplay-7,Audio,LRCLK,GPIO 32
+viewe-p4-smartdisplay-7,Audio,DIN,GPIO 34
+viewe-p4-smartdisplay-7,Audio,PA,GPIO 31
 waveshare-c3-lcd-147,Panel - SPI (4-wire serial),SCK / CLK,GPIO 7
 waveshare-c3-lcd-147,Panel - SPI (4-wire serial),MOSI / SDA,GPIO 5
 waveshare-c3-lcd-147,Panel - SPI (4-wire serial),MISO / SDO,GPIO 6
@@ -717,6 +919,33 @@ waveshare-c6-touch-amoled-206,Audio,BCLK,GPIO 20
 waveshare-c6-touch-amoled-206,Audio,LRCLK,GPIO 22
 waveshare-c6-touch-amoled-206,Audio,DIN,GPIO 23
 waveshare-c6-touch-amoled-206,Audio,PA,GPIO 6
+waveshare-c6-touch-amoled-216,Panel - QSPI (quad SPI),SCK,GPIO 0
+waveshare-c6-touch-amoled-216,Panel - QSPI (quad SPI),D0 - D3,"GPIO 1, 2, 3, 4"
+waveshare-c6-touch-amoled-216,Panel - QSPI (quad SPI),CS,GPIO 15
+waveshare-c6-touch-amoled-216,Panel - QSPI (quad SPI),RESET,PMIC ALDO3
+waveshare-c6-touch-amoled-216,Touch - CST9217 / CST9220,SDA,GPIO 8
+waveshare-c6-touch-amoled-216,Touch - CST9217 / CST9220,SCL,GPIO 7
+waveshare-c6-touch-amoled-216,Touch - CST9217 / CST9220,INT / IRQ,GPIO 5
+waveshare-c6-touch-amoled-216,Touch - CST9217 / CST9220,RESET,GPIO 11
+waveshare-c6-touch-amoled-216,I2C (GPIO 8 / 7),SDA,GPIO 8
+waveshare-c6-touch-amoled-216,I2C (GPIO 8 / 7),SCL,GPIO 7
+waveshare-c6-touch-amoled-216,IMU - QMI8658,Bus,I2C (GPIO 8 / 7)
+waveshare-c6-touch-amoled-216,IMU - QMI8658,Address,0x6B
+waveshare-c6-touch-amoled-216,RTC - PCF85063,Bus,I2C (GPIO 8 / 7)
+waveshare-c6-touch-amoled-216,RTC - PCF85063,Address,0x51
+waveshare-c6-touch-amoled-216,PMIC - AXP2101,Bus,I2C (GPIO 8 / 7)
+waveshare-c6-touch-amoled-216,PMIC - AXP2101,Address,0x34
+waveshare-c6-touch-amoled-216,Inputs and outputs,BOOTButton (input),GPIO 9
+waveshare-c6-touch-amoled-216,Inputs and outputs,KEYButton (input),GPIO 10
+waveshare-c6-touch-amoled-216,Inputs and outputs,PWRButton (input),GPIO 18
+waveshare-c6-touch-amoled-216,Board I/O,BOOTButton (active low),GPIO 9
+waveshare-c6-touch-amoled-216,Board I/O,KEYButton (active low),GPIO 10
+waveshare-c6-touch-amoled-216,Board I/O,PWRButton,GPIO 18
+waveshare-c6-touch-amoled-216,Audio,MCLK,GPIO 19
+waveshare-c6-touch-amoled-216,Audio,BCLK,GPIO 20
+waveshare-c6-touch-amoled-216,Audio,LRCLK,GPIO 22
+waveshare-c6-touch-amoled-216,Audio,DIN,GPIO 23
+waveshare-c6-touch-amoled-216,Audio,PA,-
 waveshare-c6-touch-lcd-128,Panel - SPI (4-wire serial),SCK / CLK,GPIO 11
 waveshare-c6-touch-lcd-128,Panel - SPI (4-wire serial),MOSI / SDA,GPIO 21
 waveshare-c6-touch-lcd-128,Panel - SPI (4-wire serial),MISO / SDO,GPIO 22
@@ -738,6 +967,31 @@ waveshare-c6-touch-lcd-128,RTCoptionalfit - PCF85063,Bus,I2C (GPIO 18 / 8)
 waveshare-c6-touch-lcd-128,RTCoptionalfit - PCF85063,Address,0x51
 waveshare-c6-touch-lcd-128,Inputs and outputs,BOOTButton (input),GPIO 9
 waveshare-c6-touch-lcd-128,Board I/O,BOOTButton (active low),GPIO 9
+waveshare-c6-touch-lcd-147,Panel - SPI (4-wire serial),SCK / CLK,GPIO 1
+waveshare-c6-touch-lcd-147,Panel - SPI (4-wire serial),MOSI / SDA,GPIO 2
+waveshare-c6-touch-lcd-147,Panel - SPI (4-wire serial),CS,GPIO 14
+waveshare-c6-touch-lcd-147,Panel - SPI (4-wire serial),DC / RS,GPIO 15
+waveshare-c6-touch-lcd-147,Panel - SPI (4-wire serial),RESET,GPIO 22
+waveshare-c6-touch-lcd-147,Touch - AXS5106L,SDA,GPIO 18
+waveshare-c6-touch-lcd-147,Touch - AXS5106L,SCL,GPIO 19
+waveshare-c6-touch-lcd-147,Touch - AXS5106L,INT / IRQ,GPIO 21
+waveshare-c6-touch-lcd-147,Touch - AXS5106L,RESET,GPIO 20
+waveshare-c6-touch-lcd-147,Backlight,Pin,GPIO 23
+waveshare-c6-touch-lcd-147,Backlight,Active,high
+waveshare-c6-touch-lcd-147,Backlight,Drive,PWM 5000 Hz
+waveshare-c6-touch-lcd-147,I2C (GPIO 18 / 19),SDA,GPIO 18
+waveshare-c6-touch-lcd-147,I2C (GPIO 18 / 19),SCL,GPIO 19
+waveshare-c6-touch-lcd-147,SPI (panel and TF card),SCK,GPIO 1
+waveshare-c6-touch-lcd-147,SPI (panel and TF card),MOSI,GPIO 2
+waveshare-c6-touch-lcd-147,SPI (panel and TF card),MISO,GPIO 3
+waveshare-c6-touch-lcd-147,IMU - QMI8658,Bus,I2C (GPIO 18 / 19)
+waveshare-c6-touch-lcd-147,IMU - QMI8658,Address,0x6B
+waveshare-c6-touch-lcd-147,SDCard - SD card,Bus,SPI (panel and TF card)
+waveshare-c6-touch-lcd-147,SDCard - SD card,CS,GPIO 4
+waveshare-c6-touch-lcd-147,Inputs and outputs,Battery (analog in),GPIO 0
+waveshare-c6-touch-lcd-147,Inputs and outputs,BOOTButton (input),GPIO 9
+waveshare-c6-touch-lcd-147,Board I/O,BOOTButton (active low),GPIO 9
+waveshare-c6-touch-lcd-147,Analogue input,Battery,GPIO 0
 waveshare-c6-touch-lcd-169,Panel - SPI (4-wire serial),SCK / CLK,GPIO 1
 waveshare-c6-touch-lcd-169,Panel - SPI (4-wire serial),MOSI / SDA,GPIO 2
 waveshare-c6-touch-lcd-169,Panel - SPI (4-wire serial),CS,GPIO 5
@@ -806,20 +1060,124 @@ waveshare-c6-touch-lcd-28,Backlight,Active,high
 waveshare-c6-touch-lcd-28,Backlight,Drive,PWM 5000 Hz
 waveshare-c6-touch-lcd-28,I2C (GPIO 6 / 7),SDA,GPIO 6
 waveshare-c6-touch-lcd-28,I2C (GPIO 6 / 7),SCL,GPIO 7
+waveshare-c6-touch-lcd-28,SPI (panel and TF card),SCK,GPIO 0
+waveshare-c6-touch-lcd-28,SPI (panel and TF card),MOSI,GPIO 1
+waveshare-c6-touch-lcd-28,SPI (panel and TF card),MISO,GPIO 8
 waveshare-c6-touch-lcd-28,IOExtension (I/O expander),Type,WS_IOEXT
 waveshare-c6-touch-lcd-28,IOExtension (I/O expander),Address,0x24
 waveshare-c6-touch-lcd-28,IMU - QMI8658,Bus,I2C (GPIO 6 / 7)
 waveshare-c6-touch-lcd-28,IMU - QMI8658,Address,0x6B
 waveshare-c6-touch-lcd-28,RTC - PCF85063,Bus,I2C (GPIO 6 / 7)
 waveshare-c6-touch-lcd-28,RTC - PCF85063,Address,0x51
+waveshare-c6-touch-lcd-28,SDCard - SD card,Bus,SPI (panel and TF card)
+waveshare-c6-touch-lcd-28,SDCard - SD card,CS,GPIO 23
 waveshare-c6-touch-lcd-28,Inputs and outputs,BOOTButton (input),GPIO 9
 waveshare-c6-touch-lcd-28,Board I/O,BOOTButton (active low),GPIO 9
+waveshare-c6-touch-lcd-28,Audio,MCLK,-
+waveshare-c6-touch-lcd-28,Audio,BCLK,GPIO 15
+waveshare-c6-touch-lcd-28,Audio,LRCLK,GPIO 3
+waveshare-c6-touch-lcd-28,Audio,DIN,GPIO 2
+waveshare-c6-touch-lcd-28,Audio,PA,IOExtension 3
+waveshare-p4-nano-101-dsi-touch-a,Panel - MIPI-DSI,RESET,-
+waveshare-p4-nano-101-dsi-touch-a,Touch - GT911,SDA,GPIO 7
+waveshare-p4-nano-101-dsi-touch-a,Touch - GT911,SCL,GPIO 8
+waveshare-p4-nano-101-dsi-touch-a,Backlight - on I2C,Address,0x45
+waveshare-p4-nano-101-dsi-touch-a,Backlight - on I2C,Register,"0x96, 0 - 255"
+waveshare-p4-nano-101-dsi-touch-a,Backlight - on I2C,Bus,touch panel's
+waveshare-p4-nano-101-dsi-touch-a,I2C (GPIO 7 / 8),SDA,GPIO 7
+waveshare-p4-nano-101-dsi-touch-a,I2C (GPIO 7 / 8),SCL,GPIO 8
+waveshare-p4-nano-101-dsi-touch-a,SDCard - SD card,CLK,GPIO 43
+waveshare-p4-nano-101-dsi-touch-a,SDCard - SD card,CMD,GPIO 44
+waveshare-p4-nano-101-dsi-touch-a,SDCard - SD card,D0,GPIO 39
+waveshare-p4-nano-101-dsi-touch-a,SDCard - SD card,D1,GPIO 40
+waveshare-p4-nano-101-dsi-touch-a,SDCard - SD card,D2,GPIO 41
+waveshare-p4-nano-101-dsi-touch-a,SDCard - SD card,D3,GPIO 42
+waveshare-p4-nano-101-dsi-touch-a,WiFiCoprocessor - Wi-Fi co-processor,CLK,GPIO 18
+waveshare-p4-nano-101-dsi-touch-a,WiFiCoprocessor - Wi-Fi co-processor,CMD,GPIO 19
+waveshare-p4-nano-101-dsi-touch-a,WiFiCoprocessor - Wi-Fi co-processor,D0,GPIO 14
+waveshare-p4-nano-101-dsi-touch-a,WiFiCoprocessor - Wi-Fi co-processor,D1,GPIO 15
+waveshare-p4-nano-101-dsi-touch-a,WiFiCoprocessor - Wi-Fi co-processor,D2,GPIO 16
+waveshare-p4-nano-101-dsi-touch-a,WiFiCoprocessor - Wi-Fi co-processor,D3,GPIO 17
+waveshare-p4-nano-101-dsi-touch-a,WiFiCoprocessor - Wi-Fi co-processor,RST,GPIO 54
+waveshare-p4-nano-101-dsi-touch-a,Ethernet - Ethernet PHY on RMII,MDC,GPIO 31
+waveshare-p4-nano-101-dsi-touch-a,Ethernet - Ethernet PHY on RMII,MDIO,GPIO 52
+waveshare-p4-nano-101-dsi-touch-a,Ethernet - Ethernet PHY on RMII,POWER,GPIO 51
+waveshare-p4-nano-101-dsi-touch-a,Audio,MCLK,GPIO 13
+waveshare-p4-nano-101-dsi-touch-a,Audio,BCLK,GPIO 12
+waveshare-p4-nano-101-dsi-touch-a,Audio,LRCLK,GPIO 10
+waveshare-p4-nano-101-dsi-touch-a,Audio,DIN,GPIO 9
+waveshare-p4-nano-101-dsi-touch-a,Audio,PA,GPIO 53
+waveshare-p4-nano-7-dsi-touch-a,Panel - MIPI-DSI,RESET,-
+waveshare-p4-nano-7-dsi-touch-a,Touch - GT911,SDA,GPIO 7
+waveshare-p4-nano-7-dsi-touch-a,Touch - GT911,SCL,GPIO 8
+waveshare-p4-nano-7-dsi-touch-a,Backlight - on I2C,Address,0x45
+waveshare-p4-nano-7-dsi-touch-a,Backlight - on I2C,Register,"0x96, 0 - 255"
+waveshare-p4-nano-7-dsi-touch-a,Backlight - on I2C,Bus,touch panel's
+waveshare-p4-nano-7-dsi-touch-a,I2C (GPIO 7 / 8),SDA,GPIO 7
+waveshare-p4-nano-7-dsi-touch-a,I2C (GPIO 7 / 8),SCL,GPIO 8
+waveshare-p4-nano-7-dsi-touch-a,SDCard - SD card,CLK,GPIO 43
+waveshare-p4-nano-7-dsi-touch-a,SDCard - SD card,CMD,GPIO 44
+waveshare-p4-nano-7-dsi-touch-a,SDCard - SD card,D0,GPIO 39
+waveshare-p4-nano-7-dsi-touch-a,SDCard - SD card,D1,GPIO 40
+waveshare-p4-nano-7-dsi-touch-a,SDCard - SD card,D2,GPIO 41
+waveshare-p4-nano-7-dsi-touch-a,SDCard - SD card,D3,GPIO 42
+waveshare-p4-nano-7-dsi-touch-a,WiFiCoprocessor - Wi-Fi co-processor,CLK,GPIO 18
+waveshare-p4-nano-7-dsi-touch-a,WiFiCoprocessor - Wi-Fi co-processor,CMD,GPIO 19
+waveshare-p4-nano-7-dsi-touch-a,WiFiCoprocessor - Wi-Fi co-processor,D0,GPIO 14
+waveshare-p4-nano-7-dsi-touch-a,WiFiCoprocessor - Wi-Fi co-processor,D1,GPIO 15
+waveshare-p4-nano-7-dsi-touch-a,WiFiCoprocessor - Wi-Fi co-processor,D2,GPIO 16
+waveshare-p4-nano-7-dsi-touch-a,WiFiCoprocessor - Wi-Fi co-processor,D3,GPIO 17
+waveshare-p4-nano-7-dsi-touch-a,WiFiCoprocessor - Wi-Fi co-processor,RST,GPIO 54
+waveshare-p4-nano-7-dsi-touch-a,Ethernet - Ethernet PHY on RMII,MDC,GPIO 31
+waveshare-p4-nano-7-dsi-touch-a,Ethernet - Ethernet PHY on RMII,MDIO,GPIO 52
+waveshare-p4-nano-7-dsi-touch-a,Ethernet - Ethernet PHY on RMII,POWER,GPIO 51
+waveshare-p4-nano-7-dsi-touch-a,Audio,MCLK,GPIO 13
+waveshare-p4-nano-7-dsi-touch-a,Audio,BCLK,GPIO 12
+waveshare-p4-nano-7-dsi-touch-a,Audio,LRCLK,GPIO 10
+waveshare-p4-nano-7-dsi-touch-a,Audio,DIN,GPIO 9
+waveshare-p4-nano-7-dsi-touch-a,Audio,PA,GPIO 53
+waveshare-p4-nano-8-dsi-touch-a,Panel - MIPI-DSI,RESET,-
+waveshare-p4-nano-8-dsi-touch-a,Touch - GT911,SDA,GPIO 7
+waveshare-p4-nano-8-dsi-touch-a,Touch - GT911,SCL,GPIO 8
+waveshare-p4-nano-8-dsi-touch-a,Backlight - on I2C,Address,0x45
+waveshare-p4-nano-8-dsi-touch-a,Backlight - on I2C,Register,"0x96, 0 - 255"
+waveshare-p4-nano-8-dsi-touch-a,Backlight - on I2C,Bus,touch panel's
+waveshare-p4-nano-8-dsi-touch-a,I2C (GPIO 7 / 8),SDA,GPIO 7
+waveshare-p4-nano-8-dsi-touch-a,I2C (GPIO 7 / 8),SCL,GPIO 8
+waveshare-p4-nano-8-dsi-touch-a,SDCard - SD card,CLK,GPIO 43
+waveshare-p4-nano-8-dsi-touch-a,SDCard - SD card,CMD,GPIO 44
+waveshare-p4-nano-8-dsi-touch-a,SDCard - SD card,D0,GPIO 39
+waveshare-p4-nano-8-dsi-touch-a,SDCard - SD card,D1,GPIO 40
+waveshare-p4-nano-8-dsi-touch-a,SDCard - SD card,D2,GPIO 41
+waveshare-p4-nano-8-dsi-touch-a,SDCard - SD card,D3,GPIO 42
+waveshare-p4-nano-8-dsi-touch-a,WiFiCoprocessor - Wi-Fi co-processor,CLK,GPIO 18
+waveshare-p4-nano-8-dsi-touch-a,WiFiCoprocessor - Wi-Fi co-processor,CMD,GPIO 19
+waveshare-p4-nano-8-dsi-touch-a,WiFiCoprocessor - Wi-Fi co-processor,D0,GPIO 14
+waveshare-p4-nano-8-dsi-touch-a,WiFiCoprocessor - Wi-Fi co-processor,D1,GPIO 15
+waveshare-p4-nano-8-dsi-touch-a,WiFiCoprocessor - Wi-Fi co-processor,D2,GPIO 16
+waveshare-p4-nano-8-dsi-touch-a,WiFiCoprocessor - Wi-Fi co-processor,D3,GPIO 17
+waveshare-p4-nano-8-dsi-touch-a,WiFiCoprocessor - Wi-Fi co-processor,RST,GPIO 54
+waveshare-p4-nano-8-dsi-touch-a,Ethernet - Ethernet PHY on RMII,MDC,GPIO 31
+waveshare-p4-nano-8-dsi-touch-a,Ethernet - Ethernet PHY on RMII,MDIO,GPIO 52
+waveshare-p4-nano-8-dsi-touch-a,Ethernet - Ethernet PHY on RMII,POWER,GPIO 51
+waveshare-p4-nano-8-dsi-touch-a,Audio,MCLK,GPIO 13
+waveshare-p4-nano-8-dsi-touch-a,Audio,BCLK,GPIO 12
+waveshare-p4-nano-8-dsi-touch-a,Audio,LRCLK,GPIO 10
+waveshare-p4-nano-8-dsi-touch-a,Audio,DIN,GPIO 9
+waveshare-p4-nano-8-dsi-touch-a,Audio,PA,GPIO 53
 waveshare-p4-wifi6-touch-lcd-101,Panel - MIPI-DSI,RESET,GPIO 27
 waveshare-p4-wifi6-touch-lcd-101,Touch - GT911,SDA,GPIO 7
 waveshare-p4-wifi6-touch-lcd-101,Touch - GT911,SCL,GPIO 8
 waveshare-p4-wifi6-touch-lcd-101,Backlight,Pin,GPIO 26
 waveshare-p4-wifi6-touch-lcd-101,Backlight,Active,high
 waveshare-p4-wifi6-touch-lcd-101,Backlight,Drive,PWM 5000 Hz
+waveshare-p4-wifi6-touch-lcd-101,WiFiCoprocessor - Wi-Fi co-processor,CLK,GPIO 18
+waveshare-p4-wifi6-touch-lcd-101,WiFiCoprocessor - Wi-Fi co-processor,CMD,GPIO 19
+waveshare-p4-wifi6-touch-lcd-101,WiFiCoprocessor - Wi-Fi co-processor,D0,GPIO 14
+waveshare-p4-wifi6-touch-lcd-101,WiFiCoprocessor - Wi-Fi co-processor,D1,GPIO 15
+waveshare-p4-wifi6-touch-lcd-101,WiFiCoprocessor - Wi-Fi co-processor,D2,GPIO 16
+waveshare-p4-wifi6-touch-lcd-101,WiFiCoprocessor - Wi-Fi co-processor,D3,GPIO 17
+waveshare-p4-wifi6-touch-lcd-101,WiFiCoprocessor - Wi-Fi co-processor,RST,GPIO 54
 waveshare-p4-wifi6-touch-lcd-35,Panel - SPI (4-wire serial),SCK / CLK,GPIO 21
 waveshare-p4-wifi6-touch-lcd-35,Panel - SPI (4-wire serial),MOSI / SDA,GPIO 20
 waveshare-p4-wifi6-touch-lcd-35,Panel - SPI (4-wire serial),CS,GPIO 23
@@ -836,6 +1194,13 @@ waveshare-p4-wifi6-touch-lcd-35,I2C (GPIO 7 / 8),SDA,GPIO 7
 waveshare-p4-wifi6-touch-lcd-35,I2C (GPIO 7 / 8),SCL,GPIO 8
 waveshare-p4-wifi6-touch-lcd-35,PMICbatterycharger - AXP2101,Bus,I2C (GPIO 7 / 8)
 waveshare-p4-wifi6-touch-lcd-35,PMICbatterycharger - AXP2101,Address,0x34
+waveshare-p4-wifi6-touch-lcd-35,WiFiCoprocessor - Wi-Fi co-processor,CLK,GPIO 18
+waveshare-p4-wifi6-touch-lcd-35,WiFiCoprocessor - Wi-Fi co-processor,CMD,GPIO 19
+waveshare-p4-wifi6-touch-lcd-35,WiFiCoprocessor - Wi-Fi co-processor,D0,GPIO 14
+waveshare-p4-wifi6-touch-lcd-35,WiFiCoprocessor - Wi-Fi co-processor,D1,GPIO 15
+waveshare-p4-wifi6-touch-lcd-35,WiFiCoprocessor - Wi-Fi co-processor,D2,GPIO 16
+waveshare-p4-wifi6-touch-lcd-35,WiFiCoprocessor - Wi-Fi co-processor,D3,GPIO 17
+waveshare-p4-wifi6-touch-lcd-35,WiFiCoprocessor - Wi-Fi co-processor,RST,GPIO 54
 waveshare-p4-wifi6-touch-lcd-35,Inputs and outputs,BOOTButton (input),GPIO 35
 waveshare-p4-wifi6-touch-lcd-35,Board I/O,BOOTButton (active low),GPIO 35
 waveshare-p4-wifi6-touch-lcd-35,Audio,MCLK,GPIO 13
@@ -843,6 +1208,92 @@ waveshare-p4-wifi6-touch-lcd-35,Audio,BCLK,GPIO 12
 waveshare-p4-wifi6-touch-lcd-35,Audio,LRCLK,GPIO 10
 waveshare-p4-wifi6-touch-lcd-35,Audio,DIN,GPIO 9
 waveshare-p4-wifi6-touch-lcd-35,Audio,PA,GPIO 53
+waveshare-p4-wifi6-touch-lcd-43,Panel - MIPI-DSI,RESET,GPIO 27
+waveshare-p4-wifi6-touch-lcd-43,Touch - GT911,SDA,GPIO 7
+waveshare-p4-wifi6-touch-lcd-43,Touch - GT911,SCL,GPIO 8
+waveshare-p4-wifi6-touch-lcd-43,Backlight,Pin,GPIO 26
+waveshare-p4-wifi6-touch-lcd-43,Backlight,Active,low
+waveshare-p4-wifi6-touch-lcd-43,Backlight,Drive,PWM 5000 Hz
+waveshare-p4-wifi6-touch-lcd-43,I2C (GPIO 7 / 8),SDA,GPIO 7
+waveshare-p4-wifi6-touch-lcd-43,I2C (GPIO 7 / 8),SCL,GPIO 8
+waveshare-p4-wifi6-touch-lcd-43,SDCard - SD card,CLK,GPIO 43
+waveshare-p4-wifi6-touch-lcd-43,SDCard - SD card,CMD,GPIO 44
+waveshare-p4-wifi6-touch-lcd-43,SDCard - SD card,D0,GPIO 39
+waveshare-p4-wifi6-touch-lcd-43,SDCard - SD card,D1,GPIO 40
+waveshare-p4-wifi6-touch-lcd-43,SDCard - SD card,D2,GPIO 41
+waveshare-p4-wifi6-touch-lcd-43,SDCard - SD card,D3,GPIO 42
+waveshare-p4-wifi6-touch-lcd-43,WiFiCoprocessor - Wi-Fi co-processor,CLK,GPIO 18
+waveshare-p4-wifi6-touch-lcd-43,WiFiCoprocessor - Wi-Fi co-processor,CMD,GPIO 19
+waveshare-p4-wifi6-touch-lcd-43,WiFiCoprocessor - Wi-Fi co-processor,D0,GPIO 14
+waveshare-p4-wifi6-touch-lcd-43,WiFiCoprocessor - Wi-Fi co-processor,D1,GPIO 15
+waveshare-p4-wifi6-touch-lcd-43,WiFiCoprocessor - Wi-Fi co-processor,D2,GPIO 16
+waveshare-p4-wifi6-touch-lcd-43,WiFiCoprocessor - Wi-Fi co-processor,D3,GPIO 17
+waveshare-p4-wifi6-touch-lcd-43,WiFiCoprocessor - Wi-Fi co-processor,RST,GPIO 54
+waveshare-p4-wifi6-touch-lcd-43,Inputs and outputs,Battery (analog in),GPIO 20
+waveshare-p4-wifi6-touch-lcd-43,Inputs and outputs,BOOTButton (input),GPIO 35
+waveshare-p4-wifi6-touch-lcd-43,Board I/O,BOOTButton (active low),GPIO 35
+waveshare-p4-wifi6-touch-lcd-43,Analogue input,Battery,GPIO 20
+waveshare-p4-wifi6-touch-lcd-43,Audio,MCLK,GPIO 13
+waveshare-p4-wifi6-touch-lcd-43,Audio,BCLK,GPIO 12
+waveshare-p4-wifi6-touch-lcd-43,Audio,LRCLK,GPIO 10
+waveshare-p4-wifi6-touch-lcd-43,Audio,DIN,GPIO 9
+waveshare-p4-wifi6-touch-lcd-43,Audio,PA,GPIO 53
+waveshare-p4-wifi6-touch-lcd-5,Panel - MIPI-DSI,RESET,GPIO 27
+waveshare-p4-wifi6-touch-lcd-5,Touch - GT911,SDA,GPIO 7
+waveshare-p4-wifi6-touch-lcd-5,Touch - GT911,SCL,GPIO 8
+waveshare-p4-wifi6-touch-lcd-5,Backlight,Pin,GPIO 26
+waveshare-p4-wifi6-touch-lcd-5,Backlight,Active,high
+waveshare-p4-wifi6-touch-lcd-5,Backlight,Drive,PWM 5000 Hz
+waveshare-p4-wifi6-touch-lcd-5,I2C (GPIO 7 / 8),SDA,GPIO 7
+waveshare-p4-wifi6-touch-lcd-5,I2C (GPIO 7 / 8),SCL,GPIO 8
+waveshare-p4-wifi6-touch-lcd-5,SDCard - SD card,CLK,GPIO 43
+waveshare-p4-wifi6-touch-lcd-5,SDCard - SD card,CMD,GPIO 44
+waveshare-p4-wifi6-touch-lcd-5,SDCard - SD card,D0,GPIO 39
+waveshare-p4-wifi6-touch-lcd-5,SDCard - SD card,D1,GPIO 40
+waveshare-p4-wifi6-touch-lcd-5,SDCard - SD card,D2,GPIO 41
+waveshare-p4-wifi6-touch-lcd-5,SDCard - SD card,D3,GPIO 42
+waveshare-p4-wifi6-touch-lcd-5,WiFiCoprocessor - Wi-Fi co-processor,CLK,GPIO 18
+waveshare-p4-wifi6-touch-lcd-5,WiFiCoprocessor - Wi-Fi co-processor,CMD,GPIO 19
+waveshare-p4-wifi6-touch-lcd-5,WiFiCoprocessor - Wi-Fi co-processor,D0,GPIO 14
+waveshare-p4-wifi6-touch-lcd-5,WiFiCoprocessor - Wi-Fi co-processor,D1,GPIO 15
+waveshare-p4-wifi6-touch-lcd-5,WiFiCoprocessor - Wi-Fi co-processor,D2,GPIO 16
+waveshare-p4-wifi6-touch-lcd-5,WiFiCoprocessor - Wi-Fi co-processor,D3,GPIO 17
+waveshare-p4-wifi6-touch-lcd-5,WiFiCoprocessor - Wi-Fi co-processor,RST,GPIO 54
+waveshare-p4-wifi6-touch-lcd-5,Audio,MCLK,GPIO 13
+waveshare-p4-wifi6-touch-lcd-5,Audio,BCLK,GPIO 12
+waveshare-p4-wifi6-touch-lcd-5,Audio,LRCLK,GPIO 10
+waveshare-p4-wifi6-touch-lcd-5,Audio,DIN,GPIO 9
+waveshare-p4-wifi6-touch-lcd-5,Audio,PA,GPIO 53
+waveshare-p4-wifi6-touch-lcd-7b,Panel - MIPI-DSI,RESET,GPIO 33
+waveshare-p4-wifi6-touch-lcd-7b,Touch - GT911,SDA,GPIO 7
+waveshare-p4-wifi6-touch-lcd-7b,Touch - GT911,SCL,GPIO 8
+waveshare-p4-wifi6-touch-lcd-7b,Backlight,Pin,GPIO 32
+waveshare-p4-wifi6-touch-lcd-7b,Backlight,Active,low
+waveshare-p4-wifi6-touch-lcd-7b,Backlight,Drive,PWM 5000 Hz
+waveshare-p4-wifi6-touch-lcd-7b,I2C (GPIO 7 / 8),SDA,GPIO 7
+waveshare-p4-wifi6-touch-lcd-7b,I2C (GPIO 7 / 8),SCL,GPIO 8
+waveshare-p4-wifi6-touch-lcd-7b,SDCard - SD card,CLK,GPIO 43
+waveshare-p4-wifi6-touch-lcd-7b,SDCard - SD card,CMD,GPIO 44
+waveshare-p4-wifi6-touch-lcd-7b,SDCard - SD card,D0,GPIO 39
+waveshare-p4-wifi6-touch-lcd-7b,SDCard - SD card,D1,GPIO 40
+waveshare-p4-wifi6-touch-lcd-7b,SDCard - SD card,D2,GPIO 41
+waveshare-p4-wifi6-touch-lcd-7b,SDCard - SD card,D3,GPIO 42
+waveshare-p4-wifi6-touch-lcd-7b,RS485 - RS485 / Modbus RTU,TX,GPIO 27
+waveshare-p4-wifi6-touch-lcd-7b,RS485 - RS485 / Modbus RTU,RX,GPIO 26
+waveshare-p4-wifi6-touch-lcd-7b,CanBus - CAN bus / OBD-II,TX,GPIO 22
+waveshare-p4-wifi6-touch-lcd-7b,CanBus - CAN bus / OBD-II,RX,GPIO 21
+waveshare-p4-wifi6-touch-lcd-7b,WiFiCoprocessor - Wi-Fi co-processor,CLK,GPIO 18
+waveshare-p4-wifi6-touch-lcd-7b,WiFiCoprocessor - Wi-Fi co-processor,CMD,GPIO 19
+waveshare-p4-wifi6-touch-lcd-7b,WiFiCoprocessor - Wi-Fi co-processor,D0,GPIO 14
+waveshare-p4-wifi6-touch-lcd-7b,WiFiCoprocessor - Wi-Fi co-processor,D1,GPIO 15
+waveshare-p4-wifi6-touch-lcd-7b,WiFiCoprocessor - Wi-Fi co-processor,D2,GPIO 16
+waveshare-p4-wifi6-touch-lcd-7b,WiFiCoprocessor - Wi-Fi co-processor,D3,GPIO 17
+waveshare-p4-wifi6-touch-lcd-7b,WiFiCoprocessor - Wi-Fi co-processor,RST,GPIO 54
+waveshare-p4-wifi6-touch-lcd-7b,Audio,MCLK,GPIO 13
+waveshare-p4-wifi6-touch-lcd-7b,Audio,BCLK,GPIO 12
+waveshare-p4-wifi6-touch-lcd-7b,Audio,LRCLK,GPIO 10
+waveshare-p4-wifi6-touch-lcd-7b,Audio,DIN,GPIO 9
+waveshare-p4-wifi6-touch-lcd-7b,Audio,PA,GPIO 53
 waveshare-s3-amoled-191,Panel - QSPI (quad SPI),SCK,GPIO 47
 waveshare-s3-amoled-191,Panel - QSPI (quad SPI),D0 - D3,"GPIO 18, 7, 48, 5"
 waveshare-s3-amoled-191,Panel - QSPI (quad SPI),CS,GPIO 6
@@ -1033,8 +1484,24 @@ waveshare-s3-lcd-2,Backlight,Active,high
 waveshare-s3-lcd-2,Backlight,Drive,PWM 5000 Hz
 waveshare-s3-lcd-2,I2C (GPIO 48 / 47),SDA,GPIO 48
 waveshare-s3-lcd-2,I2C (GPIO 48 / 47),SCL,GPIO 47
+waveshare-s3-lcd-2,Camera control (GPIO 21 / 16),SDA,GPIO 21
+waveshare-s3-lcd-2,Camera control (GPIO 21 / 16),SCL,GPIO 16
 waveshare-s3-lcd-2,IMU - QMI8658,Bus,I2C (GPIO 48 / 47)
 waveshare-s3-lcd-2,IMU - QMI8658,Address,0x6B
+waveshare-s3-lcd-2,Camera,Bus,Camera control (GPIO 21 / 16)
+waveshare-s3-lcd-2,Camera,XCLK,GPIO 8
+waveshare-s3-lcd-2,Camera,PCLK,GPIO 9
+waveshare-s3-lcd-2,Camera,VSYNC,GPIO 6
+waveshare-s3-lcd-2,Camera,HREF,GPIO 4
+waveshare-s3-lcd-2,Camera,D0,GPIO 12
+waveshare-s3-lcd-2,Camera,D1,GPIO 13
+waveshare-s3-lcd-2,Camera,D2,GPIO 15
+waveshare-s3-lcd-2,Camera,D3,GPIO 11
+waveshare-s3-lcd-2,Camera,D4,GPIO 14
+waveshare-s3-lcd-2,Camera,D5,GPIO 10
+waveshare-s3-lcd-2,Camera,D6,GPIO 7
+waveshare-s3-lcd-2,Camera,D7,GPIO 2
+waveshare-s3-lcd-2,Camera,PWDN,GPIO 17
 waveshare-s3-lcd-2,Inputs and outputs,BOOTButton (input),GPIO 0
 waveshare-s3-lcd-2,Board I/O,BOOTButton (active low),GPIO 0
 waveshare-s3-touch-amoled-132,Panel - QSPI (quad SPI),SCK,GPIO 11
@@ -1564,8 +2031,24 @@ waveshare-s3-touch-lcd-2,Backlight,Active,high
 waveshare-s3-touch-lcd-2,Backlight,Drive,PWM 5000 Hz
 waveshare-s3-touch-lcd-2,I2C (GPIO 48 / 47),SDA,GPIO 48
 waveshare-s3-touch-lcd-2,I2C (GPIO 48 / 47),SCL,GPIO 47
+waveshare-s3-touch-lcd-2,Camera control (GPIO 21 / 16),SDA,GPIO 21
+waveshare-s3-touch-lcd-2,Camera control (GPIO 21 / 16),SCL,GPIO 16
 waveshare-s3-touch-lcd-2,IMU - QMI8658,Bus,I2C (GPIO 48 / 47)
 waveshare-s3-touch-lcd-2,IMU - QMI8658,Address,0x6B
+waveshare-s3-touch-lcd-2,Camera,Bus,Camera control (GPIO 21 / 16)
+waveshare-s3-touch-lcd-2,Camera,XCLK,GPIO 8
+waveshare-s3-touch-lcd-2,Camera,PCLK,GPIO 9
+waveshare-s3-touch-lcd-2,Camera,VSYNC,GPIO 6
+waveshare-s3-touch-lcd-2,Camera,HREF,GPIO 4
+waveshare-s3-touch-lcd-2,Camera,D0,GPIO 12
+waveshare-s3-touch-lcd-2,Camera,D1,GPIO 13
+waveshare-s3-touch-lcd-2,Camera,D2,GPIO 15
+waveshare-s3-touch-lcd-2,Camera,D3,GPIO 11
+waveshare-s3-touch-lcd-2,Camera,D4,GPIO 14
+waveshare-s3-touch-lcd-2,Camera,D5,GPIO 10
+waveshare-s3-touch-lcd-2,Camera,D6,GPIO 7
+waveshare-s3-touch-lcd-2,Camera,D7,GPIO 2
+waveshare-s3-touch-lcd-2,Camera,PWDN,GPIO 17
 waveshare-s3-touch-lcd-2,Inputs and outputs,BOOTButton (input),GPIO 0
 waveshare-s3-touch-lcd-2,Board I/O,BOOTButton (active low),GPIO 0
 waveshare-s3-touch-lcd-28,Panel - SPI (4-wire serial),SCK / CLK,GPIO 40
@@ -1587,10 +2070,49 @@ waveshare-s3-touch-lcd-28,IMU - QMI8658,Bus,I2C (GPIO 11 / 10)
 waveshare-s3-touch-lcd-28,IMU - QMI8658,Address,0x6B
 waveshare-s3-touch-lcd-28,RTC - PCF85063,Bus,I2C (GPIO 11 / 10)
 waveshare-s3-touch-lcd-28,RTC - PCF85063,Address,0x51
+waveshare-s3-touch-lcd-28,SDCard - SD card,CLK,GPIO 14
+waveshare-s3-touch-lcd-28,SDCard - SD card,CMD,GPIO 17
+waveshare-s3-touch-lcd-28,SDCard - SD card,D0,GPIO 16
+waveshare-s3-touch-lcd-28,Inputs and outputs,Battery (analog in),GPIO 8
 waveshare-s3-touch-lcd-28,Inputs and outputs,BOOTButton (input),GPIO 0
 waveshare-s3-touch-lcd-28,Inputs and outputs,PWRKey BATButton (input),GPIO 6
 waveshare-s3-touch-lcd-28,Board I/O,BOOTButton (active low),GPIO 0
 waveshare-s3-touch-lcd-28,Board I/O,PWRKeyBATButton (active low),GPIO 6
+waveshare-s3-touch-lcd-28,Analogue input,Battery,GPIO 8
+waveshare-s3-touch-lcd-28,Audio,BCLK,GPIO 48
+waveshare-s3-touch-lcd-28,Audio,LRCLK,GPIO 38
+waveshare-s3-touch-lcd-28,Audio,DIN,GPIO 47
+waveshare-s3-touch-lcd-28-v2,Panel - SPI (4-wire serial),SCK / CLK,GPIO 40
+waveshare-s3-touch-lcd-28-v2,Panel - SPI (4-wire serial),MOSI / SDA,GPIO 45
+waveshare-s3-touch-lcd-28-v2,Panel - SPI (4-wire serial),MISO / SDO,GPIO 46
+waveshare-s3-touch-lcd-28-v2,Panel - SPI (4-wire serial),CS,GPIO 42
+waveshare-s3-touch-lcd-28-v2,Panel - SPI (4-wire serial),DC / RS,GPIO 41
+waveshare-s3-touch-lcd-28-v2,Panel - SPI (4-wire serial),RESET,GPIO 39
+waveshare-s3-touch-lcd-28-v2,Touch - CST3530,SDA,GPIO 1
+waveshare-s3-touch-lcd-28-v2,Touch - CST3530,SCL,GPIO 3
+waveshare-s3-touch-lcd-28-v2,Touch - CST3530,INT / IRQ,GPIO 4
+waveshare-s3-touch-lcd-28-v2,Touch - CST3530,RESET,GPIO 2
+waveshare-s3-touch-lcd-28-v2,Backlight,Pin,GPIO 5
+waveshare-s3-touch-lcd-28-v2,Backlight,Active,high
+waveshare-s3-touch-lcd-28-v2,Backlight,Drive,PWM 5000 Hz
+waveshare-s3-touch-lcd-28-v2,I2C (GPIO 11 / 10),SDA,GPIO 11
+waveshare-s3-touch-lcd-28-v2,I2C (GPIO 11 / 10),SCL,GPIO 10
+waveshare-s3-touch-lcd-28-v2,IMU - QMI8658,Bus,I2C (GPIO 11 / 10)
+waveshare-s3-touch-lcd-28-v2,IMU - QMI8658,Address,0x6B
+waveshare-s3-touch-lcd-28-v2,RTC - PCF85063,Bus,I2C (GPIO 11 / 10)
+waveshare-s3-touch-lcd-28-v2,RTC - PCF85063,Address,0x51
+waveshare-s3-touch-lcd-28-v2,SDCard - SD card,CLK,GPIO 14
+waveshare-s3-touch-lcd-28-v2,SDCard - SD card,CMD,GPIO 17
+waveshare-s3-touch-lcd-28-v2,SDCard - SD card,D0,GPIO 16
+waveshare-s3-touch-lcd-28-v2,Inputs and outputs,Battery (analog in),GPIO 8
+waveshare-s3-touch-lcd-28-v2,Inputs and outputs,BOOTButton (input),GPIO 0
+waveshare-s3-touch-lcd-28-v2,Inputs and outputs,PWRKey BATButton (input),GPIO 6
+waveshare-s3-touch-lcd-28-v2,Board I/O,BOOTButton (active low),GPIO 0
+waveshare-s3-touch-lcd-28-v2,Board I/O,PWRKeyBATButton (active low),GPIO 6
+waveshare-s3-touch-lcd-28-v2,Analogue input,Battery,GPIO 8
+waveshare-s3-touch-lcd-28-v2,Audio,BCLK,GPIO 48
+waveshare-s3-touch-lcd-28-v2,Audio,LRCLK,GPIO 38
+waveshare-s3-touch-lcd-28-v2,Audio,DIN,GPIO 47
 waveshare-s3-touch-lcd-28b,Panel - RGB565 parallel (DPI),DE,GPIO 40
 waveshare-s3-touch-lcd-28b,Panel - RGB565 parallel (DPI),VSYNC,GPIO 39
 waveshare-s3-touch-lcd-28b,Panel - RGB565 parallel (DPI),HSYNC,GPIO 38
@@ -1622,7 +2144,9 @@ waveshare-s3-touch-lcd-28b,SDCard - SD card,CMD,GPIO 1
 waveshare-s3-touch-lcd-28b,SDCard - SD card,D0,GPIO 42
 waveshare-s3-touch-lcd-28b,Inputs and outputs,Battery (analog in),GPIO 4
 waveshare-s3-touch-lcd-28b,Inputs and outputs,BOOTButton (input),GPIO 0
+waveshare-s3-touch-lcd-28b,Inputs and outputs,Buzzer (output),TCA9554 7
 waveshare-s3-touch-lcd-28b,Board I/O,BOOTButton (active low),GPIO 0
+waveshare-s3-touch-lcd-28b,Board I/O,Buzzer,-
 waveshare-s3-touch-lcd-28b,Analogue input,Battery,GPIO 4
 waveshare-s3-touch-lcd-349,Panel - QSPI (quad SPI),SCK,GPIO 10
 waveshare-s3-touch-lcd-349,Panel - QSPI (quad SPI),D0 - D3,"GPIO 11, 12, 13, 14"
@@ -1677,6 +2201,19 @@ waveshare-s3-touch-lcd-35,RTC - PCF85063,Bus,I2C (GPIO 8 / 7)
 waveshare-s3-touch-lcd-35,RTC - PCF85063,Address,0x51
 waveshare-s3-touch-lcd-35,IMU - QMI8658,Bus,I2C (GPIO 8 / 7)
 waveshare-s3-touch-lcd-35,IMU - QMI8658,Address,0x6B
+waveshare-s3-touch-lcd-35,Camera,Bus,I2C (GPIO 8 / 7)
+waveshare-s3-touch-lcd-35,Camera,XCLK,GPIO 38
+waveshare-s3-touch-lcd-35,Camera,PCLK,GPIO 41
+waveshare-s3-touch-lcd-35,Camera,VSYNC,GPIO 17
+waveshare-s3-touch-lcd-35,Camera,HREF,GPIO 18
+waveshare-s3-touch-lcd-35,Camera,D0,GPIO 45
+waveshare-s3-touch-lcd-35,Camera,D1,GPIO 47
+waveshare-s3-touch-lcd-35,Camera,D2,GPIO 48
+waveshare-s3-touch-lcd-35,Camera,D3,GPIO 46
+waveshare-s3-touch-lcd-35,Camera,D4,GPIO 42
+waveshare-s3-touch-lcd-35,Camera,D5,GPIO 40
+waveshare-s3-touch-lcd-35,Camera,D6,GPIO 39
+waveshare-s3-touch-lcd-35,Camera,D7,GPIO 21
 waveshare-s3-touch-lcd-35,Inputs and outputs,BOOTButton (input),GPIO 0
 waveshare-s3-touch-lcd-35,Board I/O,BOOTButton (active low),GPIO 0
 waveshare-s3-touch-lcd-35,Audio,MCLK,GPIO 12

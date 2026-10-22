@@ -1,0 +1,32 @@
+group,signal,pin
+Panel - SPI (4-wire serial),SCK / CLK,GPIO 40
+Panel - SPI (4-wire serial),MOSI / SDA,GPIO 45
+Panel - SPI (4-wire serial),MISO / SDO,GPIO 46
+Panel - SPI (4-wire serial),CS,GPIO 42
+Panel - SPI (4-wire serial),DC / RS,GPIO 41
+Panel - SPI (4-wire serial),RESET,GPIO 39
+Touch - CST3530,SDA,GPIO 1
+Touch - CST3530,SCL,GPIO 3
+Touch - CST3530,INT / IRQ,GPIO 4
+Touch - CST3530,RESET,GPIO 2
+Backlight,Pin,GPIO 5
+Backlight,Active,high
+Backlight,Drive,PWM 5000 Hz
+I2C (GPIO 11 / 10),SDA,GPIO 11
+I2C (GPIO 11 / 10),SCL,GPIO 10
+IMU - QMI8658,Bus,I2C (GPIO 11 / 10)
+IMU - QMI8658,Address,0x6B
+RTC - PCF85063,Bus,I2C (GPIO 11 / 10)
+RTC - PCF85063,Address,0x51
+SDCard - SD card,CLK,GPIO 14
+SDCard - SD card,CMD,GPIO 17
+SDCard - SD card,D0,GPIO 16
+Inputs and outputs,Battery (analog in),GPIO 8
+Inputs and outputs,BOOTButton (input),GPIO 0
+Inputs and outputs,PWRKey BATButton (input),GPIO 6
+Board I/O,BOOTButton (active low),GPIO 0
+Board I/O,PWRKeyBATButton (active low),GPIO 6
+Analogue input,Battery,GPIO 8
+Audio,BCLK,GPIO 48
+Audio,LRCLK,GPIO 38
+Audio,DIN,GPIO 47

@@ -30,5 +30,7 @@ SDCard - SD card,CMD,GPIO 1
 SDCard - SD card,D0,GPIO 42
 Inputs and outputs,Battery (analog in),GPIO 4
 Inputs and outputs,BOOTButton (input),GPIO 0
+Inputs and outputs,Buzzer (output),TCA9554 7
 Board I/O,BOOTButton (active low),GPIO 0
+Board I/O,Buzzer,-
 Analogue input,Battery,GPIO 4

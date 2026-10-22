@@ -1,0 +1,142 @@
+{
+  "id": "guition-jc1060p470c",
+  "name": "Guition JC1060P470C 7 inch ESP32-P4 (JC1060P470C_I_W_Y)",
+  "vendor": "Guition",
+  "group": "All-in-one boards",
+  "description": "7\" 1024x600 MIPI-DSI panel (JD9165) with GT911 touch on an ESP32-P4, wired 100 Mbit Ethernet, Wi-Fi through its ESP32-C6, an ES8311 speaker codec, a TF card and RS485. Compiled, not yet seen on a board.",
+  "mcu": {
+    "id": "esp32p4",
+    "name": "ESP32-P4"
+  },
+  "flashMB": 16,
+  "psramMB": 32,
+  "usbCdc": false,
+  "display": {
+    "controller": "jd9165",
+    "controllerName": "JD9165",
+    "interface": "dsi",
+    "width": 1024,
+    "height": 600,
+    "colorDepth": 16,
+    "rgbOrder": "rgb",
+    "invert": false,
+    "pins": {
+      "rst": 0
+    },
+    "options": {
+      "initSeq": "jd9165_guition_v2_init",
+      "lanes": "2",
+      "laneMbps": 750,
+      "pclkMhz": 52,
+      "hsyncFrontPorch": 160,
+      "hsyncPulseWidth": 24,
+      "hsyncBackPorch": 136,
+      "vsyncFrontPorch": 12,
+      "vsyncPulseWidth": 2,
+      "vsyncBackPorch": 21
+    },
+    "backlight": {
+      "pin": 23,
+      "active": 1,
+      "pwm": true,
+      "freq": 5000,
+      "defaultLevel": 100
+    }
+  },
+  "touch": {
+    "controller": "gt911",
+    "controllerName": "GT911",
+    "pins": {
+      "sda": 7,
+      "scl": 8,
+      "int": 21,
+      "rst": 22
+    },
+    "swapXY": false,
+    "invertX": false,
+    "invertY": false,
+    "options": {
+      "i2cAddr": "0x5D",
+      "freqKhz": 400,
+      "sharedI2C": true
+    }
+  },
+  "buses": [
+    {
+      "name": "I2C (GPIO 7 / 8: touch, codec, I2C port)",
+      "kind": "i2c",
+      "pins": {
+        "sda": 7,
+        "scl": 8
+      }
+    }
+  ],
+  "ioExpanders": [],
+  "peripherals": [
+    {
+      "name": "Ethernet",
+      "chip": "Ethernet PHY on RMII",
+      "kind": "Network",
+      "pins": {
+        "mdc": 31,
+        "mdio": 52,
+        "power": 51
+      }
+    },
+    {
+      "name": "WiFiCoprocessor",
+      "chip": "Wi-Fi co-processor",
+      "kind": "Network",
+      "pins": {
+        "clk": 18,
+        "cmd": 19,
+        "d0": 14,
+        "d1": 15,
+        "d2": 16,
+        "d3": 17,
+        "rst": 54
+      }
+    },
+    {
+      "name": "SDCard",
+      "chip": "SD card",
+      "kind": "Storage",
+      "pins": {
+        "clk": 43,
+        "cmd": 44,
+        "d0": 39,
+        "d1": 40,
+        "d2": 41,
+        "d3": 42
+      }
+    },
+    {
+      "name": "RS485",
+      "chip": "RS485 / Modbus RTU",
+      "kind": "Industrial",
+      "pins": {
+        "tx": 26,
+        "rx": 27
+      }
+    }
+  ],
+  "digitalIO": [],
+  "analogInputs": [],
+  "audio": {
+    "output": "es8311",
+    "pins": {
+      "mclk": 13,
+      "bclk": 12,
+      "lrclk": 10,
+      "din": 9,
+      "pa": 11
+    }
+  },
+  "verify": "Nobody at LCD Wizard has had this board: the export for it compiles and has not been seen on the panel or on a network. Pins are from Guition's own schematic for the JC1060P470C_I_W_Y (V1.0): panel reset GPIO 0, backlight GPIO 23 lit when high, the GT911 on GPIO 7/8 with INT 21 and RST 22, the ES8311 speaker codec (MCLK 13, BCLK 12, LRCK 10, data 9) with its amplifier on GPIO 11, the TF card on SDMMC (CLK 43, CMD 44, D0-D3 39-42), RS485 through a MAX485 that turns itself round (TX 26, RX 27, the same lines as the UART1 connector), and the RJ45 socket on an IP101 PHY wired to the ESP32-P4's own Ethernet pins (MDC 31, MDIO 52, reset 51, the clock in on 50). Guition changed the panel in 2026: a board whose label says V2 (SKU 10153004-V2) needs the V2 start-up sequence this preset starts with (52 MHz, 750 Mbps a lane, hsync 24/136/160, vsync 2/21/12, from the ESPHome community's configurations for it). If yours has no V2 on its label, choose \"Guition JC1060P470 1024x600 (the library's table)\" as the start-up sequence on the Display tab. The wrong one shows a white screen with a band of noise. Some older configurations give the panel reset as GPIO 5, which only reaches the header. GPIO 45, which the Arduino core switches as the TF card's power, is also on the 2x13 header. The touch controller may answer at 0x14 instead of 0x5D. A design on this preset builds for an ESP32-P4 before revision 3, which is what the community's configurations for this module build for; if the upload reports revision 3 (\"revision v3.1\"), choose that under Hardware > Board > Chip revision. Wi-Fi is the ESP32-C6 inside the module, in the kit as the Wi-Fi co-processor on the ESP32 core's own SDIO lines (CLK 18, CMD 19, D0-D3 14-17, its CHIP_PU on GPIO 54), beside the cable; it has to run ESP-Hosted of the core's release, which the board prints at start (see the README). The core runs that link at 40 MHz and an export cannot lower it; ESPHome configurations can, so if the picture streaks or the board restarts while Wi-Fi is busy, that is the difference to suspect. Wi-Fi through it compiles and has not been on a board. Not driven: the ES7210 microphones, the RX8025T clock chip, the battery charger (there is no battery reading), the MIPI-CSI camera connector and the C6's Bluetooth; ESP-NOW does not go through the C6.",
+  "links": {
+    "page": "https://lcdwizard.com/boards/guition-jc1060p470c",
+    "designer": "https://app.lcdwizard.com/app?board=guition-jc1060p470c",
+    "vendorProduct": "https://www.guition.com/esp32p4-display-module/7-inch-esp32p4-display-module",
+    "vendorDocs": "https://www.guition.com/icms/upload/fb081940d6fc11f09850077a33e1404f/file/productmanager-productfile/f663c89a7eaf48a9a6e0f8fcacadbb62/Directory/JC1060P470C_I_W_Y%20Specifications-EN_1775540713394.pdf"
+  }
+}

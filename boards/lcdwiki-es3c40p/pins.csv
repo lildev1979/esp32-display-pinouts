@@ -1,0 +1,32 @@
+group,signal,pin
+Panel - SPI (4-wire serial),SCK / CLK,GPIO 12
+Panel - SPI (4-wire serial),MOSI / SDA,GPIO 11
+Panel - SPI (4-wire serial),MISO / SDO,GPIO 13
+Panel - SPI (4-wire serial),CS,GPIO 10
+Panel - SPI (4-wire serial),DC / RS,GPIO 46
+Panel - SPI (4-wire serial),RESET,-
+Touch - FT6236 / FT6336U,SDA,GPIO 16
+Touch - FT6236 / FT6336U,SCL,GPIO 15
+Touch - FT6236 / FT6336U,INT / IRQ,GPIO 17
+Touch - FT6236 / FT6336U,RESET,GPIO 18
+Backlight,Pin,GPIO 45
+Backlight,Active,high
+Backlight,Drive,PWM 5000 Hz
+"I2C (GPIO 16 / 15, IIC header)",SDA,GPIO 16
+"I2C (GPIO 16 / 15, IIC header)",SCL,GPIO 15
+SDCard - SD card,CLK,GPIO 38
+SDCard - SD card,CMD,GPIO 40
+SDCard - SD card,D0,GPIO 39
+SDCard - SD card,D1,GPIO 41
+SDCard - SD card,D2,GPIO 48
+SDCard - SD card,D3,GPIO 47
+RgbLed - NeoPixel string,DATA,GPIO 42
+Inputs and outputs,Battery (analog in),GPIO 9
+Inputs and outputs,Boot Button (input),GPIO 0
+Board I/O,BootButton (active low),GPIO 0
+Analogue input,Battery,GPIO 9
+Audio,MCLK,GPIO 4
+Audio,BCLK,GPIO 5
+Audio,LRCLK,GPIO 7
+Audio,DIN,GPIO 8
+Audio,PA,GPIO 1

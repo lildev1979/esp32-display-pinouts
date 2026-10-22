@@ -3,7 +3,7 @@
   "name": "Elecrow CrowPanel Advanced ESP32-P4 7 / 9 / 10.1 inch",
   "vendor": "Elecrow",
   "group": "All-in-one boards",
-  "description": "1024x600 MIPI-DSI panel (EK79007) with GT911 touch and an I2S speaker amplifier on an ESP32-P4, the same board in 7, 9 and 10.1 inch sizes. Compiled, not yet seen on a board.",
+  "description": "1024x600 MIPI-DSI panel (EK79007) with GT911 touch, an I2S speaker amplifier and Wi-Fi through an ESP32-C6 on an ESP32-P4, the same board in 7, 9 and 10.1 inch sizes. Compiled, not yet seen on a board.",
   "mcu": {
     "id": "esp32p4",
     "name": "ESP32-P4"
@@ -72,7 +72,22 @@
     }
   ],
   "ioExpanders": [],
-  "peripherals": [],
+  "peripherals": [
+    {
+      "name": "WiFiCoprocessor",
+      "chip": "Wi-Fi co-processor",
+      "kind": "Network",
+      "pins": {
+        "clk": 18,
+        "cmd": 19,
+        "d0": 17,
+        "d1": 16,
+        "d2": 15,
+        "d3": 14,
+        "rst": 54
+      }
+    }
+  ],
   "digitalIO": [],
   "analogInputs": [],
   "audio": {
@@ -84,7 +99,7 @@
       "pa": 30
     }
   },
-  "verify": "Nobody at LCD Wizard has had this board: the export for it compiles and has not been seen on the panel. The 7\", 9\" and 10.1\" share every pin and the same 1024x600 EK79007 panel; pins and settings are from Elecrow's own Arduino lessons for each size (51 MHz, 1000 Mbps a lane, hsync 70/160/160, vsync 10/23/21), the same on hardware V1.0 and V1.2. If the screen stays dark with the backlight lit, try 52 MHz with hsync 10/160/160 and vsync 1/23/12, which is what GFX Library for Arduino's own definition of the 7\" runs. The touch controller may answer at 0x14 instead of 0x5D. Touch, the panel's reset and the TF card are on GPIO 39-48, which the P4 powers from its LDO channel 4: Arduino ESP32 core 3.3.11 and 3.3.12 switch that on by themselves when the pins are first used; core 3.2.0 does not, and there the touch will not answer. The speaker is an I2S amplifier (BCLK 22, LRCK 21, data 23) switched on by pulling GPIO 30 low. Not driven: the TF card (SDMMC CLK 43, CMD 44, D0 39), the PDM microphone (CLK 24, data 26), the camera, and the ESP32-C6 radio, so there is no Wi-Fi or Bluetooth. The export builds for an ESP32-P4 before revision 3, which is what Elecrow's own ESP-IDF lessons build for.",
+  "verify": "Nobody at LCD Wizard has had this board: the export for it compiles and has not been seen on the panel. The 7\", 9\" and 10.1\" share every pin and the same 1024x600 EK79007 panel; pins and settings are from Elecrow's own Arduino lessons for each size (51 MHz, 1000 Mbps a lane, hsync 70/160/160, vsync 10/23/21), the same on hardware V1.0 and V1.2. If the screen stays dark with the backlight lit, try 52 MHz with hsync 10/160/160 and vsync 1/23/12, which is what GFX Library for Arduino's own definition of the 7\" runs. The touch controller may answer at 0x14 instead of 0x5D. Touch, the panel's reset and the TF card are on GPIO 39-48, which the P4 powers from its LDO channel 4: Arduino ESP32 core 3.3.11 and 3.3.12 switch that on by themselves when the pins are first used; core 3.2.0 does not, and there the touch will not answer. The speaker is an I2S amplifier (BCLK 22, LRCK 21, data 23) switched on by pulling GPIO 30 low. Wi-Fi is the ESP32-C6, in the kit as the Wi-Fi co-processor on hardware V1.2's SDIO lines (CLK 18, CMD 19, D0-D3 17/16/15/14, reset 54, from Elecrow's own Arduino lesson): a V1.1 board resets it on GPIO 32 instead, and a V1.0 board, whose link has one data line, gets no Wi-Fi here. The C6 has to run ESP-Hosted of the core's release, which the board prints at start (see the README). Wi-Fi through it compiles and has not been on a board. Not driven: the TF card (SDMMC CLK 43, CMD 44, D0 39), the PDM microphone (CLK 24, data 26), the camera and the C6's Bluetooth; ESP-NOW does not go through the C6. A design on this preset builds for an ESP32-P4 before revision 3, which is what Elecrow's own ESP-IDF lessons build for; if the upload reports revision 3 (\"revision v3.1\"), choose that under Hardware > Board > Chip revision.",
   "links": {
     "page": "https://lcdwizard.com/boards/elecrow-crowpanel-advanced-p4",
     "designer": "https://app.lcdwizard.com/app?board=elecrow-crowpanel-advanced-p4",

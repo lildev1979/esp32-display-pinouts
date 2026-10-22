@@ -9,6 +9,13 @@ Backlight,Active,high
 Backlight,Drive,PWM 30000 Hz
 "I2C1 (touch, I2C port)",SDA,GPIO 45
 "I2C1 (touch, I2C port)",SCL,GPIO 46
+WiFiCoprocessor - Wi-Fi co-processor,CLK,GPIO 18
+WiFiCoprocessor - Wi-Fi co-processor,CMD,GPIO 19
+WiFiCoprocessor - Wi-Fi co-processor,D0,GPIO 17
+WiFiCoprocessor - Wi-Fi co-processor,D1,GPIO 16
+WiFiCoprocessor - Wi-Fi co-processor,D2,GPIO 15
+WiFiCoprocessor - Wi-Fi co-processor,D3,GPIO 14
+WiFiCoprocessor - Wi-Fi co-processor,RST,GPIO 54
 Audio,BCLK,GPIO 22
 Audio,LRCLK,GPIO 21
 Audio,DIN,GPIO 23

@@ -1,0 +1,130 @@
+{
+  "id": "waveshare-c6-touch-amoled-216",
+  "name": "Waveshare ESP32-C6-Touch-AMOLED-2.16",
+  "vendor": "Waveshare",
+  "group": "All-in-one boards",
+  "description": "2.16\" 480x480 AMOLED (CO5300, QSPI), CST9220 touch, ES8311 speaker and ES7210 microphones, QMI8658, PCF85063ATL, AXP2101.",
+  "mcu": {
+    "id": "esp32c6",
+    "name": "ESP32-C6"
+  },
+  "flashMB": 16,
+  "psramMB": 0,
+  "usbCdc": true,
+  "display": {
+    "controller": "co5300",
+    "controllerName": "CO5300",
+    "interface": "qspi",
+    "width": 480,
+    "height": 480,
+    "colorDepth": 16,
+    "rgbOrder": "rgb",
+    "invert": false,
+    "pins": {
+      "sck": 0,
+      "d0": 1,
+      "d1": 2,
+      "d2": 3,
+      "d3": 4,
+      "cs": 15,
+      "rst": {
+        "pmu": "per_waveshare_c6_touch_amoled_216_axp2101",
+        "rail": "aldo3"
+      }
+    },
+    "options": {
+      "freqMhz": 40,
+      "spiHost": "SPI2_HOST",
+      "madctl": "0xA0"
+    },
+    "backlight": null
+  },
+  "touch": {
+    "controller": "cst9217",
+    "controllerName": "CST9217 / CST9220",
+    "pins": {
+      "sda": 8,
+      "scl": 7,
+      "int": 5,
+      "rst": 11
+    },
+    "swapXY": true,
+    "invertX": true,
+    "invertY": false,
+    "options": {
+      "i2cAddr": "0x5A",
+      "freqKhz": 400,
+      "sharedI2C": true
+    }
+  },
+  "buses": [
+    {
+      "name": "I2C (GPIO 8 / 7)",
+      "kind": "i2c",
+      "pins": {
+        "sda": 8,
+        "scl": 7
+      }
+    }
+  ],
+  "ioExpanders": [],
+  "peripherals": [
+    {
+      "name": "IMU",
+      "chip": "QMI8658",
+      "kind": "Motion",
+      "bus": "I2C (GPIO 8 / 7)",
+      "address": "0x6B"
+    },
+    {
+      "name": "RTC",
+      "chip": "PCF85063",
+      "kind": "Time",
+      "bus": "I2C (GPIO 8 / 7)",
+      "address": "0x51"
+    },
+    {
+      "name": "PMIC",
+      "chip": "AXP2101",
+      "kind": "Power",
+      "bus": "I2C (GPIO 8 / 7)",
+      "address": "0x34"
+    }
+  ],
+  "digitalIO": [
+    {
+      "name": "BOOTButton",
+      "direction": "in",
+      "pin": 9,
+      "activeLow": true
+    },
+    {
+      "name": "KEYButton",
+      "direction": "in",
+      "pin": 10,
+      "activeLow": true
+    },
+    {
+      "name": "PWRButton",
+      "direction": "in",
+      "pin": 18,
+      "activeLow": false
+    }
+  ],
+  "analogInputs": [],
+  "audio": {
+    "output": "es8311",
+    "pins": {
+      "mclk": 19,
+      "bclk": 20,
+      "lrclk": 22,
+      "din": 23,
+      "pa": -1
+    }
+  },
+  "verify": "Pins from Waveshare's demo code and schematic (https://github.com/waveshareteam/ESP32-C6-Touch-AMOLED-2.16). 1) 02_Example/ESP-IDF-v5.5.3/*/main/user_config.h has BSP_LCD_CS GPIO_NUM_5 and BSP_LCD_TOUCH_INT GPIO_NUM_15, the reverse of the Arduino user_config.h (CS 15, INT 5). The ESP-IDF code never uses those two defines for the panel: main.cpp builds DisplayPort with its defaults (cs = 15, tp_int = 5). The schematic (J4 pin 4 = GPIO15, pin 17 = GPIO5) and the Arduino header were believed. The panel has no reset GPIO: its reset line is pulled up to ALDO3 of the AXP2101, so the export starts the chip before the panel and resets the panel by switching ALDO3 off and on, as Waveshare's own code does - compiled here, and never seen on a panel. ALDO1 (the ES7210's and the ES8311's analogue supply, 3.3 V) and ALDO2 (the speaker amplifier's enable, 3.3 V) are switched on when the chip starts, as Waveshare's code has them. The speaker amplifier has no enable GPIO, so it is on whenever the board is: nothing mutes it between sounds. The ES8311 is set to +12 dB (Speaker gain on Hardware > Audio): its amplifier has a fixed gain and the speaker was very quiet at 0 dB. The default was set by ear on 2026-10-20. Waveshare runs this glass under orientation byte 0xA0 with the picture starting at column 0, and the preset does the same: the byte is on the Display tab, and a turned design is turned over it. Waveshare's LVGL examples for this board send 0x30 instead (its XiaoZhi board file and the S3 board send 0xA0), with the same touch arithmetic; if the picture comes out mirrored against the touch, try 0x30 there. The glass has rounded corners whose radius Waveshare does not give, so the designer draws them square: keep what matters out of the corners, or set a corner radius on the Display tab once it is measured. On the board and not in this preset: TF card: it is wired onto the panel's own quad SPI lines in a way the export cannot share with the panel. Brightness is a command to the panel, not a backlight pin. Compiled; not run on a board here.",
+  "links": {
+    "page": "https://lcdwizard.com/boards/waveshare-c6-touch-amoled-216",
+    "designer": "https://app.lcdwizard.com/app?board=waveshare-c6-touch-amoled-216"
+  }
+}
